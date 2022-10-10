@@ -16,5 +16,8 @@ namespace Ficha_Jiora.View
         {
             InitializeComponent();
         }
+        
+        
+
     }
 }
