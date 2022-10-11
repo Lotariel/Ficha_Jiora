@@ -9,10 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DAO\" />
-    <Folder Include="Control\" />
     <Folder Include="Image\Perfil\" />
-    <Folder Include="Model\" />
   </ItemGroup>
 
   <ItemGroup>

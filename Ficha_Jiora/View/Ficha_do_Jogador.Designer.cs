@@ -28,32 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
             this.batalha = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pericia = new System.Windows.Forms.TabPage();
             this.inventario = new System.Windows.Forms.TabPage();
             this.Mapa = new System.Windows.Forms.TabPage();
+            this.txt_nome_personagem = new System.Windows.Forms.TextBox();
+            this.btn_atualiza = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_nome_personagem = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lbl_nivel_personagem = new System.Windows.Forms.Label();
+            this.lbl_classe_peronsagem = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // img_imagem_personagem
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(282, 378);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.img_imagem_personagem.Location = new System.Drawing.Point(12, 12);
+            this.img_imagem_personagem.Name = "img_imagem_personagem";
+            this.img_imagem_personagem.Size = new System.Drawing.Size(282, 378);
+            this.img_imagem_personagem.TabIndex = 0;
+            this.img_imagem_personagem.TabStop = false;
             // 
             // tabControl1
             // 
@@ -88,42 +90,6 @@
             this.batalha.Text = "Batalha";
             this.batalha.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1096, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1202, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Atualizar";
-            this.button1.UseVisualStyleBackColor = true;
-            
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(12, 406);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(282, 228);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Atributos";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(314, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 37);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nome";
-            // 
             // pericia
             // 
             this.pericia.Location = new System.Drawing.Point(4, 24);
@@ -151,15 +117,51 @@
             this.Mapa.Text = "Mapa";
             this.Mapa.UseVisualStyleBackColor = true;
             // 
+            // txt_nome_personagem
+            // 
+            this.txt_nome_personagem.Location = new System.Drawing.Point(1096, 12);
+            this.txt_nome_personagem.Name = "txt_nome_personagem";
+            this.txt_nome_personagem.Size = new System.Drawing.Size(100, 23);
+            this.txt_nome_personagem.TabIndex = 2;
+            // 
+            // btn_atualiza
+            // 
+            this.btn_atualiza.Location = new System.Drawing.Point(1202, 12);
+            this.btn_atualiza.Name = "btn_atualiza";
+            this.btn_atualiza.Size = new System.Drawing.Size(75, 23);
+            this.btn_atualiza.TabIndex = 3;
+            this.btn_atualiza.Text = "Atualizar";
+            this.btn_atualiza.UseVisualStyleBackColor = true;
+            this.btn_atualiza.Click += new System.EventHandler(this.btn_atualiza_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(12, 406);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(282, 228);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Atributos";
+            // 
+            // lbl_nome_personagem
+            // 
+            this.lbl_nome_personagem.AutoSize = true;
+            this.lbl_nome_personagem.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_nome_personagem.Location = new System.Drawing.Point(314, 9);
+            this.lbl_nome_personagem.Name = "lbl_nome_personagem";
+            this.lbl_nome_personagem.Size = new System.Drawing.Size(90, 37);
+            this.lbl_nome_personagem.TabIndex = 5;
+            this.lbl_nome_personagem.Text = "Nome";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(314, 46);
+            this.label2.Location = new System.Drawing.Point(318, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 28);
+            this.label2.Size = new System.Drawing.Size(41, 28);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Nv. 27";
+            this.label2.Text = "Nv.";
             // 
             // label3
             // 
@@ -191,25 +193,47 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Período: Noite";
             // 
+            // lbl_nivel_personagem
+            // 
+            this.lbl_nivel_personagem.AutoSize = true;
+            this.lbl_nivel_personagem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_nivel_personagem.Location = new System.Drawing.Point(352, 66);
+            this.lbl_nivel_personagem.Name = "lbl_nivel_personagem";
+            this.lbl_nivel_personagem.Size = new System.Drawing.Size(45, 28);
+            this.lbl_nivel_personagem.TabIndex = 10;
+            this.lbl_nivel_personagem.Text = "999";
+            // 
+            // lbl_classe_peronsagem
+            // 
+            this.lbl_classe_peronsagem.AutoSize = true;
+            this.lbl_classe_peronsagem.Location = new System.Drawing.Point(321, 49);
+            this.lbl_classe_peronsagem.Name = "lbl_classe_peronsagem";
+            this.lbl_classe_peronsagem.Size = new System.Drawing.Size(40, 15);
+            this.lbl_classe_peronsagem.TabIndex = 11;
+            this.lbl_classe_peronsagem.Text = "Classe";
+            // 
             // Ficha_do_Jogador
             // 
+            this.AcceptButton = this.btn_atualiza;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1289, 650);
+            this.Controls.Add(this.lbl_classe_peronsagem);
+            this.Controls.Add(this.lbl_nivel_personagem);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_nome_personagem);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_atualiza);
+            this.Controls.Add(this.txt_nome_personagem);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.img_imagem_personagem);
             this.Name = "Ficha_do_Jogador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ficha";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,14 +242,14 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox img_imagem_personagem;
         private TabControl tabControl1;
         private TabPage Status;
         private TabPage batalha;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox txt_nome_personagem;
+        private Button btn_atualiza;
         private GroupBox groupBox1;
-        private Label label1;
+        private Label lbl_nome_personagem;
         private TabPage pericia;
         private TabPage inventario;
         private TabPage Mapa;
@@ -233,5 +257,7 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private Label lbl_nivel_personagem;
+        private Label lbl_classe_peronsagem;
     }
 }
