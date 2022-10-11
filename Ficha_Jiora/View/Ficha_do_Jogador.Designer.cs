@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
             this.batalha = new System.Windows.Forms.TabPage();
             this.pericia = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewButtonColumn();
             this.inventario = new System.Windows.Forms.TabPage();
             this.Mapa = new System.Windows.Forms.TabPage();
             this.txt_nome_personagem = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@
             this.lbl_nivel_personagem = new System.Windows.Forms.Label();
             this.lbl_classe_peronsagem = new System.Windows.Forms.Label();
             this.bs_personagem = new System.Windows.Forms.BindingSource(this.components);
+            this.Teste = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.pericia.SuspendLayout();
@@ -115,22 +117,25 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome});
+            this.Teste});
             this.dataGridView1.Location = new System.Drawing.Point(34, 27);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(872, 229);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nivel";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Nome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // inventario
             // 
@@ -245,6 +250,17 @@
             this.lbl_classe_peronsagem.TabIndex = 11;
             this.lbl_classe_peronsagem.Text = "Classe";
             // 
+            // Teste
+            // 
+            this.Teste.DataPropertyName = "name";
+            this.Teste.HeaderText = "Teste";
+            this.Teste.Name = "Teste";
+            this.Teste.ReadOnly = true;
+            this.Teste.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Teste.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Teste.Text = "Teste";
+            this.Teste.ToolTipText = "Fazer Teste";
+            // 
             // Ficha_do_Jogador
             // 
             this.AcceptButton = this.btn_atualiza;
@@ -297,6 +313,6 @@
         private Label lbl_classe_peronsagem;
         private DataGridView dataGridView1;
         private BindingSource bs_personagem;
-        private DataGridViewButtonColumn Nome;
+        private DataGridViewButtonColumn Teste;
     }
 }

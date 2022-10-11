@@ -16,8 +16,11 @@ namespace Ficha_Jiora.View
     {
         private Personagem_Control personagem_Control = new Personagem_Control();
         private Personagem_Model personagem_Model = new Personagem_Model();
+        private Pericia_Control pericia_Control = new Pericia_Control();
+        private Pericia_Model pericia_Model = new Pericia_Model();
         private string IDPersonagem = "";
-        
+        private Rolar_Dados Rolar = new Rolar_Dados();
+
         public Ficha_do_Jogador()
         {
             InitializeComponent();
@@ -28,14 +31,14 @@ namespace Ficha_Jiora.View
         {
             try
             {
-                Cursor.Current = Cursors.WaitCursor;                
-                CarregaPersonagem();                               
+                Cursor.Current = Cursors.WaitCursor;
+                CarregaPersonagem();
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao carregar personagem:\n " + ex.Message,"Alert",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                
+                MessageBox.Show("Falha ao carregar personagem:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
@@ -61,46 +64,78 @@ namespace Ficha_Jiora.View
                 lbl_nome_personagem.Text = personagem_Model.Nome;
                 lbl_nivel_personagem.Text = personagem_Model.Nivel.ToString();
                 img_imagem_personagem.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Perfil\\" + personagem_Model.Imagem);
-                lbl_classe_peronsagem.Text = personagem_Model.Classe;                
-                bs_personagem.DataSource = personagem_Control.Carrega_Personagem_2(IDPersonagem);
+                lbl_classe_peronsagem.Text = personagem_Model.Classe;
+                bs_personagem.DataSource = pericia_Control.Carrega_Pericia(IDPersonagem);
                 dataGridView1.DataSource = bs_personagem;
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);         
+                throw new Exception(ex.Message);
             }
         }
         #endregion
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Codigo para garantir que a ação seja executada quando clicar no botão da gridview
-            var senderGrid = (DataGridView)sender;
+            try
+            {//Codigo para garantir que a ação seja executada quando clicar no botão da gridview
+                var senderGrid = (DataGridView)sender;
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
-            {
-                int Total = 0;
-                var Row = dataGridView1.CurrentRow;
-
-                
-                //Codigo que pega o valor da linha atual selecionada
-                foreach (DataGridViewRow linha in dataGridView1.Rows)
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                    e.RowIndex >= 0)
                 {
-                    var resultado = linha.Cells["Cabelo"].Value;
+                    int Total = 0;
+                    var Row = dataGridView1.CurrentRow;
 
-                    if (resultado == null)
+
+                    //Codigo que pega o valor da linha atual selecionada
+                    foreach (DataGridViewRow linha in dataGridView1.Rows)
                     {
-                        lbl_nivel_personagem.Text = "Valor Nulo";                        
+                        var resultado = linha.Cells["nome"].Value;
+                        int valor = Convert.ToInt32(dataGridView1.CurrentRow.Cells["PontosAtual"].Value);
+                        string NomeTeste = dataGridView1.CurrentRow.Cells["nome"].Value.ToString();
+
+                        if (resultado == NomeTeste)
+                        {
+                            int d100 = Rolar.D100();
+                            if (d100 <= valor)
+                            {
+                                if (d100 <= 10)
+                                {
+                                    MessageBox.Show(personagem_Model.Nome + " REALIZOU UM ACERTO CRÍTICO NO TESTE DE " + NomeTeste
+                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Acerto Crítico", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show(personagem_Model.Nome + " teve sucesso no teste de " + NomeTeste
+                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Acertou", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+
+                            }
+                            else
+                            {
+                                if (d100 >= 95)
+                                {
+                                    MessageBox.Show("Falha Crítica! no teste de" + NomeTeste
+                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Falha Crítica", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Mais sorte para você da próxima vez!"
+                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Falha", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+                            }
+                        }
+
                     }
-                    else
-                    {
-                        string cabelo = dataGridView1.CurrentRow.Cells["Cabelo"].Value.ToString();
-                        string id = dataGridView1.CurrentRow.Cells["idpersonagem"].Value.ToString();
-                        personagem_Control.AlterarCabelo(id, cabelo);
-                    }
-                                        
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao carregar realizar o teste:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
         }
     }
 }
