@@ -29,5 +29,10 @@ namespace Ficha_Jiora.Control
         {
             return personagem_Data.Carrega_Personagem_2(IDPersonagem);
         }
+
+        public void AlterarCabelo(string idpersonagem, string valor)
+        {
+            personagem_Data.AlterarCabelo(idpersonagem, valor);
+        }
     }
 }

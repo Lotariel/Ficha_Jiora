@@ -94,7 +94,9 @@ namespace Ficha_Jiora.View
                     }
                     else
                     {
-                        lbl_nivel_personagem.Text = dataGridView1.CurrentRow.Cells["Cabelo"].Value.ToString();
+                        string cabelo = dataGridView1.CurrentRow.Cells["Cabelo"].Value.ToString();
+                        string id = dataGridView1.CurrentRow.Cells["idpersonagem"].Value.ToString();
+                        personagem_Control.AlterarCabelo(id, cabelo);
                     }
                                         
                 }

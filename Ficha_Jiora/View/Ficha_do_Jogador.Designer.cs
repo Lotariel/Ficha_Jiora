@@ -118,7 +118,6 @@
             this.Nome});
             this.dataGridView1.Location = new System.Drawing.Point(34, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(872, 229);
@@ -130,7 +129,6 @@
             this.Nome.DataPropertyName = "Nivel";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
             this.Nome.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Nome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 

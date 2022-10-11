@@ -123,5 +123,24 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Personagem_Data.GetClasse:\n" + ex.Message);
             }
         }
+
+        public void AlterarCabelo(string idpersonagem, string valor)
+        {
+            try
+            {
+                Script = "UPDATE personagem set cabelo = '" + valor + "' where idpersonagem = " + idpersonagem;
+
+                SqlCommand update = new SqlCommand(Script, AbreConexao());
+
+                update.ExecuteNonQuery();
+
+                FechaConexao();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Personagem_Data.AlterarCabelo:\n" + ex.Message);
+            }
+        }
     }
 }
