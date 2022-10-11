@@ -45,6 +45,37 @@ namespace Ficha_Jiora.DAO
             }
         }
 
+
+        public DataTable Carrega_Personagem_2(string IDPersonagem)
+        {
+            try
+            {
+                DataTable TabelaPersonagem = new DataTable();
+                personagem_Model = new Personagem_Model();
+                Script = "select * from personagem";
+
+                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
+
+                select.Fill(TabelaPersonagem);
+                FechaConexao();
+
+                foreach (DataRow item in TabelaPersonagem.Rows)
+                {
+                    personagem_Model = new Personagem_Model()
+                    {
+                        Nome = item["Nome"].ToString() + " " + item["Sobrenome"].ToString(),
+                        Nivel = Convert.ToInt32(item["Nivel"]),
+                        Imagem = item["imagem"].ToString(),
+                        Classe = GetClasse(item["classeid"].ToString())
+                    };
+                }
+                return TabelaPersonagem;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("\nErro em Personagem_Data.Carrega_Personagem:\n" + ex.Message);
+            }
+        }
         public string GetID(string nome)
         {
             try
@@ -55,12 +86,20 @@ namespace Ficha_Jiora.DAO
 
                 FechaConexao();
 
-                return select.ExecuteScalar().ToString();
+                var resultado = select.ExecuteScalar();
+
+                if (resultado != null)
+                {
+                    return resultado.ToString();
+                }
+                else
+                {
+                    throw new Exception("\nPersonagem '" + nome + "' não encontrado.");
+                }
 
             }
             catch (Exception ex)
             {
-
                 throw new Exception("\nErro em Personagem_Data.GetID:\n" + ex.Message);
             }
         }
@@ -76,6 +115,7 @@ namespace Ficha_Jiora.DAO
                 FechaConexao();
 
                 return select.ExecuteScalar().ToString();
+
             }
             catch (Exception ex)
             {

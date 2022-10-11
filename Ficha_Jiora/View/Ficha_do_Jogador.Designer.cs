@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
             this.batalha = new System.Windows.Forms.TabPage();
             this.pericia = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewButtonColumn();
             this.inventario = new System.Windows.Forms.TabPage();
             this.Mapa = new System.Windows.Forms.TabPage();
             this.txt_nome_personagem = new System.Windows.Forms.TextBox();
@@ -45,8 +48,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_nivel_personagem = new System.Windows.Forms.Label();
             this.lbl_classe_peronsagem = new System.Windows.Forms.Label();
+            this.bs_personagem = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.pericia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).BeginInit();
             this.SuspendLayout();
             // 
             // img_imagem_personagem
@@ -92,12 +99,40 @@
             // 
             // pericia
             // 
+            this.pericia.Controls.Add(this.dataGridView1);
             this.pericia.Location = new System.Drawing.Point(4, 24);
             this.pericia.Name = "pericia";
             this.pericia.Size = new System.Drawing.Size(955, 500);
             this.pericia.TabIndex = 2;
             this.pericia.Text = "Perícia";
             this.pericia.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome});
+            this.dataGridView1.Location = new System.Drawing.Point(34, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(872, 229);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nivel";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Nome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // inventario
             // 
@@ -235,6 +270,9 @@
             this.Text = "Ficha";
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.pericia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +297,8 @@
         private Label label5;
         private Label lbl_nivel_personagem;
         private Label lbl_classe_peronsagem;
+        private DataGridView dataGridView1;
+        private BindingSource bs_personagem;
+        private DataGridViewButtonColumn Nome;
     }
 }

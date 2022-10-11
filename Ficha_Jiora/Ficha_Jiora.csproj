@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Folder Include="Image\Perfil\" />
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
 
   <ItemGroup>

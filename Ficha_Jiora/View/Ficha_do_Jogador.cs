@@ -23,6 +23,7 @@ namespace Ficha_Jiora.View
             InitializeComponent();
         }
 
+        #region INFORMAÇÕES DA MAIN PAGE
         private void btn_atualiza_Click(object sender, EventArgs e)
         {
             try
@@ -60,13 +61,44 @@ namespace Ficha_Jiora.View
                 lbl_nome_personagem.Text = personagem_Model.Nome;
                 lbl_nivel_personagem.Text = personagem_Model.Nivel.ToString();
                 img_imagem_personagem.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Perfil\\" + personagem_Model.Imagem);
-                lbl_classe_peronsagem.Text = personagem_Model.Classe;
+                lbl_classe_peronsagem.Text = personagem_Model.Classe;                
+                bs_personagem.DataSource = personagem_Control.Carrega_Personagem_2(IDPersonagem);
+                dataGridView1.DataSource = bs_personagem;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);         
             }
         }
-       
+        #endregion
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Codigo para garantir que a ação seja executada quando clicar no botão da gridview
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                int Total = 0;
+                var Row = dataGridView1.CurrentRow;
+
+                
+                //Codigo que pega o valor da linha atual selecionada
+                foreach (DataGridViewRow linha in dataGridView1.Rows)
+                {
+                    var resultado = linha.Cells["Cabelo"].Value;
+
+                    if (resultado == null)
+                    {
+                        lbl_nivel_personagem.Text = "Valor Nulo";                        
+                    }
+                    else
+                    {
+                        lbl_nivel_personagem.Text = dataGridView1.CurrentRow.Cells["Cabelo"].Value.ToString();
+                    }
+                                        
+                }
+            }
+        }
     }
 }

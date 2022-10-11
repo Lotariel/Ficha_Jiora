@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ficha_Jiora.Model;
 using Ficha_Jiora.DAO;
+using System.Data;
 
 namespace Ficha_Jiora.Control
 {
@@ -22,6 +23,11 @@ namespace Ficha_Jiora.Control
         public string GetID(string nome)
         {
             return personagem_Data.GetID(nome);
+        }
+
+        public DataTable Carrega_Personagem_2(string IDPersonagem)
+        {
+            return personagem_Data.Carrega_Personagem_2(IDPersonagem);
         }
     }
 }
