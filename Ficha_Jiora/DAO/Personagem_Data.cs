@@ -20,7 +20,7 @@ namespace Ficha_Jiora.DAO
             {
                 DataTable TabelaPersonagem = new DataTable();
                 personagem_Model = new Personagem_Model();
-                Script = "select * from personagem where idpersonagem = " + "'" + IDPersonagem + "'";
+                Script = "select * from personagem where id = " + "'" + IDPersonagem + "'";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
 
@@ -34,7 +34,7 @@ namespace Ficha_Jiora.DAO
                         Nome = item["Nome"].ToString() + " " + item["Sobrenome"].ToString(),
                         Nivel = Convert.ToInt32(item["Nivel"]),
                         Imagem = item["imagem"].ToString(),
-                        Classe = GetClasse(item["classeid"].ToString())
+                        Classe = GetClasse(item["job_id"].ToString())
                     };
                 }
                 return personagem_Model;
@@ -80,7 +80,7 @@ namespace Ficha_Jiora.DAO
         {
             try
             {
-                Script = "select idpersonagem from personagem where nome = '" + nome + "'";
+                Script = "select id from personagem where nome = '" + nome + "'";
 
                 SqlCommand select = new SqlCommand(Script, AbreConexao());
 
@@ -108,7 +108,7 @@ namespace Ficha_Jiora.DAO
         {
             try
             {
-                Script = "select nome from classe where idclasse = '" + IDClasse + "'";
+                Script = "select nome from job where id = '" + IDClasse + "'";
 
                 SqlCommand select = new SqlCommand(Script, AbreConexao());
 

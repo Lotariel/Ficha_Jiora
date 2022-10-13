@@ -18,8 +18,10 @@ namespace Ficha_Jiora.View
         private Personagem_Model personagem_Model = new Personagem_Model();
         private Pericia_Control pericia_Control = new Pericia_Control();
         private Pericia_Model pericia_Model = new Pericia_Model();
-        private string IDPersonagem = "";
         private Rolar_Dados Rolar = new Rolar_Dados();
+        private Log_Ficha log_ficha = new Log_Ficha();
+        private string IDPersonagem = "";
+        
 
         public Ficha_do_Jogador()
         {
@@ -27,18 +29,32 @@ namespace Ficha_Jiora.View
         }
 
         #region INFORMAÇÕES DA MAIN PAGE
+        private void Insertlog(string action)
+        {
+            try
+            {
+                log_ficha.Insert_Log(personagem_Model.Nome, action);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
+        }
         private void btn_atualiza_Click(object sender, EventArgs e)
         {
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
                 CarregaPersonagem();
+                //Insertlog("Atualizou a Ficha.");
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
-            {
+            {                
                 MessageBox.Show("Falha ao carregar personagem:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                txt_nome_personagem.Text = "";
             }
         }
 
@@ -74,6 +90,8 @@ namespace Ficha_Jiora.View
             }
         }
         #endregion
+
+        #region INFORMAÇÕES DA ABA PERICIA
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -90,9 +108,9 @@ namespace Ficha_Jiora.View
                     //Codigo que pega o valor da linha atual selecionada
                     foreach (DataGridViewRow linha in dataGridView1.Rows)
                     {
-                        var resultado = linha.Cells["nome"].Value;
-                        int valor = Convert.ToInt32(dataGridView1.CurrentRow.Cells["PontosAtual"].Value);
-                        string NomeTeste = dataGridView1.CurrentRow.Cells["nome"].Value.ToString();
+                        var resultado = linha.Cells["Nome"].Value;
+                        int valor = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Chance de Sucesso(%)"].Value);
+                        string NomeTeste = dataGridView1.CurrentRow.Cells["Nome"].Value.ToString();
 
                         if (resultado == NomeTeste)
                         {
@@ -115,13 +133,14 @@ namespace Ficha_Jiora.View
                             {
                                 if (d100 >= 95)
                                 {
-                                    MessageBox.Show("Falha Crítica! no teste de" + NomeTeste
+                                    MessageBox.Show("Falha Crítica! no teste de " + NomeTeste
                                         + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Falha Crítica", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Mais sorte para você da próxima vez!"
+                                    MessageBox.Show("Você falhou.\r\nMais sorte na próxima vez!"
                                         + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Falha", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    Insertlog("Realizou uma falha no teste de " + NomeTeste + "\n\r Valor do Dado:" + d100 + "\r\nValor do teste:" + valor);
                                 }
 
                             }
@@ -137,5 +156,7 @@ namespace Ficha_Jiora.View
 
 
         }
+
+#endregion
     }
 }

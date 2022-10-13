@@ -15,7 +15,7 @@ namespace Ficha_Jiora.Control
         private Pericia_Data pericia_Data = new Pericia_Data();
 
         public DataTable Carrega_Pericia(string IDPersonagem)
-        {
+        { 
             return pericia_Data.Carrega_Pericia(IDPersonagem);
         }
     }

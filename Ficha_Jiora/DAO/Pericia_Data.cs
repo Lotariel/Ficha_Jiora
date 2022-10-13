@@ -20,8 +20,10 @@ namespace Ficha_Jiora.DAO
             {
                 DataTable TabelaPericia = new DataTable();
                 pericia_Model = new Pericia_Model();
-                Script = "select Nome,PontosAtual,'Realizar Teste' as name from PERICIAPERSONAGEM ";
-                Script += "where idpersonagem = '" + IDPersonagem + "' and Nome != ''";
+                Script = "select 'Realizar teste' as teste, Nome , [Chance de Sucesso(%)],descricao as'Descrição' ";
+                Script += "from periciapersonagem inner join pericia ";
+                Script += "on periciapersonagem.id_pericia = pericia.id ";
+                Script += "where id_personagem = " + IDPersonagem + " order by nome";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
 
@@ -33,7 +35,7 @@ namespace Ficha_Jiora.DAO
                     pericia_Model = new Pericia_Model()
                     {
                         Nome = item["Nome"].ToString(),
-                        Valor =Convert.ToInt32(item["PontosAtual"])
+                        Valor = Convert.ToInt32(item["Chance de Sucesso(%)"])
                     };
                 }
                 return TabelaPericia;
