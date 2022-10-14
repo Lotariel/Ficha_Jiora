@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>jiora_ficha_icone.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="jiora_ficha_icone.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Image\Perfil\" />
