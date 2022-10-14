@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Ficha_Jiora.Model
 {
-    internal class Pericia_Model
+    internal class Log_Model
     {
         public string Nome { get; set; }
-        public int Valor { get; set; }
-        public string Descricao { get; set; }
+        public string Acao { get; set; }
+        public string Data { get; set; }
     }
 }

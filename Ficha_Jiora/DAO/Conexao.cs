@@ -42,24 +42,6 @@ namespace Ficha_Jiora.DAO
             }
         }
 
-        public void InsertLog(string nome,string action)
-        {
-            try
-            {
-                string Script = "";
-                Script = "insert into log_ficha (usuario,acao,data) ";
-                Script += "values('" + nome + "','" + action + "','" + DateTime.Now + "')";
-
-                SqlCommand insert = new SqlCommand(Script, AbreConexao());
-
-                insert.ExecuteNonQuery();
-
-                FechaConexao();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("\nFalha ao gravar o log\n"+ ex.Message);
-            }
-        }
+        
     }
 }

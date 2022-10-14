@@ -34,7 +34,8 @@ namespace Ficha_Jiora.DAO
                         Nome = item["Nome"].ToString() + " " + item["Sobrenome"].ToString(),
                         Nivel = Convert.ToInt32(item["Nivel"]),
                         Imagem = item["imagem"].ToString(),
-                        Classe = GetClasse(item["job_id"].ToString())
+                        Classe = GetClasse(item["job_id"].ToString()),
+                        PontosPericia = Convert.ToInt32(item["Pontos_Pericia"])
                     };
                 }
                 return personagem_Model;

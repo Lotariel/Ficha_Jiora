@@ -12,5 +12,6 @@ namespace Ficha_Jiora.Model
         public int Nivel { get; set; }
         public string Imagem { get; set; }
         public string Classe { get; set; }
+        public int PontosPericia { get; set; }
     }
 }

@@ -31,16 +31,30 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
             this.batalha = new System.Windows.Forms.TabPage();
             this.pericia = new System.Windows.Forms.TabPage();
+            this.btn_salvar_pericia = new System.Windows.Forms.Button();
+            this.lbl_pontos_pericia = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_pericia = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Teste = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salvar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_pericia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventario = new System.Windows.Forms.TabPage();
             this.Mapa = new System.Windows.Forms.TabPage();
+            this.Log = new System.Windows.Forms.TabPage();
+            this.dtg_log = new System.Windows.Forms.DataGridView();
             this.txt_nome_personagem = new System.Windows.Forms.TextBox();
             this.btn_atualiza = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,12 +66,15 @@
             this.lbl_nivel_personagem = new System.Windows.Forms.Label();
             this.lbl_classe_peronsagem = new System.Windows.Forms.Label();
             this.bs_personagem = new System.Windows.Forms.BindingSource(this.components);
-            this.Teste = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BS_Log = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.pericia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Log.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Log)).BeginInit();
             this.SuspendLayout();
             // 
             // img_imagem_personagem
@@ -75,6 +92,7 @@
             this.tabControl1.Controls.Add(this.pericia);
             this.tabControl1.Controls.Add(this.inventario);
             this.tabControl1.Controls.Add(this.Mapa);
+            this.tabControl1.Controls.Add(this.Log);
             this.tabControl1.Location = new System.Drawing.Point(314, 110);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -103,6 +121,10 @@
             // 
             // pericia
             // 
+            this.pericia.Controls.Add(this.btn_salvar_pericia);
+            this.pericia.Controls.Add(this.lbl_pontos_pericia);
+            this.pericia.Controls.Add(this.label1);
+            this.pericia.Controls.Add(this.txt_pericia);
             this.pericia.Controls.Add(this.dataGridView1);
             this.pericia.Location = new System.Drawing.Point(4, 24);
             this.pericia.Name = "pericia";
@@ -110,6 +132,46 @@
             this.pericia.TabIndex = 2;
             this.pericia.Text = "Perícia";
             this.pericia.UseVisualStyleBackColor = true;
+            // 
+            // btn_salvar_pericia
+            // 
+            this.btn_salvar_pericia.Location = new System.Drawing.Point(773, 256);
+            this.btn_salvar_pericia.Name = "btn_salvar_pericia";
+            this.btn_salvar_pericia.Size = new System.Drawing.Size(75, 23);
+            this.btn_salvar_pericia.TabIndex = 4;
+            this.btn_salvar_pericia.Text = "Editar";
+            this.btn_salvar_pericia.UseVisualStyleBackColor = true;
+            this.btn_salvar_pericia.Visible = false;
+            this.btn_salvar_pericia.Click += new System.EventHandler(this.btn_salvar_pericia_Click);
+            // 
+            // lbl_pontos_pericia
+            // 
+            this.lbl_pontos_pericia.AutoSize = true;
+            this.lbl_pontos_pericia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_pontos_pericia.Location = new System.Drawing.Point(883, 205);
+            this.lbl_pontos_pericia.Name = "lbl_pontos_pericia";
+            this.lbl_pontos_pericia.Size = new System.Drawing.Size(22, 25);
+            this.lbl_pontos_pericia.TabIndex = 3;
+            this.lbl_pontos_pericia.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(716, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Pontos a Distribuir:";
+            // 
+            // txt_pericia
+            // 
+            this.txt_pericia.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txt_pericia.Location = new System.Drawing.Point(716, 50);
+            this.txt_pericia.Multiline = true;
+            this.txt_pericia.Name = "txt_pericia";
+            this.txt_pericia.Size = new System.Drawing.Size(189, 110);
+            this.txt_pericia.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -120,7 +182,6 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -130,27 +191,88 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Teste});
+            this.Teste,
+            this.Nome,
+            this.Valor,
+            this.salvar,
+            this.descricao,
+            this.id_pericia});
             this.dataGridView1.Location = new System.Drawing.Point(34, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(639, 457);
+            this.dataGridView1.Size = new System.Drawing.Size(635, 457);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Teste
+            // 
+            this.Teste.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Teste.DataPropertyName = "teste";
+            this.Teste.HeaderText = "Teste";
+            this.Teste.Name = "Teste";
+            this.Teste.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Teste.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Teste.Text = "Teste";
+            this.Teste.ToolTipText = "Fazer Teste";
+            this.Teste.Width = 5;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.Nome.DataPropertyName = "Nome";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 5;
+            // 
+            // Valor
+            // 
+            this.Valor.DataPropertyName = "Valor";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Valor.HeaderText = "CDS (%)";
+            this.Valor.Name = "Valor";
+            this.Valor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Valor.Width = 75;
+            // 
+            // salvar
+            // 
+            this.salvar.DataPropertyName = "Salvar";
+            this.salvar.HeaderText = "Salvar";
+            this.salvar.Name = "salvar";
+            this.salvar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.salvar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.salvar.Visible = false;
+            // 
+            // descricao
+            // 
+            this.descricao.DataPropertyName = "Descrição";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            this.descricao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.descricao.Width = 230;
+            // 
+            // id_pericia
+            // 
+            this.id_pericia.DataPropertyName = "id_pericia";
+            this.id_pericia.HeaderText = "ID Pericia";
+            this.id_pericia.Name = "id_pericia";
+            this.id_pericia.Visible = false;
             // 
             // inventario
             // 
@@ -169,6 +291,30 @@
             this.Mapa.TabIndex = 4;
             this.Mapa.Text = "Mapa";
             this.Mapa.UseVisualStyleBackColor = true;
+            // 
+            // Log
+            // 
+            this.Log.Controls.Add(this.dtg_log);
+            this.Log.Location = new System.Drawing.Point(4, 24);
+            this.Log.Name = "Log";
+            this.Log.Padding = new System.Windows.Forms.Padding(3);
+            this.Log.Size = new System.Drawing.Size(955, 500);
+            this.Log.TabIndex = 5;
+            this.Log.Text = "log";
+            this.Log.UseVisualStyleBackColor = true;
+            // 
+            // dtg_log
+            // 
+            this.dtg_log.AllowUserToAddRows = false;
+            this.dtg_log.AllowUserToDeleteRows = false;
+            this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
+            this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_log.Location = new System.Drawing.Point(6, 6);
+            this.dtg_log.Name = "dtg_log";
+            this.dtg_log.ReadOnly = true;
+            this.dtg_log.RowTemplate.Height = 25;
+            this.dtg_log.Size = new System.Drawing.Size(943, 402);
+            this.dtg_log.TabIndex = 0;
             // 
             // txt_nome_personagem
             // 
@@ -265,17 +411,6 @@
             this.lbl_classe_peronsagem.TabIndex = 11;
             this.lbl_classe_peronsagem.Text = "Classe";
             // 
-            // Teste
-            // 
-            this.Teste.DataPropertyName = "teste";
-            this.Teste.HeaderText = "Teste";
-            this.Teste.Name = "Teste";
-            this.Teste.ReadOnly = true;
-            this.Teste.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Teste.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Teste.Text = "Teste";
-            this.Teste.ToolTipText = "Fazer Teste";
-            // 
             // Ficha_do_Jogador
             // 
             this.AcceptButton = this.btn_atualiza;
@@ -300,8 +435,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.pericia.ResumeLayout(false);
+            this.pericia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Log.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Log)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,6 +467,18 @@
         private Label lbl_classe_peronsagem;
         private DataGridView dataGridView1;
         private BindingSource bs_personagem;
+        private TabPage Log;
+        private DataGridView dtg_log;
+        private BindingSource BS_Log;
+        private TextBox txt_pericia;
+        private Button btn_salvar_pericia;
+        private Label lbl_pontos_pericia;
+        private Label label1;
         private DataGridViewButtonColumn Teste;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Valor;
+        private DataGridViewButtonColumn salvar;
+        private DataGridViewTextBoxColumn descricao;
+        private DataGridViewTextBoxColumn id_pericia;
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace Ficha_Jiora.View
 {
@@ -21,7 +22,7 @@ namespace Ficha_Jiora.View
         private Rolar_Dados Rolar = new Rolar_Dados();
         private Log_Ficha log_ficha = new Log_Ficha();
         private string IDPersonagem = "";
-        
+
 
         public Ficha_do_Jogador()
         {
@@ -29,36 +30,37 @@ namespace Ficha_Jiora.View
         }
 
         #region INFORMAÇÕES DA MAIN PAGE
-        private void Insertlog(string action)
+
+        private void btn_atualiza_Click(object sender, EventArgs e)
         {
             try
             {
-                log_ficha.Insert_Log(personagem_Model.Nome, action);
+                Cursor.Current = Cursors.WaitCursor;
+                Carrega_Tela();
+                //Insertlog("Atualizou a Ficha");
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar a ficha:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt_nome_personagem.Text = "";
+            }
+        }
+
+        private void Carrega_Tela()
+        {
+            try
+            {
+                CarregaPersonagem();
+                Carrega_Log();
+                Carrega_Pericia();
             }
             catch (Exception ex)
             {
 
                 throw new Exception(ex.Message);
             }
-
         }
-        private void btn_atualiza_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                CarregaPersonagem();
-                //Insertlog("Atualizou a Ficha.");
-                Cursor.Current = Cursors.Default;
-            }
-            catch (Exception ex)
-            {                
-                MessageBox.Show("Falha ao carregar personagem:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txt_nome_personagem.Text = "";
-            }
-        }
-
-
         private string GetID(string nome)
         {
             try
@@ -81,14 +83,14 @@ namespace Ficha_Jiora.View
                 lbl_nivel_personagem.Text = personagem_Model.Nivel.ToString();
                 img_imagem_personagem.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Perfil\\" + personagem_Model.Imagem);
                 lbl_classe_peronsagem.Text = personagem_Model.Classe;
-                bs_personagem.DataSource = pericia_Control.Carrega_Pericia(IDPersonagem);
-                dataGridView1.DataSource = bs_personagem;
+
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
+
         #endregion
 
         #region INFORMAÇÕES DA ABA PERICIA
@@ -98,8 +100,13 @@ namespace Ficha_Jiora.View
             {//Codigo para garantir que a ação seja executada quando clicar no botão da gridview
                 var senderGrid = (DataGridView)sender;
 
-                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                    e.RowIndex >= 0)
+
+                string? NomeTeste = "";
+                int valor = 0;
+
+                //condigo antigo do if
+                //senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+                if (e.ColumnIndex == dataGridView1.Columns["Teste"].Index)
                 {
                     int Total = 0;
                     var Row = dataGridView1.CurrentRow;
@@ -109,8 +116,8 @@ namespace Ficha_Jiora.View
                     foreach (DataGridViewRow linha in dataGridView1.Rows)
                     {
                         var resultado = linha.Cells["Nome"].Value;
-                        int valor = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Chance de Sucesso(%)"].Value);
-                        string NomeTeste = dataGridView1.CurrentRow.Cells["Nome"].Value.ToString();
+                        NomeTeste = dataGridView1.CurrentRow.Cells["Nome"].Value.ToString();
+                        valor = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Valor"].Value);
 
                         if (resultado == NomeTeste)
                         {
@@ -119,13 +126,17 @@ namespace Ficha_Jiora.View
                             {
                                 if (d100 <= 10)
                                 {
-                                    MessageBox.Show(personagem_Model.Nome + " REALIZOU UM ACERTO CRÍTICO NO TESTE DE " + NomeTeste
-                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Acerto Crítico", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    txt_pericia.Text = personagem_Model.Nome + " Realizou um acerto crítico no teste de " + NomeTeste
+                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
+
+                                    Insertlog("Realizou uma acerto crítico no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste:" + valor);
                                 }
                                 else
                                 {
-                                    MessageBox.Show(personagem_Model.Nome + " teve sucesso no teste de " + NomeTeste
-                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Acertou", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    txt_pericia.Text = personagem_Model.Nome + " teve sucesso no teste de " + NomeTeste
+                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
+
+                                    Insertlog("Teve sucesso no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste:" + valor);
                                 }
 
                             }
@@ -133,14 +144,17 @@ namespace Ficha_Jiora.View
                             {
                                 if (d100 >= 95)
                                 {
-                                    MessageBox.Show("Falha Crítica! no teste de " + NomeTeste
-                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Falha Crítica", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    txt_pericia.Text = "Falha Crítica! no teste de " + NomeTeste
+                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
+
+                                    Insertlog("Realizou uma falha crítica no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste:" + valor);
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Você falhou.\r\nMais sorte na próxima vez!"
-                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100, "Falha", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    Insertlog("Realizou uma falha no teste de " + NomeTeste + "\n\r Valor do Dado:" + d100 + "\r\nValor do teste:" + valor);
+                                    txt_pericia.Text = "Você falhou no teste de " + NomeTeste + ".\r\nMais sorte na próxima vez!"
+                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
+
+                                    Insertlog("Realizou uma falha no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste:" + valor);
                                 }
 
                             }
@@ -148,15 +162,116 @@ namespace Ficha_Jiora.View
 
                     }
                 }
+
+                if (e.ColumnIndex == dataGridView1.Columns["salvar"].Index)
+                {
+
+                    valor = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Valor"].Value);
+                    NomeTeste = dataGridView1.CurrentRow.Cells["Nome"].Value.ToString();
+                    string IDPericia = dataGridView1.CurrentRow.Cells["id_pericia"].Value.ToString();
+                    int ValorAntigo = pericia_Control.ValorAtual(NomeTeste, IDPersonagem);
+
+                    MessageBox.Show("Perícia " + NomeTeste + " atualizada com sucesso.\r\n\r\n" + ValorAntigo + " ➜ " + valor, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    pericia_Control.AtualizarValorPericia(valor, IDPersonagem, IDPericia);
+                    Insertlog("Alterou o valor da Perícia: " + NomeTeste + " de " + ValorAntigo + " para " + valor);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao carregar realizar o teste:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao realizar o teste:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 
         }
 
-#endregion
+        private void Carrega_Pericia()
+        {
+            try
+            {
+                int PontosPericia = pericia_Control.CalculaPontosPericia(IDPersonagem);
+
+                bs_personagem.DataSource = pericia_Control.Carrega_Pericia(IDPersonagem);
+                dataGridView1.DataSource = bs_personagem;
+
+                lbl_pontos_pericia.Text = PontosPericia.ToString();
+
+                if (PontosPericia != 0)
+                {
+                    btn_salvar_pericia.Visible = true;
+                }
+                else
+                {
+                    dataGridView1.Columns["salvar"].Visible = false;
+                    dataGridView1.ReadOnly = true;
+                    btn_salvar_pericia.Visible = false;
+                    btn_salvar_pericia.Text = "Editar";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void btn_salvar_pericia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridView1.ReadOnly = false;
+
+                if (btn_salvar_pericia.Text == "Confirmar")
+                {
+                    dataGridView1.Columns["salvar"].Visible = false;
+                    btn_salvar_pericia.Text = "Editar";
+                }
+                else
+                {
+                    dataGridView1.Columns["salvar"].Visible = true;
+                    btn_salvar_pericia.Text = "Confirmar";
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        #endregion
+
+        #region INFORMAÇÕES DA ABA DE LOG
+        private void Insertlog(string action)
+        {
+            try
+            {
+                log_ficha.Insert_Log(personagem_Model.Nome, action);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
+        }
+        private void Carrega_Log()
+        {
+            try
+            {
+                BS_Log.DataSource = log_ficha.Carrega_Log(personagem_Model.Nome);
+                dtg_log.DataSource = BS_Log;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Falha ao carregar a tabela de Log\n" + ex.Message);
+            }
+        }
+        #endregion
+
+
     }
 }
