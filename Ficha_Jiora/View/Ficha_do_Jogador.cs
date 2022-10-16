@@ -54,6 +54,8 @@ namespace Ficha_Jiora.View
                 CarregaPersonagem();
                 Carrega_Log();
                 Carrega_Pericia();
+                CarregaAtributos();
+                CarregaStatus();
             }
             catch (Exception ex)
             {
@@ -89,6 +91,32 @@ namespace Ficha_Jiora.View
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        private void CarregaAtributos()
+        {
+            try
+            {
+
+                lbl_defesa.Text = personagem_Model.Defesa.ToString();
+                lbl_resistencia.Text = personagem_Model.Resistencia.ToString();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        private void img_defesa_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_defesa, "Defesa Física");
+        }
+        private void img_resistencia_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_resistencia, "Resistência Mágica");
         }
 
         #endregion
@@ -189,7 +217,7 @@ namespace Ficha_Jiora.View
         {
             try
             {
-                int PontosPericia = pericia_Control.CalculaPontosPericia(IDPersonagem);
+                int? PontosPericia = pericia_Control.CalculaPontosPericia(IDPersonagem);
 
                 bs_personagem.DataSource = pericia_Control.Carrega_Pericia(IDPersonagem);
                 dataGridView1.DataSource = bs_personagem;
@@ -219,17 +247,19 @@ namespace Ficha_Jiora.View
         {
             try
             {
-                dataGridView1.ReadOnly = false;
+
 
                 if (btn_salvar_pericia.Text == "Confirmar")
                 {
                     dataGridView1.Columns["salvar"].Visible = false;
                     btn_salvar_pericia.Text = "Editar";
+                    dataGridView1.ReadOnly = true;
                 }
                 else
                 {
                     dataGridView1.Columns["salvar"].Visible = true;
                     btn_salvar_pericia.Text = "Confirmar";
+                    dataGridView1.ReadOnly = false;
                 }
 
 
@@ -270,8 +300,28 @@ namespace Ficha_Jiora.View
                 throw new Exception("Falha ao carregar a tabela de Log\n" + ex.Message);
             }
         }
+
         #endregion
 
+        #region INFORMAÇÕES DA ABA STATUS
+
+        private void CarregaStatus()
+        {
+            try
+            {
+                lbl_altura.Text = personagem_Model.Altura;
+                lbl_cabelo.Text = personagem_Model.Cabelo;
+                lbl_olhos.Text = personagem_Model.Olhos;
+                lbl_peso.Text = personagem_Model.Peso;
+                lbl_nascimento.Text = personagem_Model.Nascimento;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
 
     }
 }

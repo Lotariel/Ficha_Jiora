@@ -39,6 +39,25 @@
             this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_nascimento = new System.Windows.Forms.Label();
+            this.lbl_peso = new System.Windows.Forms.Label();
+            this.lbl_altura = new System.Windows.Forms.Label();
+            this.lbl_cabelo = new System.Windows.Forms.Label();
+            this.lbl_olhos = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.batalha = new System.Windows.Forms.TabPage();
             this.pericia = new System.Windows.Forms.TabPage();
             this.btn_salvar_pericia = new System.Windows.Forms.Button();
@@ -59,6 +78,10 @@
             this.txt_nome_personagem = new System.Windows.Forms.TextBox();
             this.btn_atualiza = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_resistencia = new System.Windows.Forms.Label();
+            this.lbl_defesa = new System.Windows.Forms.Label();
+            this.img_resistencia = new System.Windows.Forms.PictureBox();
+            this.img_defesa = new System.Windows.Forms.PictureBox();
             this.lbl_nome_personagem = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,22 +91,28 @@
             this.lbl_classe_peronsagem = new System.Windows.Forms.Label();
             this.bs_personagem = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Log = new System.Windows.Forms.BindingSource(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.Status.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.pericia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Log.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_resistencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Log)).BeginInit();
             this.SuspendLayout();
             // 
             // img_imagem_personagem
             // 
-            this.img_imagem_personagem.Location = new System.Drawing.Point(14, 16);
-            this.img_imagem_personagem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.img_imagem_personagem.Location = new System.Drawing.Point(12, 12);
             this.img_imagem_personagem.Name = "img_imagem_personagem";
-            this.img_imagem_personagem.Size = new System.Drawing.Size(322, 504);
+            this.img_imagem_personagem.Size = new System.Drawing.Size(282, 378);
             this.img_imagem_personagem.TabIndex = 0;
             this.img_imagem_personagem.TabStop = false;
             // 
@@ -95,31 +124,217 @@
             this.tabControl1.Controls.Add(this.inventario);
             this.tabControl1.Controls.Add(this.Mapa);
             this.tabControl1.Controls.Add(this.Log);
-            this.tabControl1.Location = new System.Drawing.Point(359, 147);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControl1.Location = new System.Drawing.Point(314, 110);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1101, 704);
+            this.tabControl1.Size = new System.Drawing.Size(963, 528);
             this.tabControl1.TabIndex = 1;
             // 
             // Status
             // 
-            this.Status.Location = new System.Drawing.Point(4, 29);
-            this.Status.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Status.Controls.Add(this.groupBox3);
+            this.Status.Controls.Add(this.groupBox2);
+            this.Status.Location = new System.Drawing.Point(4, 24);
             this.Status.Name = "Status";
-            this.Status.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Status.Size = new System.Drawing.Size(1093, 671);
+            this.Status.Padding = new System.Windows.Forms.Padding(3);
+            this.Status.Size = new System.Drawing.Size(955, 500);
             this.Status.TabIndex = 0;
             this.Status.Text = "Status";
             this.Status.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Location = new System.Drawing.Point(6, 262);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(203, 232);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 160);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(32, 15);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Aura";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 136);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 15);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Magia";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 108);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(64, 15);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Velocidade";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 83);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(33, 15);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Foco";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 58);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 15);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Vitalidade";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 32);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 15);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Força";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lbl_nascimento);
+            this.groupBox2.Controls.Add(this.lbl_peso);
+            this.groupBox2.Controls.Add(this.lbl_altura);
+            this.groupBox2.Controls.Add(this.lbl_cabelo);
+            this.groupBox2.Controls.Add(this.lbl_olhos);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(203, 250);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Sobre";
+            // 
+            // lbl_nascimento
+            // 
+            this.lbl_nascimento.AutoSize = true;
+            this.lbl_nascimento.Location = new System.Drawing.Point(11, 200);
+            this.lbl_nascimento.Name = "lbl_nascimento";
+            this.lbl_nascimento.Size = new System.Drawing.Size(16, 15);
+            this.lbl_nascimento.TabIndex = 10;
+            this.lbl_nascimento.Text = "N";
+            // 
+            // lbl_peso
+            // 
+            this.lbl_peso.AutoSize = true;
+            this.lbl_peso.Location = new System.Drawing.Point(12, 160);
+            this.lbl_peso.Name = "lbl_peso";
+            this.lbl_peso.Size = new System.Drawing.Size(14, 15);
+            this.lbl_peso.TabIndex = 9;
+            this.lbl_peso.Text = "P";
+            // 
+            // lbl_altura
+            // 
+            this.lbl_altura.AutoSize = true;
+            this.lbl_altura.Location = new System.Drawing.Point(12, 120);
+            this.lbl_altura.Name = "lbl_altura";
+            this.lbl_altura.Size = new System.Drawing.Size(15, 15);
+            this.lbl_altura.TabIndex = 8;
+            this.lbl_altura.Text = "A";
+            // 
+            // lbl_cabelo
+            // 
+            this.lbl_cabelo.AutoSize = true;
+            this.lbl_cabelo.Location = new System.Drawing.Point(12, 80);
+            this.lbl_cabelo.Name = "lbl_cabelo";
+            this.lbl_cabelo.Size = new System.Drawing.Size(15, 15);
+            this.lbl_cabelo.TabIndex = 7;
+            this.lbl_cabelo.Text = "C";
+            // 
+            // lbl_olhos
+            // 
+            this.lbl_olhos.AutoSize = true;
+            this.lbl_olhos.Location = new System.Drawing.Point(12, 40);
+            this.lbl_olhos.Name = "lbl_olhos";
+            this.lbl_olhos.Size = new System.Drawing.Size(16, 15);
+            this.lbl_olhos.TabIndex = 6;
+            this.lbl_olhos.Text = "O";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(5, 217);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 15);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Raça:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(4, 180);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 15);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Nascimento:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(5, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 15);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Peso:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 100);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 15);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Altura:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(5, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 15);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Cabelo:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 15);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Olhos:";
+            // 
             // batalha
             // 
-            this.batalha.Location = new System.Drawing.Point(4, 29);
-            this.batalha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.batalha.Location = new System.Drawing.Point(4, 24);
             this.batalha.Name = "batalha";
-            this.batalha.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.batalha.Size = new System.Drawing.Size(1093, 671);
+            this.batalha.Padding = new System.Windows.Forms.Padding(3);
+            this.batalha.Size = new System.Drawing.Size(955, 500);
             this.batalha.TabIndex = 1;
             this.batalha.Text = "Batalha";
             this.batalha.UseVisualStyleBackColor = true;
@@ -131,20 +346,18 @@
             this.pericia.Controls.Add(this.label1);
             this.pericia.Controls.Add(this.txt_pericia);
             this.pericia.Controls.Add(this.dataGridView1);
-            this.pericia.Location = new System.Drawing.Point(4, 29);
-            this.pericia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pericia.Location = new System.Drawing.Point(4, 24);
             this.pericia.Name = "pericia";
-            this.pericia.Size = new System.Drawing.Size(1093, 671);
+            this.pericia.Size = new System.Drawing.Size(955, 500);
             this.pericia.TabIndex = 2;
             this.pericia.Text = "Perícia";
             this.pericia.UseVisualStyleBackColor = true;
             // 
             // btn_salvar_pericia
             // 
-            this.btn_salvar_pericia.Location = new System.Drawing.Point(883, 341);
-            this.btn_salvar_pericia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_salvar_pericia.Location = new System.Drawing.Point(773, 256);
             this.btn_salvar_pericia.Name = "btn_salvar_pericia";
-            this.btn_salvar_pericia.Size = new System.Drawing.Size(86, 31);
+            this.btn_salvar_pericia.Size = new System.Drawing.Size(75, 23);
             this.btn_salvar_pericia.TabIndex = 4;
             this.btn_salvar_pericia.Text = "Editar";
             this.btn_salvar_pericia.UseVisualStyleBackColor = true;
@@ -155,9 +368,9 @@
             // 
             this.lbl_pontos_pericia.AutoSize = true;
             this.lbl_pontos_pericia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_pontos_pericia.Location = new System.Drawing.Point(1009, 273);
+            this.lbl_pontos_pericia.Location = new System.Drawing.Point(883, 205);
             this.lbl_pontos_pericia.Name = "lbl_pontos_pericia";
-            this.lbl_pontos_pericia.Size = new System.Drawing.Size(27, 32);
+            this.lbl_pontos_pericia.Size = new System.Drawing.Size(22, 25);
             this.lbl_pontos_pericia.TabIndex = 3;
             this.lbl_pontos_pericia.Text = "0";
             // 
@@ -165,20 +378,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(818, 273);
+            this.label1.Location = new System.Drawing.Point(716, 205);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 32);
+            this.label1.Size = new System.Drawing.Size(171, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pontos a Distribuir:";
             // 
             // txt_pericia
             // 
             this.txt_pericia.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txt_pericia.Location = new System.Drawing.Point(818, 67);
-            this.txt_pericia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_pericia.Location = new System.Drawing.Point(716, 50);
             this.txt_pericia.Multiline = true;
             this.txt_pericia.Name = "txt_pericia";
-            this.txt_pericia.Size = new System.Drawing.Size(215, 145);
+            this.txt_pericia.Size = new System.Drawing.Size(189, 110);
             this.txt_pericia.TabIndex = 1;
             // 
             // dataGridView1
@@ -205,8 +417,7 @@
             this.salvar,
             this.descricao,
             this.id_pericia});
-            this.dataGridView1.Location = new System.Drawing.Point(39, 36);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 27);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -219,7 +430,7 @@
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(726, 609);
+            this.dataGridView1.Size = new System.Drawing.Size(635, 457);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -272,6 +483,7 @@
             // 
             // descricao
             // 
+            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
@@ -280,7 +492,7 @@
             this.descricao.Name = "descricao";
             this.descricao.ReadOnly = true;
             this.descricao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.descricao.Width = 230;
+            this.descricao.Width = 6;
             // 
             // id_pericia
             // 
@@ -293,20 +505,18 @@
             // 
             // inventario
             // 
-            this.inventario.Location = new System.Drawing.Point(4, 29);
-            this.inventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.inventario.Location = new System.Drawing.Point(4, 24);
             this.inventario.Name = "inventario";
-            this.inventario.Size = new System.Drawing.Size(1093, 671);
+            this.inventario.Size = new System.Drawing.Size(955, 500);
             this.inventario.TabIndex = 3;
             this.inventario.Text = "Inventário";
             this.inventario.UseVisualStyleBackColor = true;
             // 
             // Mapa
             // 
-            this.Mapa.Location = new System.Drawing.Point(4, 29);
-            this.Mapa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Mapa.Location = new System.Drawing.Point(4, 24);
             this.Mapa.Name = "Mapa";
-            this.Mapa.Size = new System.Drawing.Size(1093, 671);
+            this.Mapa.Size = new System.Drawing.Size(955, 500);
             this.Mapa.TabIndex = 4;
             this.Mapa.Text = "Mapa";
             this.Mapa.UseVisualStyleBackColor = true;
@@ -314,11 +524,10 @@
             // Log
             // 
             this.Log.Controls.Add(this.dtg_log);
-            this.Log.Location = new System.Drawing.Point(4, 29);
-            this.Log.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Log.Location = new System.Drawing.Point(4, 24);
             this.Log.Name = "Log";
-            this.Log.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Log.Size = new System.Drawing.Size(1093, 671);
+            this.Log.Padding = new System.Windows.Forms.Padding(3);
+            this.Log.Size = new System.Drawing.Size(955, 500);
             this.Log.TabIndex = 5;
             this.Log.Text = "log";
             this.Log.UseVisualStyleBackColor = true;
@@ -329,29 +538,26 @@
             this.dtg_log.AllowUserToDeleteRows = false;
             this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_log.Location = new System.Drawing.Point(7, 8);
-            this.dtg_log.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtg_log.Location = new System.Drawing.Point(6, 6);
             this.dtg_log.Name = "dtg_log";
             this.dtg_log.ReadOnly = true;
             this.dtg_log.RowHeadersWidth = 51;
             this.dtg_log.RowTemplate.Height = 25;
-            this.dtg_log.Size = new System.Drawing.Size(1078, 536);
+            this.dtg_log.Size = new System.Drawing.Size(943, 402);
             this.dtg_log.TabIndex = 0;
             // 
             // txt_nome_personagem
             // 
-            this.txt_nome_personagem.Location = new System.Drawing.Point(1253, 16);
-            this.txt_nome_personagem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_nome_personagem.Location = new System.Drawing.Point(1096, 12);
             this.txt_nome_personagem.Name = "txt_nome_personagem";
-            this.txt_nome_personagem.Size = new System.Drawing.Size(114, 27);
+            this.txt_nome_personagem.Size = new System.Drawing.Size(100, 23);
             this.txt_nome_personagem.TabIndex = 2;
             // 
             // btn_atualiza
             // 
-            this.btn_atualiza.Location = new System.Drawing.Point(1374, 16);
-            this.btn_atualiza.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_atualiza.Location = new System.Drawing.Point(1202, 12);
             this.btn_atualiza.Name = "btn_atualiza";
-            this.btn_atualiza.Size = new System.Drawing.Size(86, 31);
+            this.btn_atualiza.Size = new System.Drawing.Size(75, 23);
             this.btn_atualiza.TabIndex = 3;
             this.btn_atualiza.Text = "Atualizar";
             this.btn_atualiza.UseVisualStyleBackColor = true;
@@ -359,22 +565,62 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(14, 541);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Controls.Add(this.lbl_resistencia);
+            this.groupBox1.Controls.Add(this.lbl_defesa);
+            this.groupBox1.Controls.Add(this.img_resistencia);
+            this.groupBox1.Controls.Add(this.img_defesa);
+            this.groupBox1.Location = new System.Drawing.Point(12, 406);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(322, 304);
+            this.groupBox1.Size = new System.Drawing.Size(282, 228);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Atributos";
+            // 
+            // lbl_resistencia
+            // 
+            this.lbl_resistencia.AutoSize = true;
+            this.lbl_resistencia.Location = new System.Drawing.Point(176, 33);
+            this.lbl_resistencia.Name = "lbl_resistencia";
+            this.lbl_resistencia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_resistencia.TabIndex = 3;
+            this.lbl_resistencia.Text = "0";
+            // 
+            // lbl_defesa
+            // 
+            this.lbl_defesa.AutoSize = true;
+            this.lbl_defesa.Location = new System.Drawing.Point(50, 33);
+            this.lbl_defesa.Name = "lbl_defesa";
+            this.lbl_defesa.Size = new System.Drawing.Size(13, 15);
+            this.lbl_defesa.TabIndex = 2;
+            this.lbl_defesa.Text = "0";
+            // 
+            // img_resistencia
+            // 
+            this.img_resistencia.Image = ((System.Drawing.Image)(resources.GetObject("img_resistencia.Image")));
+            this.img_resistencia.Location = new System.Drawing.Point(155, 33);
+            this.img_resistencia.Name = "img_resistencia";
+            this.img_resistencia.Size = new System.Drawing.Size(15, 15);
+            this.img_resistencia.TabIndex = 1;
+            this.img_resistencia.TabStop = false;
+            this.img_resistencia.MouseHover += new System.EventHandler(this.img_resistencia_MouseHover);
+            // 
+            // img_defesa
+            // 
+            this.img_defesa.Image = global::Ficha_Jiora.Properties.Resources.armor_15_151;
+            this.img_defesa.Location = new System.Drawing.Point(29, 33);
+            this.img_defesa.Name = "img_defesa";
+            this.img_defesa.Size = new System.Drawing.Size(15, 15);
+            this.img_defesa.TabIndex = 0;
+            this.img_defesa.TabStop = false;
+            this.img_defesa.MouseHover += new System.EventHandler(this.img_defesa_MouseHover);
             // 
             // lbl_nome_personagem
             // 
             this.lbl_nome_personagem.AutoSize = true;
             this.lbl_nome_personagem.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_nome_personagem.Location = new System.Drawing.Point(359, 12);
+            this.lbl_nome_personagem.Location = new System.Drawing.Point(314, 9);
             this.lbl_nome_personagem.Name = "lbl_nome_personagem";
-            this.lbl_nome_personagem.Size = new System.Drawing.Size(112, 46);
+            this.lbl_nome_personagem.Size = new System.Drawing.Size(90, 37);
             this.lbl_nome_personagem.TabIndex = 5;
             this.lbl_nome_personagem.Text = "Nome";
             // 
@@ -382,39 +628,39 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(363, 88);
+            this.label2.Location = new System.Drawing.Point(318, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 35);
+            this.label2.Size = new System.Drawing.Size(41, 28);
             this.label2.TabIndex = 6;
             this.label2.Text = "Nv.";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(775, 16);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(711, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(263, 46);
+            this.label3.Size = new System.Drawing.Size(127, 19);
             this.label3.TabIndex = 7;
-            this.label3.Text = "10 / Libra / 1695";
+            this.label3.Text = "10 / Virgem / 1285";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(775, 65);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(1164, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(235, 46);
+            this.label4.Size = new System.Drawing.Size(96, 19);
             this.label4.TabIndex = 8;
             this.label4.Text = "Clima: Tropical";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(778, 115);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(1164, 97);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(235, 46);
+            this.label5.Size = new System.Drawing.Size(95, 19);
             this.label5.TabIndex = 9;
             this.label5.Text = "Período: Noite";
             // 
@@ -422,27 +668,38 @@
             // 
             this.lbl_nivel_personagem.AutoSize = true;
             this.lbl_nivel_personagem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_nivel_personagem.Location = new System.Drawing.Point(402, 88);
+            this.lbl_nivel_personagem.Location = new System.Drawing.Point(352, 66);
             this.lbl_nivel_personagem.Name = "lbl_nivel_personagem";
-            this.lbl_nivel_personagem.Size = new System.Drawing.Size(54, 35);
+            this.lbl_nivel_personagem.Size = new System.Drawing.Size(23, 28);
             this.lbl_nivel_personagem.TabIndex = 10;
-            this.lbl_nivel_personagem.Text = "999";
+            this.lbl_nivel_personagem.Text = "0";
             // 
             // lbl_classe_peronsagem
             // 
             this.lbl_classe_peronsagem.AutoSize = true;
-            this.lbl_classe_peronsagem.Location = new System.Drawing.Point(367, 65);
+            this.lbl_classe_peronsagem.Location = new System.Drawing.Point(321, 49);
             this.lbl_classe_peronsagem.Name = "lbl_classe_peronsagem";
-            this.lbl_classe_peronsagem.Size = new System.Drawing.Size(50, 20);
+            this.lbl_classe_peronsagem.Size = new System.Drawing.Size(40, 15);
             this.lbl_classe_peronsagem.TabIndex = 11;
             this.lbl_classe_peronsagem.Text = "Classe";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(752, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Data";
             // 
             // Ficha_do_Jogador
             // 
             this.AcceptButton = this.btn_atualiza;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1473, 867);
+            this.ClientSize = new System.Drawing.Size(1289, 650);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_classe_peronsagem);
             this.Controls.Add(this.lbl_nivel_personagem);
             this.Controls.Add(this.label5);
@@ -456,17 +713,25 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.img_imagem_personagem);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Ficha_do_Jogador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ficha";
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.Status.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.pericia.ResumeLayout(false);
             this.pericia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Log.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_resistencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Log)).EndInit();
             this.ResumeLayout(false);
@@ -508,5 +773,29 @@
         private DataGridViewButtonColumn salvar;
         private DataGridViewTextBoxColumn descricao;
         private DataGridViewTextBoxColumn id_pericia;
+        private PictureBox img_defesa;
+        private PictureBox img_resistencia;
+        private Label lbl_resistencia;
+        private Label lbl_defesa;
+        private Label label6;
+        private GroupBox groupBox3;
+        private Label label18;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label label13;
+        private GroupBox groupBox2;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label lbl_nascimento;
+        private Label lbl_peso;
+        private Label lbl_altura;
+        private Label lbl_cabelo;
+        private Label lbl_olhos;
     }
 }

@@ -21,11 +21,11 @@ namespace Ficha_Jiora.Control
             return pericia_Data.Carrega_Pericia(IDPersonagem);
         }
 
-        public int CalculaPontosPericia(string IDPersonagem)
+        public int? CalculaPontosPericia(string IDPersonagem)
         {
 
             personagem_Model = personagem_Control.Carrega_Personagem(IDPersonagem);
-            int PontosPericiaPersonagem = personagem_Model.PontosPericia;
+            int? PontosPericiaPersonagem = personagem_Model.PontosPericia;
             int PontosPericiaDistribuido = pericia_Data.TotalPontosPericia(IDPersonagem);
 
             return PontosPericiaPersonagem - PontosPericiaDistribuido;
