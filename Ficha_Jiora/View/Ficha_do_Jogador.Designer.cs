@@ -66,6 +66,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.lbl_nascimento = new System.Windows.Forms.Label();
             this.lbl_peso = new System.Windows.Forms.Label();
             this.lbl_altura = new System.Windows.Forms.Label();
@@ -111,7 +112,6 @@
             this.bs_personagem = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Log = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Status.SuspendLayout();
@@ -149,6 +149,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(963, 528);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // Status
             // 
@@ -165,10 +166,11 @@
             // 
             // txt_status
             // 
+            this.txt_status.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_status.Location = new System.Drawing.Point(365, 38);
             this.txt_status.Multiline = true;
             this.txt_status.Name = "txt_status";
-            this.txt_status.Size = new System.Drawing.Size(193, 177);
+            this.txt_status.Size = new System.Drawing.Size(193, 116);
             this.txt_status.TabIndex = 4;
             // 
             // GPB_status_atributos
@@ -332,6 +334,7 @@
             this.btn_teste__aur.TabIndex = 17;
             this.btn_teste__aur.Text = "Teste";
             this.btn_teste__aur.UseVisualStyleBackColor = true;
+            this.btn_teste__aur.Click += new System.EventHandler(this.btn_teste__aur_Click);
             // 
             // btn_teste_mag
             // 
@@ -341,6 +344,7 @@
             this.btn_teste_mag.TabIndex = 16;
             this.btn_teste_mag.Text = "Teste";
             this.btn_teste_mag.UseVisualStyleBackColor = true;
+            this.btn_teste_mag.Click += new System.EventHandler(this.btn_teste_mag_Click);
             // 
             // btn_teste_vel
             // 
@@ -350,6 +354,7 @@
             this.btn_teste_vel.TabIndex = 15;
             this.btn_teste_vel.Text = "Teste";
             this.btn_teste_vel.UseVisualStyleBackColor = true;
+            this.btn_teste_vel.Click += new System.EventHandler(this.btn_teste_vel_Click);
             // 
             // btn_teste_foc
             // 
@@ -359,6 +364,7 @@
             this.btn_teste_foc.TabIndex = 14;
             this.btn_teste_foc.Text = "Teste";
             this.btn_teste_foc.UseVisualStyleBackColor = true;
+            this.btn_teste_foc.Click += new System.EventHandler(this.btn_teste_foc_Click);
             // 
             // btn_teste_vit
             // 
@@ -368,6 +374,7 @@
             this.btn_teste_vit.TabIndex = 13;
             this.btn_teste_vit.Text = "Teste";
             this.btn_teste_vit.UseVisualStyleBackColor = true;
+            this.btn_teste_vit.Click += new System.EventHandler(this.btn_teste_vit_Click);
             // 
             // btn_teste_for
             // 
@@ -377,6 +384,7 @@
             this.btn_teste_for.TabIndex = 12;
             this.btn_teste_for.Text = "Teste";
             this.btn_teste_for.UseVisualStyleBackColor = true;
+            this.btn_teste_for.Click += new System.EventHandler(this.btn_teste_for_Click);
             // 
             // label18
             // 
@@ -452,6 +460,15 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sobre";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 235);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(14, 15);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "R";
             // 
             // lbl_nascimento
             // 
@@ -771,7 +788,7 @@
             // 
             // txt_nome_personagem
             // 
-            this.txt_nome_personagem.Location = new System.Drawing.Point(1095, 12);
+            this.txt_nome_personagem.Location = new System.Drawing.Point(1077, 12);
             this.txt_nome_personagem.Name = "txt_nome_personagem";
             this.txt_nome_personagem.Size = new System.Drawing.Size(100, 23);
             this.txt_nome_personagem.TabIndex = 2;
@@ -780,7 +797,7 @@
             // 
             this.btn_atualiza.Image = global::Ficha_Jiora.Properties.Resources.Atualizar_16;
             this.btn_atualiza.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_atualiza.Location = new System.Drawing.Point(1201, 12);
+            this.btn_atualiza.Location = new System.Drawing.Point(1185, 12);
             this.btn_atualiza.Name = "btn_atualiza";
             this.btn_atualiza.Size = new System.Drawing.Size(76, 23);
             this.btn_atualiza.TabIndex = 3;
@@ -918,15 +935,6 @@
             this.label6.Size = new System.Drawing.Size(38, 19);
             this.label6.TabIndex = 12;
             this.label6.Text = "Data";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 235);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(14, 15);
-            this.label19.TabIndex = 11;
-            this.label19.Text = "R";
             // 
             // Ficha_do_Jogador
             // 
