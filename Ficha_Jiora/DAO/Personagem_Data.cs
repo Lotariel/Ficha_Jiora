@@ -49,38 +49,38 @@ namespace Ficha_Jiora.DAO
                         Turnos = Convert.ToInt32(item["Turnos"]),
                         TextoMestre = item["Texto_Mestre"].ToString(),
                         Anotacoes = item["anotacoes"].ToString(),
-                        Forca = Convert.ToInt32(item["forca"]),
-                        Vitalidade = Convert.ToInt32(item["vitalidade"]),
-                        Foco = Convert.ToInt32(item["foco"]),
-                        Velocidade = Convert.ToInt32(item["velocidade"]),
-                        Magia = Convert.ToInt32(item["magia"]),
-                        Aura = Convert.ToInt32(item["aura"]),
+                        Forca = Convert.ToInt32(item["forca"]) + Convert.ToInt32(item["mod_forca"]),
+                        Vitalidade = Convert.ToInt32(item["vitalidade"]) + Convert.ToInt32(item["mod_vitalidade"]),
+                        Foco = Convert.ToInt32(item["foco"]) + Convert.ToInt32(item["mod_foco"]),
+                        Velocidade = Convert.ToInt32(item["velocidade"]) + Convert.ToInt32(item["mod_velocidade"]),
+                        Magia = Convert.ToInt32(item["magia"]) + Convert.ToInt32(item["mod_magia"]),
+                        Aura = Convert.ToInt32(item["aura"]) + Convert.ToInt32(item["mod_aura"]),
                         ModForca = Convert.ToInt32(item["mod_forca"]),
                         ModVitalidade = Convert.ToInt32(item["mod_vitalidade"]),
                         ModFoco = Convert.ToInt32(item["Mod_foco"]),
                         ModMagia = Convert.ToInt32(item["Mod_magia"]),
                         ModAura = Convert.ToInt32(item["Mod_aura"]),
-                        Defesa = Convert.ToInt32(item["Defesa"]),
-                        Resistencia = Convert.ToInt32(item["Resistencia"]),
+                        Defesa = Convert.ToInt32(item["Defesa"]) + Convert.ToInt32(item["mod_Defesa"]),
+                        Resistencia = Convert.ToInt32(item["Resistencia"]) + Convert.ToInt32(item["mod_Resistencia"]),
                         ModResistenca = Convert.ToInt32(item["Mod_resistencia"]),
                         ModDefesa = Convert.ToInt32(item["mod_defesa"]),
-                        CDS_Critico = Convert.ToInt32(item["cds_critico"]),
+                        CDS_Critico = Convert.ToInt32(item["cds_critico"]) + Convert.ToInt32(item["mod_cds_critico"]),
                         Mod_CDSCritico = Convert.ToInt32(item["mod_cds_critico"]),
-                        Valor_Critico = Convert.ToInt32(item["valor_critico"]),
+                        Valor_Critico = Convert.ToInt32(item["valor_critico"]) + Convert.ToInt32(item["mod_valor_critico"]),
                         Mod_ValorCritico = Convert.ToInt32(item["mod_valor_critico"]),
                         Especial = Convert.ToInt32(item["Especial"]),
                         HPAtual = Convert.ToInt32(item["Hpatual"]),
                         HPMax = Convert.ToInt32(item["HPMax"]),
                         MPAtual = Convert.ToInt32(item["MPatual"]),
                         MPMax = Convert.ToInt32(item["MPMAx"]),
-                        Res_Water = Convert.ToInt32(item["res_water"]),
-                        Res_Fire = Convert.ToInt32(item["res_fire"]),
-                        Res_Ice = Convert.ToInt32(item["res_ice"]),
-                        Res_Thunder = Convert.ToInt32(item["res_thunder"]),
-                        Res_Wind = Convert.ToInt32(item["res_wind"]),
-                        Res_Earth = Convert.ToInt32(item["res_earth"]),
-                        Res_Light = Convert.ToInt32(item["res_light"]),
-                        Res_Shadow = Convert.ToInt32(item["res_shadow"]),
+                        Res_Water = Convert.ToInt32(item["res_water"]) + Convert.ToInt32(item["Mod_res_water"]),
+                        Res_Fire = Convert.ToInt32(item["res_fire"]) + Convert.ToInt32(item["mod_res_fire"]),
+                        Res_Ice = Convert.ToInt32(item["res_ice"]) + Convert.ToInt32(item["mod_res_ice"]),
+                        Res_Thunder = Convert.ToInt32(item["res_thunder"]) + Convert.ToInt32(item["mod_res_thunder"]),
+                        Res_Wind = Convert.ToInt32(item["res_wind"]) + Convert.ToInt32(item["mod_res_wind"]),
+                        Res_Earth = Convert.ToInt32(item["res_earth"]) + Convert.ToInt32(item["mod_res_earth"]),
+                        Res_Light = Convert.ToInt32(item["res_light"]) + Convert.ToInt32(item["mod_res_light"]),
+                        Res_Shadow = Convert.ToInt32(item["res_shadow"]) + Convert.ToInt32(item["mod_res_shadow"]),
                         Mod_Res_Fire = Convert.ToInt32(item["mod_res_fire"]),
                         Mod_Res_Water = Convert.ToInt32(item["mod_res_water"]),
                         Mod_Res_Thunder = Convert.ToInt32(item["mod_res_thunder"]),
@@ -117,37 +117,6 @@ namespace Ficha_Jiora.DAO
             }
         }
 
-
-        public DataTable Carrega_Personagem_2(string IDPersonagem)
-        {
-            try
-            {
-                DataTable TabelaPersonagem = new DataTable();
-                personagem_Model = new Personagem_Model();
-                Script = "select * from personagem";
-
-                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
-
-                select.Fill(TabelaPersonagem);
-                FechaConexao();
-
-                foreach (DataRow item in TabelaPersonagem.Rows)
-                {
-                    personagem_Model = new Personagem_Model()
-                    {
-                        Nome = item["Nome"].ToString() + " " + item["Sobrenome"].ToString(),
-                        Nivel = Convert.ToInt32(item["Nivel"]),
-                        Imagem = item["imagem"].ToString(),
-                        Classe = GetClasse(item["classeid"].ToString())
-                    };
-                }
-                return TabelaPersonagem;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("\nErro em Personagem_Data.Carrega_Personagem:\n" + ex.Message);
-            }
-        }
         public string GetID(string nome)
         {
             try
@@ -196,11 +165,11 @@ namespace Ficha_Jiora.DAO
             }
         }
 
-        public void AlterarCabelo(string idpersonagem, string valor)
+        public void Update_Personagem(string Coluna, int Valor, string ID)
         {
             try
             {
-                Script = "UPDATE personagem set cabelo = '" + valor + "' where idpersonagem = " + idpersonagem;
+                Script = "UPDATE personagem set " + Coluna + " = '" + Valor + "' where ID = " + ID;
 
                 SqlCommand update = new SqlCommand(Script, AbreConexao());
 
@@ -211,7 +180,30 @@ namespace Ficha_Jiora.DAO
             catch (Exception ex)
             {
 
-                throw new Exception("\nErro em Personagem_Data.AlterarCabelo:\n" + ex.Message);
+                throw new Exception("\nErro em Personagem_Data.Update_Personagem:\n" + ex.Message);
+            }
+        }
+
+        public int TotalAtributos(string ID)
+        {
+            try
+            {
+                Script = "select SUM(Forca + Vitalidade + Foco + Velocidade + Magia + aura) as total ";
+                Script += "from Personagem ";
+                Script += "where ID = " + ID;
+
+                SqlCommand select = new SqlCommand(Script, AbreConexao());
+
+                int valor = Convert.ToInt32(select.ExecuteScalar());
+
+                FechaConexao();
+
+                return valor;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Personagem_Data.TotalAtributos:\n" + ex.Message);
             }
         }
     }

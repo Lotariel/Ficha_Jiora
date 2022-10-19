@@ -11,7 +11,8 @@ namespace Ficha_Jiora.DAO
 {
     internal class Conexao
     {
-        private string DadosConexao = @"Data Source=25.52.32.100\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;";
+        //private string DadosConexao = @"Data Source=25.52.32.100\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;";
+        private string DadosConexao = @"Data Source=192.168.1.11\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;";
         public SqlConnection AbreConexao()
         {
 			try

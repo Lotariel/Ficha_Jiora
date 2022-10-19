@@ -39,7 +39,26 @@
             this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_status = new System.Windows.Forms.TextBox();
+            this.GPB_status_atributos = new System.Windows.Forms.GroupBox();
+            this.lbl_aura = new System.Windows.Forms.Label();
+            this.lbl_magia = new System.Windows.Forms.Label();
+            this.lbl_velocidade = new System.Windows.Forms.Label();
+            this.lbl_foco = new System.Windows.Forms.Label();
+            this.lbl_vitalidade = new System.Windows.Forms.Label();
+            this.lbl_forca = new System.Windows.Forms.Label();
+            this.btn_up_aur = new System.Windows.Forms.Button();
+            this.btn_up_mag = new System.Windows.Forms.Button();
+            this.btn_up_vel = new System.Windows.Forms.Button();
+            this.btn_up_foc = new System.Windows.Forms.Button();
+            this.btn_up_vit = new System.Windows.Forms.Button();
+            this.btn_up_for = new System.Windows.Forms.Button();
+            this.btn_teste__aur = new System.Windows.Forms.Button();
+            this.btn_teste_mag = new System.Windows.Forms.Button();
+            this.btn_teste_vel = new System.Windows.Forms.Button();
+            this.btn_teste_foc = new System.Windows.Forms.Button();
+            this.btn_teste_vit = new System.Windows.Forms.Button();
+            this.btn_teste_for = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -92,10 +111,11 @@
             this.bs_personagem = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Log = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Status.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.GPB_status_atributos.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.pericia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -132,7 +152,8 @@
             // 
             // Status
             // 
-            this.Status.Controls.Add(this.groupBox3);
+            this.Status.Controls.Add(this.txt_status);
+            this.Status.Controls.Add(this.GPB_status_atributos);
             this.Status.Controls.Add(this.groupBox2);
             this.Status.Location = new System.Drawing.Point(4, 24);
             this.Status.Name = "Status";
@@ -142,24 +163,225 @@
             this.Status.Text = "Status";
             this.Status.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // txt_status
             // 
-            this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Location = new System.Drawing.Point(6, 262);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(203, 232);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
+            this.txt_status.Location = new System.Drawing.Point(365, 38);
+            this.txt_status.Multiline = true;
+            this.txt_status.Name = "txt_status";
+            this.txt_status.Size = new System.Drawing.Size(193, 177);
+            this.txt_status.TabIndex = 4;
+            // 
+            // GPB_status_atributos
+            // 
+            this.GPB_status_atributos.Controls.Add(this.lbl_aura);
+            this.GPB_status_atributos.Controls.Add(this.lbl_magia);
+            this.GPB_status_atributos.Controls.Add(this.lbl_velocidade);
+            this.GPB_status_atributos.Controls.Add(this.lbl_foco);
+            this.GPB_status_atributos.Controls.Add(this.lbl_vitalidade);
+            this.GPB_status_atributos.Controls.Add(this.lbl_forca);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_aur);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_mag);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_vel);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_foc);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_vit);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_for);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste__aur);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_mag);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_vel);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_foc);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_vit);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_for);
+            this.GPB_status_atributos.Controls.Add(this.label18);
+            this.GPB_status_atributos.Controls.Add(this.label17);
+            this.GPB_status_atributos.Controls.Add(this.label16);
+            this.GPB_status_atributos.Controls.Add(this.label15);
+            this.GPB_status_atributos.Controls.Add(this.label14);
+            this.GPB_status_atributos.Controls.Add(this.label13);
+            this.GPB_status_atributos.Location = new System.Drawing.Point(712, 6);
+            this.GPB_status_atributos.Name = "GPB_status_atributos";
+            this.GPB_status_atributos.Size = new System.Drawing.Size(237, 232);
+            this.GPB_status_atributos.TabIndex = 3;
+            this.GPB_status_atributos.TabStop = false;
+            this.GPB_status_atributos.Text = "Atributos";
+            // 
+            // lbl_aura
+            // 
+            this.lbl_aura.AutoSize = true;
+            this.lbl_aura.Location = new System.Drawing.Point(100, 185);
+            this.lbl_aura.Name = "lbl_aura";
+            this.lbl_aura.Size = new System.Drawing.Size(13, 15);
+            this.lbl_aura.TabIndex = 29;
+            this.lbl_aura.Text = "0";
+            // 
+            // lbl_magia
+            // 
+            this.lbl_magia.AutoSize = true;
+            this.lbl_magia.Location = new System.Drawing.Point(100, 154);
+            this.lbl_magia.Name = "lbl_magia";
+            this.lbl_magia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_magia.TabIndex = 28;
+            this.lbl_magia.Text = "0";
+            // 
+            // lbl_velocidade
+            // 
+            this.lbl_velocidade.AutoSize = true;
+            this.lbl_velocidade.Location = new System.Drawing.Point(100, 125);
+            this.lbl_velocidade.Name = "lbl_velocidade";
+            this.lbl_velocidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_velocidade.TabIndex = 27;
+            this.lbl_velocidade.Text = "0";
+            // 
+            // lbl_foco
+            // 
+            this.lbl_foco.AutoSize = true;
+            this.lbl_foco.Location = new System.Drawing.Point(100, 96);
+            this.lbl_foco.Name = "lbl_foco";
+            this.lbl_foco.Size = new System.Drawing.Size(13, 15);
+            this.lbl_foco.TabIndex = 26;
+            this.lbl_foco.Text = "0";
+            // 
+            // lbl_vitalidade
+            // 
+            this.lbl_vitalidade.AutoSize = true;
+            this.lbl_vitalidade.Location = new System.Drawing.Point(100, 63);
+            this.lbl_vitalidade.Name = "lbl_vitalidade";
+            this.lbl_vitalidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_vitalidade.TabIndex = 25;
+            this.lbl_vitalidade.Text = "0";
+            // 
+            // lbl_forca
+            // 
+            this.lbl_forca.AutoSize = true;
+            this.lbl_forca.Location = new System.Drawing.Point(100, 32);
+            this.lbl_forca.Name = "lbl_forca";
+            this.lbl_forca.Size = new System.Drawing.Size(13, 15);
+            this.lbl_forca.TabIndex = 24;
+            this.lbl_forca.Text = "0";
+            // 
+            // btn_up_aur
+            // 
+            this.btn_up_aur.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_aur.Location = new System.Drawing.Point(119, 185);
+            this.btn_up_aur.Name = "btn_up_aur";
+            this.btn_up_aur.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_aur.TabIndex = 23;
+            this.btn_up_aur.UseVisualStyleBackColor = true;
+            this.btn_up_aur.Visible = false;
+            this.btn_up_aur.Click += new System.EventHandler(this.btn_up_aur_Click);
+            // 
+            // btn_up_mag
+            // 
+            this.btn_up_mag.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_mag.Location = new System.Drawing.Point(119, 154);
+            this.btn_up_mag.Name = "btn_up_mag";
+            this.btn_up_mag.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_mag.TabIndex = 22;
+            this.btn_up_mag.UseVisualStyleBackColor = true;
+            this.btn_up_mag.Visible = false;
+            this.btn_up_mag.Click += new System.EventHandler(this.btn_up_mag_Click);
+            // 
+            // btn_up_vel
+            // 
+            this.btn_up_vel.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_vel.Location = new System.Drawing.Point(119, 123);
+            this.btn_up_vel.Name = "btn_up_vel";
+            this.btn_up_vel.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_vel.TabIndex = 21;
+            this.btn_up_vel.UseVisualStyleBackColor = true;
+            this.btn_up_vel.Visible = false;
+            this.btn_up_vel.Click += new System.EventHandler(this.btn_up_vel_Click);
+            // 
+            // btn_up_foc
+            // 
+            this.btn_up_foc.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_foc.Location = new System.Drawing.Point(119, 92);
+            this.btn_up_foc.Name = "btn_up_foc";
+            this.btn_up_foc.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_foc.TabIndex = 20;
+            this.btn_up_foc.UseVisualStyleBackColor = true;
+            this.btn_up_foc.Visible = false;
+            this.btn_up_foc.Click += new System.EventHandler(this.btn_up_foc_Click);
+            // 
+            // btn_up_vit
+            // 
+            this.btn_up_vit.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_vit.Location = new System.Drawing.Point(119, 61);
+            this.btn_up_vit.Name = "btn_up_vit";
+            this.btn_up_vit.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_vit.TabIndex = 19;
+            this.btn_up_vit.UseVisualStyleBackColor = true;
+            this.btn_up_vit.Visible = false;
+            this.btn_up_vit.Click += new System.EventHandler(this.btn_up_vit_Click);
+            // 
+            // btn_up_for
+            // 
+            this.btn_up_for.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_for.Location = new System.Drawing.Point(119, 30);
+            this.btn_up_for.Name = "btn_up_for";
+            this.btn_up_for.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_for.TabIndex = 18;
+            this.btn_up_for.UseVisualStyleBackColor = true;
+            this.btn_up_for.Visible = false;
+            this.btn_up_for.Click += new System.EventHandler(this.btn_up_for_Click);
+            // 
+            // btn_teste__aur
+            // 
+            this.btn_teste__aur.Location = new System.Drawing.Point(154, 185);
+            this.btn_teste__aur.Name = "btn_teste__aur";
+            this.btn_teste__aur.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste__aur.TabIndex = 17;
+            this.btn_teste__aur.Text = "Teste";
+            this.btn_teste__aur.UseVisualStyleBackColor = true;
+            // 
+            // btn_teste_mag
+            // 
+            this.btn_teste_mag.Location = new System.Drawing.Point(154, 154);
+            this.btn_teste_mag.Name = "btn_teste_mag";
+            this.btn_teste_mag.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_mag.TabIndex = 16;
+            this.btn_teste_mag.Text = "Teste";
+            this.btn_teste_mag.UseVisualStyleBackColor = true;
+            // 
+            // btn_teste_vel
+            // 
+            this.btn_teste_vel.Location = new System.Drawing.Point(154, 125);
+            this.btn_teste_vel.Name = "btn_teste_vel";
+            this.btn_teste_vel.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_vel.TabIndex = 15;
+            this.btn_teste_vel.Text = "Teste";
+            this.btn_teste_vel.UseVisualStyleBackColor = true;
+            // 
+            // btn_teste_foc
+            // 
+            this.btn_teste_foc.Location = new System.Drawing.Point(154, 96);
+            this.btn_teste_foc.Name = "btn_teste_foc";
+            this.btn_teste_foc.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_foc.TabIndex = 14;
+            this.btn_teste_foc.Text = "Teste";
+            this.btn_teste_foc.UseVisualStyleBackColor = true;
+            // 
+            // btn_teste_vit
+            // 
+            this.btn_teste_vit.Location = new System.Drawing.Point(154, 63);
+            this.btn_teste_vit.Name = "btn_teste_vit";
+            this.btn_teste_vit.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_vit.TabIndex = 13;
+            this.btn_teste_vit.Text = "Teste";
+            this.btn_teste_vit.UseVisualStyleBackColor = true;
+            // 
+            // btn_teste_for
+            // 
+            this.btn_teste_for.Location = new System.Drawing.Point(154, 32);
+            this.btn_teste_for.Name = "btn_teste_for";
+            this.btn_teste_for.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_for.TabIndex = 12;
+            this.btn_teste_for.Text = "Teste";
+            this.btn_teste_for.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 160);
+            this.label18.Location = new System.Drawing.Point(6, 185);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(32, 15);
             this.label18.TabIndex = 11;
@@ -168,7 +390,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 136);
+            this.label17.Location = new System.Drawing.Point(6, 154);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(40, 15);
             this.label17.TabIndex = 10;
@@ -177,7 +399,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 108);
+            this.label16.Location = new System.Drawing.Point(6, 125);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(64, 15);
             this.label16.TabIndex = 9;
@@ -186,7 +408,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 83);
+            this.label15.Location = new System.Drawing.Point(6, 96);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(33, 15);
             this.label15.TabIndex = 8;
@@ -195,7 +417,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 58);
+            this.label14.Location = new System.Drawing.Point(6, 63);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 15);
             this.label14.TabIndex = 7;
@@ -212,6 +434,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.lbl_nascimento);
             this.groupBox2.Controls.Add(this.lbl_peso);
             this.groupBox2.Controls.Add(this.lbl_altura);
@@ -225,7 +448,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(203, 250);
+            this.groupBox2.Size = new System.Drawing.Size(203, 261);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sobre";
@@ -548,18 +771,21 @@
             // 
             // txt_nome_personagem
             // 
-            this.txt_nome_personagem.Location = new System.Drawing.Point(1096, 12);
+            this.txt_nome_personagem.Location = new System.Drawing.Point(1095, 12);
             this.txt_nome_personagem.Name = "txt_nome_personagem";
             this.txt_nome_personagem.Size = new System.Drawing.Size(100, 23);
             this.txt_nome_personagem.TabIndex = 2;
             // 
             // btn_atualiza
             // 
-            this.btn_atualiza.Location = new System.Drawing.Point(1202, 12);
+            this.btn_atualiza.Image = global::Ficha_Jiora.Properties.Resources.Atualizar_16;
+            this.btn_atualiza.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_atualiza.Location = new System.Drawing.Point(1201, 12);
             this.btn_atualiza.Name = "btn_atualiza";
-            this.btn_atualiza.Size = new System.Drawing.Size(75, 23);
+            this.btn_atualiza.Size = new System.Drawing.Size(76, 23);
             this.btn_atualiza.TabIndex = 3;
             this.btn_atualiza.Text = "Atualizar";
+            this.btn_atualiza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_atualiza.UseVisualStyleBackColor = true;
             this.btn_atualiza.Click += new System.EventHandler(this.btn_atualiza_Click);
             // 
@@ -693,11 +919,23 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Data";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 235);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(14, 15);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "R";
+            // 
             // Ficha_do_Jogador
             // 
             this.AcceptButton = this.btn_atualiza;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1289, 650);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_classe_peronsagem);
@@ -713,14 +951,16 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.img_imagem_personagem);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Ficha_do_Jogador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ficha";
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.Status.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.Status.PerformLayout();
+            this.GPB_status_atributos.ResumeLayout(false);
+            this.GPB_status_atributos.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.pericia.ResumeLayout(false);
@@ -778,7 +1018,7 @@
         private Label lbl_resistencia;
         private Label lbl_defesa;
         private Label label6;
-        private GroupBox groupBox3;
+        private GroupBox GPB_status_atributos;
         private Label label18;
         private Label label17;
         private Label label16;
@@ -797,5 +1037,25 @@
         private Label lbl_altura;
         private Label lbl_cabelo;
         private Label lbl_olhos;
+        private TextBox txt_status;
+        private Button btn_teste_for;
+        private Button btn_teste_vit;
+        private Button btn_teste_vel;
+        private Button btn_teste_foc;
+        private Button btn_teste_mag;
+        private Button btn_teste__aur;
+        private Button btn_up_foc;
+        private Button btn_up_vit;
+        private Button btn_up_for;
+        private Button btn_up_mag;
+        private Button btn_up_vel;
+        private Button btn_up_aur;
+        private Label lbl_vitalidade;
+        private Label lbl_forca;
+        private Label lbl_foco;
+        private Label lbl_velocidade;
+        private Label lbl_magia;
+        private Label lbl_aura;
+        private Label label19;
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Ficha_Jiora.Model;
 using Ficha_Jiora.DAO;
 using System.Data;
+using System.Threading.Tasks.Sources;
 
 namespace Ficha_Jiora.Control
 {
@@ -17,22 +18,63 @@ namespace Ficha_Jiora.Control
 
         public Personagem_Model Carrega_Personagem(string idpersonagem)
         {
-            return personagem_Model = personagem_Data.Carrega_Personagem(idpersonagem);           
+            return personagem_Model = personagem_Data.Carrega_Personagem(idpersonagem);
         }
 
         public string GetID(string nome)
         {
             return personagem_Data.GetID(nome);
+        }        
+
+        public void AumentarAtributo(string coluna, int valor, string id)
+        {
+            valor += 1;
+
+            personagem_Data.Update_Personagem(coluna, valor, id);
         }
 
-        public DataTable Carrega_Personagem_2(string IDPersonagem)
+        public int? GerenciaAtributos(string ID)
         {
-            return personagem_Data.Carrega_Personagem_2(IDPersonagem);
+            personagem_Model = Carrega_Personagem(ID);
+            int? ValorPadraoDeAtributos = 40;
+            int? NivelPersonagem = personagem_Model.Nivel;
+            int? SomaTotalAtributos = personagem_Data.TotalAtributos(ID);
+            int? resultado = 0;
+
+            resultado = (ValorPadraoDeAtributos + NivelPersonagem) - SomaTotalAtributos;
+
+            return resultado;
         }
 
-        public void AlterarCabelo(string idpersonagem, string valor)
+        public int TesteAtributo(int ValorTeste,int ValorDado)
         {
-            personagem_Data.AlterarCabelo(idpersonagem, valor);
+            /* 1- Acerto Crítico
+             * 2- Acerto
+             * 3- Falha
+             * 4- Falha Crítica
+             */
+            if (ValorDado  <= ValorTeste)
+            {
+                if (ValorDado <= 10)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            else
+            {
+                if (ValorDado >= 95)
+                {
+                    return 4;
+                }
+                else
+                {
+                    return 3;
+                }
+            }
         }
     }
 }

@@ -63,6 +63,16 @@ namespace Ficha_Jiora.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Adicionar_16 {
+            get {
+                object obj = ResourceManager.GetObject("Adicionar_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap armor_15_15 {
             get {
                 object obj = ResourceManager.GetObject("armor_15_15", resourceCulture);
@@ -86,6 +96,16 @@ namespace Ficha_Jiora.Properties {
         internal static System.Drawing.Bitmap ataque_icone {
             get {
                 object obj = ResourceManager.GetObject("ataque_icone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Atualizar_16 {
+            get {
+                object obj = ResourceManager.GetObject("Atualizar_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

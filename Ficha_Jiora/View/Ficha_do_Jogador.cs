@@ -26,7 +26,7 @@ namespace Ficha_Jiora.View
 
         public Ficha_do_Jogador()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         #region INFORMAÇÕES DA MAIN PAGE
@@ -36,8 +36,7 @@ namespace Ficha_Jiora.View
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                Carrega_Tela();
-                //Insertlog("Atualizou a Ficha");
+                Carrega_Tela();                
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
@@ -157,14 +156,14 @@ namespace Ficha_Jiora.View
                                     txt_pericia.Text = personagem_Model.Nome + " Realizou um acerto crítico no teste de " + NomeTeste
                                         + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
 
-                                    Insertlog("Realizou uma acerto crítico no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste:" + valor);
+                                    Insertlog("Realizou uma acerto crítico no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste: " + valor);
                                 }
                                 else
                                 {
                                     txt_pericia.Text = personagem_Model.Nome + " teve sucesso no teste de " + NomeTeste
                                         + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
 
-                                    Insertlog("Teve sucesso no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste:" + valor);
+                                    Insertlog("Teve sucesso no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste: " + valor);
                                 }
 
                             }
@@ -175,14 +174,14 @@ namespace Ficha_Jiora.View
                                     txt_pericia.Text = "Falha Crítica! no teste de " + NomeTeste
                                         + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
 
-                                    Insertlog("Realizou uma falha crítica no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste:" + valor);
+                                    Insertlog("Realizou uma falha crítica no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste: " + valor);
                                 }
                                 else
                                 {
                                     txt_pericia.Text = "Você falhou no teste de " + NomeTeste + ".\r\nMais sorte na próxima vez!"
                                         + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
 
-                                    Insertlog("Realizou uma falha no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste:" + valor);
+                                    Insertlog("Realizou uma falha no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste: " + valor);
                                 }
 
                             }
@@ -309,11 +308,30 @@ namespace Ficha_Jiora.View
         {
             try
             {
+                int? ValorAtributo = personagem_Control.GerenciaAtributos(IDPersonagem);
                 lbl_altura.Text = personagem_Model.Altura;
                 lbl_cabelo.Text = personagem_Model.Cabelo;
                 lbl_olhos.Text = personagem_Model.Olhos;
                 lbl_peso.Text = personagem_Model.Peso;
                 lbl_nascimento.Text = personagem_Model.Nascimento;
+                lbl_forca.Text = personagem_Model.Forca.ToString();
+                lbl_vitalidade.Text = personagem_Model.Vitalidade.ToString();
+                lbl_foco.Text = personagem_Model.Foco.ToString();
+                lbl_velocidade.Text = personagem_Model.Velocidade.ToString();
+                lbl_magia.Text = personagem_Model.Magia.ToString();
+                lbl_aura.Text = personagem_Model.Aura.ToString(); ;
+
+                GPB_status_atributos.Text = "Pontos Disponíveis " + ValorAtributo;
+                if (ValorAtributo > 0)
+                {
+                    ControleBotao(true);
+                }
+                else
+                {
+                    ControleBotao(false);
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -321,7 +339,142 @@ namespace Ficha_Jiora.View
                 throw new Exception(ex.Message);
             }
         }
+
+        private void ControleBotao(bool LigaDesliga)
+        {            
+            if (LigaDesliga)
+            {
+                btn_up_for.Visible = true;
+                btn_up_vit.Visible = true;
+                btn_up_foc.Visible = true;
+                btn_up_vel.Visible = true;
+                btn_up_mag.Visible = true;
+                btn_up_aur.Visible = true;
+            }
+            else
+            {
+                btn_up_for.Visible = false;
+                btn_up_vit.Visible = false;
+                btn_up_foc.Visible = false;
+                btn_up_vel.Visible = false;
+                btn_up_mag.Visible = false;
+                btn_up_aur.Visible = false;
+            }
+        }
         #endregion
 
+        private void btn_up_for_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                personagem_Control.AumentarAtributo("forca", personagem_Model.Forca, IDPersonagem);
+                Insertlog("Aumentou +1 ponto de força. De " + personagem_Model.Forca + " para " + (personagem_Model.Forca + 1));
+                ControleBotao(false);
+                Carrega_Tela();
+                Cursor.Current = Cursors.WaitCursor;
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_up_vit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                personagem_Control.AumentarAtributo("vitalidade", personagem_Model.Vitalidade, IDPersonagem);
+                Insertlog("Aumentou +1 ponto de vitalidade. De " + personagem_Model.Vitalidade + " para " + (personagem_Model.Vitalidade + 1));
+                ControleBotao(false);
+                Carrega_Tela();
+                Cursor.Current = Cursors.WaitCursor;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_up_foc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                personagem_Control.AumentarAtributo("foco", personagem_Model.Foco, IDPersonagem);
+                Insertlog("Aumentou +1 ponto de foco. De " + personagem_Model.Foco + " para " + (personagem_Model.Foco + 1));
+                ControleBotao(false);
+                Carrega_Tela();
+                Cursor.Current = Cursors.WaitCursor;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_up_vel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                personagem_Control.AumentarAtributo("Velocidade", personagem_Model.Velocidade, IDPersonagem);
+                Insertlog("Aumentou +1 ponto de velocidade. De " + personagem_Model.Velocidade + " para " + (personagem_Model.Velocidade + 1));
+                ControleBotao(false);
+                Carrega_Tela();
+                Cursor.Current = Cursors.WaitCursor;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_up_mag_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                personagem_Control.AumentarAtributo("Magia", personagem_Model.Magia, IDPersonagem);
+                Insertlog("Aumentou +1 ponto de magia. De " + personagem_Model.Magia + " para " + (personagem_Model.Magia + 1));
+                ControleBotao(false);
+                Carrega_Tela();
+                Cursor.Current = Cursors.WaitCursor;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_up_aur_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                personagem_Control.AumentarAtributo("Aura", personagem_Model.Aura, IDPersonagem);
+                Insertlog("Aumentou +1 ponto de aura. De " + personagem_Model.Aura + " para " + (personagem_Model.Aura + 1));
+                ControleBotao(false);
+                Carrega_Tela();
+                Cursor.Current = Cursors.WaitCursor;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
