@@ -58,13 +58,13 @@ namespace Ficha_Jiora.View
                 d12 = Rolar.D12();
                 d10 = Rolar.D10();
                 d8 = Rolar.D8();
-                d6 = Rolar.D6();                
+                d6 = Rolar.D6();
                 CarregaPersonagem();
                 Carrega_Log();
                 Carrega_Pericia();
                 CarregaAtributos();
                 CarregaStatus();
-                
+
             }
             catch (Exception ex)
             {
@@ -111,10 +111,10 @@ namespace Ficha_Jiora.View
                 lbl_defesa.Text = personagem_Model.Defesa.ToString();
                 lbl_resistencia.Text = personagem_Model.Resistencia.ToString();
                 lbl_precisao.Text = batalha.Precisao() + " %";
-                lbl_esquiva.Text = batalha.Esquiva()+ " %";
+                lbl_esquiva.Text = batalha.Esquiva() + " %";
                 lbl_critico.Text = personagem_Model.CDS_Critico + " %";
-                lbl_valor_critico.Text = "x"+personagem_Model.Valor_Critico.ToString();
-                lbl_exp.Text = personagem_Model.EXPAtual + "/" + (personagem_Model.Nivel * 500);
+                lbl_valor_critico.Text = "x" + personagem_Model.Valor_Critico.ToString();
+                lbl_exp.Text = personagem_Model.EXPAtual + " / " + (personagem_Model.Nivel * 500);
                 lbl_tonz.Text = personagem_Model.Tonz.ToString();
 
 
@@ -340,6 +340,22 @@ namespace Ficha_Jiora.View
                 lbl_magia.Text = personagem_Model.Magia.ToString();
                 lbl_aura.Text = personagem_Model.Aura.ToString();
                 lbl_raca.Text = personagem_Model.Raca;
+                lbl_res_fire.Text = personagem_Model.Res_Fire + " %";
+                lbl_res_water.Text = personagem_Model.Res_Water + " %";
+                lbl_res_ice.Text = personagem_Model.Res_Ice + " %";
+                lbl_res_wind.Text = personagem_Model.Res_Wind + " %";
+                lbl_res_earth.Text = personagem_Model.Res_Earth + " %";
+                lbl_res_thunder.Text = personagem_Model.Res_Thunder + " %";
+                lbl_res_light.Text = personagem_Model.Res_Light + " %";
+                lbl_res_shadow.Text = personagem_Model.Res_Shadow + " %";
+                lbl_res_burn.Text = personagem_Model.Res_Burn + " %";
+                lbl_res_frozen.Text = personagem_Model.Res_Fronze + " %";
+                lbl_res_silence.Text = personagem_Model.Res_Silence + " %";
+                lbl_res_confuse.Text = personagem_Model.Res_Confuse + " %";
+                lbl_res_paralyze.Text = personagem_Model.Res_Paralyze + " %";
+                lbl_res_poison.Text = personagem_Model.Res_Poison + " %";
+                lbl_res_blind.Text = personagem_Model.Res_Blind + " %";
+                lbl_res_charm.Text = personagem_Model.Res_Charm + " %";
 
                 GPB_status_atributos.Text = "Pontos Disponíveis " + ValorAtributo;
                 if (ValorAtributo > 0)
@@ -630,7 +646,7 @@ namespace Ficha_Jiora.View
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
-        {         
+        {
             //Ver se tem como carregar a tela quando clicar na aba log
 
         }
@@ -705,6 +721,102 @@ namespace Ficha_Jiora.View
         {
             ToolTip tt = new ToolTip();
             tt.SetToolTip(img_tonz, "Quantidade de Tonz");
+        }
+
+        private void img_fire_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_fire, "Resistência a Fogo");
+        }
+
+        private void img_ice_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_ice, "Resistência a Gelo");
+        }
+
+        private void img_wind_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_wind, "Resistência a Vento");
+        }
+
+        private void img_earth_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_earth, "Resistência a Terra");
+        }
+
+        private void img_thunder_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_thunder, "Resistência a Trovão");
+        }
+
+        private void img_water_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_water, "Resistência a Água");
+        }
+
+        private void img_light_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_light, "Resistência a Luz");
+        }
+
+        private void img_shadow_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_shadow, "Resistência a Escuridão");
+        }
+
+        private void img_burn_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_burn, "Resistência a Burn");
+        }
+
+        private void img_frozen_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_frozen, "Resistência a Frozen");
+        }
+
+        private void img_silence_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_silence, "Resistência a Silence");
+        }
+
+        private void img_confuse_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_confuse, "Resistência a Confuse");
+        }
+
+        private void img_paralyze_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_paralyze, "Resistência a Paralyze");
+        }
+
+        private void img_posion_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_posion, "Resistência a Poison");
+        }
+
+        private void img_blind_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_blind, "Resistência a Blind");
+        }
+
+        private void img_charm_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_charm, "Resistência a Charm");
         }
 
         private void btn_teste__aur_Click(object sender, EventArgs e)
