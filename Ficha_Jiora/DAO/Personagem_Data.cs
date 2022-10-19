@@ -35,6 +35,7 @@ namespace Ficha_Jiora.DAO
                         Nivel = Convert.ToInt32(item["Nivel"]),
                         Imagem = item["imagem"].ToString(),
                         Classe = GetClasse(item["job_id"].ToString()),
+                        Raca =  GetRaca(item["raca_id"].ToString()),
                         PontosPericia = Convert.ToInt32(item["Pontos_Pericia"]),
                         Olhos = item["Olhos"].ToString(),
                         Cabelo = item["Cabelo"].ToString(),
@@ -106,7 +107,9 @@ namespace Ficha_Jiora.DAO
                         Blind_Ativo = Convert.ToBoolean(item["Blind_ativo"]),
                         Charm_Ativo = Convert.ToBoolean(item["Charm_ativo"]),
                         Mod_Esquiva = Convert.ToInt32(item["mod_esquiva"]),
-                        Mod_Precisao = Convert.ToInt32(item["mod_precisao"])
+                        Mod_Precisao = Convert.ToInt32(item["mod_precisao"]),
+                        Tonz = Convert.ToInt32(item["Tonz"])
+
                     };
                 }
                 return personagem_Model;
@@ -162,6 +165,26 @@ namespace Ficha_Jiora.DAO
             {
 
                 throw new Exception("\nErro em Personagem_Data.GetClasse:\n" + ex.Message);
+            }
+        }
+
+        private string GetRaca(string IDRaca)
+        {
+            try
+            {
+                Script = "select nome from raca where id = '" + IDRaca + "'";
+
+                SqlCommand select = new SqlCommand(Script, AbreConexao());
+
+                FechaConexao();
+
+                return select.ExecuteScalar().ToString();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Personagem_Data.GetRaca:\n" + ex.Message);
             }
         }
 

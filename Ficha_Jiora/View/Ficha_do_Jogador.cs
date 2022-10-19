@@ -21,6 +21,7 @@ namespace Ficha_Jiora.View
         private Pericia_Model pericia_Model = new Pericia_Model();
         private Rolar_Dados Rolar = new Rolar_Dados();
         private Log_Ficha log_ficha = new Log_Ficha();
+        Batalha_Control batalha;
         private string IDPersonagem = "";
         private int d100 = 0, d12 = 0, d10 = 0, d8 = 0, d6 = 0;
 
@@ -57,12 +58,13 @@ namespace Ficha_Jiora.View
                 d12 = Rolar.D12();
                 d10 = Rolar.D10();
                 d8 = Rolar.D8();
-                d6 = Rolar.D6();
+                d6 = Rolar.D6();                
                 CarregaPersonagem();
                 Carrega_Log();
                 Carrega_Pericia();
                 CarregaAtributos();
                 CarregaStatus();
+                
             }
             catch (Exception ex)
             {
@@ -104,9 +106,17 @@ namespace Ficha_Jiora.View
         {
             try
             {
+                batalha = new Batalha_Control(IDPersonagem);
 
                 lbl_defesa.Text = personagem_Model.Defesa.ToString();
                 lbl_resistencia.Text = personagem_Model.Resistencia.ToString();
+                lbl_precisao.Text = batalha.Precisao() + " %";
+                lbl_esquiva.Text = batalha.Esquiva()+ " %";
+                lbl_critico.Text = personagem_Model.CDS_Critico + " %";
+                lbl_valor_critico.Text = "x"+personagem_Model.Valor_Critico.ToString();
+                lbl_exp.Text = personagem_Model.EXPAtual + "/" + (personagem_Model.Nivel * 500);
+                lbl_tonz.Text = personagem_Model.Tonz.ToString();
+
 
             }
             catch (Exception ex)
@@ -328,7 +338,8 @@ namespace Ficha_Jiora.View
                 lbl_foco.Text = personagem_Model.Foco.ToString();
                 lbl_velocidade.Text = personagem_Model.Velocidade.ToString();
                 lbl_magia.Text = personagem_Model.Magia.ToString();
-                lbl_aura.Text = personagem_Model.Aura.ToString(); ;
+                lbl_aura.Text = personagem_Model.Aura.ToString();
+                lbl_raca.Text = personagem_Model.Raca;
 
                 GPB_status_atributos.Text = "Pontos Disponíveis " + ValorAtributo;
                 if (ValorAtributo > 0)
@@ -622,6 +633,78 @@ namespace Ficha_Jiora.View
         {         
             //Ver se tem como carregar a tela quando clicar na aba log
 
+        }
+
+        private void btn_up_for_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(btn_up_for, "Aumenta a Força em +1");
+        }
+
+        private void btn_up_vit_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(btn_up_vit, "Aumenta a Vitalidade em +1");
+        }
+
+        private void btn_up_vel_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(btn_up_vel, "Aumenta a Velocidade em +1");
+        }
+
+        private void btn_up_foc_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(btn_up_foc, "Aumenta o Foco em +1");
+        }
+
+        private void btn_up_mag_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(btn_up_mag, "Aumenta a Magia em +1");
+        }
+
+        private void btn_up_aur_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(btn_up_aur, "Aumenta a Aura em +1");
+        }
+
+        private void img_precisao_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_precisao, "Chance de acerto(Precisão)");
+        }
+
+        private void img_esquiva_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_esquiva, "Chance de Esquiva");
+        }
+
+        private void img_critico_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_critico, "Chance de acerto Crítico");
+        }
+
+        private void img_valor_critico_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_valor_critico, "Cálculo do acerto crítico");
+        }
+
+        private void img_exp_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_exp, "Pontos de Experiência");
+        }
+
+        private void img_tonz_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(img_tonz, "Quantidade de Tonz");
         }
 
         private void btn_teste__aur_Click(object sender, EventArgs e)

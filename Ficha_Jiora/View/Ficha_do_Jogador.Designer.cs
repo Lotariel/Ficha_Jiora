@@ -66,7 +66,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lbl_raca = new System.Windows.Forms.Label();
             this.lbl_nascimento = new System.Windows.Forms.Label();
             this.lbl_peso = new System.Windows.Forms.Label();
             this.lbl_altura = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.batalha = new System.Windows.Forms.TabPage();
+            this.battle = new System.Windows.Forms.TabPage();
             this.pericia = new System.Windows.Forms.TabPage();
             this.btn_salvar_pericia = new System.Windows.Forms.Button();
             this.lbl_pontos_pericia = new System.Windows.Forms.Label();
@@ -98,6 +98,17 @@
             this.txt_nome_personagem = new System.Windows.Forms.TextBox();
             this.btn_atualiza = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_tonz = new System.Windows.Forms.Label();
+            this.img_tonz = new System.Windows.Forms.PictureBox();
+            this.img_exp = new System.Windows.Forms.PictureBox();
+            this.lbl_valor_critico = new System.Windows.Forms.Label();
+            this.img_valor_critico = new System.Windows.Forms.PictureBox();
+            this.lbl_exp = new System.Windows.Forms.Label();
+            this.img_critico = new System.Windows.Forms.PictureBox();
+            this.lbl_esquiva = new System.Windows.Forms.Label();
+            this.img_esquiva = new System.Windows.Forms.PictureBox();
+            this.lbl_precisao = new System.Windows.Forms.Label();
+            this.img_precisao = new System.Windows.Forms.PictureBox();
             this.lbl_resistencia = new System.Windows.Forms.Label();
             this.lbl_defesa = new System.Windows.Forms.Label();
             this.img_resistencia = new System.Windows.Forms.PictureBox();
@@ -112,6 +123,7 @@
             this.bs_personagem = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Log = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
+            this.lbl_critico = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Status.SuspendLayout();
@@ -122,6 +134,12 @@
             this.Log.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_tonz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_exp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_valor_critico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_critico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_esquiva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_precisao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_resistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).BeginInit();
@@ -139,7 +157,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.Status);
-            this.tabControl1.Controls.Add(this.batalha);
+            this.tabControl1.Controls.Add(this.battle);
             this.tabControl1.Controls.Add(this.pericia);
             this.tabControl1.Controls.Add(this.inventario);
             this.tabControl1.Controls.Add(this.Mapa);
@@ -270,6 +288,7 @@
             this.btn_up_aur.UseVisualStyleBackColor = true;
             this.btn_up_aur.Visible = false;
             this.btn_up_aur.Click += new System.EventHandler(this.btn_up_aur_Click);
+            this.btn_up_aur.MouseHover += new System.EventHandler(this.btn_up_aur_MouseHover);
             // 
             // btn_up_mag
             // 
@@ -281,6 +300,7 @@
             this.btn_up_mag.UseVisualStyleBackColor = true;
             this.btn_up_mag.Visible = false;
             this.btn_up_mag.Click += new System.EventHandler(this.btn_up_mag_Click);
+            this.btn_up_mag.MouseHover += new System.EventHandler(this.btn_up_mag_MouseHover);
             // 
             // btn_up_vel
             // 
@@ -292,6 +312,7 @@
             this.btn_up_vel.UseVisualStyleBackColor = true;
             this.btn_up_vel.Visible = false;
             this.btn_up_vel.Click += new System.EventHandler(this.btn_up_vel_Click);
+            this.btn_up_vel.MouseHover += new System.EventHandler(this.btn_up_vel_MouseHover);
             // 
             // btn_up_foc
             // 
@@ -303,6 +324,7 @@
             this.btn_up_foc.UseVisualStyleBackColor = true;
             this.btn_up_foc.Visible = false;
             this.btn_up_foc.Click += new System.EventHandler(this.btn_up_foc_Click);
+            this.btn_up_foc.MouseHover += new System.EventHandler(this.btn_up_foc_MouseHover);
             // 
             // btn_up_vit
             // 
@@ -314,6 +336,7 @@
             this.btn_up_vit.UseVisualStyleBackColor = true;
             this.btn_up_vit.Visible = false;
             this.btn_up_vit.Click += new System.EventHandler(this.btn_up_vit_Click);
+            this.btn_up_vit.MouseHover += new System.EventHandler(this.btn_up_vit_MouseHover);
             // 
             // btn_up_for
             // 
@@ -325,6 +348,7 @@
             this.btn_up_for.UseVisualStyleBackColor = true;
             this.btn_up_for.Visible = false;
             this.btn_up_for.Click += new System.EventHandler(this.btn_up_for_Click);
+            this.btn_up_for.MouseHover += new System.EventHandler(this.btn_up_for_MouseHover);
             // 
             // btn_teste__aur
             // 
@@ -442,7 +466,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.lbl_raca);
             this.groupBox2.Controls.Add(this.lbl_nascimento);
             this.groupBox2.Controls.Add(this.lbl_peso);
             this.groupBox2.Controls.Add(this.lbl_altura);
@@ -461,14 +485,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sobre";
             // 
-            // label19
+            // lbl_raca
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 235);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(14, 15);
-            this.label19.TabIndex = 11;
-            this.label19.Text = "R";
+            this.lbl_raca.AutoSize = true;
+            this.lbl_raca.Location = new System.Drawing.Point(12, 235);
+            this.lbl_raca.Name = "lbl_raca";
+            this.lbl_raca.Size = new System.Drawing.Size(14, 15);
+            this.lbl_raca.TabIndex = 11;
+            this.lbl_raca.Text = "R";
             // 
             // lbl_nascimento
             // 
@@ -569,15 +593,15 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Olhos:";
             // 
-            // batalha
+            // battle
             // 
-            this.batalha.Location = new System.Drawing.Point(4, 24);
-            this.batalha.Name = "batalha";
-            this.batalha.Padding = new System.Windows.Forms.Padding(3);
-            this.batalha.Size = new System.Drawing.Size(955, 500);
-            this.batalha.TabIndex = 1;
-            this.batalha.Text = "Batalha";
-            this.batalha.UseVisualStyleBackColor = true;
+            this.battle.Location = new System.Drawing.Point(4, 24);
+            this.battle.Name = "battle";
+            this.battle.Padding = new System.Windows.Forms.Padding(3);
+            this.battle.Size = new System.Drawing.Size(955, 500);
+            this.battle.TabIndex = 1;
+            this.battle.Text = "Batalha";
+            this.battle.UseVisualStyleBackColor = true;
             // 
             // pericia
             // 
@@ -808,6 +832,18 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_critico);
+            this.groupBox1.Controls.Add(this.lbl_tonz);
+            this.groupBox1.Controls.Add(this.img_tonz);
+            this.groupBox1.Controls.Add(this.img_exp);
+            this.groupBox1.Controls.Add(this.lbl_valor_critico);
+            this.groupBox1.Controls.Add(this.img_valor_critico);
+            this.groupBox1.Controls.Add(this.lbl_exp);
+            this.groupBox1.Controls.Add(this.img_critico);
+            this.groupBox1.Controls.Add(this.lbl_esquiva);
+            this.groupBox1.Controls.Add(this.img_esquiva);
+            this.groupBox1.Controls.Add(this.lbl_precisao);
+            this.groupBox1.Controls.Add(this.img_precisao);
             this.groupBox1.Controls.Add(this.lbl_resistencia);
             this.groupBox1.Controls.Add(this.lbl_defesa);
             this.groupBox1.Controls.Add(this.img_resistencia);
@@ -818,6 +854,111 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Atributos";
+            // 
+            // lbl_tonz
+            // 
+            this.lbl_tonz.AutoSize = true;
+            this.lbl_tonz.Location = new System.Drawing.Point(176, 174);
+            this.lbl_tonz.Name = "lbl_tonz";
+            this.lbl_tonz.Size = new System.Drawing.Size(13, 15);
+            this.lbl_tonz.TabIndex = 14;
+            this.lbl_tonz.Text = "0";
+            // 
+            // img_tonz
+            // 
+            this.img_tonz.Image = global::Ficha_Jiora.Properties.Resources.tonz_15_15;
+            this.img_tonz.Location = new System.Drawing.Point(155, 174);
+            this.img_tonz.Name = "img_tonz";
+            this.img_tonz.Size = new System.Drawing.Size(15, 15);
+            this.img_tonz.TabIndex = 13;
+            this.img_tonz.TabStop = false;
+            this.img_tonz.MouseHover += new System.EventHandler(this.img_tonz_MouseHover);
+            // 
+            // img_exp
+            // 
+            this.img_exp.Image = global::Ficha_Jiora.Properties.Resources.exp_15_15;
+            this.img_exp.Location = new System.Drawing.Point(29, 174);
+            this.img_exp.Name = "img_exp";
+            this.img_exp.Size = new System.Drawing.Size(15, 15);
+            this.img_exp.TabIndex = 12;
+            this.img_exp.TabStop = false;
+            this.img_exp.MouseHover += new System.EventHandler(this.img_exp_MouseHover);
+            // 
+            // lbl_valor_critico
+            // 
+            this.lbl_valor_critico.AutoSize = true;
+            this.lbl_valor_critico.Location = new System.Drawing.Point(176, 128);
+            this.lbl_valor_critico.Name = "lbl_valor_critico";
+            this.lbl_valor_critico.Size = new System.Drawing.Size(13, 15);
+            this.lbl_valor_critico.TabIndex = 11;
+            this.lbl_valor_critico.Text = "0";
+            // 
+            // img_valor_critico
+            // 
+            this.img_valor_critico.Image = global::Ficha_Jiora.Properties.Resources.valor_critico_15_15;
+            this.img_valor_critico.Location = new System.Drawing.Point(155, 128);
+            this.img_valor_critico.Name = "img_valor_critico";
+            this.img_valor_critico.Size = new System.Drawing.Size(15, 15);
+            this.img_valor_critico.TabIndex = 10;
+            this.img_valor_critico.TabStop = false;
+            this.img_valor_critico.MouseHover += new System.EventHandler(this.img_valor_critico_MouseHover);
+            // 
+            // lbl_exp
+            // 
+            this.lbl_exp.AutoSize = true;
+            this.lbl_exp.Location = new System.Drawing.Point(50, 174);
+            this.lbl_exp.Name = "lbl_exp";
+            this.lbl_exp.Size = new System.Drawing.Size(13, 15);
+            this.lbl_exp.TabIndex = 9;
+            this.lbl_exp.Text = "0";
+            // 
+            // img_critico
+            // 
+            this.img_critico.Image = global::Ficha_Jiora.Properties.Resources.critico_15_15;
+            this.img_critico.Location = new System.Drawing.Point(29, 128);
+            this.img_critico.Name = "img_critico";
+            this.img_critico.Size = new System.Drawing.Size(15, 15);
+            this.img_critico.TabIndex = 8;
+            this.img_critico.TabStop = false;
+            this.img_critico.MouseHover += new System.EventHandler(this.img_critico_MouseHover);
+            // 
+            // lbl_esquiva
+            // 
+            this.lbl_esquiva.AutoSize = true;
+            this.lbl_esquiva.Location = new System.Drawing.Point(176, 83);
+            this.lbl_esquiva.Name = "lbl_esquiva";
+            this.lbl_esquiva.Size = new System.Drawing.Size(13, 15);
+            this.lbl_esquiva.TabIndex = 7;
+            this.lbl_esquiva.Text = "0";
+            // 
+            // img_esquiva
+            // 
+            this.img_esquiva.Image = global::Ficha_Jiora.Properties.Resources.evade_15_15;
+            this.img_esquiva.Location = new System.Drawing.Point(155, 83);
+            this.img_esquiva.Name = "img_esquiva";
+            this.img_esquiva.Size = new System.Drawing.Size(15, 15);
+            this.img_esquiva.TabIndex = 6;
+            this.img_esquiva.TabStop = false;
+            this.img_esquiva.MouseHover += new System.EventHandler(this.img_esquiva_MouseHover);
+            // 
+            // lbl_precisao
+            // 
+            this.lbl_precisao.AutoSize = true;
+            this.lbl_precisao.Location = new System.Drawing.Point(50, 83);
+            this.lbl_precisao.Name = "lbl_precisao";
+            this.lbl_precisao.Size = new System.Drawing.Size(13, 15);
+            this.lbl_precisao.TabIndex = 5;
+            this.lbl_precisao.Text = "0";
+            // 
+            // img_precisao
+            // 
+            this.img_precisao.Image = global::Ficha_Jiora.Properties.Resources.precisao_15_15__2png;
+            this.img_precisao.Location = new System.Drawing.Point(29, 83);
+            this.img_precisao.Name = "img_precisao";
+            this.img_precisao.Size = new System.Drawing.Size(15, 15);
+            this.img_precisao.TabIndex = 4;
+            this.img_precisao.TabStop = false;
+            this.img_precisao.MouseHover += new System.EventHandler(this.img_precisao_MouseHover);
             // 
             // lbl_resistencia
             // 
@@ -936,6 +1077,15 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Data";
             // 
+            // lbl_critico
+            // 
+            this.lbl_critico.AutoSize = true;
+            this.lbl_critico.Location = new System.Drawing.Point(50, 128);
+            this.lbl_critico.Name = "lbl_critico";
+            this.lbl_critico.Size = new System.Drawing.Size(13, 15);
+            this.lbl_critico.TabIndex = 15;
+            this.lbl_critico.Text = "0";
+            // 
             // Ficha_do_Jogador
             // 
             this.AcceptButton = this.btn_atualiza;
@@ -978,6 +1128,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_tonz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_exp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_valor_critico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_critico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_esquiva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_precisao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_resistencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).EndInit();
@@ -992,7 +1148,7 @@
         private PictureBox img_imagem_personagem;
         private TabControl tabControl1;
         private TabPage Status;
-        private TabPage batalha;
+        private TabPage battle;
         private TextBox txt_nome_personagem;
         private Button btn_atualiza;
         private GroupBox groupBox1;
@@ -1064,6 +1220,18 @@
         private Label lbl_velocidade;
         private Label lbl_magia;
         private Label lbl_aura;
-        private Label label19;
+        private Label lbl_raca;
+        private Label lbl_precisao;
+        private PictureBox img_precisao;
+        private Label lbl_esquiva;
+        private PictureBox img_esquiva;
+        private Label lbl_valor_critico;
+        private PictureBox img_valor_critico;
+        private Label lbl_exp;
+        private PictureBox img_critico;
+        private Label lbl_tonz;
+        private PictureBox img_tonz;
+        private PictureBox img_exp;
+        private Label lbl_critico;
     }
 }

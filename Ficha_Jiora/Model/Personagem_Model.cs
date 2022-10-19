@@ -14,6 +14,7 @@ namespace Ficha_Jiora.Model
         public string Classe { get; set; }
         public string Raca { get; set; }
         public int PontosPericia { get; set; }
+        public int Tonz { get; set; }
         public string Cabelo { get; set; }
         public string Olhos { get; set; }
         public string Altura { get; set; }
