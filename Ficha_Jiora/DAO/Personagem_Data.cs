@@ -31,6 +31,7 @@ namespace Ficha_Jiora.DAO
                 {
                     personagem_Model = new Personagem_Model()
                     {
+                        ID = item["ID"].ToString(),
                         Nome = item["Nome"].ToString() + " " + item["Sobrenome"].ToString(),
                         Nivel = Convert.ToInt32(item["Nivel"]),
                         Imagem = item["imagem"].ToString(),
@@ -108,8 +109,10 @@ namespace Ficha_Jiora.DAO
                         Charm_Ativo = Convert.ToBoolean(item["Charm_ativo"]),
                         Mod_Esquiva = Convert.ToInt32(item["mod_esquiva"]),
                         Mod_Precisao = Convert.ToInt32(item["mod_precisao"]),
-                        Tonz = Convert.ToInt32(item["Tonz"])
-
+                        Tonz = Convert.ToInt32(item["Tonz"]),
+                        EstigmaImagem = item["estigma_imagem"].ToString(),
+                        PontosEstigma = Convert.ToInt32(item["pontos_estigma"]),
+                        NomeEstigma = item["nome_estigma"].ToString(),
                     };
                 }
                 return personagem_Model;

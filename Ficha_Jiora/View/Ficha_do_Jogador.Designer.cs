@@ -39,6 +39,15 @@
             this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
+            this.lbl_estigma_desc04 = new System.Windows.Forms.Label();
+            this.lbl_estigma_desc03 = new System.Windows.Forms.Label();
+            this.lbl_estigma_desc02 = new System.Windows.Forms.Label();
+            this.lbl_estigma_desc01 = new System.Windows.Forms.Label();
+            this.lbl_estigma_nome04 = new System.Windows.Forms.Label();
+            this.lbl_estigma_nome03 = new System.Windows.Forms.Label();
+            this.lbl_estigma_nome02 = new System.Windows.Forms.Label();
+            this.lbl_estigma_nome01 = new System.Windows.Forms.Label();
+            this.img_stigma = new System.Windows.Forms.PictureBox();
             this.lbl_res_charm = new System.Windows.Forms.Label();
             this.lbl_res_blind = new System.Windows.Forms.Label();
             this.lbl_res_poison = new System.Windows.Forms.Label();
@@ -161,6 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Status.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_stigma)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_charm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_blind)).BeginInit();
@@ -223,6 +233,15 @@
             // 
             // Status
             // 
+            this.Status.Controls.Add(this.lbl_estigma_desc04);
+            this.Status.Controls.Add(this.lbl_estigma_desc03);
+            this.Status.Controls.Add(this.lbl_estigma_desc02);
+            this.Status.Controls.Add(this.lbl_estigma_desc01);
+            this.Status.Controls.Add(this.lbl_estigma_nome04);
+            this.Status.Controls.Add(this.lbl_estigma_nome03);
+            this.Status.Controls.Add(this.lbl_estigma_nome02);
+            this.Status.Controls.Add(this.lbl_estigma_nome01);
+            this.Status.Controls.Add(this.img_stigma);
             this.Status.Controls.Add(this.lbl_res_charm);
             this.Status.Controls.Add(this.lbl_res_blind);
             this.Status.Controls.Add(this.lbl_res_poison);
@@ -252,10 +271,99 @@
             this.Status.Text = "Status";
             this.Status.UseVisualStyleBackColor = true;
             // 
+            // lbl_estigma_desc04
+            // 
+            this.lbl_estigma_desc04.AutoSize = true;
+            this.lbl_estigma_desc04.Location = new System.Drawing.Point(171, 472);
+            this.lbl_estigma_desc04.Name = "lbl_estigma_desc04";
+            this.lbl_estigma_desc04.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_desc04.TabIndex = 32;
+            this.lbl_estigma_desc04.Text = "Passiva";
+            this.lbl_estigma_desc04.Visible = false;
+            // 
+            // lbl_estigma_desc03
+            // 
+            this.lbl_estigma_desc03.AutoSize = true;
+            this.lbl_estigma_desc03.Location = new System.Drawing.Point(171, 430);
+            this.lbl_estigma_desc03.Name = "lbl_estigma_desc03";
+            this.lbl_estigma_desc03.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_desc03.TabIndex = 31;
+            this.lbl_estigma_desc03.Text = "Passiva";
+            this.lbl_estigma_desc03.Visible = false;
+            // 
+            // lbl_estigma_desc02
+            // 
+            this.lbl_estigma_desc02.AutoSize = true;
+            this.lbl_estigma_desc02.Location = new System.Drawing.Point(171, 385);
+            this.lbl_estigma_desc02.Name = "lbl_estigma_desc02";
+            this.lbl_estigma_desc02.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_desc02.TabIndex = 30;
+            this.lbl_estigma_desc02.Text = "Passiva";
+            this.lbl_estigma_desc02.Visible = false;
+            // 
+            // lbl_estigma_desc01
+            // 
+            this.lbl_estigma_desc01.AutoSize = true;
+            this.lbl_estigma_desc01.Location = new System.Drawing.Point(171, 344);
+            this.lbl_estigma_desc01.Name = "lbl_estigma_desc01";
+            this.lbl_estigma_desc01.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_desc01.TabIndex = 29;
+            this.lbl_estigma_desc01.Text = "Passiva";
+            this.lbl_estigma_desc01.Visible = false;
+            // 
+            // lbl_estigma_nome04
+            // 
+            this.lbl_estigma_nome04.AutoSize = true;
+            this.lbl_estigma_nome04.Location = new System.Drawing.Point(162, 450);
+            this.lbl_estigma_nome04.Name = "lbl_estigma_nome04";
+            this.lbl_estigma_nome04.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_nome04.TabIndex = 28;
+            this.lbl_estigma_nome04.Text = "Passiva";
+            this.lbl_estigma_nome04.Visible = false;
+            // 
+            // lbl_estigma_nome03
+            // 
+            this.lbl_estigma_nome03.AutoSize = true;
+            this.lbl_estigma_nome03.Location = new System.Drawing.Point(162, 409);
+            this.lbl_estigma_nome03.Name = "lbl_estigma_nome03";
+            this.lbl_estigma_nome03.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_nome03.TabIndex = 27;
+            this.lbl_estigma_nome03.Text = "Passiva";
+            this.lbl_estigma_nome03.Visible = false;
+            // 
+            // lbl_estigma_nome02
+            // 
+            this.lbl_estigma_nome02.AutoSize = true;
+            this.lbl_estigma_nome02.Location = new System.Drawing.Point(162, 364);
+            this.lbl_estigma_nome02.Name = "lbl_estigma_nome02";
+            this.lbl_estigma_nome02.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_nome02.TabIndex = 26;
+            this.lbl_estigma_nome02.Text = "Passiva";
+            this.lbl_estigma_nome02.Visible = false;
+            // 
+            // lbl_estigma_nome01
+            // 
+            this.lbl_estigma_nome01.AutoSize = true;
+            this.lbl_estigma_nome01.Location = new System.Drawing.Point(162, 324);
+            this.lbl_estigma_nome01.Name = "lbl_estigma_nome01";
+            this.lbl_estigma_nome01.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_nome01.TabIndex = 25;
+            this.lbl_estigma_nome01.Text = "Passiva";
+            this.lbl_estigma_nome01.Visible = false;
+            // 
+            // img_stigma
+            // 
+            this.img_stigma.Location = new System.Drawing.Point(6, 314);
+            this.img_stigma.Name = "img_stigma";
+            this.img_stigma.Size = new System.Drawing.Size(150, 180);
+            this.img_stigma.TabIndex = 24;
+            this.img_stigma.TabStop = false;
+            this.img_stigma.MouseHover += new System.EventHandler(this.img_stigma_MouseHover);
+            // 
             // lbl_res_charm
             // 
             this.lbl_res_charm.AutoSize = true;
-            this.lbl_res_charm.Location = new System.Drawing.Point(903, 464);
+            this.lbl_res_charm.Location = new System.Drawing.Point(599, 204);
             this.lbl_res_charm.Name = "lbl_res_charm";
             this.lbl_res_charm.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_charm.TabIndex = 23;
@@ -264,7 +372,7 @@
             // lbl_res_blind
             // 
             this.lbl_res_blind.AutoSize = true;
-            this.lbl_res_blind.Location = new System.Drawing.Point(862, 464);
+            this.lbl_res_blind.Location = new System.Drawing.Point(558, 204);
             this.lbl_res_blind.Name = "lbl_res_blind";
             this.lbl_res_blind.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_blind.TabIndex = 22;
@@ -273,7 +381,7 @@
             // lbl_res_poison
             // 
             this.lbl_res_poison.AutoSize = true;
-            this.lbl_res_poison.Location = new System.Drawing.Point(821, 464);
+            this.lbl_res_poison.Location = new System.Drawing.Point(517, 204);
             this.lbl_res_poison.Name = "lbl_res_poison";
             this.lbl_res_poison.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_poison.TabIndex = 21;
@@ -282,7 +390,7 @@
             // lbl_res_paralyze
             // 
             this.lbl_res_paralyze.AutoSize = true;
-            this.lbl_res_paralyze.Location = new System.Drawing.Point(780, 464);
+            this.lbl_res_paralyze.Location = new System.Drawing.Point(476, 204);
             this.lbl_res_paralyze.Name = "lbl_res_paralyze";
             this.lbl_res_paralyze.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_paralyze.TabIndex = 20;
@@ -291,7 +399,7 @@
             // lbl_res_confuse
             // 
             this.lbl_res_confuse.AutoSize = true;
-            this.lbl_res_confuse.Location = new System.Drawing.Point(738, 464);
+            this.lbl_res_confuse.Location = new System.Drawing.Point(434, 204);
             this.lbl_res_confuse.Name = "lbl_res_confuse";
             this.lbl_res_confuse.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_confuse.TabIndex = 19;
@@ -300,7 +408,7 @@
             // lbl_res_silence
             // 
             this.lbl_res_silence.AutoSize = true;
-            this.lbl_res_silence.Location = new System.Drawing.Point(699, 464);
+            this.lbl_res_silence.Location = new System.Drawing.Point(395, 204);
             this.lbl_res_silence.Name = "lbl_res_silence";
             this.lbl_res_silence.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_silence.TabIndex = 18;
@@ -309,7 +417,7 @@
             // lbl_res_frozen
             // 
             this.lbl_res_frozen.AutoSize = true;
-            this.lbl_res_frozen.Location = new System.Drawing.Point(658, 464);
+            this.lbl_res_frozen.Location = new System.Drawing.Point(354, 204);
             this.lbl_res_frozen.Name = "lbl_res_frozen";
             this.lbl_res_frozen.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_frozen.TabIndex = 17;
@@ -318,7 +426,7 @@
             // lbl_res_burn
             // 
             this.lbl_res_burn.AutoSize = true;
-            this.lbl_res_burn.Location = new System.Drawing.Point(616, 464);
+            this.lbl_res_burn.Location = new System.Drawing.Point(312, 204);
             this.lbl_res_burn.Name = "lbl_res_burn";
             this.lbl_res_burn.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_burn.TabIndex = 16;
@@ -343,7 +451,7 @@
             this.tableLayoutPanel2.Controls.Add(this.img_silence, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.img_frozen, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.img_burn, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(609, 416);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(305, 156);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49F));
@@ -433,7 +541,7 @@
             // lbl_res_shadow
             // 
             this.lbl_res_shadow.AutoSize = true;
-            this.lbl_res_shadow.Location = new System.Drawing.Point(333, 470);
+            this.lbl_res_shadow.Location = new System.Drawing.Point(601, 291);
             this.lbl_res_shadow.Name = "lbl_res_shadow";
             this.lbl_res_shadow.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_shadow.TabIndex = 15;
@@ -442,7 +550,7 @@
             // lbl_res_light
             // 
             this.lbl_res_light.AutoSize = true;
-            this.lbl_res_light.Location = new System.Drawing.Point(292, 470);
+            this.lbl_res_light.Location = new System.Drawing.Point(560, 291);
             this.lbl_res_light.Name = "lbl_res_light";
             this.lbl_res_light.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_light.TabIndex = 14;
@@ -451,7 +559,7 @@
             // lbl_res_water
             // 
             this.lbl_res_water.AutoSize = true;
-            this.lbl_res_water.Location = new System.Drawing.Point(251, 470);
+            this.lbl_res_water.Location = new System.Drawing.Point(519, 291);
             this.lbl_res_water.Name = "lbl_res_water";
             this.lbl_res_water.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_water.TabIndex = 13;
@@ -460,7 +568,7 @@
             // lbl_res_thunder
             // 
             this.lbl_res_thunder.AutoSize = true;
-            this.lbl_res_thunder.Location = new System.Drawing.Point(210, 470);
+            this.lbl_res_thunder.Location = new System.Drawing.Point(478, 291);
             this.lbl_res_thunder.Name = "lbl_res_thunder";
             this.lbl_res_thunder.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_thunder.TabIndex = 12;
@@ -469,7 +577,7 @@
             // lbl_res_earth
             // 
             this.lbl_res_earth.AutoSize = true;
-            this.lbl_res_earth.Location = new System.Drawing.Point(168, 470);
+            this.lbl_res_earth.Location = new System.Drawing.Point(436, 291);
             this.lbl_res_earth.Name = "lbl_res_earth";
             this.lbl_res_earth.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_earth.TabIndex = 11;
@@ -478,7 +586,7 @@
             // lbl_res_wind
             // 
             this.lbl_res_wind.AutoSize = true;
-            this.lbl_res_wind.Location = new System.Drawing.Point(129, 470);
+            this.lbl_res_wind.Location = new System.Drawing.Point(397, 291);
             this.lbl_res_wind.Name = "lbl_res_wind";
             this.lbl_res_wind.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_wind.TabIndex = 10;
@@ -487,7 +595,7 @@
             // lbl_res_ice
             // 
             this.lbl_res_ice.AutoSize = true;
-            this.lbl_res_ice.Location = new System.Drawing.Point(88, 470);
+            this.lbl_res_ice.Location = new System.Drawing.Point(356, 291);
             this.lbl_res_ice.Name = "lbl_res_ice";
             this.lbl_res_ice.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_ice.TabIndex = 9;
@@ -512,7 +620,7 @@
             this.tableLayoutPanel1.Controls.Add(this.img_wind, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.img_ice, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.img_fire, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(34, 416);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(302, 237);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49F));
@@ -603,11 +711,12 @@
             // txt_status
             // 
             this.txt_status.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_status.Location = new System.Drawing.Point(365, 38);
+            this.txt_status.Location = new System.Drawing.Point(370, 9);
             this.txt_status.Multiline = true;
             this.txt_status.Name = "txt_status";
             this.txt_status.Size = new System.Drawing.Size(193, 116);
             this.txt_status.TabIndex = 4;
+            
             // 
             // GPB_status_atributos
             // 
@@ -1014,7 +1123,7 @@
             // lbl_res_fire
             // 
             this.lbl_res_fire.AutoSize = true;
-            this.lbl_res_fire.Location = new System.Drawing.Point(46, 470);
+            this.lbl_res_fire.Location = new System.Drawing.Point(314, 291);
             this.lbl_res_fire.Name = "lbl_res_fire";
             this.lbl_res_fire.Size = new System.Drawing.Size(19, 15);
             this.lbl_res_fire.TabIndex = 8;
@@ -1544,6 +1653,7 @@
             this.tabControl1.ResumeLayout(false);
             this.Status.ResumeLayout(false);
             this.Status.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_stigma)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_charm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_blind)).EndInit();
@@ -1712,5 +1822,14 @@
         private Label lbl_res_silence;
         private Label lbl_res_frozen;
         private Label lbl_res_burn;
+        private PictureBox img_stigma;
+        private Label lbl_estigma_nome04;
+        private Label lbl_estigma_nome03;
+        private Label lbl_estigma_nome02;
+        private Label lbl_estigma_nome01;
+        private Label lbl_estigma_desc01;
+        private Label lbl_estigma_desc04;
+        private Label lbl_estigma_desc03;
+        private Label lbl_estigma_desc02;
     }
 }

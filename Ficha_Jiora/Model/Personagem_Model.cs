@@ -8,9 +8,12 @@ namespace Ficha_Jiora.Model
 {
     internal class Personagem_Model
     {
+        public string ID { get; set; }
         public string Nome { get; set; }
+        public string NomeEstigma { get; set; }
         public int Nivel { get; set; }
         public string Imagem { get; set; }
+        public string EstigmaImagem { get; set; }
         public string Classe { get; set; }
         public string Raca { get; set; }
         public int PontosPericia { get; set; }
