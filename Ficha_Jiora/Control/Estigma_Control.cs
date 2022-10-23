@@ -23,7 +23,7 @@ namespace Ficha_Jiora.Control
 
         public string GetEvolucao(string nivel, string idpersonagem)
         {
-            return estigma_Data.GetEvolucao(nivel, idpersonagem);
+            return "";//estigma_Data.GetEvolucao(nivel, idpersonagem);
         }
 
         public void AumentarPontosEstigma(Personagem_Model personagem)

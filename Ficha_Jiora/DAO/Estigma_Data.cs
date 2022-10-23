@@ -63,13 +63,14 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("Erro em Estigma_Data.GetNome " + ex.Message);
             }
         }
-        public string GetTextoEvolucao(string grupo, string idpersonagem)
+        public string GetTextoEvolucao(string nivel,string grupo, string idpersonagem)
         {
             try
             {
                 Script = "Select descricao from Estigma_Texto ";
-                Script += "where nivel ='" + grupo + "' ";
+                Script += "where grupo ='" + grupo + "' ";
                 Script += "and idpersonagem = '" + idpersonagem + "' ";
+                Script += "and nivel = '" + nivel + "'";
 
 
                 SqlCommand select = new SqlCommand(Script, AbreConexao());
@@ -89,7 +90,7 @@ namespace Ficha_Jiora.DAO
             }
         }
 
-        private double GetNivel(string nivel, string idpersonagem)
+        private double GetNivel(string nivel, string grupo, string idpersonagem)
         {
             try
             {
@@ -138,7 +139,7 @@ namespace Ficha_Jiora.DAO
         {
             try
             {
-                double NivelAtualAtivo = GetNivel(nivel, personagem.ID);
+                double NivelAtualAtivo = 2.1;// GetNivel(nivel, personagem.ID);
                 double NovoNivel = NivelAtualAtivo + 0.2;
 
                 

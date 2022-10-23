@@ -19,7 +19,7 @@ namespace Ficha_Jiora.Control
 				{
                     if (personagem.PontosEstigma >= 5)
                     {
-                        return estigma_data.GetEvolucao("2.1", "3");
+						return "";//estigma_data.GetEvolucao("2.1", "3");
 					}
 					else
 					{
