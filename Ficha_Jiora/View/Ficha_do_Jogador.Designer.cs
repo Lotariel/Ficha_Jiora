@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
             this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -122,6 +122,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_res_fire = new System.Windows.Forms.Label();
             this.battle = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.txt_batalha = new System.Windows.Forms.TextBox();
             this.pericia = new System.Windows.Forms.TabPage();
             this.btn_salvar_pericia = new System.Windows.Forms.Button();
@@ -168,13 +175,7 @@
             this.bs_personagem = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Log = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_imagem_personagem)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Status.SuspendLayout();
@@ -200,6 +201,7 @@
             this.GPB_status_atributos.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.battle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.pericia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Log.SuspendLayout();
@@ -215,14 +217,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Log)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // img_imagem_personagem
             // 
-            this.img_imagem_personagem.Location = new System.Drawing.Point(12, 12);
+            this.img_imagem_personagem.Location = new System.Drawing.Point(14, 16);
+            this.img_imagem_personagem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_imagem_personagem.Name = "img_imagem_personagem";
-            this.img_imagem_personagem.Size = new System.Drawing.Size(282, 378);
+            this.img_imagem_personagem.Size = new System.Drawing.Size(322, 504);
             this.img_imagem_personagem.TabIndex = 0;
             this.img_imagem_personagem.TabStop = false;
             // 
@@ -234,10 +236,11 @@
             this.tabControl1.Controls.Add(this.inventario);
             this.tabControl1.Controls.Add(this.Mapa);
             this.tabControl1.Controls.Add(this.Log);
-            this.tabControl1.Location = new System.Drawing.Point(314, 110);
+            this.tabControl1.Location = new System.Drawing.Point(359, 147);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(963, 528);
+            this.tabControl1.Size = new System.Drawing.Size(1101, 704);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -273,10 +276,11 @@
             this.Status.Controls.Add(this.GPB_status_atributos);
             this.Status.Controls.Add(this.groupBox2);
             this.Status.Controls.Add(this.lbl_res_fire);
-            this.Status.Location = new System.Drawing.Point(4, 24);
+            this.Status.Location = new System.Drawing.Point(4, 29);
+            this.Status.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Status.Name = "Status";
-            this.Status.Padding = new System.Windows.Forms.Padding(3);
-            this.Status.Size = new System.Drawing.Size(955, 500);
+            this.Status.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Status.Size = new System.Drawing.Size(1093, 671);
             this.Status.TabIndex = 0;
             this.Status.Text = "Status";
             this.Status.UseVisualStyleBackColor = true;
@@ -284,9 +288,9 @@
             // lbl_estigma_desc04
             // 
             this.lbl_estigma_desc04.AutoSize = true;
-            this.lbl_estigma_desc04.Location = new System.Drawing.Point(171, 472);
+            this.lbl_estigma_desc04.Location = new System.Drawing.Point(195, 629);
             this.lbl_estigma_desc04.Name = "lbl_estigma_desc04";
-            this.lbl_estigma_desc04.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_desc04.Size = new System.Drawing.Size(55, 20);
             this.lbl_estigma_desc04.TabIndex = 32;
             this.lbl_estigma_desc04.Text = "Passiva";
             this.lbl_estigma_desc04.Visible = false;
@@ -294,9 +298,9 @@
             // lbl_estigma_desc03
             // 
             this.lbl_estigma_desc03.AutoSize = true;
-            this.lbl_estigma_desc03.Location = new System.Drawing.Point(171, 430);
+            this.lbl_estigma_desc03.Location = new System.Drawing.Point(195, 573);
             this.lbl_estigma_desc03.Name = "lbl_estigma_desc03";
-            this.lbl_estigma_desc03.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_desc03.Size = new System.Drawing.Size(55, 20);
             this.lbl_estigma_desc03.TabIndex = 31;
             this.lbl_estigma_desc03.Text = "Passiva";
             this.lbl_estigma_desc03.Visible = false;
@@ -304,9 +308,9 @@
             // lbl_estigma_desc02
             // 
             this.lbl_estigma_desc02.AutoSize = true;
-            this.lbl_estigma_desc02.Location = new System.Drawing.Point(171, 385);
+            this.lbl_estigma_desc02.Location = new System.Drawing.Point(195, 513);
             this.lbl_estigma_desc02.Name = "lbl_estigma_desc02";
-            this.lbl_estigma_desc02.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_desc02.Size = new System.Drawing.Size(55, 20);
             this.lbl_estigma_desc02.TabIndex = 30;
             this.lbl_estigma_desc02.Text = "Passiva";
             this.lbl_estigma_desc02.Visible = false;
@@ -314,9 +318,9 @@
             // lbl_estigma_desc01
             // 
             this.lbl_estigma_desc01.AutoSize = true;
-            this.lbl_estigma_desc01.Location = new System.Drawing.Point(171, 344);
+            this.lbl_estigma_desc01.Location = new System.Drawing.Point(195, 459);
             this.lbl_estigma_desc01.Name = "lbl_estigma_desc01";
-            this.lbl_estigma_desc01.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_desc01.Size = new System.Drawing.Size(55, 20);
             this.lbl_estigma_desc01.TabIndex = 29;
             this.lbl_estigma_desc01.Text = "Passiva";
             this.lbl_estigma_desc01.Visible = false;
@@ -324,9 +328,9 @@
             // lbl_estigma_nome04
             // 
             this.lbl_estigma_nome04.AutoSize = true;
-            this.lbl_estigma_nome04.Location = new System.Drawing.Point(162, 450);
+            this.lbl_estigma_nome04.Location = new System.Drawing.Point(185, 600);
             this.lbl_estigma_nome04.Name = "lbl_estigma_nome04";
-            this.lbl_estigma_nome04.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_nome04.Size = new System.Drawing.Size(55, 20);
             this.lbl_estigma_nome04.TabIndex = 28;
             this.lbl_estigma_nome04.Text = "Passiva";
             this.lbl_estigma_nome04.Visible = false;
@@ -334,9 +338,9 @@
             // lbl_estigma_nome03
             // 
             this.lbl_estigma_nome03.AutoSize = true;
-            this.lbl_estigma_nome03.Location = new System.Drawing.Point(162, 409);
+            this.lbl_estigma_nome03.Location = new System.Drawing.Point(185, 545);
             this.lbl_estigma_nome03.Name = "lbl_estigma_nome03";
-            this.lbl_estigma_nome03.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_nome03.Size = new System.Drawing.Size(55, 20);
             this.lbl_estigma_nome03.TabIndex = 27;
             this.lbl_estigma_nome03.Text = "Passiva";
             this.lbl_estigma_nome03.Visible = false;
@@ -344,9 +348,9 @@
             // lbl_estigma_nome02
             // 
             this.lbl_estigma_nome02.AutoSize = true;
-            this.lbl_estigma_nome02.Location = new System.Drawing.Point(162, 364);
+            this.lbl_estigma_nome02.Location = new System.Drawing.Point(185, 485);
             this.lbl_estigma_nome02.Name = "lbl_estigma_nome02";
-            this.lbl_estigma_nome02.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_nome02.Size = new System.Drawing.Size(55, 20);
             this.lbl_estigma_nome02.TabIndex = 26;
             this.lbl_estigma_nome02.Text = "Passiva";
             this.lbl_estigma_nome02.Visible = false;
@@ -354,18 +358,19 @@
             // lbl_estigma_nome01
             // 
             this.lbl_estigma_nome01.AutoSize = true;
-            this.lbl_estigma_nome01.Location = new System.Drawing.Point(162, 324);
+            this.lbl_estigma_nome01.Location = new System.Drawing.Point(185, 432);
             this.lbl_estigma_nome01.Name = "lbl_estigma_nome01";
-            this.lbl_estigma_nome01.Size = new System.Drawing.Size(45, 15);
+            this.lbl_estigma_nome01.Size = new System.Drawing.Size(55, 20);
             this.lbl_estigma_nome01.TabIndex = 25;
             this.lbl_estigma_nome01.Text = "Passiva";
             this.lbl_estigma_nome01.Visible = false;
             // 
             // img_stigma
             // 
-            this.img_stigma.Location = new System.Drawing.Point(6, 314);
+            this.img_stigma.Location = new System.Drawing.Point(7, 419);
+            this.img_stigma.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_stigma.Name = "img_stigma";
-            this.img_stigma.Size = new System.Drawing.Size(150, 180);
+            this.img_stigma.Size = new System.Drawing.Size(171, 240);
             this.img_stigma.TabIndex = 24;
             this.img_stigma.TabStop = false;
             this.img_stigma.MouseHover += new System.EventHandler(this.img_stigma_MouseHover);
@@ -373,86 +378,86 @@
             // lbl_res_charm
             // 
             this.lbl_res_charm.AutoSize = true;
-            this.lbl_res_charm.Location = new System.Drawing.Point(599, 204);
+            this.lbl_res_charm.Location = new System.Drawing.Point(685, 272);
             this.lbl_res_charm.Name = "lbl_res_charm";
-            this.lbl_res_charm.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_charm.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_charm.TabIndex = 23;
             this.lbl_res_charm.Text = "20";
             // 
             // lbl_res_blind
             // 
             this.lbl_res_blind.AutoSize = true;
-            this.lbl_res_blind.Location = new System.Drawing.Point(558, 204);
+            this.lbl_res_blind.Location = new System.Drawing.Point(638, 272);
             this.lbl_res_blind.Name = "lbl_res_blind";
-            this.lbl_res_blind.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_blind.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_blind.TabIndex = 22;
             this.lbl_res_blind.Text = "20";
             // 
             // lbl_res_poison
             // 
             this.lbl_res_poison.AutoSize = true;
-            this.lbl_res_poison.Location = new System.Drawing.Point(517, 204);
+            this.lbl_res_poison.Location = new System.Drawing.Point(591, 272);
             this.lbl_res_poison.Name = "lbl_res_poison";
-            this.lbl_res_poison.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_poison.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_poison.TabIndex = 21;
             this.lbl_res_poison.Text = "20";
             // 
             // lbl_res_paralyze
             // 
             this.lbl_res_paralyze.AutoSize = true;
-            this.lbl_res_paralyze.Location = new System.Drawing.Point(476, 204);
+            this.lbl_res_paralyze.Location = new System.Drawing.Point(544, 272);
             this.lbl_res_paralyze.Name = "lbl_res_paralyze";
-            this.lbl_res_paralyze.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_paralyze.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_paralyze.TabIndex = 20;
             this.lbl_res_paralyze.Text = "20";
             // 
             // lbl_res_confuse
             // 
             this.lbl_res_confuse.AutoSize = true;
-            this.lbl_res_confuse.Location = new System.Drawing.Point(434, 204);
+            this.lbl_res_confuse.Location = new System.Drawing.Point(496, 272);
             this.lbl_res_confuse.Name = "lbl_res_confuse";
-            this.lbl_res_confuse.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_confuse.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_confuse.TabIndex = 19;
             this.lbl_res_confuse.Text = "20";
             // 
             // lbl_res_silence
             // 
             this.lbl_res_silence.AutoSize = true;
-            this.lbl_res_silence.Location = new System.Drawing.Point(395, 204);
+            this.lbl_res_silence.Location = new System.Drawing.Point(451, 272);
             this.lbl_res_silence.Name = "lbl_res_silence";
-            this.lbl_res_silence.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_silence.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_silence.TabIndex = 18;
             this.lbl_res_silence.Text = "20";
             // 
             // lbl_res_frozen
             // 
             this.lbl_res_frozen.AutoSize = true;
-            this.lbl_res_frozen.Location = new System.Drawing.Point(354, 204);
+            this.lbl_res_frozen.Location = new System.Drawing.Point(405, 272);
             this.lbl_res_frozen.Name = "lbl_res_frozen";
-            this.lbl_res_frozen.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_frozen.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_frozen.TabIndex = 17;
             this.lbl_res_frozen.Text = "20";
             // 
             // lbl_res_burn
             // 
             this.lbl_res_burn.AutoSize = true;
-            this.lbl_res_burn.Location = new System.Drawing.Point(312, 204);
+            this.lbl_res_burn.Location = new System.Drawing.Point(357, 272);
             this.lbl_res_burn.Name = "lbl_res_burn";
-            this.lbl_res_burn.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_burn.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_burn.TabIndex = 16;
             this.lbl_res_burn.Text = "20";
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 8;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel2.Controls.Add(this.img_charm, 7, 0);
             this.tableLayoutPanel2.Controls.Add(this.img_blind, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.img_posion, 5, 0);
@@ -461,19 +466,21 @@
             this.tableLayoutPanel2.Controls.Add(this.img_silence, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.img_frozen, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.img_burn, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(305, 156);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(349, 208);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(332, 45);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(379, 60);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // img_charm
             // 
             this.img_charm.Image = global::Ficha_Jiora.Properties.Resources.charm_icon;
-            this.img_charm.Location = new System.Drawing.Point(290, 3);
+            this.img_charm.Location = new System.Drawing.Point(332, 4);
+            this.img_charm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_charm.Name = "img_charm";
-            this.img_charm.Size = new System.Drawing.Size(35, 35);
+            this.img_charm.Size = new System.Drawing.Size(40, 47);
             this.img_charm.TabIndex = 7;
             this.img_charm.TabStop = false;
             this.img_charm.MouseHover += new System.EventHandler(this.img_charm_MouseHover);
@@ -481,9 +488,10 @@
             // img_blind
             // 
             this.img_blind.Image = global::Ficha_Jiora.Properties.Resources.blind_icon;
-            this.img_blind.Location = new System.Drawing.Point(249, 3);
+            this.img_blind.Location = new System.Drawing.Point(285, 4);
+            this.img_blind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_blind.Name = "img_blind";
-            this.img_blind.Size = new System.Drawing.Size(35, 35);
+            this.img_blind.Size = new System.Drawing.Size(40, 47);
             this.img_blind.TabIndex = 6;
             this.img_blind.TabStop = false;
             this.img_blind.MouseHover += new System.EventHandler(this.img_blind_MouseHover);
@@ -491,9 +499,10 @@
             // img_posion
             // 
             this.img_posion.Image = global::Ficha_Jiora.Properties.Resources.poison_icon;
-            this.img_posion.Location = new System.Drawing.Point(208, 3);
+            this.img_posion.Location = new System.Drawing.Point(238, 4);
+            this.img_posion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_posion.Name = "img_posion";
-            this.img_posion.Size = new System.Drawing.Size(35, 35);
+            this.img_posion.Size = new System.Drawing.Size(40, 47);
             this.img_posion.TabIndex = 5;
             this.img_posion.TabStop = false;
             this.img_posion.MouseHover += new System.EventHandler(this.img_posion_MouseHover);
@@ -501,9 +510,10 @@
             // img_paralyze
             // 
             this.img_paralyze.Image = global::Ficha_Jiora.Properties.Resources.Paralyze_icon;
-            this.img_paralyze.Location = new System.Drawing.Point(167, 3);
+            this.img_paralyze.Location = new System.Drawing.Point(191, 4);
+            this.img_paralyze.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_paralyze.Name = "img_paralyze";
-            this.img_paralyze.Size = new System.Drawing.Size(35, 35);
+            this.img_paralyze.Size = new System.Drawing.Size(40, 47);
             this.img_paralyze.TabIndex = 4;
             this.img_paralyze.TabStop = false;
             this.img_paralyze.MouseHover += new System.EventHandler(this.img_paralyze_MouseHover);
@@ -511,9 +521,10 @@
             // img_confuse
             // 
             this.img_confuse.Image = global::Ficha_Jiora.Properties.Resources.confuse_icon;
-            this.img_confuse.Location = new System.Drawing.Point(126, 3);
+            this.img_confuse.Location = new System.Drawing.Point(144, 4);
+            this.img_confuse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_confuse.Name = "img_confuse";
-            this.img_confuse.Size = new System.Drawing.Size(35, 35);
+            this.img_confuse.Size = new System.Drawing.Size(40, 47);
             this.img_confuse.TabIndex = 3;
             this.img_confuse.TabStop = false;
             this.img_confuse.MouseHover += new System.EventHandler(this.img_confuse_MouseHover);
@@ -521,9 +532,10 @@
             // img_silence
             // 
             this.img_silence.Image = global::Ficha_Jiora.Properties.Resources.Silence_icon;
-            this.img_silence.Location = new System.Drawing.Point(85, 3);
+            this.img_silence.Location = new System.Drawing.Point(97, 4);
+            this.img_silence.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_silence.Name = "img_silence";
-            this.img_silence.Size = new System.Drawing.Size(35, 35);
+            this.img_silence.Size = new System.Drawing.Size(40, 47);
             this.img_silence.TabIndex = 2;
             this.img_silence.TabStop = false;
             this.img_silence.MouseHover += new System.EventHandler(this.img_silence_MouseHover);
@@ -531,9 +543,10 @@
             // img_frozen
             // 
             this.img_frozen.Image = global::Ficha_Jiora.Properties.Resources.Frozen_icon;
-            this.img_frozen.Location = new System.Drawing.Point(44, 3);
+            this.img_frozen.Location = new System.Drawing.Point(50, 4);
+            this.img_frozen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_frozen.Name = "img_frozen";
-            this.img_frozen.Size = new System.Drawing.Size(35, 35);
+            this.img_frozen.Size = new System.Drawing.Size(40, 47);
             this.img_frozen.TabIndex = 1;
             this.img_frozen.TabStop = false;
             this.img_frozen.MouseHover += new System.EventHandler(this.img_frozen_MouseHover);
@@ -541,9 +554,10 @@
             // img_burn
             // 
             this.img_burn.Image = global::Ficha_Jiora.Properties.Resources.Burn_icon;
-            this.img_burn.Location = new System.Drawing.Point(3, 3);
+            this.img_burn.Location = new System.Drawing.Point(3, 4);
+            this.img_burn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_burn.Name = "img_burn";
-            this.img_burn.Size = new System.Drawing.Size(35, 35);
+            this.img_burn.Size = new System.Drawing.Size(40, 47);
             this.img_burn.TabIndex = 0;
             this.img_burn.TabStop = false;
             this.img_burn.MouseHover += new System.EventHandler(this.img_burn_MouseHover);
@@ -551,77 +565,77 @@
             // lbl_res_shadow
             // 
             this.lbl_res_shadow.AutoSize = true;
-            this.lbl_res_shadow.Location = new System.Drawing.Point(601, 291);
+            this.lbl_res_shadow.Location = new System.Drawing.Point(687, 388);
             this.lbl_res_shadow.Name = "lbl_res_shadow";
-            this.lbl_res_shadow.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_shadow.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_shadow.TabIndex = 15;
             this.lbl_res_shadow.Text = "20";
             // 
             // lbl_res_light
             // 
             this.lbl_res_light.AutoSize = true;
-            this.lbl_res_light.Location = new System.Drawing.Point(560, 291);
+            this.lbl_res_light.Location = new System.Drawing.Point(640, 388);
             this.lbl_res_light.Name = "lbl_res_light";
-            this.lbl_res_light.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_light.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_light.TabIndex = 14;
             this.lbl_res_light.Text = "20";
             // 
             // lbl_res_water
             // 
             this.lbl_res_water.AutoSize = true;
-            this.lbl_res_water.Location = new System.Drawing.Point(519, 291);
+            this.lbl_res_water.Location = new System.Drawing.Point(593, 388);
             this.lbl_res_water.Name = "lbl_res_water";
-            this.lbl_res_water.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_water.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_water.TabIndex = 13;
             this.lbl_res_water.Text = "20";
             // 
             // lbl_res_thunder
             // 
             this.lbl_res_thunder.AutoSize = true;
-            this.lbl_res_thunder.Location = new System.Drawing.Point(478, 291);
+            this.lbl_res_thunder.Location = new System.Drawing.Point(546, 388);
             this.lbl_res_thunder.Name = "lbl_res_thunder";
-            this.lbl_res_thunder.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_thunder.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_thunder.TabIndex = 12;
             this.lbl_res_thunder.Text = "20";
             // 
             // lbl_res_earth
             // 
             this.lbl_res_earth.AutoSize = true;
-            this.lbl_res_earth.Location = new System.Drawing.Point(436, 291);
+            this.lbl_res_earth.Location = new System.Drawing.Point(498, 388);
             this.lbl_res_earth.Name = "lbl_res_earth";
-            this.lbl_res_earth.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_earth.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_earth.TabIndex = 11;
             this.lbl_res_earth.Text = "20";
             // 
             // lbl_res_wind
             // 
             this.lbl_res_wind.AutoSize = true;
-            this.lbl_res_wind.Location = new System.Drawing.Point(397, 291);
+            this.lbl_res_wind.Location = new System.Drawing.Point(454, 388);
             this.lbl_res_wind.Name = "lbl_res_wind";
-            this.lbl_res_wind.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_wind.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_wind.TabIndex = 10;
             this.lbl_res_wind.Text = "20";
             // 
             // lbl_res_ice
             // 
             this.lbl_res_ice.AutoSize = true;
-            this.lbl_res_ice.Location = new System.Drawing.Point(356, 291);
+            this.lbl_res_ice.Location = new System.Drawing.Point(407, 388);
             this.lbl_res_ice.Name = "lbl_res_ice";
-            this.lbl_res_ice.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_ice.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_ice.TabIndex = 9;
             this.lbl_res_ice.Text = "20";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41.37F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Controls.Add(this.img_shadow, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.img_light, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.img_water, 5, 0);
@@ -630,20 +644,22 @@
             this.tableLayoutPanel1.Controls.Add(this.img_wind, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.img_ice, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.img_fire, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(302, 237);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(345, 316);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(331, 51);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 11F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(378, 68);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // img_shadow
             // 
             this.img_shadow.Image = global::Ficha_Jiora.Properties.Resources.Dark_icon;
-            this.img_shadow.Location = new System.Drawing.Point(290, 3);
+            this.img_shadow.Location = new System.Drawing.Point(332, 4);
+            this.img_shadow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_shadow.Name = "img_shadow";
-            this.img_shadow.Size = new System.Drawing.Size(35, 37);
+            this.img_shadow.Size = new System.Drawing.Size(40, 49);
             this.img_shadow.TabIndex = 7;
             this.img_shadow.TabStop = false;
             this.img_shadow.MouseHover += new System.EventHandler(this.img_shadow_MouseHover);
@@ -651,9 +667,10 @@
             // img_light
             // 
             this.img_light.Image = global::Ficha_Jiora.Properties.Resources.Light_icon;
-            this.img_light.Location = new System.Drawing.Point(249, 3);
+            this.img_light.Location = new System.Drawing.Point(285, 4);
+            this.img_light.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_light.Name = "img_light";
-            this.img_light.Size = new System.Drawing.Size(35, 37);
+            this.img_light.Size = new System.Drawing.Size(40, 49);
             this.img_light.TabIndex = 6;
             this.img_light.TabStop = false;
             this.img_light.MouseHover += new System.EventHandler(this.img_light_MouseHover);
@@ -661,9 +678,10 @@
             // img_water
             // 
             this.img_water.Image = global::Ficha_Jiora.Properties.Resources.water_icon;
-            this.img_water.Location = new System.Drawing.Point(208, 3);
+            this.img_water.Location = new System.Drawing.Point(238, 4);
+            this.img_water.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_water.Name = "img_water";
-            this.img_water.Size = new System.Drawing.Size(35, 37);
+            this.img_water.Size = new System.Drawing.Size(40, 49);
             this.img_water.TabIndex = 5;
             this.img_water.TabStop = false;
             this.img_water.MouseHover += new System.EventHandler(this.img_water_MouseHover);
@@ -671,9 +689,10 @@
             // img_thunder
             // 
             this.img_thunder.Image = global::Ficha_Jiora.Properties.Resources.thunder_icon;
-            this.img_thunder.Location = new System.Drawing.Point(167, 3);
+            this.img_thunder.Location = new System.Drawing.Point(191, 4);
+            this.img_thunder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_thunder.Name = "img_thunder";
-            this.img_thunder.Size = new System.Drawing.Size(35, 37);
+            this.img_thunder.Size = new System.Drawing.Size(40, 49);
             this.img_thunder.TabIndex = 4;
             this.img_thunder.TabStop = false;
             this.img_thunder.MouseHover += new System.EventHandler(this.img_thunder_MouseHover);
@@ -681,9 +700,10 @@
             // img_earth
             // 
             this.img_earth.Image = global::Ficha_Jiora.Properties.Resources.earth_icon;
-            this.img_earth.Location = new System.Drawing.Point(126, 3);
+            this.img_earth.Location = new System.Drawing.Point(144, 4);
+            this.img_earth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_earth.Name = "img_earth";
-            this.img_earth.Size = new System.Drawing.Size(35, 37);
+            this.img_earth.Size = new System.Drawing.Size(40, 49);
             this.img_earth.TabIndex = 3;
             this.img_earth.TabStop = false;
             this.img_earth.MouseHover += new System.EventHandler(this.img_earth_MouseHover);
@@ -691,9 +711,10 @@
             // img_wind
             // 
             this.img_wind.Image = global::Ficha_Jiora.Properties.Resources.wind_icon;
-            this.img_wind.Location = new System.Drawing.Point(85, 3);
+            this.img_wind.Location = new System.Drawing.Point(97, 4);
+            this.img_wind.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_wind.Name = "img_wind";
-            this.img_wind.Size = new System.Drawing.Size(35, 37);
+            this.img_wind.Size = new System.Drawing.Size(40, 49);
             this.img_wind.TabIndex = 2;
             this.img_wind.TabStop = false;
             this.img_wind.MouseHover += new System.EventHandler(this.img_wind_MouseHover);
@@ -701,9 +722,10 @@
             // img_ice
             // 
             this.img_ice.Image = global::Ficha_Jiora.Properties.Resources.ice_icon;
-            this.img_ice.Location = new System.Drawing.Point(44, 3);
+            this.img_ice.Location = new System.Drawing.Point(50, 4);
+            this.img_ice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_ice.Name = "img_ice";
-            this.img_ice.Size = new System.Drawing.Size(35, 37);
+            this.img_ice.Size = new System.Drawing.Size(40, 49);
             this.img_ice.TabIndex = 1;
             this.img_ice.TabStop = false;
             this.img_ice.MouseHover += new System.EventHandler(this.img_ice_MouseHover);
@@ -711,9 +733,10 @@
             // img_fire
             // 
             this.img_fire.Image = global::Ficha_Jiora.Properties.Resources._35_35_fire_icon;
-            this.img_fire.Location = new System.Drawing.Point(3, 3);
+            this.img_fire.Location = new System.Drawing.Point(3, 4);
+            this.img_fire.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_fire.Name = "img_fire";
-            this.img_fire.Size = new System.Drawing.Size(35, 37);
+            this.img_fire.Size = new System.Drawing.Size(40, 49);
             this.img_fire.TabIndex = 0;
             this.img_fire.TabStop = false;
             this.img_fire.MouseHover += new System.EventHandler(this.img_fire_MouseHover);
@@ -721,10 +744,11 @@
             // txt_status
             // 
             this.txt_status.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_status.Location = new System.Drawing.Point(370, 9);
+            this.txt_status.Location = new System.Drawing.Point(423, 12);
+            this.txt_status.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_status.Multiline = true;
             this.txt_status.Name = "txt_status";
-            this.txt_status.Size = new System.Drawing.Size(193, 116);
+            this.txt_status.Size = new System.Drawing.Size(220, 153);
             this.txt_status.TabIndex = 4;
             // 
             // GPB_status_atributos
@@ -753,9 +777,11 @@
             this.GPB_status_atributos.Controls.Add(this.label15);
             this.GPB_status_atributos.Controls.Add(this.label14);
             this.GPB_status_atributos.Controls.Add(this.label13);
-            this.GPB_status_atributos.Location = new System.Drawing.Point(712, 6);
+            this.GPB_status_atributos.Location = new System.Drawing.Point(814, 8);
+            this.GPB_status_atributos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GPB_status_atributos.Name = "GPB_status_atributos";
-            this.GPB_status_atributos.Size = new System.Drawing.Size(237, 215);
+            this.GPB_status_atributos.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GPB_status_atributos.Size = new System.Drawing.Size(271, 287);
             this.GPB_status_atributos.TabIndex = 3;
             this.GPB_status_atributos.TabStop = false;
             this.GPB_status_atributos.Text = "Atributos";
@@ -763,63 +789,64 @@
             // lbl_aura
             // 
             this.lbl_aura.AutoSize = true;
-            this.lbl_aura.Location = new System.Drawing.Point(100, 185);
+            this.lbl_aura.Location = new System.Drawing.Point(114, 247);
             this.lbl_aura.Name = "lbl_aura";
-            this.lbl_aura.Size = new System.Drawing.Size(13, 15);
+            this.lbl_aura.Size = new System.Drawing.Size(17, 20);
             this.lbl_aura.TabIndex = 29;
             this.lbl_aura.Text = "0";
             // 
             // lbl_magia
             // 
             this.lbl_magia.AutoSize = true;
-            this.lbl_magia.Location = new System.Drawing.Point(100, 154);
+            this.lbl_magia.Location = new System.Drawing.Point(114, 205);
             this.lbl_magia.Name = "lbl_magia";
-            this.lbl_magia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_magia.Size = new System.Drawing.Size(17, 20);
             this.lbl_magia.TabIndex = 28;
             this.lbl_magia.Text = "0";
             // 
             // lbl_velocidade
             // 
             this.lbl_velocidade.AutoSize = true;
-            this.lbl_velocidade.Location = new System.Drawing.Point(100, 125);
+            this.lbl_velocidade.Location = new System.Drawing.Point(114, 167);
             this.lbl_velocidade.Name = "lbl_velocidade";
-            this.lbl_velocidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_velocidade.Size = new System.Drawing.Size(17, 20);
             this.lbl_velocidade.TabIndex = 27;
             this.lbl_velocidade.Text = "0";
             // 
             // lbl_foco
             // 
             this.lbl_foco.AutoSize = true;
-            this.lbl_foco.Location = new System.Drawing.Point(100, 96);
+            this.lbl_foco.Location = new System.Drawing.Point(114, 128);
             this.lbl_foco.Name = "lbl_foco";
-            this.lbl_foco.Size = new System.Drawing.Size(13, 15);
+            this.lbl_foco.Size = new System.Drawing.Size(17, 20);
             this.lbl_foco.TabIndex = 26;
             this.lbl_foco.Text = "0";
             // 
             // lbl_vitalidade
             // 
             this.lbl_vitalidade.AutoSize = true;
-            this.lbl_vitalidade.Location = new System.Drawing.Point(100, 63);
+            this.lbl_vitalidade.Location = new System.Drawing.Point(114, 84);
             this.lbl_vitalidade.Name = "lbl_vitalidade";
-            this.lbl_vitalidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_vitalidade.Size = new System.Drawing.Size(17, 20);
             this.lbl_vitalidade.TabIndex = 25;
             this.lbl_vitalidade.Text = "0";
             // 
             // lbl_forca
             // 
             this.lbl_forca.AutoSize = true;
-            this.lbl_forca.Location = new System.Drawing.Point(100, 32);
+            this.lbl_forca.Location = new System.Drawing.Point(114, 43);
             this.lbl_forca.Name = "lbl_forca";
-            this.lbl_forca.Size = new System.Drawing.Size(13, 15);
+            this.lbl_forca.Size = new System.Drawing.Size(17, 20);
             this.lbl_forca.TabIndex = 24;
             this.lbl_forca.Text = "0";
             // 
             // btn_up_aur
             // 
             this.btn_up_aur.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_aur.Location = new System.Drawing.Point(119, 185);
+            this.btn_up_aur.Location = new System.Drawing.Point(136, 247);
+            this.btn_up_aur.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_up_aur.Name = "btn_up_aur";
-            this.btn_up_aur.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_aur.Size = new System.Drawing.Size(33, 33);
             this.btn_up_aur.TabIndex = 23;
             this.btn_up_aur.UseVisualStyleBackColor = true;
             this.btn_up_aur.Visible = false;
@@ -829,9 +856,10 @@
             // btn_up_mag
             // 
             this.btn_up_mag.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_mag.Location = new System.Drawing.Point(119, 154);
+            this.btn_up_mag.Location = new System.Drawing.Point(136, 205);
+            this.btn_up_mag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_up_mag.Name = "btn_up_mag";
-            this.btn_up_mag.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_mag.Size = new System.Drawing.Size(33, 33);
             this.btn_up_mag.TabIndex = 22;
             this.btn_up_mag.UseVisualStyleBackColor = true;
             this.btn_up_mag.Visible = false;
@@ -841,9 +869,10 @@
             // btn_up_vel
             // 
             this.btn_up_vel.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_vel.Location = new System.Drawing.Point(119, 123);
+            this.btn_up_vel.Location = new System.Drawing.Point(136, 164);
+            this.btn_up_vel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_up_vel.Name = "btn_up_vel";
-            this.btn_up_vel.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_vel.Size = new System.Drawing.Size(33, 33);
             this.btn_up_vel.TabIndex = 21;
             this.btn_up_vel.UseVisualStyleBackColor = true;
             this.btn_up_vel.Visible = false;
@@ -853,9 +882,10 @@
             // btn_up_foc
             // 
             this.btn_up_foc.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_foc.Location = new System.Drawing.Point(119, 92);
+            this.btn_up_foc.Location = new System.Drawing.Point(136, 123);
+            this.btn_up_foc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_up_foc.Name = "btn_up_foc";
-            this.btn_up_foc.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_foc.Size = new System.Drawing.Size(33, 33);
             this.btn_up_foc.TabIndex = 20;
             this.btn_up_foc.UseVisualStyleBackColor = true;
             this.btn_up_foc.Visible = false;
@@ -865,9 +895,10 @@
             // btn_up_vit
             // 
             this.btn_up_vit.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_vit.Location = new System.Drawing.Point(119, 61);
+            this.btn_up_vit.Location = new System.Drawing.Point(136, 81);
+            this.btn_up_vit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_up_vit.Name = "btn_up_vit";
-            this.btn_up_vit.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_vit.Size = new System.Drawing.Size(33, 33);
             this.btn_up_vit.TabIndex = 19;
             this.btn_up_vit.UseVisualStyleBackColor = true;
             this.btn_up_vit.Visible = false;
@@ -877,9 +908,10 @@
             // btn_up_for
             // 
             this.btn_up_for.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_for.Location = new System.Drawing.Point(119, 30);
+            this.btn_up_for.Location = new System.Drawing.Point(136, 40);
+            this.btn_up_for.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_up_for.Name = "btn_up_for";
-            this.btn_up_for.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_for.Size = new System.Drawing.Size(33, 33);
             this.btn_up_for.TabIndex = 18;
             this.btn_up_for.UseVisualStyleBackColor = true;
             this.btn_up_for.Visible = false;
@@ -888,9 +920,10 @@
             // 
             // btn_teste__aur
             // 
-            this.btn_teste__aur.Location = new System.Drawing.Point(154, 185);
+            this.btn_teste__aur.Location = new System.Drawing.Point(176, 247);
+            this.btn_teste__aur.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_teste__aur.Name = "btn_teste__aur";
-            this.btn_teste__aur.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste__aur.Size = new System.Drawing.Size(86, 31);
             this.btn_teste__aur.TabIndex = 17;
             this.btn_teste__aur.Text = "Teste";
             this.btn_teste__aur.UseVisualStyleBackColor = true;
@@ -898,9 +931,10 @@
             // 
             // btn_teste_mag
             // 
-            this.btn_teste_mag.Location = new System.Drawing.Point(154, 154);
+            this.btn_teste_mag.Location = new System.Drawing.Point(176, 205);
+            this.btn_teste_mag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_teste_mag.Name = "btn_teste_mag";
-            this.btn_teste_mag.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_mag.Size = new System.Drawing.Size(86, 31);
             this.btn_teste_mag.TabIndex = 16;
             this.btn_teste_mag.Text = "Teste";
             this.btn_teste_mag.UseVisualStyleBackColor = true;
@@ -908,9 +942,10 @@
             // 
             // btn_teste_vel
             // 
-            this.btn_teste_vel.Location = new System.Drawing.Point(154, 125);
+            this.btn_teste_vel.Location = new System.Drawing.Point(176, 167);
+            this.btn_teste_vel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_teste_vel.Name = "btn_teste_vel";
-            this.btn_teste_vel.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_vel.Size = new System.Drawing.Size(86, 31);
             this.btn_teste_vel.TabIndex = 15;
             this.btn_teste_vel.Text = "Teste";
             this.btn_teste_vel.UseVisualStyleBackColor = true;
@@ -918,9 +953,10 @@
             // 
             // btn_teste_foc
             // 
-            this.btn_teste_foc.Location = new System.Drawing.Point(154, 96);
+            this.btn_teste_foc.Location = new System.Drawing.Point(176, 128);
+            this.btn_teste_foc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_teste_foc.Name = "btn_teste_foc";
-            this.btn_teste_foc.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_foc.Size = new System.Drawing.Size(86, 31);
             this.btn_teste_foc.TabIndex = 14;
             this.btn_teste_foc.Text = "Teste";
             this.btn_teste_foc.UseVisualStyleBackColor = true;
@@ -928,9 +964,10 @@
             // 
             // btn_teste_vit
             // 
-            this.btn_teste_vit.Location = new System.Drawing.Point(154, 63);
+            this.btn_teste_vit.Location = new System.Drawing.Point(176, 84);
+            this.btn_teste_vit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_teste_vit.Name = "btn_teste_vit";
-            this.btn_teste_vit.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_vit.Size = new System.Drawing.Size(86, 31);
             this.btn_teste_vit.TabIndex = 13;
             this.btn_teste_vit.Text = "Teste";
             this.btn_teste_vit.UseVisualStyleBackColor = true;
@@ -938,9 +975,10 @@
             // 
             // btn_teste_for
             // 
-            this.btn_teste_for.Location = new System.Drawing.Point(154, 32);
+            this.btn_teste_for.Location = new System.Drawing.Point(176, 43);
+            this.btn_teste_for.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_teste_for.Name = "btn_teste_for";
-            this.btn_teste_for.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_for.Size = new System.Drawing.Size(86, 31);
             this.btn_teste_for.TabIndex = 12;
             this.btn_teste_for.Text = "Teste";
             this.btn_teste_for.UseVisualStyleBackColor = true;
@@ -949,54 +987,54 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 185);
+            this.label18.Location = new System.Drawing.Point(7, 247);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(32, 15);
+            this.label18.Size = new System.Drawing.Size(40, 20);
             this.label18.TabIndex = 11;
             this.label18.Text = "Aura";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 154);
+            this.label17.Location = new System.Drawing.Point(7, 205);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 15);
+            this.label17.Size = new System.Drawing.Size(51, 20);
             this.label17.TabIndex = 10;
             this.label17.Text = "Magia";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 125);
+            this.label16.Location = new System.Drawing.Point(7, 167);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 15);
+            this.label16.Size = new System.Drawing.Size(83, 20);
             this.label16.TabIndex = 9;
             this.label16.Text = "Velocidade";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 96);
+            this.label15.Location = new System.Drawing.Point(7, 128);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 15);
+            this.label15.Size = new System.Drawing.Size(41, 20);
             this.label15.TabIndex = 8;
             this.label15.Text = "Foco";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 63);
+            this.label14.Location = new System.Drawing.Point(7, 84);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 15);
+            this.label14.Size = new System.Drawing.Size(77, 20);
             this.label14.TabIndex = 7;
             this.label14.Text = "Vitalidade";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 32);
+            this.label13.Location = new System.Drawing.Point(7, 43);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 15);
+            this.label13.Size = new System.Drawing.Size(45, 20);
             this.label13.TabIndex = 6;
             this.label13.Text = "Força";
             // 
@@ -1014,9 +1052,11 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Location = new System.Drawing.Point(7, 8);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(203, 261);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(232, 348);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sobre";
@@ -1024,117 +1064,117 @@
             // lbl_raca
             // 
             this.lbl_raca.AutoSize = true;
-            this.lbl_raca.Location = new System.Drawing.Point(12, 235);
+            this.lbl_raca.Location = new System.Drawing.Point(14, 313);
             this.lbl_raca.Name = "lbl_raca";
-            this.lbl_raca.Size = new System.Drawing.Size(14, 15);
+            this.lbl_raca.Size = new System.Drawing.Size(18, 20);
             this.lbl_raca.TabIndex = 11;
             this.lbl_raca.Text = "R";
             // 
             // lbl_nascimento
             // 
             this.lbl_nascimento.AutoSize = true;
-            this.lbl_nascimento.Location = new System.Drawing.Point(11, 200);
+            this.lbl_nascimento.Location = new System.Drawing.Point(13, 267);
             this.lbl_nascimento.Name = "lbl_nascimento";
-            this.lbl_nascimento.Size = new System.Drawing.Size(16, 15);
+            this.lbl_nascimento.Size = new System.Drawing.Size(20, 20);
             this.lbl_nascimento.TabIndex = 10;
             this.lbl_nascimento.Text = "N";
             // 
             // lbl_peso
             // 
             this.lbl_peso.AutoSize = true;
-            this.lbl_peso.Location = new System.Drawing.Point(12, 160);
+            this.lbl_peso.Location = new System.Drawing.Point(14, 213);
             this.lbl_peso.Name = "lbl_peso";
-            this.lbl_peso.Size = new System.Drawing.Size(14, 15);
+            this.lbl_peso.Size = new System.Drawing.Size(17, 20);
             this.lbl_peso.TabIndex = 9;
             this.lbl_peso.Text = "P";
             // 
             // lbl_altura
             // 
             this.lbl_altura.AutoSize = true;
-            this.lbl_altura.Location = new System.Drawing.Point(12, 120);
+            this.lbl_altura.Location = new System.Drawing.Point(14, 160);
             this.lbl_altura.Name = "lbl_altura";
-            this.lbl_altura.Size = new System.Drawing.Size(15, 15);
+            this.lbl_altura.Size = new System.Drawing.Size(19, 20);
             this.lbl_altura.TabIndex = 8;
             this.lbl_altura.Text = "A";
             // 
             // lbl_cabelo
             // 
             this.lbl_cabelo.AutoSize = true;
-            this.lbl_cabelo.Location = new System.Drawing.Point(12, 80);
+            this.lbl_cabelo.Location = new System.Drawing.Point(14, 107);
             this.lbl_cabelo.Name = "lbl_cabelo";
-            this.lbl_cabelo.Size = new System.Drawing.Size(15, 15);
+            this.lbl_cabelo.Size = new System.Drawing.Size(18, 20);
             this.lbl_cabelo.TabIndex = 7;
             this.lbl_cabelo.Text = "C";
             // 
             // lbl_olhos
             // 
             this.lbl_olhos.AutoSize = true;
-            this.lbl_olhos.Location = new System.Drawing.Point(12, 40);
+            this.lbl_olhos.Location = new System.Drawing.Point(14, 53);
             this.lbl_olhos.Name = "lbl_olhos";
-            this.lbl_olhos.Size = new System.Drawing.Size(16, 15);
+            this.lbl_olhos.Size = new System.Drawing.Size(20, 20);
             this.lbl_olhos.TabIndex = 6;
             this.lbl_olhos.Text = "O";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(5, 217);
+            this.label12.Location = new System.Drawing.Point(6, 289);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 15);
+            this.label12.Size = new System.Drawing.Size(44, 20);
             this.label12.TabIndex = 5;
             this.label12.Text = "Raça:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 180);
+            this.label11.Location = new System.Drawing.Point(5, 240);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 15);
+            this.label11.Size = new System.Drawing.Size(91, 20);
             this.label11.TabIndex = 4;
             this.label11.Text = "Nascimento:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 140);
+            this.label10.Location = new System.Drawing.Point(6, 187);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 15);
+            this.label10.Size = new System.Drawing.Size(42, 20);
             this.label10.TabIndex = 3;
             this.label10.Text = "Peso:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 100);
+            this.label9.Location = new System.Drawing.Point(5, 133);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 15);
+            this.label9.Size = new System.Drawing.Size(52, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "Altura:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 60);
+            this.label8.Location = new System.Drawing.Point(6, 80);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 15);
+            this.label8.Size = new System.Drawing.Size(59, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "Cabelo:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1, 20);
+            this.label7.Location = new System.Drawing.Point(1, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 15);
+            this.label7.Size = new System.Drawing.Size(50, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Olhos:";
             // 
             // lbl_res_fire
             // 
             this.lbl_res_fire.AutoSize = true;
-            this.lbl_res_fire.Location = new System.Drawing.Point(314, 291);
+            this.lbl_res_fire.Location = new System.Drawing.Point(359, 388);
             this.lbl_res_fire.Name = "lbl_res_fire";
-            this.lbl_res_fire.Size = new System.Drawing.Size(19, 15);
+            this.lbl_res_fire.Size = new System.Drawing.Size(25, 20);
             this.lbl_res_fire.TabIndex = 8;
             this.lbl_res_fire.Text = "20";
             // 
@@ -1148,20 +1188,88 @@
             this.battle.Controls.Add(this.button1);
             this.battle.Controls.Add(this.numericUpDown1);
             this.battle.Controls.Add(this.txt_batalha);
-            this.battle.Location = new System.Drawing.Point(4, 24);
+            this.battle.Location = new System.Drawing.Point(4, 29);
+            this.battle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.battle.Name = "battle";
-            this.battle.Padding = new System.Windows.Forms.Padding(3);
-            this.battle.Size = new System.Drawing.Size(955, 500);
+            this.battle.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.battle.Size = new System.Drawing.Size(1093, 671);
             this.battle.TabIndex = 1;
             this.battle.Text = "Batalha";
             this.battle.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Location = new System.Drawing.Point(71, 55);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(247, 148);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Ações Básicas";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(894, 148);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 20);
+            this.label21.TabIndex = 6;
+            this.label21.Text = "LB:  100%";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(891, 109);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(103, 20);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "MP:  100 / 100";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(890, 72);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(101, 20);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "HP:  100 / 100";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(713, 148);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 31);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Reduzir MP";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(713, 109);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 31);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Reduzir HP";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(713, 71);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(86, 27);
+            this.numericUpDown1.TabIndex = 1;
+            // 
             // txt_batalha
             // 
-            this.txt_batalha.Location = new System.Drawing.Point(369, 41);
+            this.txt_batalha.Location = new System.Drawing.Point(422, 55);
+            this.txt_batalha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_batalha.Multiline = true;
             this.txt_batalha.Name = "txt_batalha";
-            this.txt_batalha.Size = new System.Drawing.Size(190, 111);
+            this.txt_batalha.Size = new System.Drawing.Size(217, 147);
             this.txt_batalha.TabIndex = 0;
             // 
             // pericia
@@ -1171,18 +1279,20 @@
             this.pericia.Controls.Add(this.label1);
             this.pericia.Controls.Add(this.txt_pericia);
             this.pericia.Controls.Add(this.dataGridView1);
-            this.pericia.Location = new System.Drawing.Point(4, 24);
+            this.pericia.Location = new System.Drawing.Point(4, 29);
+            this.pericia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pericia.Name = "pericia";
-            this.pericia.Size = new System.Drawing.Size(955, 500);
+            this.pericia.Size = new System.Drawing.Size(1093, 671);
             this.pericia.TabIndex = 2;
             this.pericia.Text = "Perícia";
             this.pericia.UseVisualStyleBackColor = true;
             // 
             // btn_salvar_pericia
             // 
-            this.btn_salvar_pericia.Location = new System.Drawing.Point(773, 256);
+            this.btn_salvar_pericia.Location = new System.Drawing.Point(883, 341);
+            this.btn_salvar_pericia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_salvar_pericia.Name = "btn_salvar_pericia";
-            this.btn_salvar_pericia.Size = new System.Drawing.Size(75, 23);
+            this.btn_salvar_pericia.Size = new System.Drawing.Size(86, 31);
             this.btn_salvar_pericia.TabIndex = 4;
             this.btn_salvar_pericia.Text = "Editar";
             this.btn_salvar_pericia.UseVisualStyleBackColor = true;
@@ -1193,9 +1303,9 @@
             // 
             this.lbl_pontos_pericia.AutoSize = true;
             this.lbl_pontos_pericia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_pontos_pericia.Location = new System.Drawing.Point(883, 205);
+            this.lbl_pontos_pericia.Location = new System.Drawing.Point(1009, 273);
             this.lbl_pontos_pericia.Name = "lbl_pontos_pericia";
-            this.lbl_pontos_pericia.Size = new System.Drawing.Size(22, 25);
+            this.lbl_pontos_pericia.Size = new System.Drawing.Size(27, 32);
             this.lbl_pontos_pericia.TabIndex = 3;
             this.lbl_pontos_pericia.Text = "0";
             // 
@@ -1203,19 +1313,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(716, 205);
+            this.label1.Location = new System.Drawing.Point(818, 273);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 25);
+            this.label1.Size = new System.Drawing.Size(214, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pontos a Distribuir:";
             // 
             // txt_pericia
             // 
             this.txt_pericia.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.txt_pericia.Location = new System.Drawing.Point(716, 50);
+            this.txt_pericia.Location = new System.Drawing.Point(818, 67);
+            this.txt_pericia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_pericia.Multiline = true;
             this.txt_pericia.Name = "txt_pericia";
-            this.txt_pericia.Size = new System.Drawing.Size(189, 110);
+            this.txt_pericia.Size = new System.Drawing.Size(215, 145);
             this.txt_pericia.TabIndex = 1;
             // 
             // dataGridView1
@@ -1224,16 +1335,16 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Teste,
@@ -1242,20 +1353,21 @@
             this.salvar,
             this.descricao,
             this.id_pericia});
-            this.dataGridView1.Location = new System.Drawing.Point(34, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 36);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(635, 457);
+            this.dataGridView1.Size = new System.Drawing.Size(726, 609);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -1276,8 +1388,8 @@
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nome.DataPropertyName = "Nome";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nome.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
             this.Nome.HeaderText = "Nome";
             this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
@@ -1287,8 +1399,8 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
             this.Valor.HeaderText = "CDS (%)";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -1310,8 +1422,8 @@
             // 
             this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descricao.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
             this.descricao.HeaderText = "Descrição";
             this.descricao.MinimumWidth = 6;
             this.descricao.Name = "descricao";
@@ -1330,18 +1442,20 @@
             // 
             // inventario
             // 
-            this.inventario.Location = new System.Drawing.Point(4, 24);
+            this.inventario.Location = new System.Drawing.Point(4, 29);
+            this.inventario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.inventario.Name = "inventario";
-            this.inventario.Size = new System.Drawing.Size(955, 500);
+            this.inventario.Size = new System.Drawing.Size(1093, 671);
             this.inventario.TabIndex = 3;
             this.inventario.Text = "Inventário";
             this.inventario.UseVisualStyleBackColor = true;
             // 
             // Mapa
             // 
-            this.Mapa.Location = new System.Drawing.Point(4, 24);
+            this.Mapa.Location = new System.Drawing.Point(4, 29);
+            this.Mapa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Mapa.Name = "Mapa";
-            this.Mapa.Size = new System.Drawing.Size(955, 500);
+            this.Mapa.Size = new System.Drawing.Size(1093, 671);
             this.Mapa.TabIndex = 4;
             this.Mapa.Text = "Mapa";
             this.Mapa.UseVisualStyleBackColor = true;
@@ -1349,10 +1463,11 @@
             // Log
             // 
             this.Log.Controls.Add(this.dtg_log);
-            this.Log.Location = new System.Drawing.Point(4, 24);
+            this.Log.Location = new System.Drawing.Point(4, 29);
+            this.Log.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Log.Name = "Log";
-            this.Log.Padding = new System.Windows.Forms.Padding(3);
-            this.Log.Size = new System.Drawing.Size(955, 500);
+            this.Log.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Log.Size = new System.Drawing.Size(1093, 671);
             this.Log.TabIndex = 5;
             this.Log.Text = "log";
             this.Log.UseVisualStyleBackColor = true;
@@ -1363,28 +1478,31 @@
             this.dtg_log.AllowUserToDeleteRows = false;
             this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_log.Location = new System.Drawing.Point(6, 6);
+            this.dtg_log.Location = new System.Drawing.Point(7, 8);
+            this.dtg_log.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtg_log.Name = "dtg_log";
             this.dtg_log.ReadOnly = true;
             this.dtg_log.RowHeadersWidth = 51;
             this.dtg_log.RowTemplate.Height = 25;
-            this.dtg_log.Size = new System.Drawing.Size(943, 402);
+            this.dtg_log.Size = new System.Drawing.Size(1078, 536);
             this.dtg_log.TabIndex = 0;
             // 
             // txt_nome_personagem
             // 
-            this.txt_nome_personagem.Location = new System.Drawing.Point(1077, 12);
+            this.txt_nome_personagem.Location = new System.Drawing.Point(1231, 16);
+            this.txt_nome_personagem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nome_personagem.Name = "txt_nome_personagem";
-            this.txt_nome_personagem.Size = new System.Drawing.Size(100, 23);
+            this.txt_nome_personagem.Size = new System.Drawing.Size(114, 27);
             this.txt_nome_personagem.TabIndex = 2;
             // 
             // btn_atualiza
             // 
             this.btn_atualiza.Image = global::Ficha_Jiora.Properties.Resources.Atualizar_16;
             this.btn_atualiza.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_atualiza.Location = new System.Drawing.Point(1185, 12);
+            this.btn_atualiza.Location = new System.Drawing.Point(1354, 16);
+            this.btn_atualiza.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_atualiza.Name = "btn_atualiza";
-            this.btn_atualiza.Size = new System.Drawing.Size(76, 23);
+            this.btn_atualiza.Size = new System.Drawing.Size(87, 31);
             this.btn_atualiza.TabIndex = 3;
             this.btn_atualiza.Text = "Atualizar";
             this.btn_atualiza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1409,9 +1527,11 @@
             this.groupBox1.Controls.Add(this.lbl_defesa);
             this.groupBox1.Controls.Add(this.img_resistencia);
             this.groupBox1.Controls.Add(this.img_defesa);
-            this.groupBox1.Location = new System.Drawing.Point(12, 406);
+            this.groupBox1.Location = new System.Drawing.Point(14, 541);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(282, 228);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(322, 304);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estatísticas de Combate";
@@ -1419,27 +1539,28 @@
             // lbl_critico
             // 
             this.lbl_critico.AutoSize = true;
-            this.lbl_critico.Location = new System.Drawing.Point(50, 128);
+            this.lbl_critico.Location = new System.Drawing.Point(57, 171);
             this.lbl_critico.Name = "lbl_critico";
-            this.lbl_critico.Size = new System.Drawing.Size(13, 15);
+            this.lbl_critico.Size = new System.Drawing.Size(17, 20);
             this.lbl_critico.TabIndex = 15;
             this.lbl_critico.Text = "0";
             // 
             // lbl_tonz
             // 
             this.lbl_tonz.AutoSize = true;
-            this.lbl_tonz.Location = new System.Drawing.Point(176, 174);
+            this.lbl_tonz.Location = new System.Drawing.Point(201, 232);
             this.lbl_tonz.Name = "lbl_tonz";
-            this.lbl_tonz.Size = new System.Drawing.Size(13, 15);
+            this.lbl_tonz.Size = new System.Drawing.Size(17, 20);
             this.lbl_tonz.TabIndex = 14;
             this.lbl_tonz.Text = "0";
             // 
             // img_tonz
             // 
             this.img_tonz.Image = global::Ficha_Jiora.Properties.Resources.tonz_15_15;
-            this.img_tonz.Location = new System.Drawing.Point(155, 174);
+            this.img_tonz.Location = new System.Drawing.Point(177, 232);
+            this.img_tonz.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_tonz.Name = "img_tonz";
-            this.img_tonz.Size = new System.Drawing.Size(15, 15);
+            this.img_tonz.Size = new System.Drawing.Size(17, 20);
             this.img_tonz.TabIndex = 13;
             this.img_tonz.TabStop = false;
             this.img_tonz.MouseHover += new System.EventHandler(this.img_tonz_MouseHover);
@@ -1447,9 +1568,10 @@
             // img_exp
             // 
             this.img_exp.Image = global::Ficha_Jiora.Properties.Resources.exp_15_15;
-            this.img_exp.Location = new System.Drawing.Point(29, 174);
+            this.img_exp.Location = new System.Drawing.Point(33, 232);
+            this.img_exp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_exp.Name = "img_exp";
-            this.img_exp.Size = new System.Drawing.Size(15, 15);
+            this.img_exp.Size = new System.Drawing.Size(17, 20);
             this.img_exp.TabIndex = 12;
             this.img_exp.TabStop = false;
             this.img_exp.MouseHover += new System.EventHandler(this.img_exp_MouseHover);
@@ -1457,18 +1579,19 @@
             // lbl_valor_critico
             // 
             this.lbl_valor_critico.AutoSize = true;
-            this.lbl_valor_critico.Location = new System.Drawing.Point(176, 128);
+            this.lbl_valor_critico.Location = new System.Drawing.Point(201, 171);
             this.lbl_valor_critico.Name = "lbl_valor_critico";
-            this.lbl_valor_critico.Size = new System.Drawing.Size(13, 15);
+            this.lbl_valor_critico.Size = new System.Drawing.Size(17, 20);
             this.lbl_valor_critico.TabIndex = 11;
             this.lbl_valor_critico.Text = "0";
             // 
             // img_valor_critico
             // 
             this.img_valor_critico.Image = global::Ficha_Jiora.Properties.Resources.valor_critico_15_15;
-            this.img_valor_critico.Location = new System.Drawing.Point(155, 128);
+            this.img_valor_critico.Location = new System.Drawing.Point(177, 171);
+            this.img_valor_critico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_valor_critico.Name = "img_valor_critico";
-            this.img_valor_critico.Size = new System.Drawing.Size(15, 15);
+            this.img_valor_critico.Size = new System.Drawing.Size(17, 20);
             this.img_valor_critico.TabIndex = 10;
             this.img_valor_critico.TabStop = false;
             this.img_valor_critico.MouseHover += new System.EventHandler(this.img_valor_critico_MouseHover);
@@ -1476,18 +1599,19 @@
             // lbl_exp
             // 
             this.lbl_exp.AutoSize = true;
-            this.lbl_exp.Location = new System.Drawing.Point(50, 174);
+            this.lbl_exp.Location = new System.Drawing.Point(57, 232);
             this.lbl_exp.Name = "lbl_exp";
-            this.lbl_exp.Size = new System.Drawing.Size(13, 15);
+            this.lbl_exp.Size = new System.Drawing.Size(17, 20);
             this.lbl_exp.TabIndex = 9;
             this.lbl_exp.Text = "0";
             // 
             // img_critico
             // 
             this.img_critico.Image = global::Ficha_Jiora.Properties.Resources.critico_15_15;
-            this.img_critico.Location = new System.Drawing.Point(29, 128);
+            this.img_critico.Location = new System.Drawing.Point(33, 171);
+            this.img_critico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_critico.Name = "img_critico";
-            this.img_critico.Size = new System.Drawing.Size(15, 15);
+            this.img_critico.Size = new System.Drawing.Size(17, 20);
             this.img_critico.TabIndex = 8;
             this.img_critico.TabStop = false;
             this.img_critico.MouseHover += new System.EventHandler(this.img_critico_MouseHover);
@@ -1495,18 +1619,19 @@
             // lbl_esquiva
             // 
             this.lbl_esquiva.AutoSize = true;
-            this.lbl_esquiva.Location = new System.Drawing.Point(176, 83);
+            this.lbl_esquiva.Location = new System.Drawing.Point(201, 111);
             this.lbl_esquiva.Name = "lbl_esquiva";
-            this.lbl_esquiva.Size = new System.Drawing.Size(13, 15);
+            this.lbl_esquiva.Size = new System.Drawing.Size(17, 20);
             this.lbl_esquiva.TabIndex = 7;
             this.lbl_esquiva.Text = "0";
             // 
             // img_esquiva
             // 
             this.img_esquiva.Image = global::Ficha_Jiora.Properties.Resources.evade_15_15;
-            this.img_esquiva.Location = new System.Drawing.Point(155, 83);
+            this.img_esquiva.Location = new System.Drawing.Point(177, 111);
+            this.img_esquiva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_esquiva.Name = "img_esquiva";
-            this.img_esquiva.Size = new System.Drawing.Size(15, 15);
+            this.img_esquiva.Size = new System.Drawing.Size(17, 20);
             this.img_esquiva.TabIndex = 6;
             this.img_esquiva.TabStop = false;
             this.img_esquiva.MouseHover += new System.EventHandler(this.img_esquiva_MouseHover);
@@ -1514,18 +1639,19 @@
             // lbl_precisao
             // 
             this.lbl_precisao.AutoSize = true;
-            this.lbl_precisao.Location = new System.Drawing.Point(50, 83);
+            this.lbl_precisao.Location = new System.Drawing.Point(57, 111);
             this.lbl_precisao.Name = "lbl_precisao";
-            this.lbl_precisao.Size = new System.Drawing.Size(13, 15);
+            this.lbl_precisao.Size = new System.Drawing.Size(17, 20);
             this.lbl_precisao.TabIndex = 5;
             this.lbl_precisao.Text = "0";
             // 
             // img_precisao
             // 
             this.img_precisao.Image = global::Ficha_Jiora.Properties.Resources.precisao_15_15__2png;
-            this.img_precisao.Location = new System.Drawing.Point(29, 83);
+            this.img_precisao.Location = new System.Drawing.Point(33, 111);
+            this.img_precisao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_precisao.Name = "img_precisao";
-            this.img_precisao.Size = new System.Drawing.Size(15, 15);
+            this.img_precisao.Size = new System.Drawing.Size(17, 20);
             this.img_precisao.TabIndex = 4;
             this.img_precisao.TabStop = false;
             this.img_precisao.MouseHover += new System.EventHandler(this.img_precisao_MouseHover);
@@ -1533,27 +1659,28 @@
             // lbl_resistencia
             // 
             this.lbl_resistencia.AutoSize = true;
-            this.lbl_resistencia.Location = new System.Drawing.Point(176, 33);
+            this.lbl_resistencia.Location = new System.Drawing.Point(201, 44);
             this.lbl_resistencia.Name = "lbl_resistencia";
-            this.lbl_resistencia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_resistencia.Size = new System.Drawing.Size(17, 20);
             this.lbl_resistencia.TabIndex = 3;
             this.lbl_resistencia.Text = "0";
             // 
             // lbl_defesa
             // 
             this.lbl_defesa.AutoSize = true;
-            this.lbl_defesa.Location = new System.Drawing.Point(50, 33);
+            this.lbl_defesa.Location = new System.Drawing.Point(57, 44);
             this.lbl_defesa.Name = "lbl_defesa";
-            this.lbl_defesa.Size = new System.Drawing.Size(13, 15);
+            this.lbl_defesa.Size = new System.Drawing.Size(17, 20);
             this.lbl_defesa.TabIndex = 2;
             this.lbl_defesa.Text = "0";
             // 
             // img_resistencia
             // 
             this.img_resistencia.Image = ((System.Drawing.Image)(resources.GetObject("img_resistencia.Image")));
-            this.img_resistencia.Location = new System.Drawing.Point(155, 33);
+            this.img_resistencia.Location = new System.Drawing.Point(177, 44);
+            this.img_resistencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_resistencia.Name = "img_resistencia";
-            this.img_resistencia.Size = new System.Drawing.Size(15, 15);
+            this.img_resistencia.Size = new System.Drawing.Size(17, 20);
             this.img_resistencia.TabIndex = 1;
             this.img_resistencia.TabStop = false;
             this.img_resistencia.MouseHover += new System.EventHandler(this.img_resistencia_MouseHover);
@@ -1561,9 +1688,10 @@
             // img_defesa
             // 
             this.img_defesa.Image = global::Ficha_Jiora.Properties.Resources.armor_15_151;
-            this.img_defesa.Location = new System.Drawing.Point(29, 33);
+            this.img_defesa.Location = new System.Drawing.Point(33, 44);
+            this.img_defesa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.img_defesa.Name = "img_defesa";
-            this.img_defesa.Size = new System.Drawing.Size(15, 15);
+            this.img_defesa.Size = new System.Drawing.Size(17, 20);
             this.img_defesa.TabIndex = 0;
             this.img_defesa.TabStop = false;
             this.img_defesa.MouseHover += new System.EventHandler(this.img_defesa_MouseHover);
@@ -1572,9 +1700,9 @@
             // 
             this.lbl_nome_personagem.AutoSize = true;
             this.lbl_nome_personagem.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_nome_personagem.Location = new System.Drawing.Point(314, 9);
+            this.lbl_nome_personagem.Location = new System.Drawing.Point(359, 12);
             this.lbl_nome_personagem.Name = "lbl_nome_personagem";
-            this.lbl_nome_personagem.Size = new System.Drawing.Size(90, 37);
+            this.lbl_nome_personagem.Size = new System.Drawing.Size(112, 46);
             this.lbl_nome_personagem.TabIndex = 5;
             this.lbl_nome_personagem.Text = "Nome";
             // 
@@ -1582,9 +1710,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(318, 66);
+            this.label2.Location = new System.Drawing.Point(363, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 28);
+            this.label2.Size = new System.Drawing.Size(51, 35);
             this.label2.TabIndex = 6;
             this.label2.Text = "Nv.";
             // 
@@ -1592,9 +1720,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(711, 28);
+            this.label3.Location = new System.Drawing.Point(813, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 19);
+            this.label3.Size = new System.Drawing.Size(153, 23);
             this.label3.TabIndex = 7;
             this.label3.Text = "20 / Virgem / 1285";
             // 
@@ -1602,9 +1730,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(1164, 75);
+            this.label4.Location = new System.Drawing.Point(1330, 100);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 19);
+            this.label4.Size = new System.Drawing.Size(121, 23);
             this.label4.TabIndex = 8;
             this.label4.Text = "Clima: Tropical";
             // 
@@ -1612,9 +1740,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(1164, 97);
+            this.label5.Location = new System.Drawing.Point(1330, 129);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 19);
+            this.label5.Size = new System.Drawing.Size(119, 23);
             this.label5.TabIndex = 9;
             this.label5.Text = "Período: Noite";
             // 
@@ -1622,18 +1750,18 @@
             // 
             this.lbl_nivel_personagem.AutoSize = true;
             this.lbl_nivel_personagem.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_nivel_personagem.Location = new System.Drawing.Point(352, 66);
+            this.lbl_nivel_personagem.Location = new System.Drawing.Point(402, 88);
             this.lbl_nivel_personagem.Name = "lbl_nivel_personagem";
-            this.lbl_nivel_personagem.Size = new System.Drawing.Size(23, 28);
+            this.lbl_nivel_personagem.Size = new System.Drawing.Size(28, 35);
             this.lbl_nivel_personagem.TabIndex = 10;
             this.lbl_nivel_personagem.Text = "0";
             // 
             // lbl_classe_peronsagem
             // 
             this.lbl_classe_peronsagem.AutoSize = true;
-            this.lbl_classe_peronsagem.Location = new System.Drawing.Point(321, 49);
+            this.lbl_classe_peronsagem.Location = new System.Drawing.Point(367, 65);
             this.lbl_classe_peronsagem.Name = "lbl_classe_peronsagem";
-            this.lbl_classe_peronsagem.Size = new System.Drawing.Size(40, 15);
+            this.lbl_classe_peronsagem.Size = new System.Drawing.Size(50, 20);
             this.lbl_classe_peronsagem.TabIndex = 11;
             this.lbl_classe_peronsagem.Text = "Classe";
             // 
@@ -1641,82 +1769,31 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(752, 9);
+            this.label6.Location = new System.Drawing.Point(859, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 19);
+            this.label6.Size = new System.Drawing.Size(46, 23);
             this.label6.TabIndex = 12;
             this.label6.Text = "Data";
             // 
-            // numericUpDown1
+            // label22
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(624, 53);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(75, 23);
-            this.numericUpDown1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(624, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Reduzir HP";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(624, 111);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Reduzir MP";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(779, 54);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(79, 15);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "HP:  100 / 100";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(780, 82);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(81, 15);
-            this.label20.TabIndex = 5;
-            this.label20.Text = "MP:  100 / 100";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(782, 111);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(57, 15);
-            this.label21.TabIndex = 6;
-            this.label21.Text = "LB:  100%";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(62, 41);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(216, 111);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Ações Básicas";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(570, 76);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(58, 20);
+            this.label22.TabIndex = 13;
+            this.label22.Text = "label22";
             // 
             // Ficha_do_Jogador
             // 
             this.AcceptButton = this.btn_atualiza;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1289, 650);
+            this.ClientSize = new System.Drawing.Size(1473, 867);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_classe_peronsagem);
             this.Controls.Add(this.lbl_nivel_personagem);
@@ -1731,6 +1808,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.img_imagem_personagem);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "Ficha_do_Jogador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1764,6 +1842,7 @@
             this.groupBox2.PerformLayout();
             this.battle.ResumeLayout(false);
             this.battle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.pericia.ResumeLayout(false);
             this.pericia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1781,7 +1860,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Log)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1928,5 +2006,6 @@
         private Button button1;
         private NumericUpDown numericUpDown1;
         private GroupBox groupBox3;
+        private Label label22;
     }
 }

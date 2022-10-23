@@ -27,6 +27,9 @@ namespace Ficha_Jiora.View
         private string IDPersonagem = "";
         private int d100 = 0, d12 = 0, d10 = 0, d8 = 0, d6 = 0;
 
+        private Equipamento_Control equipamento_control = new Equipamento_Control();
+
+
 
 
 
@@ -42,7 +45,8 @@ namespace Ficha_Jiora.View
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                Carrega_Tela();                
+                Carrega_Tela();
+                label22.Text = equipamento_control.Arma_Equipada(IDPersonagem);
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
@@ -387,7 +391,7 @@ namespace Ficha_Jiora.View
                 lbl_estigma_nome04.Text = estigma_Control.GetNome("4", IDPersonagem) + ":";
                 lbl_estigma_desc04.Text = estigma_Control.GetDescricao("4", IDPersonagem);
                 GPB_status_atributos.Text = "Pontos Disponíveis " + ValorAtributo;
-
+               
                 if (ValorAtributo > 0)
                 {
                     ControleBotao(true);
