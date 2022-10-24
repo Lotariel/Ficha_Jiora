@@ -38,30 +38,60 @@ namespace Ficha_Jiora.Control
             {
                 switch (personagem.PontosEstigma)
                 {
-                    case 5:                    
+                    case 5:
                         return estigma_data.GetTextoEvolucao("2", "2", personagem.ID);
                     default:
                         return "";
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception("Erro em Evento_Estigma.Alerta_Protecao: " + ex.Message);
             }
         }
         private string Alerta_Esperanca(Personagem_Model personagem)
         {
-            return "";
+            try
+            {
+                return "";
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Evento_Estigma.Alerta_Esperanca: " + ex.Message);
+            }
         }
         private string Alerta_Coragem(Personagem_Model personagem)
         {
-            return "";
+            try
+            {
+                return "";
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Evento_Estigma.Alerta_Coragem " + ex.Message);
+            }
         }
         private string Alerta_Amizade(Personagem_Model personagem)
         {
-            return "";
+            try
+            {
+                switch (personagem.PontosEstigma)
+                {
+                    case 2:
+                        return estigma_data.GetTextoEvolucao("2", "2", personagem.ID);
+                    default:
+                        return "";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Evento_Estigma.Alerta_Amizade: " + ex.Message);
+            }
         }
 
         public void Evolui_Estigma(Personagem_Model personagem)
@@ -90,29 +120,44 @@ namespace Ficha_Jiora.Control
                 switch (personagem.PontosEstigma)
                 {
                     case 5:
-                        estigma_data.EvoluirPassiva(personagem,2);
+                        estigma_data.EvoluirPassiva(personagem, 2);
                         break;
-                    
+
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception("Erro em Evento_Estigma.Evolui_Protecao: " + ex.Message);
             }
         }
         private void Evolui_Esperanca(Personagem_Model personagem)
         {
-            
+
         }
         private void Evolui_Coragem(Personagem_Model personagem)
         {
-            
+
         }
         private void Evolui_Amizade(Personagem_Model personagem)
         {
-            
+            try
+            {
+                switch (personagem.PontosEstigma)
+                {
+                    case 2:
+                        estigma_data.EvoluirPassiva(personagem, 2);
+                        break;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Evento_Estigma.Evolui_Amizade: " + ex.Message);
+            }
         }
 
     }

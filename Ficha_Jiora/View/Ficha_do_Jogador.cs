@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -49,7 +50,7 @@ namespace Ficha_Jiora.View
                 Cursor.Current = Cursors.WaitCursor;
                 Carrega_Tela();
                 tabControl1.Enabled = true;                
-                txt_nome_personagem.Visible = false;                
+                //txt_nome_personagem.Visible = false;                
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
@@ -158,7 +159,7 @@ namespace Ficha_Jiora.View
                 if (dialog == DialogResult.Yes)
                 {
                     evento_estigma.Evolui_Estigma(personagem);
-                    MessageBox.Show("Sua Estigma está mais poderosa. Você teve sucesso na evolução.", "Estigma", MessageBoxButtons.OK);
+                    MessageBox.Show("Sua Estigma está mais poderosa. Você teve sucesso em sua evolução.", "Estigma", MessageBoxButtons.OK);
                     Insertlog("Teve sucesso em evoluir sua Estigma.");
                 }
             }
@@ -204,6 +205,11 @@ namespace Ficha_Jiora.View
                                         + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
 
                                     Insertlog("Realizou uma acerto crítico no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste: " + valor);
+                                    if (NomeTeste == "Fuga" && personagem_Model.ID == "2")
+                                    {
+                                        estigma_Control.AumentarPontosEstigma(personagem_Model);
+                                        VerificaEstigma(personagem_Model);
+                                    }
                                 }
                                 else
                                 {
@@ -219,6 +225,11 @@ namespace Ficha_Jiora.View
                                     VerificaEstigma(personagem_Model);
                                 }
 
+                                if (NomeTeste == "Culinária" || NomeTeste == "Cura" && personagem_Model.ID == "2" || personagem_Model.ID == "4")
+                                {
+                                    estigma_Control.AumentarPontosEstigma(personagem_Model);
+                                    VerificaEstigma(personagem_Model);
+                                }
                             }
                             else
                             {
