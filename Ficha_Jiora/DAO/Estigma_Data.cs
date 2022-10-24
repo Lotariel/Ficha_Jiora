@@ -13,13 +13,14 @@ namespace Ficha_Jiora.DAO
     {
         private string Script = "";
         private string resultado = "";
-        public string GetDescricao(string nivel, string idpersonagem)
+        public string GetDescricao(string nivel, string grupo, string idpersonagem)
         {
             try
             {
                 Script = "Select descricao from estigma ";
                 Script += "where nivel ='" + nivel + "' ";
                 Script += "and idpersonagem = '" + idpersonagem + "' ";
+                Script += "and grupo ='" + grupo + "' ";
                 Script += "and ativo = 'Ativo'";
 
                 SqlCommand select = new SqlCommand(Script, AbreConexao());
@@ -38,13 +39,14 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("Erro em Estigma_Data.GetDescricao " + ex.Message);
             }
         }
-        public string GetNome(string grupo, string idpersonagem)
+        public string GetNome(string nivel, string grupo, string idpersonagem)
         {
             try
             {
-                Script = " Select nome from estigma ";
-                Script += "where grupo ='" + grupo + "' ";
+                Script = "Select nome from estigma ";
+                Script += "where nivel ='" + nivel + "' ";
                 Script += "and idpersonagem = '" + idpersonagem + "' ";
+                Script += "and grupo ='" + grupo + "' ";
                 Script += "and ativo = 'Ativo'";
 
                 SqlCommand select = new SqlCommand(Script, AbreConexao());
@@ -63,7 +65,7 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("Erro em Estigma_Data.GetNome " + ex.Message);
             }
         }
-        public string GetTextoEvolucao(string nivel,string grupo, string idpersonagem)
+        public string GetTextoEvolucao(string nivel, string grupo, string idpersonagem)
         {
             try
             {
@@ -89,16 +91,14 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("Erro em Estigma_Data.GetEvolucao " + ex.Message);
             }
         }
-
-        private double GetNivel(string nivel, string grupo, string idpersonagem)
+        public int GetNivel(string grupo, string idpersonagem)
         {
             try
             {
-                int Ranged = Convert.ToInt32(nivel) + 1;
-
-                Script = "select Nivel from Estigma ";
-                Script += "where Convert(numeric,nivel) >= " + nivel + "and Convert(numeric,nivel) < " + Ranged;
-                Script += " and ativo='Ativo'and idpersonagem = '" + idpersonagem + "' ";
+                Script = "Select nivel from Estigma ";
+                Script += "where grupo ='" + grupo + "' ";
+                Script += "and idpersonagem = '" + idpersonagem + "' ";
+                Script += "and ativo = 'Ativo'";
 
 
                 SqlCommand select = new SqlCommand(Script, AbreConexao());
@@ -107,7 +107,7 @@ namespace Ficha_Jiora.DAO
 
                 FechaConexao();
 
-                return Convert.ToDouble(resultado);
+                return Convert.ToInt32(resultado);
 
 
             }
@@ -135,24 +135,23 @@ namespace Ficha_Jiora.DAO
             }
         }
 
-        public void EvoluirPassiva(Personagem_Model personagem, string nivel)
+        public void EvoluirPassiva(Personagem_Model personagem, int grupo)
         {
             try
             {
-                double NivelAtualAtivo = 2.1;// GetNivel(nivel, personagem.ID);
-                double NovoNivel = NivelAtualAtivo + 0.2;
+                int NivelAtual = GetNivel(grupo.ToString(), personagem.ID);
+                int NovoNivel = NivelAtual + 1;
 
-                
                 Script = "Update estigma set ativo = 'Desativado' where IDpersonagem = " + personagem.ID;
-                Script += " and ativo = 'Ativo' and nivel = '" + NivelAtualAtivo + "'";
+                Script += " and grupo ='" + grupo + "'  and nivel = '" + NivelAtual + "'";
 
                 SqlCommand update = new SqlCommand(Script, AbreConexao());
 
                 update.ExecuteNonQuery();
 
                 Script = "Update estigma set ativo = 'Ativo' where IDpersonagem = " + personagem.ID;
-                Script += " and ativo = 'Desativado' and nivel = " + NovoNivel;
-                
+                Script += " and grupo ='" + grupo + "'  and nivel = '" + NovoNivel + "'";
+
                 update = new SqlCommand(Script, AbreConexao());
 
                 update.ExecuteNonQuery();

@@ -3,9 +3,11 @@ using Ficha_Jiora.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,13 +48,17 @@ namespace Ficha_Jiora.View
             {
                 Cursor.Current = Cursors.WaitCursor;
                 Carrega_Tela();
-                label22.Text = equipamento_control.Arma_Equipada(IDPersonagem);
+                tabControl1.Enabled = true;                
+                txt_nome_personagem.Visible = false;                
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao atualizar a ficha:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_nome_personagem.Text = "";
+                tabControl1.Enabled = false;
+                txt_nome_personagem.Visible = true;
+               
             }
         }
 
@@ -60,6 +66,7 @@ namespace Ficha_Jiora.View
         {
             try
             {
+                
                 d100 = Rolar.D100();
                 d12 = Rolar.D12();
                 d10 = Rolar.D10();
@@ -74,9 +81,9 @@ namespace Ficha_Jiora.View
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
+            
         }
         private string GetID(string nome)
         {
@@ -142,18 +149,20 @@ namespace Ficha_Jiora.View
             tt.SetToolTip(img_resistencia, "Resistência Mágica");
         }
 
-        private void TextoEstigma(Personagem_Model personagem)
+        private void VerificaEstigma(Personagem_Model personagem)
         {
-            string textoprotecao = evento_estigma.Protecao(personagem);
-            if ( textoprotecao != "")
+            string textoprotecao = evento_estigma.Alert_Estigma(personagem);
+            if (textoprotecao != "")
             {
-               var dialog =  MessageBox.Show(textoprotecao,"Estigma da Proteção",MessageBoxButtons.YesNo);
+                var dialog = MessageBox.Show(textoprotecao, "Estigma", MessageBoxButtons.YesNo);
                 if (dialog == DialogResult.Yes)
                 {
-                    estigma_Control.EvoluirPassiva(personagem_Model, "2");
+                    evento_estigma.Evolui_Estigma(personagem);
+                    MessageBox.Show("Sua Estigma está mais poderosa. Você teve sucesso na evolução.", "Estigma", MessageBoxButtons.OK);
+                    Insertlog("Teve sucesso em evoluir sua Estigma.");
                 }
             }
-            
+
         }
         #endregion
 
@@ -204,10 +213,10 @@ namespace Ficha_Jiora.View
                                     Insertlog("Teve sucesso no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste: " + valor);
                                 }
 
-                                if (NomeTeste =="Cobertura" && personagem_Model.ID == "3")
+                                if (NomeTeste == "Cobertura" && personagem_Model.ID == "3")
                                 {
                                     estigma_Control.AumentarPontosEstigma(personagem_Model);
-                                    TextoEstigma(personagem_Model);
+                                    VerificaEstigma(personagem_Model);
                                 }
 
                             }
@@ -382,16 +391,36 @@ namespace Ficha_Jiora.View
                 lbl_res_blind.Text = personagem_Model.Res_Blind + " %";
                 lbl_res_charm.Text = personagem_Model.Res_Charm + " %";
                 img_stigma.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Estigma\\" + personagem_Model.EstigmaImagem);
-                lbl_estigma_nome01.Text = estigma_Control.GetNome("1", IDPersonagem) + ":";
-                lbl_estigma_desc01.Text = estigma_Control.GetDescricao("1", IDPersonagem);
-                lbl_estigma_nome02.Text = estigma_Control.GetNome("2", IDPersonagem) + ":";
-                lbl_estigma_desc02.Text = estigma_Control.GetDescricao("2", IDPersonagem);
-                lbl_estigma_nome03.Text = estigma_Control.GetNome("3", IDPersonagem) + ":";
-                lbl_estigma_desc03.Text = estigma_Control.GetDescricao("3", IDPersonagem);
-                lbl_estigma_nome04.Text = estigma_Control.GetNome("4", IDPersonagem) + ":";
-                lbl_estigma_desc04.Text = estigma_Control.GetDescricao("4", IDPersonagem);
+                if (Convert.ToInt16(IDPersonagem) < 5)
+                {
+                    int nivel1 = estigma_Control.GetNivel("1", IDPersonagem);
+                    int nivel2 = estigma_Control.GetNivel("2", IDPersonagem);
+                    int nivel3 = estigma_Control.GetNivel("3", IDPersonagem);
+                    int nivel4 = estigma_Control.GetNivel("4", IDPersonagem);
+
+                    lbl_estigma_nome01.Text = estigma_Control.GetNome(nivel1, "1", IDPersonagem) + ":";
+                    lbl_estigma_desc01.Text = estigma_Control.GetDescricao(nivel1, "1", IDPersonagem);
+                    lbl_estigma_nome02.Text = estigma_Control.GetNome(nivel2, "2", IDPersonagem) + ":";
+                    lbl_estigma_desc02.Text = estigma_Control.GetDescricao(nivel2, "2", IDPersonagem);
+                    lbl_estigma_nome03.Text = estigma_Control.GetNome(nivel3, "3", IDPersonagem) + ":";
+                    lbl_estigma_desc03.Text = estigma_Control.GetDescricao(nivel3, "3", IDPersonagem);
+                    lbl_estigma_nome04.Text = estigma_Control.GetNome(nivel4, "4", IDPersonagem) + ":";
+                    lbl_estigma_desc04.Text = estigma_Control.GetDescricao(nivel4, "4", IDPersonagem);
+                }
+                else
+                {
+                    lbl_estigma_nome01.Text = "";
+                    lbl_estigma_desc01.Text = "";
+                    lbl_estigma_nome02.Text = "";
+                    lbl_estigma_desc02.Text = "";
+                    lbl_estigma_nome03.Text = "";
+                    lbl_estigma_desc03.Text = "";
+                    lbl_estigma_nome04.Text = "";
+                    lbl_estigma_desc04.Text = "";
+                }
+
                 GPB_status_atributos.Text = "Pontos Disponíveis " + ValorAtributo;
-               
+
                 if (ValorAtributo > 0)
                 {
                     ControleBotao(true);
@@ -704,7 +733,7 @@ namespace Ficha_Jiora.View
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             //Ver se tem como carregar a tela quando clicar na aba log
-            Carrega_Log();
+            Carrega_Tela();
 
         }
 
@@ -882,10 +911,10 @@ namespace Ficha_Jiora.View
             if (nomeestigma != "")
             {
                 ToolTip tt = new ToolTip();
-                tt.SetToolTip(img_stigma, "Estigma da " + nomeestigma);           
+                tt.SetToolTip(img_stigma, "Estigma da " + nomeestigma);
 
             }
-        }       
+        }
 
         private void btn_teste__aur_Click(object sender, EventArgs e)
         {

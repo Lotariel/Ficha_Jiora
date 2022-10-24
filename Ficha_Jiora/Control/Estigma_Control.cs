@@ -11,14 +11,14 @@ namespace Ficha_Jiora.Control
     internal class Estigma_Control
     {
         private Estigma_Data estigma_Data = new Estigma_Data();
-        public string GetNome(string nivel, string idpersonagem)
+        public string GetNome(int nivel, string grupo, string idpersonagem)
         {
-            return estigma_Data.GetNome(nivel, idpersonagem);
+            return estigma_Data.GetNome(nivel.ToString(),grupo,idpersonagem);
         }
 
-        public string GetDescricao(string nivel, string idpersonagem)
+        public string GetDescricao(int nivel, string grupo, string idpersonagem)
         {
-            return estigma_Data.GetDescricao(nivel, idpersonagem);
+            return estigma_Data.GetDescricao(nivel.ToString(),grupo,idpersonagem);
         }
 
         public string GetEvolucao(string nivel, string idpersonagem)
@@ -31,10 +31,12 @@ namespace Ficha_Jiora.Control
             int valor = personagem.PontosEstigma + 1;
             estigma_Data.AumentarPontosEstigma(valor,personagem.ID);
         }
+              
 
-        public void EvoluirPassiva(Personagem_Model personagem, string nivel)
+
+        public int GetNivel(string grupo, string idpersonagem)
         {
-            estigma_Data.EvoluirPassiva(personagem, nivel);
+            return estigma_Data.GetNivel(grupo, idpersonagem);
         }
     }
 }
