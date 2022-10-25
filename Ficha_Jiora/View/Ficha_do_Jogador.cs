@@ -1035,7 +1035,7 @@ namespace Ficha_Jiora.View
 
         private void Carrega_Batalha()
         {
-            CBB_nome_personagem.Text = "Selecione um Alvo";
+            CBB_nome_personagem.Text = "Selecione";
             txt_reduzir.Maximum = 999999;
             txt_defender.Maximum = 999999;
             txt_reduzir.Controls[0].Visible = false;
@@ -1095,7 +1095,7 @@ namespace Ficha_Jiora.View
         {
             try
             {
-                if (CBB_nome_personagem.Text == "Selecione um Alvo")
+                if (CBB_nome_personagem.Text == "Selecione")
                 {
                     MessageBox.Show("Selecione um alvo para utilizar o item.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     CBB_nome_personagem.Focus();
