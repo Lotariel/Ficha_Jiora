@@ -13,6 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ToolTip = System.Windows.Forms.ToolTip;
 
 namespace Ficha_Jiora.View
 {
@@ -48,7 +50,7 @@ namespace Ficha_Jiora.View
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                Carrega_Tela();
+                Carrega_Tela();                
                 tabControl1.Enabled = true;                
                 //txt_nome_personagem.Visible = false;                
                 Cursor.Current = Cursors.Default;
@@ -78,6 +80,7 @@ namespace Ficha_Jiora.View
                 Carrega_Pericia();
                 CarregaAtributos();
                 CarregaStatus();
+                Carrega_Batalha();
 
             }
             catch (Exception ex)
@@ -115,7 +118,6 @@ namespace Ficha_Jiora.View
                 throw new Exception(ex.Message);
             }
         }
-
         private void CarregaAtributos()
         {
             try
@@ -965,6 +967,8 @@ namespace Ficha_Jiora.View
             }
         }
 
+        
+
         private void btn_up_vel_Click(object sender, EventArgs e)
         {
             try
@@ -983,6 +987,8 @@ namespace Ficha_Jiora.View
                 MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+       
 
         private void btn_up_mag_Click(object sender, EventArgs e)
         {
@@ -1021,6 +1027,106 @@ namespace Ficha_Jiora.View
             }
         }
 
+       
+
+        #endregion
+
+        #region INFORMAÇÕES DA ABA BATALHA
+
+        private void Carrega_Batalha()
+        {
+            CBB_nome_personagem.Text = "Selecione um Alvo";
+            txt_reduzir.Maximum = 999999;
+            txt_defender.Maximum = 999999;
+            txt_reduzir.Controls[0].Visible = false;
+            txt_defender.Controls[0].Visible = false;
+            txt_defender.Text = "";
+            txt_reduzir.Text = "";
+            lbl_valor_lb.Text = personagem_Model.Especial + " %";
+            switch (personagem_Model.ID)
+            {
+                case "1":
+                    lbl_limite_break.Text = "OverCharge";
+                    break;
+                case "2":
+                    lbl_limite_break.Text = "Trance";
+                    break;
+                case "3":
+                    lbl_limite_break.Text = "Limit Break";
+                    break;
+                case "4":
+                    lbl_limite_break.Text = "Over Soul";
+                    break;
+                case "6":
+                    lbl_limite_break.Text = "Trance";
+                    break;
+                default:
+                    lbl_limite_break.Text = "Limit Break";
+                    break;
+            }
+            lbl_hp.Text = personagem_Model.HPAtual + " / " + personagem_Model.HPMax;
+            lbl_mp.Text = personagem_Model.MPAtual + " / " + personagem_Model.MPMax;
+        }        
+        private void Carrega_Combobox_Personagem()
+        {
+            
+            try
+            {
+                CBB_nome_personagem.DataSource = batalha.Carrega_Combo_Personagem();
+                CBB_nome_personagem.ValueMember = "ID";
+                CBB_nome_personagem.DisplayMember = "Nome";
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Falha ao carregar ComboBox Nome do Personagem: "+ ex.Message);
+            }
+        }
+        private void button20_Click(object sender, EventArgs e)
+        {
+            label23.Text = CBB_nome_personagem.SelectedValue.ToString();
+        }
+        private void CBB_nome_personagem_Click(object sender, EventArgs e)
+        {
+            Carrega_Combobox_Personagem();
+        }
+
+        private void btn_small_potion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CBB_nome_personagem.Text == "Selecione um Alvo")
+                {
+                    MessageBox.Show("Selecione um alvo para utilizar o item.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    CBB_nome_personagem.Focus();
+                }
+                else
+                {
+                    string IDAlvo = CBB_nome_personagem.SelectedValue.ToString();
+                    if (IDAlvo == personagem_Model.ID)
+                    {
+                        batalha.Pocao_Pequena(IDAlvo);
+                        Carrega_Tela();
+                        txt_batalha.Text = personagem_Model.Nome + " acaba de consumir uma Poção Pequena. Recuperando +";
+                        txt_batalha.Text += (personagem_Model.HPMax * 0.30) + " do seu HP.";
+                        Insertlog("Utilizou uma Poção Pequena.");
+                    }
+                    else
+                    {
+                        batalha.Pocao_Pequena(IDAlvo);
+                        txt_batalha.Text = personagem_Model.Nome + " utiliza uma Poção Pequena em " + CBB_nome_personagem.Text;
+                        Insertlog("Utilizou uma Poção Pequena em " + CBB_nome_personagem.Text);
+                    }
+                }
+                
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao usar Item: " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
         #endregion
 
 

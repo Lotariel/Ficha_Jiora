@@ -123,6 +123,37 @@ namespace Ficha_Jiora.DAO
             }
         }
 
+        public DataTable Carrega_Combo_Personagem()
+        {
+            try
+            {
+                DataTable TabelaPersonagem= new DataTable();
+
+                Script = "select ID,Nome from Personagem where Ativo = 1";
+                Script += "order by Nome";
+
+                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
+
+                select.Fill(TabelaPersonagem);
+                FechaConexao();
+
+                foreach (DataRow item in TabelaPersonagem.Rows)
+                {
+                    personagem_Model = new Personagem_Model()
+                    {
+                        Nome = item["Nome"].ToString(),
+                        ID = item["ID"].ToString()                        
+                    };
+                }
+                return TabelaPersonagem;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Personagem_Data.Carrega_Combo_Personagem:\n" + ex.Message);
+            }
+        }
+
         public string GetID(string nome)
         {
             try
@@ -209,7 +240,6 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Personagem_Data.Update_Personagem:\n" + ex.Message);
             }
         }
-
         public int TotalAtributos(string ID)
         {
             try

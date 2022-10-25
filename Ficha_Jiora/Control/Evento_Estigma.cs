@@ -55,7 +55,13 @@ namespace Ficha_Jiora.Control
         {
             try
             {
-                return "";
+                switch (personagem.PontosEstigma)
+                {
+                    case 3:
+                        return estigma_data.GetTextoEvolucao("2", "2", personagem.ID);
+                    default:
+                        return "";
+                }
             }
             catch (Exception ex)
             {
@@ -134,7 +140,22 @@ namespace Ficha_Jiora.Control
         }
         private void Evolui_Esperanca(Personagem_Model personagem)
         {
+            try
+            {
+                switch (personagem.PontosEstigma)
+                {
+                    case 3:
+                        estigma_data.EvoluirPassiva(personagem, 2);
+                        break;
 
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Evento_Estigma.Evolui_Esperanca: " + ex.Message);
+            }
         }
         private void Evolui_Coragem(Personagem_Model personagem)
         {

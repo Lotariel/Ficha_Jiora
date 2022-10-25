@@ -134,7 +134,6 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("Erro em Estigma_Data.AumentarPontosEstigma: " + ex.Message);
             }
         }
-
         public void EvoluirPassiva(Personagem_Model personagem, int grupo)
         {
             try
