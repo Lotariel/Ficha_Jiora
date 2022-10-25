@@ -1035,7 +1035,11 @@ namespace Ficha_Jiora.View
 
         private void Carrega_Batalha()
         {
+
             CBB_nome_personagem.Text = "Selecione";
+            CBB_alvo.Text = "Selecione";
+            CBB_Elementos.Text = "Selecione";     
+
             txt_reduzir.Maximum = 999999;
             txt_defender.Maximum = 999999;
             txt_reduzir.Controls[0].Visible = false;
@@ -1043,6 +1047,8 @@ namespace Ficha_Jiora.View
             txt_defender.Text = "";
             txt_reduzir.Text = "";
             lbl_valor_lb.Text = personagem_Model.Especial + " %";
+            
+
             switch (personagem_Model.ID)
             {
                 case "1":
@@ -1082,6 +1088,49 @@ namespace Ficha_Jiora.View
                 throw new Exception("Falha ao carregar ComboBox Nome do Personagem: "+ ex.Message);
             }
         }
+
+        private void CBB_alvo_Click(object sender, EventArgs e)
+        {
+            Carrega_Combo_Alvo();
+        }
+
+        private void CBB_Elementos_Click(object sender, EventArgs e)
+        {
+            Carrega_Combo_Elementos();
+        }
+
+        private void Carrega_Combo_Alvo()
+        {
+
+            try
+            {
+                CBB_alvo.DataSource = batalha.Carrega_Combo_Alvo();
+                CBB_alvo.ValueMember = "Nome";
+                CBB_alvo.DisplayMember = "Nome";
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Falha ao carregar ComboBox Nome do Alvo: " + ex.Message);
+            }
+        }
+
+        private void Carrega_Combo_Elementos()
+        {
+
+            try
+            {
+                CBB_Elementos.DataSource = batalha.Carrega_Combo_Elementos();
+                CBB_Elementos.ValueMember = "Nome";
+                CBB_Elementos.DisplayMember = "Nome";
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Falha ao carregar ComboBox Nome dos Elementos: " + ex.Message);
+            }
+        }
+
         private void button20_Click(object sender, EventArgs e)
         {
             label23.Text = CBB_nome_personagem.SelectedValue.ToString();

@@ -13,6 +13,7 @@ namespace Ficha_Jiora.Control
     {
         private Personagem_Model personagem = new Personagem_Model();
         private Personagem_Data personagem_Data = new Personagem_Data();
+        private Batalha_Data batalha_Data = new Batalha_Data();
 
         private int HPAtual = 0, HPMax = 0, MPAtual = 0, MPMax = 0;
 
@@ -80,12 +81,12 @@ namespace Ficha_Jiora.Control
                     }
                     else
                     {
-                        HPAtual = ValorCura;                        
+                        HPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("HPatual", HPAtual, IDAlvo);
                 }
-                
-                
+
+
 
             }
             catch (Exception ex)
@@ -123,6 +124,16 @@ namespace Ficha_Jiora.Control
             {
                 return resultado;
             }
+        }
+
+        public DataTable Carrega_Combo_Alvo()
+        {
+            return batalha_Data.Carrega_Combo_Alvo();
+        }
+
+        public DataTable Carrega_Combo_Elementos()
+        {
+            return batalha_Data.Carrega_Combo_Elementos();
         }
     }
 }
