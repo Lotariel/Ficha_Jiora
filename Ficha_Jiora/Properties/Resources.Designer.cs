@@ -253,6 +253,16 @@ namespace Ficha_Jiora.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pm {
+            get {
+                object obj = ResourceManager.GetObject("pm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap poison_icon {
             get {
                 object obj = ResourceManager.GetObject("poison_icon", resourceCulture);

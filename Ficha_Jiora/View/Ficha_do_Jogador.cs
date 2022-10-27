@@ -28,6 +28,7 @@ namespace Ficha_Jiora.View
         private Log_Ficha log_ficha = new Log_Ficha();
         private Estigma_Control estigma_Control = new Estigma_Control();
         private Evento_Estigma evento_estigma = new Evento_Estigma();
+        private Efeitos_Control efeitos_Control = new Efeitos_Control();
         Batalha_Control batalha;
         private string IDPersonagem = "";
         private int d100 = 0, d12 = 0, d10 = 0, d8 = 0, d6 = 0;
@@ -85,7 +86,7 @@ namespace Ficha_Jiora.View
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                MessageBox.Show("Erro ao carregar Ficha, motivo do erro:\r\n");
             }
             
         }
@@ -111,6 +112,7 @@ namespace Ficha_Jiora.View
                 lbl_nivel_personagem.Text = personagem_Model.Nivel.ToString();
                 img_imagem_personagem.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Perfil\\" + personagem_Model.Imagem);
                 lbl_classe_peronsagem.Text = personagem_Model.Classe;
+                VerificaEfeito(personagem_Model);
 
             }
             catch (Exception ex)
@@ -129,7 +131,7 @@ namespace Ficha_Jiora.View
                 lbl_precisao.Text = batalha.Precisao() + " %";
                 lbl_esquiva.Text = batalha.Esquiva() + " %";
                 lbl_critico.Text = personagem_Model.CDS_Critico + " %";
-                lbl_valor_critico.Text = "x" + personagem_Model.Valor_Critico.ToString();
+                lbl_valor_critico.Text = "x" + personagem_Model.Valor_Critico.ToString().Replace(',', '.'); ;
                 lbl_exp.Text = personagem_Model.EXPAtual + " / " + (personagem_Model.Nivel * 500);
                 lbl_tonz.Text = personagem_Model.Tonz.ToString();
 
@@ -151,7 +153,6 @@ namespace Ficha_Jiora.View
             ToolTip tt = new ToolTip();
             tt.SetToolTip(img_resistencia, "Resistência Mágica");
         }
-
         private void VerificaEstigma(Personagem_Model personagem)
         {
             string textoprotecao = evento_estigma.Alert_Estigma(personagem);
@@ -166,6 +167,25 @@ namespace Ficha_Jiora.View
                 }
             }
 
+        }
+        private void VerificaEfeito(Personagem_Model personagem)
+        {
+            try
+            {
+                if (personagem_Model.Poison_Ativo)
+                {
+                    img_poison_effect.Visible = true;
+                }
+                else
+                {
+                    img_poison_effect.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
         #endregion
 
@@ -403,6 +423,8 @@ namespace Ficha_Jiora.View
                 lbl_res_poison.Text = personagem_Model.Res_Poison + " %";
                 lbl_res_blind.Text = personagem_Model.Res_Blind + " %";
                 lbl_res_charm.Text = personagem_Model.Res_Charm + " %";
+                lbl_critico_atributo.Text = personagem_Model.CDS_Critico.ToString();
+                lbl_potencia.Text = personagem_Model.Potencia.ToString();
                 img_stigma.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Estigma\\" + personagem_Model.EstigmaImagem);
                 if (Convert.ToInt16(IDPersonagem) < 5)
                 {
@@ -484,6 +506,8 @@ namespace Ficha_Jiora.View
                 btn_up_vel.Visible = true;
                 btn_up_mag.Visible = true;
                 btn_up_aur.Visible = true;
+                btn_up_cri.Visible = true;
+                btn_up_pot.Visible = true;
             }
             else
             {
@@ -493,6 +517,8 @@ namespace Ficha_Jiora.View
                 btn_up_vel.Visible = false;
                 btn_up_mag.Visible = false;
                 btn_up_aur.Visible = false;
+                btn_up_cri.Visible = false;
+                btn_up_pot.Visible = false;
             }
         }
 
@@ -807,7 +833,7 @@ namespace Ficha_Jiora.View
         private void img_valor_critico_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_valor_critico, "Cálculo do acerto crítico");
+            tt.SetToolTip(img_valor_critico, "Potência do acerto crítico");
         }
 
         private void img_exp_MouseHover(object sender, EventArgs e)
@@ -965,9 +991,7 @@ namespace Ficha_Jiora.View
             {
                 MessageBox.Show("Erro ao realizar o teste:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        
+        }        
 
         private void btn_up_vel_Click(object sender, EventArgs e)
         {
@@ -986,9 +1010,7 @@ namespace Ficha_Jiora.View
 
                 MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-       
+        }       
 
         private void btn_up_mag_Click(object sender, EventArgs e)
         {
@@ -1027,7 +1049,42 @@ namespace Ficha_Jiora.View
             }
         }
 
-       
+        private void btn_up_cri_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                personagem_Control.AumentarAtributo("CDS_Critico", personagem_Model.CDS_Critico, IDPersonagem);
+                Insertlog("Aumentou +1 ponto de Crítico. De " + personagem_Model.CDS_Critico + " para " + (personagem_Model.CDS_Critico + 1));
+                ControleBotao(false);
+                Carrega_Tela();
+                Cursor.Current = Cursors.WaitCursor;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_up_pot_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                personagem_Control.AumentarAtributo("Potencia", personagem_Model.Potencia, IDPersonagem);
+                Insertlog("Aumentou +1 ponto de Potência. De " + personagem_Model.Potencia + " para " + (personagem_Model.Potencia + 1));
+                ControleBotao(false);
+                Carrega_Tela();
+                Cursor.Current = Cursors.WaitCursor;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
 
         #endregion
 
@@ -1131,6 +1188,38 @@ namespace Ficha_Jiora.View
             }
         }
 
+        private void button17_Click(object sender, EventArgs e)
+        {
+            label24.Text = comboBox4.SelectedIndex.ToString();
+        }
+
+        private void btn_esquiva_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int esquiva = batalha.Esquiva();
+                d100 = Rolar.D100();
+                AdicionaTurnos();
+                if (d100 <= esquiva)
+                {
+                    txt_batalha.Text = personagem_Model.Nome + " conseguiu se esquivar com sucesso!";
+                    txt_batalha.Text += "\r\nValor do Dado: " + d100;
+                    Insertlog("Teve sucesso no teste de Esquiva.");
+                }
+                else
+                {
+                    txt_batalha.Text = personagem_Model.Nome + " falhou ao tentar se esquivar!";
+                    txt_batalha.Text += "\r\nValor do Dado: " + d100;
+                    Insertlog("Teve falha no teste de Esquiva.");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Falha ao tentar executar o comando Esquivar. Motivo do Erro: "+ex.Message,"Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+        }
+
         private void button20_Click(object sender, EventArgs e)
         {
             label23.Text = CBB_nome_personagem.SelectedValue.ToString();
@@ -1141,6 +1230,16 @@ namespace Ficha_Jiora.View
         }
 
         private void btn_small_potion_Click(object sender, EventArgs e)
+        {
+            Pocao_Pequena();
+            comboBox4.Items.Clear();
+            comboBox4.Items.Insert(0, "Ofensivo");
+            comboBox4.Items.Insert(1, "Defensivo");
+            comboBox4.Items.Insert(2, "Encatamento");
+
+        }
+
+        private void Pocao_Pequena()
         {
             try
             {
@@ -1167,14 +1266,18 @@ namespace Ficha_Jiora.View
                         Insertlog("Utilizou uma Poção Pequena em " + CBB_nome_personagem.Text);
                     }
                 }
-                
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Falha ao usar Item: " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
 
+        private void AdicionaTurnos()
+        {
+            CarregaPersonagem();
+            batalha.AdicionaTurno(personagem_Model);
         }
         #endregion
 

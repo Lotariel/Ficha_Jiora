@@ -44,13 +44,14 @@ namespace Ficha_Jiora.Model
         public int ModMagia { get; set; }
         public int ModAura { get; set; }
         public int Defesa { get; set; }
+        public int Potencia { get; set; }
         public int Resistencia { get; set; }
         public int ModDefesa { get; set; }
         public int ModResistenca { get; set; }
         public int CDS_Critico { get; set; }
-        public int Valor_Critico { get; set; }
+        public double Valor_Critico { get; set; }
         public int Mod_CDSCritico { get; set; }
-        public int Mod_ValorCritico { get; set; }
+        public double Mod_ValorCritico { get; set; }
         public int Especial { get; set; }
         public int HPMax { get; set; }
         public int HPAtual { get; set; }

@@ -24,13 +24,26 @@ namespace Ficha_Jiora.Control
         public string GetID(string nome)
         {
             return personagem_Data.GetID(nome);
-        }        
+        }
 
-        public void AumentarAtributo(string coluna, int valor, string id)
+        public void AumentarAtributo(string coluna, double valor, string id)
         {
-            valor += 1;
+            if (coluna == "Potencia")
+            {
+                double potencia = valor + 1.0;
+                personagem_Model = Carrega_Personagem(id);
+                valor = (potencia * 0.1) + 2;
+                personagem_Data.Update_Personagem(coluna, potencia, id);
+                personagem_Data.Update_Personagem("Valor_critico", valor, id);
 
-            personagem_Data.Update_Personagem(coluna, valor, id);
+            }
+            else
+            {
+                valor += 1;
+                personagem_Data.Update_Personagem(coluna, valor, id);
+
+            }
+            
         }
 
         public int? GerenciaAtributos(string ID)
@@ -46,14 +59,14 @@ namespace Ficha_Jiora.Control
             return resultado;
         }
 
-        public int TesteAtributo(int ValorTeste,int ValorDado)
+        public int TesteAtributo(int ValorTeste, int ValorDado)
         {
             /* 1- Acerto Crítico
              * 2- Acerto
              * 3- Falha
              * 4- Falha Crítica
              */
-            if (ValorDado  <= ValorTeste)
+            if (ValorDado <= ValorTeste)
             {
                 if (ValorDado <= 10)
                 {

@@ -62,13 +62,14 @@ namespace Ficha_Jiora.DAO
                         ModFoco = Convert.ToInt32(item["Mod_foco"]),
                         ModMagia = Convert.ToInt32(item["Mod_magia"]),
                         ModAura = Convert.ToInt32(item["Mod_aura"]),
+                        Potencia = Convert.ToInt32(item["Potencia"]),
                         Defesa = Convert.ToInt32(item["Defesa"]) + Convert.ToInt32(item["mod_Defesa"]),
                         Resistencia = Convert.ToInt32(item["Resistencia"]) + Convert.ToInt32(item["mod_Resistencia"]),
                         ModResistenca = Convert.ToInt32(item["Mod_resistencia"]),
                         ModDefesa = Convert.ToInt32(item["mod_defesa"]),
                         CDS_Critico = Convert.ToInt32(item["cds_critico"]) + Convert.ToInt32(item["mod_cds_critico"]),
                         Mod_CDSCritico = Convert.ToInt32(item["mod_cds_critico"]),
-                        Valor_Critico = Convert.ToInt32(item["valor_critico"]) + Convert.ToInt32(item["mod_valor_critico"]),
+                        Valor_Critico = Convert.ToDouble(item["valor_critico"]) + Convert.ToDouble(item["mod_valor_critico"]),
                         Mod_ValorCritico = Convert.ToInt32(item["mod_valor_critico"]),
                         Especial = Convert.ToInt32(item["Especial"]),
                         HPAtual = Convert.ToInt32(item["Hpatual"]),
@@ -222,13 +223,13 @@ namespace Ficha_Jiora.DAO
             }
         }
 
-        public void Update_Personagem(string Coluna, int Valor, string ID)
+        public void Update_Personagem(string Coluna, double Valor, string ID)
         {
             try
             {
                 Script = "UPDATE personagem set " + Coluna + " = '" + Valor + "' where ID = " + ID;
 
-                SqlCommand update = new SqlCommand(Script, AbreConexao());
+                SqlCommand update = new SqlCommand(Script.Replace(',','.'), AbreConexao());
 
                 update.ExecuteNonQuery();
 
@@ -244,7 +245,7 @@ namespace Ficha_Jiora.DAO
         {
             try
             {
-                Script = "select SUM(Forca + Vitalidade + Foco + Velocidade + Magia + aura) as total ";
+                Script = "select SUM(Forca + Vitalidade + Foco + Velocidade + Magia + aura+ potencia + cds_critico - 10) as total ";
                 Script += "from Personagem ";
                 Script += "where ID = " + ID;
 

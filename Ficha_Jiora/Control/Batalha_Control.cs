@@ -13,6 +13,7 @@ namespace Ficha_Jiora.Control
     {
         private Personagem_Model personagem = new Personagem_Model();
         private Personagem_Data personagem_Data = new Personagem_Data();
+        private Efeitos_Control efeitos_Control = new Efeitos_Control();
         private Batalha_Data batalha_Data = new Batalha_Data();
 
         private int HPAtual = 0, HPMax = 0, MPAtual = 0, MPMax = 0;
@@ -62,7 +63,7 @@ namespace Ficha_Jiora.Control
                     {
                         HPAtual = ValorCura;
                     }
-                    personagem_Data.Update_Personagem("HPatual", HPAtual, personagem.ID);
+                    personagem_Data.Update_Personagem("HPatual", HPAtual, IDAlvo);
                 }
                 else
                 {
@@ -83,7 +84,7 @@ namespace Ficha_Jiora.Control
                     {
                         HPAtual = ValorCura;
                     }
-                    personagem_Data.Update_Personagem("HPatual", HPAtual, IDAlvo);
+                    personagem_Data.Update_Personagem("HPatual", HPAtual, personagem.ID);
                 }
 
 
@@ -95,6 +96,303 @@ namespace Ficha_Jiora.Control
                 throw new Exception(ex.Message);
             }
         }
+
+        public void Pocao_Media(string IDAlvo)
+        {
+            try
+            {
+                Personagem_Model alvo = new Personagem_Model();
+                int ValorCura = 0;
+
+                if (IDAlvo != personagem.ID)
+                {
+                    alvo = personagem_Data.Carrega_Personagem(IDAlvo);
+                    HPMax = alvo.HPMax;
+                    HPAtual = alvo.HPAtual;
+                    MPAtual = alvo.MPAtual;
+                    MPMax = alvo.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(HPMax * 0.50));
+
+                    ValorCura += HPAtual;
+
+                    if (ValorCura > HPMax)
+                    {
+                        HPAtual = HPMax;
+                    }
+                    else
+                    {
+                        HPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("HPatual", HPAtual, IDAlvo);
+                }
+                else
+                {
+                    HPMax = personagem.HPMax;
+                    HPAtual = personagem.HPAtual;
+                    MPAtual = personagem.MPAtual;
+                    MPMax = personagem.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(HPMax * 0.50));
+
+                    ValorCura += HPAtual;
+
+                    if (ValorCura > HPMax)
+                    {
+                        HPAtual = HPMax;
+                    }
+                    else
+                    {
+                        HPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("HPatual", HPAtual, personagem.ID);
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Pocao_Grande(string IDAlvo)
+        {
+            try
+            {
+                Personagem_Model alvo = new Personagem_Model();
+                int ValorCura = 0;
+
+                if (IDAlvo != personagem.ID)
+                {
+                    alvo = personagem_Data.Carrega_Personagem(IDAlvo);
+                    HPMax = alvo.HPMax;
+                    HPAtual = alvo.HPAtual;
+                    MPAtual = alvo.MPAtual;
+                    MPMax = alvo.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(HPMax * 0.70));
+
+                    ValorCura += HPAtual;
+
+                    if (ValorCura > HPMax)
+                    {
+                        HPAtual = HPMax;
+                    }
+                    else
+                    {
+                        HPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("HPatual", HPAtual, IDAlvo);
+                }
+                else
+                {
+                    HPMax = personagem.HPMax;
+                    HPAtual = personagem.HPAtual;
+                    MPAtual = personagem.MPAtual;
+                    MPMax = personagem.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(HPMax * 0.70));
+
+                    ValorCura += HPAtual;
+
+                    if (ValorCura > HPMax)
+                    {
+                        HPAtual = HPMax;
+                    }
+                    else
+                    {
+                        HPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("HPatual", HPAtual, personagem.ID);
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Elixir_Pequeno(string IDAlvo)
+        {
+            try
+            {
+                Personagem_Model alvo = new Personagem_Model();
+                int ValorCura = 0;
+
+                if (IDAlvo != personagem.ID)
+                {
+                    alvo = personagem_Data.Carrega_Personagem(IDAlvo);                   
+                    MPAtual = alvo.MPAtual;
+                    MPMax = alvo.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(MPMax * 0.20));
+
+                    ValorCura += MPAtual;
+
+                    if (ValorCura > MPMax)
+                    {
+                        MPAtual = MPMax;
+                    }
+                    else
+                    {
+                        MPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("MPatual", MPAtual, IDAlvo);
+                }
+                else
+                {
+                    
+                    MPAtual = personagem.MPAtual;
+                    MPMax = personagem.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(MPMax * 0.20));
+
+                    ValorCura += MPAtual;
+
+                    if (ValorCura > MPMax)
+                    {
+                        MPAtual = MPMax;
+                    }
+                    else
+                    {
+                        MPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("MPatual", MPAtual, personagem.ID);
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Elixir_Media(string IDAlvo)
+        {
+            try
+            {
+                Personagem_Model alvo = new Personagem_Model();
+                int ValorCura = 0;
+
+                if (IDAlvo != personagem.ID)
+                {
+                    alvo = personagem_Data.Carrega_Personagem(IDAlvo);
+                    MPAtual = alvo.MPAtual;
+                    MPMax = alvo.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(MPMax * 0.40));
+
+                    ValorCura += MPAtual;
+
+                    if (ValorCura > MPMax)
+                    {
+                        MPAtual = MPMax;
+                    }
+                    else
+                    {
+                        MPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("MPatual", MPAtual, IDAlvo);
+                }
+                else
+                {
+
+                    MPAtual = personagem.MPAtual;
+                    MPMax = personagem.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(MPMax * 0.40));
+
+                    ValorCura += MPAtual;
+
+                    if (ValorCura > MPMax)
+                    {
+                        MPAtual = MPMax;
+                    }
+                    else
+                    {
+                        MPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("MPatual", MPAtual, personagem.ID);
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Elixir_Grande(string IDAlvo)
+        {
+            try
+            {
+                Personagem_Model alvo = new Personagem_Model();
+                int ValorCura = 0;
+
+                if (IDAlvo != personagem.ID)
+                {
+                    alvo = personagem_Data.Carrega_Personagem(IDAlvo);
+                    MPAtual = alvo.MPAtual;
+                    MPMax = alvo.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(MPMax * 0.60));
+
+                    ValorCura += MPAtual;
+
+                    if (ValorCura > MPMax)
+                    {
+                        MPAtual = MPMax;
+                    }
+                    else
+                    {
+                        MPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("MPatual", MPAtual, IDAlvo);
+                }
+                else
+                {
+
+                    MPAtual = personagem.MPAtual;
+                    MPMax = personagem.MPMax;
+
+                    ValorCura = Convert.ToInt32(Math.Ceiling(MPMax * 0.60));
+
+                    ValorCura += MPAtual;
+
+                    if (ValorCura > MPMax)
+                    {
+                        MPAtual = MPMax;
+                    }
+                    else
+                    {
+                        MPAtual = ValorCura;
+                    }
+                    personagem_Data.Update_Personagem("MPatual", MPAtual, personagem.ID);
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
         public int Precisao()
         {
             resultado = 40 + (personagem.Foco * 2) + personagem.Nivel;
@@ -134,6 +432,20 @@ namespace Ficha_Jiora.Control
         public DataTable Carrega_Combo_Elementos()
         {
             return batalha_Data.Carrega_Combo_Elementos();
+        }
+
+        public void AdicionaTurno(Personagem_Model personagem)
+        {
+            int Valor = personagem.Turnos + 1;
+
+            personagem_Data.Update_Personagem("Turnos", Valor, personagem.ID);
+            efeitos_Control.VerificaEfeitos(personagem);
+            
+        }
+
+        public void ZeraTurno(Personagem_Model personagem)
+        {
+           personagem_Data.Update_Personagem("Turnos", 0, personagem.ID);
         }
     }
 }
