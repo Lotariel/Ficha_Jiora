@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
             this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -1314,7 +1314,7 @@
             // lbl_mp
             // 
             this.lbl_mp.AutoSize = true;
-            this.lbl_mp.Location = new System.Drawing.Point(896, 15);
+            this.lbl_mp.Location = new System.Drawing.Point(127, 15);
             this.lbl_mp.Name = "lbl_mp";
             this.lbl_mp.Size = new System.Drawing.Size(13, 15);
             this.lbl_mp.TabIndex = 28;
@@ -1323,7 +1323,7 @@
             // lbl_hp
             // 
             this.lbl_hp.AutoSize = true;
-            this.lbl_hp.Location = new System.Drawing.Point(791, 15);
+            this.lbl_hp.Location = new System.Drawing.Point(38, 15);
             this.lbl_hp.Name = "lbl_hp";
             this.lbl_hp.Size = new System.Drawing.Size(13, 15);
             this.lbl_hp.TabIndex = 27;
@@ -1332,7 +1332,7 @@
             // lbl_valor_lb
             // 
             this.lbl_valor_lb.AutoSize = true;
-            this.lbl_valor_lb.Location = new System.Drawing.Point(858, 41);
+            this.lbl_valor_lb.Location = new System.Drawing.Point(84, 41);
             this.lbl_valor_lb.Name = "lbl_valor_lb";
             this.lbl_valor_lb.Size = new System.Drawing.Size(44, 15);
             this.lbl_valor_lb.TabIndex = 26;
@@ -1340,7 +1340,7 @@
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(868, 119);
+            this.button26.Location = new System.Drawing.Point(133, 93);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(75, 23);
             this.button26.TabIndex = 25;
@@ -1352,7 +1352,7 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
             "Selecione o jogador"});
-            this.comboBox5.Location = new System.Drawing.Point(740, 120);
+            this.comboBox5.Location = new System.Drawing.Point(7, 94);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 23);
             this.comboBox5.TabIndex = 24;
@@ -1360,7 +1360,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(826, 93);
+            this.label32.Location = new System.Drawing.Point(103, 66);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(44, 15);
             this.label32.TabIndex = 12;
@@ -1369,7 +1369,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(802, 67);
+            this.label31.Location = new System.Drawing.Point(6, 66);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(91, 15);
             this.label31.TabIndex = 11;
@@ -1390,9 +1390,9 @@
             this.groupBox6.Controls.Add(this.button20);
             this.groupBox6.Controls.Add(this.button19);
             this.groupBox6.Controls.Add(this.btn_small_potion);
-            this.groupBox6.Location = new System.Drawing.Point(327, 182);
+            this.groupBox6.Location = new System.Drawing.Point(659, 282);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(290, 312);
+            this.groupBox6.Size = new System.Drawing.Size(290, 203);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Itens";
@@ -1532,9 +1532,9 @@
             this.groupBox5.Controls.Add(this.CBB_categoria);
             this.groupBox5.Controls.Add(this.CBB_alvo);
             this.groupBox5.Controls.Add(this.CBB_Elementos);
-            this.groupBox5.Location = new System.Drawing.Point(659, 182);
+            this.groupBox5.Location = new System.Drawing.Point(659, 12);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(290, 312);
+            this.groupBox5.Size = new System.Drawing.Size(290, 264);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Magias";
@@ -1542,7 +1542,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(136, 243);
+            this.label21.Location = new System.Drawing.Point(133, 193);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(34, 15);
             this.label21.TabIndex = 33;
@@ -1558,7 +1558,7 @@
             "Rank 3",
             "Rank 4",
             "Rank 5"});
-            this.CBB_nivel.Location = new System.Drawing.Point(9, 235);
+            this.CBB_nivel.Location = new System.Drawing.Point(6, 185);
             this.CBB_nivel.Name = "CBB_nivel";
             this.CBB_nivel.Size = new System.Drawing.Size(121, 23);
             this.CBB_nivel.TabIndex = 32;
@@ -1574,7 +1574,7 @@
             // 
             // Btn_simular
             // 
-            this.Btn_simular.Location = new System.Drawing.Point(133, 277);
+            this.Btn_simular.Location = new System.Drawing.Point(130, 227);
             this.Btn_simular.Name = "Btn_simular";
             this.Btn_simular.Size = new System.Drawing.Size(75, 23);
             this.Btn_simular.TabIndex = 31;
@@ -1584,7 +1584,7 @@
             // 
             // button23
             // 
-            this.button23.Location = new System.Drawing.Point(37, 277);
+            this.button23.Location = new System.Drawing.Point(34, 227);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(75, 23);
             this.button23.TabIndex = 30;
@@ -1594,7 +1594,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(136, 214);
+            this.label30.Location = new System.Drawing.Point(133, 164);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(58, 15);
             this.label30.TabIndex = 29;
@@ -1603,7 +1603,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(136, 185);
+            this.label29.Location = new System.Drawing.Point(133, 135);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(31, 15);
             this.label29.TabIndex = 28;
@@ -1612,7 +1612,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(136, 156);
+            this.label28.Location = new System.Drawing.Point(133, 106);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(57, 15);
             this.label28.TabIndex = 27;
@@ -1625,7 +1625,7 @@
             this.CBB_categoria.Items.AddRange(new object[] {
             "Ofensivo",
             "Defensivo"});
-            this.CBB_categoria.Location = new System.Drawing.Point(9, 206);
+            this.CBB_categoria.Location = new System.Drawing.Point(6, 156);
             this.CBB_categoria.Name = "CBB_categoria";
             this.CBB_categoria.Size = new System.Drawing.Size(121, 23);
             this.CBB_categoria.TabIndex = 26;
@@ -1636,7 +1636,7 @@
             this.CBB_alvo.FormattingEnabled = true;
             this.CBB_alvo.Items.AddRange(new object[] {
             "Selecione o jogador"});
-            this.CBB_alvo.Location = new System.Drawing.Point(9, 177);
+            this.CBB_alvo.Location = new System.Drawing.Point(6, 127);
             this.CBB_alvo.Name = "CBB_alvo";
             this.CBB_alvo.Size = new System.Drawing.Size(121, 23);
             this.CBB_alvo.TabIndex = 25;
@@ -1648,7 +1648,7 @@
             this.CBB_Elementos.FormattingEnabled = true;
             this.CBB_Elementos.Items.AddRange(new object[] {
             "Selecione o jogador"});
-            this.CBB_Elementos.Location = new System.Drawing.Point(9, 148);
+            this.CBB_Elementos.Location = new System.Drawing.Point(6, 98);
             this.CBB_Elementos.Name = "CBB_Elementos";
             this.CBB_Elementos.Size = new System.Drawing.Size(121, 23);
             this.CBB_Elementos.TabIndex = 24;
@@ -1779,7 +1779,7 @@
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.btn_esquiva);
             this.groupBox3.Controls.Add(this.btn_Atacar);
-            this.groupBox3.Location = new System.Drawing.Point(6, 41);
+            this.groupBox3.Location = new System.Drawing.Point(377, 321);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(190, 111);
             this.groupBox3.TabIndex = 7;
@@ -1825,7 +1825,7 @@
             // lbl_limite_break
             // 
             this.lbl_limite_break.AutoSize = true;
-            this.lbl_limite_break.Location = new System.Drawing.Point(782, 41);
+            this.lbl_limite_break.Location = new System.Drawing.Point(6, 41);
             this.lbl_limite_break.Name = "lbl_limite_break";
             this.lbl_limite_break.Size = new System.Drawing.Size(57, 15);
             this.lbl_limite_break.TabIndex = 6;
@@ -1834,7 +1834,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(859, 15);
+            this.label20.Location = new System.Drawing.Point(84, 15);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(31, 15);
             this.label20.TabIndex = 5;
@@ -1843,7 +1843,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(760, 15);
+            this.label19.Location = new System.Drawing.Point(3, 15);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 15);
             this.label19.TabIndex = 4;
@@ -1851,7 +1851,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(624, 111);
+            this.button2.Location = new System.Drawing.Point(244, 70);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -1860,7 +1860,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(624, 82);
+            this.button1.Location = new System.Drawing.Point(244, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -1869,16 +1869,19 @@
             // 
             // txt_reduzir
             // 
-            this.txt_reduzir.Location = new System.Drawing.Point(624, 53);
+            this.txt_reduzir.Location = new System.Drawing.Point(244, 12);
             this.txt_reduzir.Name = "txt_reduzir";
             this.txt_reduzir.Size = new System.Drawing.Size(75, 23);
             this.txt_reduzir.TabIndex = 1;
             // 
             // txt_batalha
             // 
-            this.txt_batalha.Location = new System.Drawing.Point(370, 41);
+            this.txt_batalha.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txt_batalha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.txt_batalha.Location = new System.Drawing.Point(377, 173);
             this.txt_batalha.Multiline = true;
             this.txt_batalha.Name = "txt_batalha";
+            this.txt_batalha.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_batalha.Size = new System.Drawing.Size(190, 111);
             this.txt_batalha.TabIndex = 0;
             // 
@@ -1942,16 +1945,16 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Teste,
@@ -1962,13 +1965,13 @@
             this.id_pericia});
             this.dataGridView1.Location = new System.Drawing.Point(34, 27);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
@@ -1994,8 +1997,8 @@
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nome.DataPropertyName = "Nome";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nome.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
             this.Nome.HeaderText = "Nome";
             this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
@@ -2005,8 +2008,8 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
             this.Valor.HeaderText = "CDS (%)";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -2028,8 +2031,8 @@
             // 
             this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descricao.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
             this.descricao.HeaderText = "Descrição";
             this.descricao.MinimumWidth = 6;
             this.descricao.Name = "descricao";

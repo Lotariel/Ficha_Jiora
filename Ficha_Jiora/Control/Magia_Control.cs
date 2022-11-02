@@ -12,7 +12,7 @@ namespace Ficha_Jiora.Control
     {
         
         private Magia_Data magia_Data = new Magia_Data();
-        public string RetornaDescricaoMagiaAntiga(string Elemento, int Rank, string alvo, string Categoria)
+        public MagiaAntiga_Model RetornaDescricaoMagiaAntiga(string Elemento, int Rank, string alvo, string Categoria)
         {
             return magia_Data.RetornaDescricaoMagiaAntiga(Elemento, Rank, alvo, Categoria);
         }
