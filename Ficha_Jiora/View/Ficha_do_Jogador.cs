@@ -35,7 +35,7 @@ namespace Ficha_Jiora.View
 
         private Equipamento_Control equipamento_control = new Equipamento_Control();
 
-
+        
 
 
 
@@ -82,7 +82,7 @@ namespace Ficha_Jiora.View
                 CarregaAtributos();
                 CarregaStatus();
                 Carrega_Batalha();
-
+                
             }
             catch (Exception ex)
             {
