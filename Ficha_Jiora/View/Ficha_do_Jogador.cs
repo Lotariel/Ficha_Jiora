@@ -1237,7 +1237,7 @@ namespace Ficha_Jiora.View
 
         private void Btn_simular_Click(object sender, EventArgs e)
         {
-            
+            txt_batalha.Text = Descricao_Magia_Antiga();
         }
 
         private void btn_small_potion_Click(object sender, EventArgs e)
@@ -1314,11 +1314,18 @@ namespace Ficha_Jiora.View
         }
         private string Descricao_Magia_Antiga()
         {
-            string elemento = CBB_Elementos.Text;
+            MagiaAntiga_Model magia = new MagiaAntiga_Model();
+            string elemento = CBB_Elementos.Text.Trim();
             string rank = CBB_nivel.Text;
             int alvo = Convert.ToInt32(CBB_alvo.SelectedValue);
             string categoria = CBB_categoria.Text;
-            return batalha.RetornaDescricaoMagiaAntiga(elemento, rank, alvo, categoria);
+            string Texto = "";
+            magia = batalha.RetornaDescricaoMagiaAntiga(elemento, rank, alvo, categoria);
+
+            Texto = "~~~~~~~Simulação~~~~~~~\r\n\r\n";
+            Texto += magia.Descricao + "\r\n\r\n";
+            Texto += "Custo de Mana: " + magia.Custo;
+            return Texto;
         }
         #endregion
 

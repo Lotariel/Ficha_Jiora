@@ -15,25 +15,38 @@ namespace Ficha_Jiora.DAO
         private string Script = "";
         private string Retorno = "";
 
-        public string RetornaDescricaoMagiaAntiga(string Elemento, int Rank, string alvo, string Categoria)
+        public MagiaAntiga_Model RetornaDescricaoMagiaAntiga(string Elemento, int Rank, string alvo, string Categoria)
         {
             try
             {
-                Script = "select " + Elemento + " from magias_antigas";
+                DataTable TabelaMagiaAntiga = new DataTable();
+                MagiaAntiga_Model  magia_a = new MagiaAntiga_Model();
+
+                Script = "select " + Elemento + ",qntd_dado,custo,mult_dado,multiplicador from magias_antigas";
                 Script += " where rank = " + Rank;
                 Script += " AND alvo = '" + alvo + "'";
                 Script += " AND Tipo = '" + Categoria + "'";
-                
 
-                SqlCommand select = new SqlCommand(Script, AbreConexao());
+                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
 
-                Retorno = select.ExecuteScalar().ToString();
+                select.Fill(TabelaMagiaAntiga);
+                FechaConexao();
 
-                return Retorno;
+                foreach (DataRow item in TabelaMagiaAntiga.Rows)
+                {
+                    magia_a = new MagiaAntiga_Model()
+                    {
+                        Descricao = item[Elemento].ToString(),
+                        ValorMin = Convert.ToInt32(item["qntd_dado"]),
+                        ValorMax = Convert.ToInt32(item["mult_dado"]),
+                        Custo = Convert.ToInt32(item["custo"]),
+                        Multiplicador = Convert.ToInt32(item["multiplicador"])
+                    };
+                }
+                return magia_a;
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Erro em Magia_Data.RetornaDescricaoMagiaAntiga: " + ex.Message);
             }
         }

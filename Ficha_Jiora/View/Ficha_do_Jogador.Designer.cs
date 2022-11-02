@@ -1358,7 +1358,8 @@
             // lbl_mp
             // 
             this.lbl_mp.AutoSize = true;
-            this.lbl_mp.Location = new System.Drawing.Point(1024, 20);
+
+            this.lbl_mp.Location = new System.Drawing.Point(127, 15);
             this.lbl_mp.Name = "lbl_mp";
             this.lbl_mp.Size = new System.Drawing.Size(17, 20);
             this.lbl_mp.TabIndex = 28;
@@ -1367,7 +1368,9 @@
             // lbl_hp
             // 
             this.lbl_hp.AutoSize = true;
-            this.lbl_hp.Location = new System.Drawing.Point(904, 20);
+
+            this.lbl_hp.Location = new System.Drawing.Point(38, 15);
+
             this.lbl_hp.Name = "lbl_hp";
             this.lbl_hp.Size = new System.Drawing.Size(17, 20);
             this.lbl_hp.TabIndex = 27;
@@ -1376,7 +1379,9 @@
             // lbl_valor_lb
             // 
             this.lbl_valor_lb.AutoSize = true;
-            this.lbl_valor_lb.Location = new System.Drawing.Point(981, 55);
+
+            this.lbl_valor_lb.Location = new System.Drawing.Point(84, 41);
+
             this.lbl_valor_lb.Name = "lbl_valor_lb";
             this.lbl_valor_lb.Size = new System.Drawing.Size(58, 20);
             this.lbl_valor_lb.TabIndex = 26;
@@ -1384,8 +1389,9 @@
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(992, 159);
-            this.button26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.button26.Location = new System.Drawing.Point(133, 93);
+
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(86, 31);
             this.button26.TabIndex = 25;
@@ -1397,8 +1403,9 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
             "Selecione o jogador"});
-            this.comboBox5.Location = new System.Drawing.Point(846, 160);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.comboBox5.Location = new System.Drawing.Point(7, 94);
+
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(138, 28);
             this.comboBox5.TabIndex = 24;
@@ -1406,7 +1413,9 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(944, 124);
+
+            this.label32.Location = new System.Drawing.Point(103, 66);
+
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(57, 20);
             this.label32.TabIndex = 12;
@@ -1415,7 +1424,9 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(917, 89);
+
+            this.label31.Location = new System.Drawing.Point(6, 66);
+
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(115, 20);
             this.label31.TabIndex = 11;
@@ -1436,11 +1447,11 @@
             this.groupBox6.Controls.Add(this.button20);
             this.groupBox6.Controls.Add(this.button19);
             this.groupBox6.Controls.Add(this.btn_small_potion);
-            this.groupBox6.Location = new System.Drawing.Point(374, 243);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.groupBox6.Location = new System.Drawing.Point(659, 282);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox6.Size = new System.Drawing.Size(331, 416);
+            this.groupBox6.Size = new System.Drawing.Size(290, 203);
+
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Itens";
@@ -1587,11 +1598,11 @@
             this.groupBox5.Controls.Add(this.CBB_categoria);
             this.groupBox5.Controls.Add(this.CBB_alvo);
             this.groupBox5.Controls.Add(this.CBB_Elementos);
-            this.groupBox5.Location = new System.Drawing.Point(753, 243);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.groupBox5.Location = new System.Drawing.Point(659, 12);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox5.Size = new System.Drawing.Size(331, 416);
+            this.groupBox5.Size = new System.Drawing.Size(290, 264);
+
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Magias";
@@ -1599,7 +1610,10 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(155, 324);
+
+
+            this.label21.Location = new System.Drawing.Point(133, 193);
+
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 20);
             this.label21.TabIndex = 33;
@@ -1615,8 +1629,9 @@
             "Rank 3",
             "Rank 4",
             "Rank 5"});
-            this.CBB_nivel.Location = new System.Drawing.Point(10, 313);
-            this.CBB_nivel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.CBB_nivel.Location = new System.Drawing.Point(6, 185);
+
             this.CBB_nivel.Name = "CBB_nivel";
             this.CBB_nivel.Size = new System.Drawing.Size(138, 28);
             this.CBB_nivel.TabIndex = 32;
@@ -1633,8 +1648,9 @@
             // 
             // Btn_simular
             // 
-            this.Btn_simular.Location = new System.Drawing.Point(152, 369);
-            this.Btn_simular.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.Btn_simular.Location = new System.Drawing.Point(130, 227);
+
             this.Btn_simular.Name = "Btn_simular";
             this.Btn_simular.Size = new System.Drawing.Size(86, 31);
             this.Btn_simular.TabIndex = 31;
@@ -1644,8 +1660,9 @@
             // 
             // button23
             // 
-            this.button23.Location = new System.Drawing.Point(42, 369);
-            this.button23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.button23.Location = new System.Drawing.Point(34, 227);
+
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(86, 31);
             this.button23.TabIndex = 30;
@@ -1655,7 +1672,9 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(155, 285);
+
+            this.label30.Location = new System.Drawing.Point(133, 164);
+
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(74, 20);
             this.label30.TabIndex = 29;
@@ -1664,7 +1683,9 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(155, 247);
+
+            this.label29.Location = new System.Drawing.Point(133, 135);
+
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(39, 20);
             this.label29.TabIndex = 28;
@@ -1673,7 +1694,9 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(155, 208);
+
+            this.label28.Location = new System.Drawing.Point(133, 106);
+
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(72, 20);
             this.label28.TabIndex = 27;
@@ -1686,8 +1709,9 @@
             this.CBB_categoria.Items.AddRange(new object[] {
             "Ofensivo",
             "Defensivo"});
-            this.CBB_categoria.Location = new System.Drawing.Point(10, 275);
-            this.CBB_categoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.CBB_categoria.Location = new System.Drawing.Point(6, 156);
+
             this.CBB_categoria.Name = "CBB_categoria";
             this.CBB_categoria.Size = new System.Drawing.Size(138, 28);
             this.CBB_categoria.TabIndex = 26;
@@ -1698,8 +1722,9 @@
             this.CBB_alvo.FormattingEnabled = true;
             this.CBB_alvo.Items.AddRange(new object[] {
             "Selecione o jogador"});
-            this.CBB_alvo.Location = new System.Drawing.Point(10, 236);
-            this.CBB_alvo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.CBB_alvo.Location = new System.Drawing.Point(6, 127);
+
             this.CBB_alvo.Name = "CBB_alvo";
             this.CBB_alvo.Size = new System.Drawing.Size(138, 28);
             this.CBB_alvo.TabIndex = 25;
@@ -1711,8 +1736,9 @@
             this.CBB_Elementos.FormattingEnabled = true;
             this.CBB_Elementos.Items.AddRange(new object[] {
             "Selecione o jogador"});
-            this.CBB_Elementos.Location = new System.Drawing.Point(10, 197);
-            this.CBB_Elementos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.CBB_Elementos.Location = new System.Drawing.Point(6, 98);
+
             this.CBB_Elementos.Name = "CBB_Elementos";
             this.CBB_Elementos.Size = new System.Drawing.Size(138, 28);
             this.CBB_Elementos.TabIndex = 24;
@@ -1856,8 +1882,9 @@
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.btn_esquiva);
             this.groupBox3.Controls.Add(this.btn_Atacar);
-            this.groupBox3.Location = new System.Drawing.Point(7, 55);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.groupBox3.Location = new System.Drawing.Point(377, 321);
+
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Size = new System.Drawing.Size(217, 148);
@@ -1908,7 +1935,9 @@
             // lbl_limite_break
             // 
             this.lbl_limite_break.AutoSize = true;
-            this.lbl_limite_break.Location = new System.Drawing.Point(894, 55);
+
+            this.lbl_limite_break.Location = new System.Drawing.Point(6, 41);
+
             this.lbl_limite_break.Name = "lbl_limite_break";
             this.lbl_limite_break.Size = new System.Drawing.Size(72, 20);
             this.lbl_limite_break.TabIndex = 6;
@@ -1917,7 +1946,9 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(982, 20);
+
+            this.label20.Location = new System.Drawing.Point(84, 15);
+
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(37, 20);
             this.label20.TabIndex = 5;
@@ -1926,7 +1957,9 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(869, 20);
+
+            this.label19.Location = new System.Drawing.Point(3, 15);
+
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(35, 20);
             this.label19.TabIndex = 4;
@@ -1934,8 +1967,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(713, 148);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.button2.Location = new System.Drawing.Point(244, 70);
+
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 31);
             this.button2.TabIndex = 3;
@@ -1944,8 +1978,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(713, 109);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.button1.Location = new System.Drawing.Point(244, 41);
+
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 31);
             this.button1.TabIndex = 2;
@@ -1954,19 +1989,24 @@
             // 
             // txt_reduzir
             // 
-            this.txt_reduzir.Location = new System.Drawing.Point(713, 71);
-            this.txt_reduzir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.txt_reduzir.Location = new System.Drawing.Point(244, 12);
+
             this.txt_reduzir.Name = "txt_reduzir";
             this.txt_reduzir.Size = new System.Drawing.Size(86, 27);
             this.txt_reduzir.TabIndex = 1;
             // 
             // txt_batalha
             // 
-            this.txt_batalha.Location = new System.Drawing.Point(423, 55);
-            this.txt_batalha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.txt_batalha.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.txt_batalha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.txt_batalha.Location = new System.Drawing.Point(377, 173);
             this.txt_batalha.Multiline = true;
             this.txt_batalha.Name = "txt_batalha";
-            this.txt_batalha.Size = new System.Drawing.Size(217, 147);
+            this.txt_batalha.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_batalha.Size = new System.Drawing.Size(190, 111);
+
             this.txt_batalha.TabIndex = 0;
             // 
             // pericia

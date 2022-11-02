@@ -471,7 +471,7 @@ namespace Ficha_Jiora.Control
             }
         }
 
-        public string RetornaDescricaoMagiaAntiga(string Elemento, string Rank, int alvo, string Categoria)
+        public MagiaAntiga_Model RetornaDescricaoMagiaAntiga(string Elemento, string Rank, int alvo, string Categoria)
         {
             string NovoAlvo = "";
             switch (alvo)
@@ -512,7 +512,8 @@ namespace Ficha_Jiora.Control
                 case "Rank 5":
                    return  magia_Control.RetornaDescricaoMagiaAntiga(Elemento, 5, NovoAlvo, Categoria);
                 default:
-                    return "";
+                    MagiaAntiga_Model magia = new MagiaAntiga_Model();
+                    return magia;
             }
         }
         public DataTable Carrega_Combo_Alvo()
