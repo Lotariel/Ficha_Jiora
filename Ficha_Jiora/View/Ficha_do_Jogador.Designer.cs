@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
             this.img_imagem_personagem = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -150,13 +150,15 @@
             this.button19 = new System.Windows.Forms.Button();
             this.btn_small_potion = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.CBB_nivel = new System.Windows.Forms.ComboBox();
             this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
+            this.Btn_simular = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.CBB_categoria = new System.Windows.Forms.ComboBox();
             this.CBB_alvo = new System.Windows.Forms.ComboBox();
             this.CBB_Elementos = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -175,7 +177,7 @@
             this.txt_defender = new System.Windows.Forms.NumericUpDown();
             this.button5 = new System.Windows.Forms.Button();
             this.btn_esquiva = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_Atacar = new System.Windows.Forms.Button();
             this.lbl_limite_break = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -1519,13 +1521,15 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label21);
+            this.groupBox5.Controls.Add(this.CBB_nivel);
             this.groupBox5.Controls.Add(this.button25);
-            this.groupBox5.Controls.Add(this.button24);
+            this.groupBox5.Controls.Add(this.Btn_simular);
             this.groupBox5.Controls.Add(this.button23);
             this.groupBox5.Controls.Add(this.label30);
             this.groupBox5.Controls.Add(this.label29);
             this.groupBox5.Controls.Add(this.label28);
-            this.groupBox5.Controls.Add(this.comboBox4);
+            this.groupBox5.Controls.Add(this.CBB_categoria);
             this.groupBox5.Controls.Add(this.CBB_alvo);
             this.groupBox5.Controls.Add(this.CBB_Elementos);
             this.groupBox5.Location = new System.Drawing.Point(659, 182);
@@ -1534,6 +1538,30 @@
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Magias";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(136, 243);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(34, 15);
+            this.label21.TabIndex = 33;
+            this.label21.Text = "Nivel";
+            // 
+            // CBB_nivel
+            // 
+            this.CBB_nivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBB_nivel.FormattingEnabled = true;
+            this.CBB_nivel.Items.AddRange(new object[] {
+            "Rank 1",
+            "Rank 2",
+            "Rank 3",
+            "Rank 4",
+            "Rank 5"});
+            this.CBB_nivel.Location = new System.Drawing.Point(9, 235);
+            this.CBB_nivel.Name = "CBB_nivel";
+            this.CBB_nivel.Size = new System.Drawing.Size(121, 23);
+            this.CBB_nivel.TabIndex = 32;
             // 
             // button25
             // 
@@ -1544,14 +1572,15 @@
             this.button25.Text = "Thundaga";
             this.button25.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // Btn_simular
             // 
-            this.button24.Location = new System.Drawing.Point(133, 277);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(75, 23);
-            this.button24.TabIndex = 31;
-            this.button24.Text = "Simular";
-            this.button24.UseVisualStyleBackColor = true;
+            this.Btn_simular.Location = new System.Drawing.Point(133, 277);
+            this.Btn_simular.Name = "Btn_simular";
+            this.Btn_simular.Size = new System.Drawing.Size(75, 23);
+            this.Btn_simular.TabIndex = 31;
+            this.Btn_simular.Text = "Simular";
+            this.Btn_simular.UseVisualStyleBackColor = true;
+            this.Btn_simular.Click += new System.EventHandler(this.Btn_simular_Click);
             // 
             // button23
             // 
@@ -1565,7 +1594,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(133, 245);
+            this.label30.Location = new System.Drawing.Point(136, 214);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(58, 15);
             this.label30.TabIndex = 29;
@@ -1574,7 +1603,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(133, 216);
+            this.label29.Location = new System.Drawing.Point(136, 185);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(31, 15);
             this.label29.TabIndex = 28;
@@ -1583,26 +1612,31 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(133, 187);
+            this.label28.Location = new System.Drawing.Point(136, 156);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(57, 15);
             this.label28.TabIndex = 27;
             this.label28.Text = "Elemento";
             // 
-            // comboBox4
+            // CBB_categoria
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(6, 237);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 23);
-            this.comboBox4.TabIndex = 26;
+            this.CBB_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBB_categoria.FormattingEnabled = true;
+            this.CBB_categoria.Items.AddRange(new object[] {
+            "Ofensivo",
+            "Defensivo"});
+            this.CBB_categoria.Location = new System.Drawing.Point(9, 206);
+            this.CBB_categoria.Name = "CBB_categoria";
+            this.CBB_categoria.Size = new System.Drawing.Size(121, 23);
+            this.CBB_categoria.TabIndex = 26;
             // 
             // CBB_alvo
             // 
+            this.CBB_alvo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBB_alvo.FormattingEnabled = true;
             this.CBB_alvo.Items.AddRange(new object[] {
             "Selecione o jogador"});
-            this.CBB_alvo.Location = new System.Drawing.Point(6, 208);
+            this.CBB_alvo.Location = new System.Drawing.Point(9, 177);
             this.CBB_alvo.Name = "CBB_alvo";
             this.CBB_alvo.Size = new System.Drawing.Size(121, 23);
             this.CBB_alvo.TabIndex = 25;
@@ -1610,10 +1644,11 @@
             // 
             // CBB_Elementos
             // 
+            this.CBB_Elementos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBB_Elementos.FormattingEnabled = true;
             this.CBB_Elementos.Items.AddRange(new object[] {
             "Selecione o jogador"});
-            this.CBB_Elementos.Location = new System.Drawing.Point(6, 179);
+            this.CBB_Elementos.Location = new System.Drawing.Point(9, 148);
             this.CBB_Elementos.Name = "CBB_Elementos";
             this.CBB_Elementos.Size = new System.Drawing.Size(121, 23);
             this.CBB_Elementos.TabIndex = 24;
@@ -1743,7 +1778,7 @@
             this.groupBox3.Controls.Add(this.txt_defender);
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.btn_esquiva);
-            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.btn_Atacar);
             this.groupBox3.Location = new System.Drawing.Point(6, 41);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(190, 111);
@@ -1777,14 +1812,15 @@
             this.btn_esquiva.UseVisualStyleBackColor = true;
             this.btn_esquiva.Click += new System.EventHandler(this.btn_esquiva_Click);
             // 
-            // button3
+            // btn_Atacar
             // 
-            this.button3.Location = new System.Drawing.Point(6, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Atacar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Atacar.Location = new System.Drawing.Point(6, 22);
+            this.btn_Atacar.Name = "btn_Atacar";
+            this.btn_Atacar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Atacar.TabIndex = 0;
+            this.btn_Atacar.Text = "Atacar";
+            this.btn_Atacar.UseVisualStyleBackColor = true;
+            this.btn_Atacar.Click += new System.EventHandler(this.btn_Atacar_Click);
             // 
             // lbl_limite_break
             // 
@@ -1906,16 +1942,16 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Teste,
@@ -1926,13 +1962,13 @@
             this.id_pericia});
             this.dataGridView1.Location = new System.Drawing.Point(34, 27);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
@@ -1958,8 +1994,8 @@
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nome.DataPropertyName = "Nome";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle9;
             this.Nome.HeaderText = "Nome";
             this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
@@ -1969,8 +2005,8 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle10;
             this.Valor.HeaderText = "CDS (%)";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -1992,8 +2028,8 @@
             // 
             this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle11;
             this.descricao.HeaderText = "Descrição";
             this.descricao.MinimumWidth = 6;
             this.descricao.Name = "descricao";
@@ -2681,13 +2717,13 @@
         private NumericUpDown txt_defender;
         private Button button5;
         private Button btn_esquiva;
-        private Button button3;
-        private Button button24;
+        private Button btn_Atacar;
+        private Button Btn_simular;
         private Button button23;
         private Label label30;
         private Label label29;
         private Label label28;
-        private ComboBox comboBox4;
+        private ComboBox CBB_categoria;
         private ComboBox CBB_alvo;
         private ComboBox CBB_Elementos;
         private Button button25;
@@ -2713,5 +2749,7 @@
         private PictureBox img_poison_effect;
         private PictureBox pictureBox2;
         private PictureBox img_charm_effect;
+        private Label label21;
+        private ComboBox CBB_nivel;
     }
 }

@@ -10,6 +10,7 @@ namespace Ficha_Jiora.Model
     {
         public string Nome { get; set; }
         public string NomeElementos { get; set; }
+        public int ID { get; set; }
 
     }
 

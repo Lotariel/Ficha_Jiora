@@ -11,10 +11,13 @@ namespace Ficha_Jiora.Control
 {
     internal class Batalha_Control
     {
+        private Random random = new Random();
         private Personagem_Model personagem = new Personagem_Model();
         private Personagem_Data personagem_Data = new Personagem_Data();
         private Efeitos_Control efeitos_Control = new Efeitos_Control();
         private Batalha_Data batalha_Data = new Batalha_Data();
+        private Equipamento_Control equipamento_Control = new Equipamento_Control();
+        private Magia_Control magia_Control = new Magia_Control();
 
         private int HPAtual = 0, HPMax = 0, MPAtual = 0, MPMax = 0;
 
@@ -228,7 +231,7 @@ namespace Ficha_Jiora.Control
 
                 if (IDAlvo != personagem.ID)
                 {
-                    alvo = personagem_Data.Carrega_Personagem(IDAlvo);                   
+                    alvo = personagem_Data.Carrega_Personagem(IDAlvo);
                     MPAtual = alvo.MPAtual;
                     MPMax = alvo.MPMax;
 
@@ -248,7 +251,7 @@ namespace Ficha_Jiora.Control
                 }
                 else
                 {
-                    
+
                     MPAtual = personagem.MPAtual;
                     MPMax = personagem.MPMax;
 
@@ -393,6 +396,50 @@ namespace Ficha_Jiora.Control
             }
         }
 
+        public int Atacar()
+        {
+            try
+            {
+
+                Equipamento_Model arma = new Equipamento_Model();
+                string IDArmaEquipada = equipamento_Control.Arma_Equipada(personagem.ID);
+                int DanoDaArma = 0;
+                int DanoFinal = 0;
+                arma = equipamento_Control.Carrega_Arma_Equipada(IDArmaEquipada);
+
+                switch (arma.ATRIBUTO)
+                {
+                    case "FOR":
+                        DanoFinal = (personagem.Forca * arma.MULTIPLICADOR) + random.Next(arma.QUANT_DADOS, arma.DADO + 1);
+                        break;
+                    case "MAG":
+                        DanoFinal = (personagem.Magia * arma.MULTIPLICADOR) + random.Next(arma.QUANT_DADOS, arma.DADO + 1);
+                        break;
+                    case "FOC":
+                        DanoFinal = (personagem.Foco * arma.MULTIPLICADOR) + random.Next(arma.QUANT_DADOS, arma.DADO + 1);
+                        break;
+                    case "VIT":
+                        DanoFinal = (personagem.Vitalidade * arma.MULTIPLICADOR) + random.Next(arma.QUANT_DADOS, arma.DADO + 1);
+                        break;
+                    case "VEL":
+                        DanoFinal = (personagem.Velocidade * arma.MULTIPLICADOR) + random.Next(arma.QUANT_DADOS, arma.DADO + 1);
+                        break;
+                    case "AUR":
+                        DanoFinal = (personagem.Aura * arma.MULTIPLICADOR) + random.Next(arma.QUANT_DADOS, arma.DADO + 1);
+                        break;
+                }
+                return DanoFinal;
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
         public int Precisao()
         {
             resultado = 40 + (personagem.Foco * 2) + personagem.Nivel;
@@ -424,6 +471,50 @@ namespace Ficha_Jiora.Control
             }
         }
 
+        public string RetornaDescricaoMagiaAntiga(string Elemento, string Rank, int alvo, string Categoria)
+        {
+            string NovoAlvo = "";
+            switch (alvo)
+            {
+
+                case 4 :
+                    NovoAlvo = "PRÓPRIO";
+                    break;
+                case < 99:
+                    NovoAlvo = "Aliado";
+                    break;
+                case 100:
+                    NovoAlvo = "Inimigo";
+                    break;
+                case 101:
+                    NovoAlvo = "Todos inimigos";
+                    break;
+                case 102:
+                    NovoAlvo = "Todos Aliados";
+                    break;
+
+            }
+
+            switch (Rank)
+            {
+                case "Rank 1":
+                    return magia_Control.RetornaDescricaoMagiaAntiga(Elemento, 1,NovoAlvo , Categoria);
+                    
+                case "Rank 2":
+                    return magia_Control.RetornaDescricaoMagiaAntiga(Elemento, 2, NovoAlvo, Categoria);
+                    
+                case "Rank 3":
+                   return magia_Control.RetornaDescricaoMagiaAntiga(Elemento, 3, NovoAlvo, Categoria);
+                    
+                case "Rank 4":
+                    return magia_Control.RetornaDescricaoMagiaAntiga(Elemento, 4, NovoAlvo, Categoria);
+                    
+                case "Rank 5":
+                   return  magia_Control.RetornaDescricaoMagiaAntiga(Elemento, 5, NovoAlvo, Categoria);
+                default:
+                    return "";
+            }
+        }
         public DataTable Carrega_Combo_Alvo()
         {
             return batalha_Data.Carrega_Combo_Alvo();
@@ -440,12 +531,14 @@ namespace Ficha_Jiora.Control
 
             personagem_Data.Update_Personagem("Turnos", Valor, personagem.ID);
             efeitos_Control.VerificaEfeitos(personagem);
-            
+
         }
 
         public void ZeraTurno(Personagem_Model personagem)
         {
-           personagem_Data.Update_Personagem("Turnos", 0, personagem.ID);
+            personagem_Data.Update_Personagem("Turnos", 0, personagem.ID);
         }
+
+
     }
 }

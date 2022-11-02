@@ -15,5 +15,10 @@ namespace Ficha_Jiora.Control
         {
             return equipamento_data.Arma_Equipada(ID_PERSONAGEM);
         }
+
+        public Equipamento_Model Carrega_Arma_Equipada(string IDArma)
+        {
+            return equipamento_data.Carrega_Arma_Equipada(IDArma);
+        }
     }
 }

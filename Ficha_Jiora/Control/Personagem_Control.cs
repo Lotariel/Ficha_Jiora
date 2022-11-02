@@ -25,7 +25,6 @@ namespace Ficha_Jiora.Control
         {
             return personagem_Data.GetID(nome);
         }
-
         public void AumentarAtributo(string coluna, double valor, string id)
         {
             if (coluna == "Potencia")
@@ -43,9 +42,8 @@ namespace Ficha_Jiora.Control
                 personagem_Data.Update_Personagem(coluna, valor, id);
 
             }
-            
-        }
 
+        }
         public int? GerenciaAtributos(string ID)
         {
             personagem_Model = Carrega_Personagem(ID);
@@ -58,7 +56,6 @@ namespace Ficha_Jiora.Control
 
             return resultado;
         }
-
         public int TesteAtributo(int ValorTeste, int ValorDado)
         {
             /* 1- Acerto Crítico
@@ -88,6 +85,41 @@ namespace Ficha_Jiora.Control
                     return 3;
                 }
             }
+        }
+        public void ReduzHPAtual(string ID, int valor)
+        {
+            int result = personagem_Model.HPAtual - valor;
+            if (result <0)
+            {
+                personagem_Data.Update_Personagem("HPAtual", 0, ID);
+            }
+            else
+            {
+                personagem_Data.Update_Personagem("HPAtual", valor, ID);
+            }
+            
+        }
+        public void ReduzMPAtual(string ID, int valor)
+        {
+            int result = personagem_Model.MPAtual - valor;
+
+            if (result < 0)
+            {
+                personagem_Data.Update_Personagem("MPAtual", 0, ID);
+            }
+            else
+            {
+                personagem_Data.Update_Personagem("MPAtual", result, ID);
+            }
+            
+        }
+        public void AlteraPrecMod(double valor, string ID)
+        {
+            personagem_Data.Update_Personagem("Mod_precisao", valor, ID);
+        }
+        public void AlteraCriticoMod(double valor, string ID)
+        {
+            personagem_Data.Update_Personagem("Mod_cds_Critico", valor, ID);
         }
     }
 }

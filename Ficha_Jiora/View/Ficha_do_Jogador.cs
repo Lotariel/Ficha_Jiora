@@ -1162,7 +1162,7 @@ namespace Ficha_Jiora.View
             try
             {
                 CBB_alvo.DataSource = batalha.Carrega_Combo_Alvo();
-                CBB_alvo.ValueMember = "Nome";
+                CBB_alvo.ValueMember = "ID";
                 CBB_alvo.DisplayMember = "Nome";
             }
             catch (Exception ex)
@@ -1190,7 +1190,7 @@ namespace Ficha_Jiora.View
 
         private void button17_Click(object sender, EventArgs e)
         {
-            label24.Text = comboBox4.SelectedIndex.ToString();
+            label24.Text = CBB_categoria.SelectedIndex.ToString();
         }
 
         private void btn_esquiva_Click(object sender, EventArgs e)
@@ -1224,18 +1224,29 @@ namespace Ficha_Jiora.View
         {
             label23.Text = CBB_nome_personagem.SelectedValue.ToString();
         }
+
+        private void btn_Atacar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void CBB_nome_personagem_Click(object sender, EventArgs e)
         {
             Carrega_Combobox_Personagem();
         }
 
+        private void Btn_simular_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void btn_small_potion_Click(object sender, EventArgs e)
         {
             Pocao_Pequena();
-            comboBox4.Items.Clear();
-            comboBox4.Items.Insert(0, "Ofensivo");
-            comboBox4.Items.Insert(1, "Defensivo");
-            comboBox4.Items.Insert(2, "Encatamento");
+            CBB_categoria.Items.Clear();
+            CBB_categoria.Items.Insert(0, "Ofensivo");
+            CBB_categoria.Items.Insert(1, "Defensivo");
+            CBB_categoria.Items.Insert(2, "Encatamento");
 
         }
 
@@ -1278,6 +1289,36 @@ namespace Ficha_Jiora.View
         {
             CarregaPersonagem();
             batalha.AdicionaTurno(personagem_Model);
+        }
+
+        private bool Atacar()
+        {
+            try
+            {
+                if (d100 <= batalha.Precisao())
+                {
+                    txt_batalha.Text = personagem_Model.Nome + " teve sucesso em acertart seu ataque.\r\n";
+                    txt_batalha.Text += "Dano: " + batalha.Atacar();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        private string Descricao_Magia_Antiga()
+        {
+            string elemento = CBB_Elementos.Text;
+            string rank = CBB_nivel.Text;
+            int alvo = Convert.ToInt32(CBB_alvo.SelectedValue);
+            string categoria = CBB_categoria.Text;
+            return batalha.RetornaDescricaoMagiaAntiga(elemento, rank, alvo, categoria);
         }
         #endregion
 

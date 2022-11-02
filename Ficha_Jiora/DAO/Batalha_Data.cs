@@ -20,7 +20,7 @@ namespace Ficha_Jiora.DAO
             {
                 DataTable TabelaAlvo = new DataTable();
 
-                Script = "select Nome from Alvo ";
+                Script = "select Nome,ID from Alvo ";
                 Script += "order by Nome";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
@@ -32,8 +32,9 @@ namespace Ficha_Jiora.DAO
                 {
                     batalha_modelo = new Batalha_Modelo()
                     {
-                        Nome = item["Nome"].ToString()
-                        
+                        Nome = item["Nome"].ToString(),
+                        ID = Convert.ToInt32(item["ID"])
+
                     };
                 }
                 return TabelaAlvo;
