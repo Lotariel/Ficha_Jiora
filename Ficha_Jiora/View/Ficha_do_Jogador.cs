@@ -51,10 +51,11 @@ namespace Ficha_Jiora.View
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                Carrega_Tela();                
-                tabControl1.Enabled = true;                
+                Carrega_Tela();
+                tabControl1.Enabled = true;
                 //txt_nome_personagem.Visible = false;                
                 Cursor.Current = Cursors.Default;
+
             }
             catch (Exception ex)
             {
@@ -62,15 +63,20 @@ namespace Ficha_Jiora.View
                 txt_nome_personagem.Text = "";
                 tabControl1.Enabled = false;
                 txt_nome_personagem.Visible = true;
-               
+
             }
         }
-
+        private void PaintBorderlessGroupBox(object sender, PaintEventArgs p)
+        {
+            GroupBox box = (GroupBox)sender;
+            p.Graphics.Clear(SystemColors.Control);
+            p.Graphics.DrawString(box.Text, box.Font, Brushes.Red, 0, 0);
+        }
         private void Carrega_Tela()
         {
             try
             {
-                
+
                 d100 = Rolar.D100();
                 d12 = Rolar.D12();
                 d10 = Rolar.D10();
@@ -82,13 +88,14 @@ namespace Ficha_Jiora.View
                 CarregaAtributos();
                 CarregaStatus();
                 Carrega_Batalha();
+                //groupBox1.Paint += PaintBorderlessGroupBox;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar Ficha, motivo do erro:\r\n");
             }
-            
+
         }
         private string GetID(string nome)
         {
@@ -110,10 +117,30 @@ namespace Ficha_Jiora.View
                 personagem_Model = personagem_Control.Carrega_Personagem(IDPersonagem);
                 lbl_nome_personagem.Text = personagem_Model.Nome;
                 lbl_nivel_personagem.Text = personagem_Model.Nivel.ToString();
-                img_imagem_personagem.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Perfil\\" + personagem_Model.Imagem);
+                //img_imagem_personagem.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Perfil\\" + personagem_Model.Imagem);
                 lbl_classe_peronsagem.Text = personagem_Model.Classe;
                 VerificaEfeito(personagem_Model);
-
+                panel2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Perfil\\" + personagem_Model.Imagem);
+                if (IDPersonagem == "2")
+                {
+                    label2.ForeColor = Color.Black;
+                    lbl_nome_personagem.ForeColor = Color.Black;
+                    lbl_nivel_personagem.ForeColor = Color.Black;
+                    label2.BackColor = Color.White;
+                    lbl_nome_personagem.BackColor = Color.White;
+                    lbl_nivel_personagem.BackColor = Color.White;
+                    lbl_classe_peronsagem.ForeColor = Color.Black;
+                }
+                else
+                {
+                    label2.ForeColor = Color.White;
+                    lbl_nome_personagem.ForeColor = Color.White;
+                    lbl_nivel_personagem.ForeColor = Color.White;
+                    label2.BackColor = Color.Transparent;
+                    lbl_nome_personagem.BackColor = Color.Transparent;
+                    lbl_nivel_personagem.BackColor = Color.Transparent;
+                    lbl_classe_peronsagem.ForeColor = Color.White;
+                }
             }
             catch (Exception ex)
             {
@@ -196,17 +223,19 @@ namespace Ficha_Jiora.View
             {//Codigo para garantir que a ação seja executada quando clicar no botão da gridview
                 var senderGrid = (DataGridView)sender;
 
-
+                
                 string? NomeTeste = "";
                 int valor = 0;
 
                 //condigo antigo do if
                 //senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+
+                
                 if (e.ColumnIndex == dataGridView1.Columns["Teste"].Index)
                 {
                     int Total = 0;
                     var Row = dataGridView1.CurrentRow;
-
+                    
 
                     //Codigo que pega o valor da linha atual selecionada
                     foreach (DataGridViewRow linha in dataGridView1.Rows)
@@ -302,8 +331,7 @@ namespace Ficha_Jiora.View
         {
             try
             {
-                int? PontosPericia = pericia_Control.CalculaPontosPericia(IDPersonagem);
-
+                int? PontosPericia = pericia_Control.CalculaPontosPericia(IDPersonagem);                
                 bs_personagem.DataSource = pericia_Control.Carrega_Pericia(IDPersonagem);
                 dataGridView1.DataSource = bs_personagem;
 
@@ -991,7 +1019,7 @@ namespace Ficha_Jiora.View
             {
                 MessageBox.Show("Erro ao realizar o teste:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }        
+        }
 
         private void btn_up_vel_Click(object sender, EventArgs e)
         {
@@ -1010,7 +1038,7 @@ namespace Ficha_Jiora.View
 
                 MessageBox.Show("Erro ao aumentar atributo:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }       
+        }
 
         private void btn_up_mag_Click(object sender, EventArgs e)
         {
@@ -1095,7 +1123,7 @@ namespace Ficha_Jiora.View
 
             CBB_nome_personagem.Text = "Selecione";
             CBB_alvo.Text = "Selecione";
-            CBB_Elementos.Text = "Selecione";     
+            CBB_Elementos.Text = "Selecione";
 
             txt_reduzir.Maximum = 999999;
             txt_defender.Maximum = 999999;
@@ -1104,7 +1132,7 @@ namespace Ficha_Jiora.View
             txt_defender.Text = "";
             txt_reduzir.Text = "";
             lbl_valor_lb.Text = personagem_Model.Especial + " %";
-            
+
 
             switch (personagem_Model.ID)
             {
@@ -1129,10 +1157,10 @@ namespace Ficha_Jiora.View
             }
             lbl_hp.Text = personagem_Model.HPAtual + " / " + personagem_Model.HPMax;
             lbl_mp.Text = personagem_Model.MPAtual + " / " + personagem_Model.MPMax;
-        }        
+        }
         private void Carrega_Combobox_Personagem()
         {
-            
+
             try
             {
                 CBB_nome_personagem.DataSource = batalha.Carrega_Combo_Personagem();
@@ -1142,10 +1170,9 @@ namespace Ficha_Jiora.View
             catch (Exception ex)
             {
 
-                throw new Exception("Falha ao carregar ComboBox Nome do Personagem: "+ ex.Message);
+                throw new Exception("Falha ao carregar ComboBox Nome do Personagem: " + ex.Message);
             }
         }
-
         private void CBB_alvo_Click(object sender, EventArgs e)
         {
             Carrega_Combo_Alvo();
@@ -1216,7 +1243,7 @@ namespace Ficha_Jiora.View
             catch (Exception ex)
             {
 
-                MessageBox.Show("Falha ao tentar executar o comando Esquivar. Motivo do Erro: "+ex.Message,"Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("Falha ao tentar executar o comando Esquivar. Motivo do Erro: " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -1227,7 +1254,7 @@ namespace Ficha_Jiora.View
 
         private void btn_Atacar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void CBB_nome_personagem_Click(object sender, EventArgs e)
@@ -1237,7 +1264,7 @@ namespace Ficha_Jiora.View
 
         private void Btn_simular_Click(object sender, EventArgs e)
         {
-            txt_batalha.Text = Descricao_Magia_Antiga();
+            txt_batalha.Text = Simulação_Magia_Antiga();
         }
 
         private void btn_small_potion_Click(object sender, EventArgs e)
@@ -1249,6 +1276,8 @@ namespace Ficha_Jiora.View
             CBB_categoria.Items.Insert(2, "Encatamento");
 
         }
+
+
 
         private void Pocao_Pequena()
         {
@@ -1285,6 +1314,19 @@ namespace Ficha_Jiora.View
             }
         }
 
+        private void btn_magia_antiga_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txt_batalha.Text = Usar_Magia_Antiga();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falhar ao usar magia antiga.\r\n" + ex.Message);
+            }
+
+        }
+
         private void AdicionaTurnos()
         {
             CarregaPersonagem();
@@ -1312,20 +1354,90 @@ namespace Ficha_Jiora.View
                 throw new Exception(ex.Message);
             }
         }
-        private string Descricao_Magia_Antiga()
+        private string Simulação_Magia_Antiga()
         {
-            MagiaAntiga_Model magia = new MagiaAntiga_Model();
-            string elemento = CBB_Elementos.Text.Trim();
-            string rank = CBB_nivel.Text;
-            int alvo = Convert.ToInt32(CBB_alvo.SelectedValue);
-            string categoria = CBB_categoria.Text;
-            string Texto = "";
-            magia = batalha.RetornaDescricaoMagiaAntiga(elemento, rank, alvo, categoria);
+            try
+            {
+                MagiaAntiga_Model magia = new MagiaAntiga_Model();
+                string elemento = CBB_Elementos.Text.Trim();
+                string rank = CBB_nivel.Text;
+                int alvo = Convert.ToInt32(CBB_alvo.SelectedValue);
+                string categoria = CBB_categoria.Text;
+                string Texto = "";
+                magia = batalha.RetornaDescricaoMagiaAntiga(elemento, rank, alvo, categoria);
 
-            Texto = "~~~~~~~Simulação~~~~~~~\r\n\r\n";
-            Texto += magia.Descricao + "\r\n\r\n";
-            Texto += "Custo de Mana: " + magia.Custo;
-            return Texto;
+                Texto = "~~~~~Simulação~~~~~\r\n\r\n";
+                Texto += magia.Descricao + "\r\n\r\n";
+                Texto += "Custo de Mana: " + magia.Custo;
+                return Texto;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
+        }
+        private string Usar_Magia_Antiga()
+        {
+            try
+            {
+                MagiaAntiga_Model magia = new MagiaAntiga_Model();
+                string elemento = CBB_Elementos.Text.Trim();
+                string rank = CBB_nivel.Text;
+                int alvo = Convert.ToInt32(CBB_alvo.SelectedValue);
+                string categoria = CBB_categoria.Text;
+                string Texto = "";
+                magia = batalha.RetornaDescricaoMagiaAntiga(elemento, rank, alvo, categoria);
+
+                Texto = "~~~~~Magia Antiga~~~~~\r\n\r\n";
+                Texto += magia.Descricao + "\r\n\r\n";
+                Texto += "Custo de Mana: " + magia.Custo+ " MP.";
+
+                if (categoria =="Ofensivo" && elemento =="Lumen" && alvo == 100 ||alvo ==101)
+                {
+                    return Texto += "\r\n\r\nValor da Cura: " + (magia.Multiplicador * personagem_Model.Magia)+ " de HP.";
+                }
+
+                if (categoria == "Defensivo" && elemento == "Lumen" && alvo < 99 || alvo == 102)
+                {
+                    return Texto += "\r\n\r\nValor da Cura: " + (magia.Multiplicador * personagem_Model.Magia) + " de HP.";
+                }
+
+                Texto += "\r\n\r\nDano: " + (magia.Multiplicador * personagem_Model.Magia) + " do elemento " + ConversorDeElemento(elemento);
+                return Texto;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+        private string ConversorDeElemento(string elemento)
+        {
+            switch (elemento.Trim())
+            {
+                case "Pyro":
+                    return "Fogo.";
+                case "Cryo":
+                    return "Gelo.";
+                case "Venti":
+                    return "Vento.";
+                case "Geo":
+                    return "Terra.";
+                case "Electro":
+                    return "Trovão.";
+                case "Hydro":
+                    return "Água.";
+                case "Lumen":
+                    return "Luz.";
+                case "Mortem":
+                    return "Sombras.";
+                default:
+                    return "";
+                    
+            }
         }
         #endregion
 
