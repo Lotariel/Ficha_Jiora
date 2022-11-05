@@ -11,7 +11,7 @@ namespace Ficha_Jiora.DAO
 {
     internal class Equipamento_Data: Conexao
     {
-        Equipamento_Model equipamento_Model;
+        Equipamento_Model equipamento_Model = new Equipamento_Model();
         private string Script = "";
         private string Retorno = "";
 

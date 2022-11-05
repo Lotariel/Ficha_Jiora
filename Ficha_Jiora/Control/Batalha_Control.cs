@@ -402,8 +402,7 @@ namespace Ficha_Jiora.Control
             {
 
                 Equipamento_Model arma = new Equipamento_Model();
-                string IDArmaEquipada = equipamento_Control.Arma_Equipada(personagem.ID);
-                int DanoDaArma = 0;
+                string IDArmaEquipada = equipamento_Control.Arma_Equipada(personagem.ID);                
                 int DanoFinal = 0;
                 arma = equipamento_Control.Carrega_Arma_Equipada(IDArmaEquipada);
 
@@ -538,6 +537,105 @@ namespace Ficha_Jiora.Control
         public void ZeraTurno(Personagem_Model personagem)
         {
             personagem_Data.Update_Personagem("Turnos", 0, personagem.ID);
+        }
+
+        public void CurarHPAtual(string id, int valor)
+        {
+            try
+            {
+                Personagem_Model personagemCurado = new Personagem_Model();
+                personagemCurado = personagem_Data.Carrega_Personagem(id);
+                int NewValor = personagemCurado.HPAtual + valor;
+
+                if (NewValor >= personagemCurado.HPMax)
+                {
+                    valor = personagemCurado.HPMax;
+                }
+                else
+                {
+                    valor = NewValor;
+                }
+
+                personagem_Data.Update_Personagem("HPAtual", valor, id);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Curar HP Atual: "+ ex.Message);
+            }
+        }
+
+        public void ReduzirHPAtual(string id, int valor)
+        {
+            try
+            {
+                int NewValor = personagem.HPAtual - valor;
+
+                if (NewValor <= 0)
+                {
+                    valor = 0;
+                }
+                else
+                {
+                    valor = NewValor;
+                }
+
+                personagem_Data.Update_Personagem("HPAtual", valor, id);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Reduzir HP Atual: " + ex.Message);
+            }
+        }
+        public void CurarMPAtual(string id, int valor)
+        {
+            try
+            {
+                Personagem_Model personagemCurado = new Personagem_Model();
+                personagemCurado = personagem_Data.Carrega_Personagem(id);
+                int NewValor = personagemCurado.MPAtual + valor;
+
+                if (NewValor >= personagemCurado.MPMax)
+                {
+                    valor = personagemCurado.MPMax;
+                }
+                else
+                {
+                    valor = NewValor;
+                }
+
+                personagem_Data.Update_Personagem("MPAtual", valor, id);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Curar MP Atual: " + ex.Message);
+            }
+        }
+
+        public void ReduzirMPAtual(string id, int valor)
+        {
+            try
+            {
+                int NewValor = personagem.MPAtual - valor;
+
+                if (NewValor <=0)
+                {
+                    valor = 0;
+                }
+                else
+                {
+                    valor = NewValor;
+                }
+
+                personagem_Data.Update_Personagem("MPAtual", valor, id);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Reduzir MP Atual: " + ex.Message);
+            }
         }
 
 

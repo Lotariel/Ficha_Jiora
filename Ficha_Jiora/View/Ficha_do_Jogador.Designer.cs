@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
             this.lbl_estigma_desc04 = new System.Windows.Forms.Label();
@@ -181,13 +181,14 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_defender = new System.Windows.Forms.NumericUpDown();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_defender = new System.Windows.Forms.Button();
+            this.btn_postura = new System.Windows.Forms.Button();
             this.btn_esquiva = new System.Windows.Forms.Button();
             this.btn_Atacar = new System.Windows.Forms.Button();
             this.img_poison_effect = new System.Windows.Forms.PictureBox();
             this.lbl_limite_break = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_reduzir_mp = new System.Windows.Forms.Button();
+            this.btn_reduzir_hp = new System.Windows.Forms.Button();
             this.txt_reduzir = new System.Windows.Forms.NumericUpDown();
             this.txt_batalha = new System.Windows.Forms.TextBox();
             this.pericia = new System.Windows.Forms.TabPage();
@@ -203,6 +204,10 @@
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_pericia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventario = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.img_tonz = new System.Windows.Forms.PictureBox();
             this.lbl_tonz = new System.Windows.Forms.Label();
             this.Mapa = new System.Windows.Forms.TabPage();
@@ -1329,8 +1334,8 @@
             this.battle.Controls.Add(this.groupBox3);
             this.battle.Controls.Add(this.img_poison_effect);
             this.battle.Controls.Add(this.lbl_limite_break);
-            this.battle.Controls.Add(this.button2);
-            this.battle.Controls.Add(this.button1);
+            this.battle.Controls.Add(this.btn_reduzir_mp);
+            this.battle.Controls.Add(this.btn_reduzir_hp);
             this.battle.Controls.Add(this.txt_reduzir);
             this.battle.Controls.Add(this.txt_batalha);
             this.battle.Location = new System.Drawing.Point(4, 24);
@@ -1447,7 +1452,6 @@
             this.button17.TabIndex = 24;
             this.button17.Text = "Potion L";
             this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // CBB_nome_personagem
             // 
@@ -1540,7 +1544,6 @@
             this.button20.TabIndex = 14;
             this.button20.Text = "Potion S";
             this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button19
             // 
@@ -1859,7 +1862,8 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txt_defender);
-            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.btn_defender);
+            this.groupBox3.Controls.Add(this.btn_postura);
             this.groupBox3.Controls.Add(this.btn_esquiva);
             this.groupBox3.Controls.Add(this.btn_Atacar);
             this.groupBox3.Location = new System.Drawing.Point(377, 321);
@@ -1871,19 +1875,30 @@
             // 
             // txt_defender
             // 
-            this.txt_defender.Location = new System.Drawing.Point(60, 80);
+            this.txt_defender.Location = new System.Drawing.Point(113, 80);
             this.txt_defender.Name = "txt_defender";
             this.txt_defender.Size = new System.Drawing.Size(75, 23);
             this.txt_defender.TabIndex = 8;
             // 
-            // button5
+            // btn_defender
             // 
-            this.button5.Location = new System.Drawing.Point(60, 51);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Defender";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_defender.Location = new System.Drawing.Point(111, 51);
+            this.btn_defender.Name = "btn_defender";
+            this.btn_defender.Size = new System.Drawing.Size(75, 23);
+            this.btn_defender.TabIndex = 2;
+            this.btn_defender.Text = "Defender";
+            this.btn_defender.UseVisualStyleBackColor = true;
+            // 
+            // btn_postura
+            // 
+            this.btn_postura.Location = new System.Drawing.Point(6, 51);
+            this.btn_postura.Name = "btn_postura";
+            this.btn_postura.Size = new System.Drawing.Size(75, 23);
+            this.btn_postura.TabIndex = 2;
+            this.btn_postura.Text = "Postura";
+            this.btn_postura.UseVisualStyleBackColor = true;
+            this.btn_postura.Visible = false;
+            this.btn_postura.Click += new System.EventHandler(this.btn_postura_Click);
             // 
             // btn_esquiva
             // 
@@ -1924,23 +1939,25 @@
             this.lbl_limite_break.TabIndex = 6;
             this.lbl_limite_break.Text = "LB:  100%";
             // 
-            // button2
+            // btn_reduzir_mp
             // 
-            this.button2.Location = new System.Drawing.Point(244, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Reduzir MP";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_reduzir_mp.Location = new System.Drawing.Point(244, 70);
+            this.btn_reduzir_mp.Name = "btn_reduzir_mp";
+            this.btn_reduzir_mp.Size = new System.Drawing.Size(75, 23);
+            this.btn_reduzir_mp.TabIndex = 3;
+            this.btn_reduzir_mp.Text = "Reduzir MP";
+            this.btn_reduzir_mp.UseVisualStyleBackColor = true;
+            this.btn_reduzir_mp.Click += new System.EventHandler(this.btn_reduzir_mp_Click);
             // 
-            // button1
+            // btn_reduzir_hp
             // 
-            this.button1.Location = new System.Drawing.Point(244, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Reduzir HP";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_reduzir_hp.Location = new System.Drawing.Point(244, 41);
+            this.btn_reduzir_hp.Name = "btn_reduzir_hp";
+            this.btn_reduzir_hp.Size = new System.Drawing.Size(75, 23);
+            this.btn_reduzir_hp.TabIndex = 2;
+            this.btn_reduzir_hp.Text = "Reduzir HP";
+            this.btn_reduzir_hp.UseVisualStyleBackColor = true;
+            this.btn_reduzir_hp.Click += new System.EventHandler(this.btn_reduzir_hp_Click);
             // 
             // txt_reduzir
             // 
@@ -2022,17 +2039,17 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PapayaWhip;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Teste,
@@ -2044,13 +2061,13 @@
             this.dataGridView1.GridColor = System.Drawing.Color.Goldenrod;
             this.dataGridView1.Location = new System.Drawing.Point(34, 27);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
@@ -2076,8 +2093,8 @@
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nome.DataPropertyName = "Nome";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle11;
             this.Nome.HeaderText = "Nome";
             this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
@@ -2087,8 +2104,8 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle12;
             this.Valor.HeaderText = "CDS (%)";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -2110,8 +2127,8 @@
             // 
             this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle13;
             this.descricao.HeaderText = "Descrição";
             this.descricao.MinimumWidth = 6;
             this.descricao.Name = "descricao";
@@ -2132,6 +2149,10 @@
             // 
             this.inventario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventario.BackgroundImage")));
             this.inventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.inventario.Controls.Add(this.button1);
+            this.inventario.Controls.Add(this.label34);
+            this.inventario.Controls.Add(this.label6);
+            this.inventario.Controls.Add(this.textBox1);
             this.inventario.Controls.Add(this.img_tonz);
             this.inventario.Controls.Add(this.lbl_tonz);
             this.inventario.Location = new System.Drawing.Point(4, 24);
@@ -2140,6 +2161,44 @@
             this.inventario.TabIndex = 3;
             this.inventario.Text = "Inventário";
             this.inventario.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(843, 424);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Salvar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(129, 357);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(161, 15);
+            this.label34.TabIndex = 17;
+            this.label34.Text = "(ctrl + enter, para pular linha)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(12, 346);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 28);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Anotações";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.PapayaWhip;
+            this.textBox1.Location = new System.Drawing.Point(9, 377);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(800, 114);
+            this.textBox1.TabIndex = 15;
             // 
             // img_tonz
             // 
@@ -2172,7 +2231,7 @@
             this.Mapa.Name = "Mapa";
             this.Mapa.Size = new System.Drawing.Size(941, 500);
             this.Mapa.TabIndex = 4;
-            this.Mapa.Text = "Mapa";
+            this.Mapa.Text = "Equipamento";
             this.Mapa.UseVisualStyleBackColor = true;
             // 
             // Log
@@ -2194,14 +2253,14 @@
             this.dtg_log.AllowUserToDeleteRows = false;
             this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dtg_log.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_log.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtg_log.Location = new System.Drawing.Point(6, 6);
@@ -2209,8 +2268,8 @@
             this.dtg_log.ReadOnly = true;
             this.dtg_log.RowHeadersVisible = false;
             this.dtg_log.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LemonChiffon;
-            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dtg_log.RowTemplate.Height = 25;
             this.dtg_log.Size = new System.Drawing.Size(929, 402);
             this.dtg_log.TabIndex = 0;
@@ -2787,8 +2846,8 @@
         private Label lbl_limite_break;
         private Label label20;
         private Label label19;
-        private Button button2;
-        private Button button1;
+        private Button btn_reduzir_mp;
+        private Button btn_reduzir_hp;
         private NumericUpDown txt_reduzir;
         private GroupBox groupBox3;
         private Button button7;
@@ -2818,7 +2877,7 @@
         private Button button9;
         private Button button6;
         private NumericUpDown txt_defender;
-        private Button button5;
+        private Button btn_postura;
         private Button btn_esquiva;
         private Button btn_Atacar;
         private Button Btn_simular;
@@ -2856,5 +2915,10 @@
         private ComboBox CBB_nivel;
         private Panel panel1;
         private Panel panel2;
+        private Label label6;
+        private TextBox textBox1;
+        private Button btn_defender;
+        private Button button1;
+        private Label label34;
     }
 }

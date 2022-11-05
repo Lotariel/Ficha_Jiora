@@ -169,31 +169,31 @@ namespace Ficha_Jiora.Control
             {
                 case 1:
                     return "Use sua habilidade mais fraca no aliado mais próximo.";
-                    break;
+                    
                 case 2:
                     return "Use sua magia mais fraca no aliado mais próximo.";
-                    break;
+                    
                 case 3:
                     return "Use uma Poção Grande no aliado mais próximo.";
-                    break;
+                    
                 case 4:
                     return "Faça um ataque normal em você mesmo.";
-                    break;
+                    
                 case 5:
                     return "Use sua habilidade mais fraca no aliado mais próximo.";
-                    break;
+                    
                 case 6:
                     return "Ataque um oponente aleatório.";
-                    break;
+                    
                 case 7:
                     return "Use uma Elixir Grande no aliado mais próximo.";
-                    break;
+                    
                 case 8:
                     return "Use sua magia ou habilidade mais poderosa em um oponente aleatório.";
-                    break;
+                    
                 default:
                     return "";
-                    break;
+                    
             }
         }
         private bool Paralyze()

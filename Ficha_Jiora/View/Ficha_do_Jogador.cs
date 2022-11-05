@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.ExceptionServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +30,7 @@ namespace Ficha_Jiora.View
         private Estigma_Control estigma_Control = new Estigma_Control();
         private Evento_Estigma evento_estigma = new Evento_Estigma();
         private Efeitos_Control efeitos_Control = new Efeitos_Control();
+        private Habilidade_Control habilidade_Control = new Habilidade_Control();
         Batalha_Control batalha;
         private string IDPersonagem = "";
         private int d100 = 0, d12 = 0, d10 = 0, d8 = 0, d6 = 0;
@@ -66,12 +68,6 @@ namespace Ficha_Jiora.View
 
             }
         }
-        private void PaintBorderlessGroupBox(object sender, PaintEventArgs p)
-        {
-            GroupBox box = (GroupBox)sender;
-            p.Graphics.Clear(SystemColors.Control);
-            p.Graphics.DrawString(box.Text, box.Font, Brushes.Red, 0, 0);
-        }
         private void Carrega_Tela()
         {
             try
@@ -93,7 +89,7 @@ namespace Ficha_Jiora.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar Ficha, motivo do erro:\r\n");
+                MessageBox.Show("Erro ao carregar Ficha, motivo do erro:\r\n" + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -223,19 +219,19 @@ namespace Ficha_Jiora.View
             {//Codigo para garantir que a ação seja executada quando clicar no botão da gridview
                 var senderGrid = (DataGridView)sender;
 
-                
+
                 string? NomeTeste = "";
                 int valor = 0;
 
                 //condigo antigo do if
                 //senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
 
-                
+
                 if (e.ColumnIndex == dataGridView1.Columns["Teste"].Index)
                 {
                     int Total = 0;
                     var Row = dataGridView1.CurrentRow;
-                    
+
 
                     //Codigo que pega o valor da linha atual selecionada
                     foreach (DataGridViewRow linha in dataGridView1.Rows)
@@ -331,7 +327,7 @@ namespace Ficha_Jiora.View
         {
             try
             {
-                int? PontosPericia = pericia_Control.CalculaPontosPericia(IDPersonagem);                
+                int? PontosPericia = pericia_Control.CalculaPontosPericia(IDPersonagem);
                 bs_personagem.DataSource = pericia_Control.Carrega_Pericia(IDPersonagem);
                 dataGridView1.DataSource = bs_personagem;
 
@@ -1157,6 +1153,26 @@ namespace Ficha_Jiora.View
             }
             lbl_hp.Text = personagem_Model.HPAtual + " / " + personagem_Model.HPMax;
             lbl_mp.Text = personagem_Model.MPAtual + " / " + personagem_Model.MPMax;
+
+            if (personagem_Model.ID == "3")
+            {
+                btn_postura.Visible = true;
+
+                if (btn_postura.Text == "Protector Mode")
+                {
+                    btn_postura.Text = "Protector Mode";
+                }
+                else
+                {
+                    btn_postura.Text = "Predator Mode";
+                }
+                
+            }
+            else
+            {
+                btn_postura.Visible = false;
+                
+            }
         }
         private void Carrega_Combobox_Personagem()
         {
@@ -1215,10 +1231,6 @@ namespace Ficha_Jiora.View
             }
         }
 
-        private void button17_Click(object sender, EventArgs e)
-        {
-            label24.Text = CBB_categoria.SelectedIndex.ToString();
-        }
 
         private void btn_esquiva_Click(object sender, EventArgs e)
         {
@@ -1230,7 +1242,7 @@ namespace Ficha_Jiora.View
                 if (d100 <= esquiva)
                 {
                     txt_batalha.Text = personagem_Model.Nome + " conseguiu se esquivar com sucesso!";
-                    txt_batalha.Text += "\r\nValor do Dado: " + d100;
+                    txt_batalha.Text += "\r\n\r\nValor do Dado: " + d100;
                     Insertlog("Teve sucesso no teste de Esquiva.");
                 }
                 else
@@ -1245,11 +1257,6 @@ namespace Ficha_Jiora.View
 
                 MessageBox.Show("Falha ao tentar executar o comando Esquivar. Motivo do Erro: " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-            label23.Text = CBB_nome_personagem.SelectedValue.ToString();
         }
 
         private void btn_Atacar_Click(object sender, EventArgs e)
@@ -1270,14 +1277,7 @@ namespace Ficha_Jiora.View
         private void btn_small_potion_Click(object sender, EventArgs e)
         {
             Pocao_Pequena();
-            CBB_categoria.Items.Clear();
-            CBB_categoria.Items.Insert(0, "Ofensivo");
-            CBB_categoria.Items.Insert(1, "Defensivo");
-            CBB_categoria.Items.Insert(2, "Encatamento");
-
         }
-
-
 
         private void Pocao_Pequena()
         {
@@ -1296,7 +1296,7 @@ namespace Ficha_Jiora.View
                         batalha.Pocao_Pequena(IDAlvo);
                         Carrega_Tela();
                         txt_batalha.Text = personagem_Model.Nome + " acaba de consumir uma Poção Pequena. Recuperando +";
-                        txt_batalha.Text += (personagem_Model.HPMax * 0.30) + " do seu HP.";
+                        txt_batalha.Text += Convert.ToInt32(Math.Ceiling(personagem_Model.HPMax * 0.30)) + " do seu HP.";
                         Insertlog("Utilizou uma Poção Pequena.");
                     }
                     else
@@ -1318,11 +1318,14 @@ namespace Ficha_Jiora.View
         {
             try
             {
+                Cursor.Current = Cursors.WaitCursor;
                 txt_batalha.Text = Usar_Magia_Antiga();
+                Carrega_Tela();
+                Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falhar ao usar magia antiga.\r\n" + ex.Message);
+                MessageBox.Show("Falha ao usar magia antiga.\r\n" + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -1333,13 +1336,79 @@ namespace Ficha_Jiora.View
             batalha.AdicionaTurno(personagem_Model);
         }
 
+        private void btn_reduzir_hp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor = Convert.ToInt32(txt_reduzir.Text);
+                txt_batalha.Text = "Você perdeu " + valor + " de HP.";
+                Insertlog("Perdeu " + valor + " de HP.");
+                batalha.ReduzirHPAtual(personagem_Model.ID, valor);
+
+                if (personagem_Model.ID == "2")
+                {
+                    txt_batalha.Text += habilidade_Control.MeatBone_Slash(personagem_Model);
+                }
+
+                if (personagem_Model.ID == "3" && btn_postura.Text =="Protector Mode")
+                {
+                    txt_batalha.Text += habilidade_Control.StrikeBack(personagem_Model);
+                }
+                Carrega_Tela();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao reduzir HP:\r\n" + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_reduzir_mp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor = Convert.ToInt32(txt_reduzir.Text);
+                txt_batalha.Text = "Você perdeu " + valor + " de MP.";
+                Insertlog("Perdeu " + valor + " de MP.");
+                batalha.ReduzirMPAtual(personagem_Model.ID, valor);
+                Carrega_Tela();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao reduzir MP:\r\n" + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_postura_Click(object sender, EventArgs e)
+        {
+            if (personagem_Model.ID == "3")
+            {
+                if (btn_postura.Text == "Predator Mode")
+                {
+                    btn_postura.Text = "Protector Mode";
+                    txt_batalha.Text = "Você adotou a postura ofensiva para a batalha.";
+                    btn_defender.Enabled = false;
+                    txt_defender.Enabled = false;
+                    
+                }
+                else
+                {
+                    btn_postura.Text = "Predator Mode";                    
+                    txt_batalha.Text = "Você adotou a postura defensiva para a batalha.";
+                    btn_defender.Enabled = true;
+                    txt_defender.Enabled = true;
+                }
+                
+            }
+        }
+
         private bool Atacar()
         {
             try
             {
                 if (d100 <= batalha.Precisao())
                 {
-                    txt_batalha.Text = personagem_Model.Nome + " teve sucesso em acertart seu ataque.\r\n";
+                    txt_batalha.Text = personagem_Model.Nome + " teve sucesso em acertar seu ataque.\r\n";
                     txt_batalha.Text += "Dano: " + batalha.Atacar();
                     return true;
                 }
@@ -1389,31 +1458,67 @@ namespace Ficha_Jiora.View
                 string categoria = CBB_categoria.Text;
                 string Texto = "";
                 magia = batalha.RetornaDescricaoMagiaAntiga(elemento, rank, alvo, categoria);
+                int Dano = (magia.Multiplicador * personagem_Model.Magia);
 
-                Texto = "~~~~~Magia Antiga~~~~~\r\n\r\n";
-                Texto += magia.Descricao + "\r\n\r\n";
-                Texto += "Custo de Mana: " + magia.Custo+ " MP.";
-
-                if (categoria =="Ofensivo" && elemento =="Lumen" && alvo == 100 ||alvo ==101)
+                if (personagem_Model.MPAtual >= magia.Custo)
                 {
-                    return Texto += "\r\n\r\nValor da Cura: " + (magia.Multiplicador * personagem_Model.Magia)+ " de HP.";
+                    Texto = "~~~~~Magia Antiga~~~~~\r\n\r\n";
+                    Texto += magia.Descricao + "\r\n\r\n";
+                    Texto += "Custo de Mana: " + magia.Custo + " MP.";
+                    batalha.ReduzirMPAtual(personagem_Model.ID, magia.Custo);
+
+                    if ((categoria == "Ofensivo" && elemento == "Lumen") && alvo == 100 && alvo == 101)
+                    {
+                        Insertlog("Curou o HP do inimigo em +" + Dano);
+                        return Texto += "\r\n\r\nValor da Cura: " + Dano + " de HP" + ". (" + CBB_nivel.Text + ")";
+                    }
+
+                    if ((categoria == "Defensivo" && elemento == "Lumen") && alvo < 99 || alvo == 102)
+                    {
+                        Insertlog("Curou o HP de " + CBB_alvo.Text + " em +" + Dano + ". (" + CBB_nivel.Text + ")");
+                        if (alvo < 99)
+                        {
+                            batalha.CurarHPAtual(alvo.ToString(), Dano);
+                        }
+                        else
+                        {
+                            batalha.CurarHPAtual("1".ToString(), Dano);
+                            batalha.CurarHPAtual("2".ToString(), Dano);
+                            batalha.CurarHPAtual("3".ToString(), Dano);
+                            batalha.CurarHPAtual("4".ToString(), Dano);
+                            batalha.CurarHPAtual("6".ToString(), Dano);
+                        }
+                        return Texto += "\r\n\r\nValor da Cura: " + Dano + " de HP.";
+                    }
+
+                    if (categoria == "Defensivo")
+                    {
+                        Insertlog("Utilizou o elemento " + CBB_Elementos.Text + " na forma " + CBB_categoria.Text + " em " + CBB_alvo.Text + ". (" + CBB_nivel.Text + ")");
+                        return Texto += "";
+                    }
+
+                    if (categoria == "Ofensivo" && alvo < 99 && alvo == 102)
+                    {
+                        Insertlog("Utilizou o elemento " + CBB_Elementos.Text + " na forma " + CBB_categoria.Text + " em " + CBB_alvo.Text + ". (" + CBB_nivel.Text + ")");
+                        return Texto += "";
+                    }
+
+                    Texto += "\r\n\r\nDano: " + Dano + " do elemento " + ConversorDeElemento(elemento);
+                    Insertlog("Utilizou o elemento " + CBB_Elementos.Text + " na forma " + CBB_categoria.Text + " em " + CBB_alvo.Text + ". (" + CBB_nivel.Text + ")");
+                    return Texto;
+                }
+                else
+                {
+                    MessageBox.Show("Mana insuficiente para conjurar Magia.", "Falta de Mana", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return "";
                 }
 
-                if (categoria == "Defensivo" && elemento == "Lumen" && alvo < 99 || alvo == 102)
-                {
-                    return Texto += "\r\n\r\nValor da Cura: " + (magia.Multiplicador * personagem_Model.Magia) + " de HP.";
-                }
-
-                Texto += "\r\n\r\nDano: " + (magia.Multiplicador * personagem_Model.Magia) + " do elemento " + ConversorDeElemento(elemento);
-                return Texto;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
         }
-
         private string ConversorDeElemento(string elemento)
         {
             switch (elemento.Trim())
@@ -1436,7 +1541,7 @@ namespace Ficha_Jiora.View
                     return "Sombras.";
                 default:
                     return "";
-                    
+
             }
         }
         #endregion

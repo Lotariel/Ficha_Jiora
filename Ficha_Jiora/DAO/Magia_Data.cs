@@ -12,8 +12,7 @@ namespace Ficha_Jiora.DAO
 {
     internal class Magia_Data : Conexao
     {
-        private string Script = "";
-        private string Retorno = "";
+        private string Script = "";        
 
         public MagiaAntiga_Model RetornaDescricaoMagiaAntiga(string Elemento, int Rank, string alvo, string Categoria)
         {
