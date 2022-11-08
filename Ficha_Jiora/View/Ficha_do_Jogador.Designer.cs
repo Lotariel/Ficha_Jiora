@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
             this.lbl_estigma_desc04 = new System.Windows.Forms.Label();
@@ -129,13 +129,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_res_fire = new System.Windows.Forms.Label();
             this.battle = new System.Windows.Forms.TabPage();
+            this.btn_iniciativa = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.cbb_tipo_dano = new System.Windows.Forms.ComboBox();
             this.lbl_valor_lb = new System.Windows.Forms.Label();
-            this.button26 = new System.Windows.Forms.Button();
             this.img_charm_effect = new System.Windows.Forms.PictureBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label31 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button17 = new System.Windows.Forms.Button();
@@ -167,19 +166,13 @@
             this.CBB_Elementos = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cbb_habilidade = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbb_ataque = new System.Windows.Forms.ComboBox();
             this.txt_defender = new System.Windows.Forms.NumericUpDown();
             this.btn_defender = new System.Windows.Forms.Button();
             this.btn_postura = new System.Windows.Forms.Button();
@@ -211,6 +204,10 @@
             this.img_tonz = new System.Windows.Forms.PictureBox();
             this.lbl_tonz = new System.Windows.Forms.Label();
             this.Mapa = new System.Windows.Forms.TabPage();
+            this.button26 = new System.Windows.Forms.Button();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.Log = new System.Windows.Forms.TabPage();
             this.dtg_log = new System.Windows.Forms.DataGridView();
             this.lbl_mp = new System.Windows.Forms.Label();
@@ -286,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.inventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_tonz)).BeginInit();
+            this.Mapa.SuspendLayout();
             this.Log.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_exp)).BeginInit();
@@ -319,8 +317,7 @@
             // 
             // Status
             // 
-            this.Status.BackColor = System.Drawing.Color.Moccasin;
-            this.Status.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Status.BackgroundImage")));
+            this.Status.BackColor = System.Drawing.Color.White;
             this.Status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Status.Controls.Add(this.lbl_estigma_desc04);
             this.Status.Controls.Add(this.lbl_estigma_desc03);
@@ -1315,14 +1312,12 @@
             // 
             // battle
             // 
-            this.battle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("battle.BackgroundImage")));
+            this.battle.Controls.Add(this.btn_iniciativa);
+            this.battle.Controls.Add(this.label36);
+            this.battle.Controls.Add(this.cbb_tipo_dano);
             this.battle.Controls.Add(this.lbl_valor_lb);
-            this.battle.Controls.Add(this.button26);
             this.battle.Controls.Add(this.img_charm_effect);
-            this.battle.Controls.Add(this.comboBox5);
-            this.battle.Controls.Add(this.label32);
             this.battle.Controls.Add(this.pictureBox8);
-            this.battle.Controls.Add(this.label31);
             this.battle.Controls.Add(this.pictureBox7);
             this.battle.Controls.Add(this.groupBox6);
             this.battle.Controls.Add(this.pictureBox6);
@@ -1346,23 +1341,45 @@
             this.battle.Text = "Batalha";
             this.battle.UseVisualStyleBackColor = true;
             // 
+            // btn_iniciativa
+            // 
+            this.btn_iniciativa.Location = new System.Drawing.Point(434, 130);
+            this.btn_iniciativa.Name = "btn_iniciativa";
+            this.btn_iniciativa.Size = new System.Drawing.Size(75, 23);
+            this.btn_iniciativa.TabIndex = 29;
+            this.btn_iniciativa.Text = "Iniciativa";
+            this.btn_iniciativa.UseVisualStyleBackColor = true;
+            this.btn_iniciativa.Click += new System.EventHandler(this.btn_iniciativa_Click);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(188, 58);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(77, 15);
+            this.label36.TabIndex = 28;
+            this.label36.Text = "Tipo de Dano";
+            // 
+            // cbb_tipo_dano
+            // 
+            this.cbb_tipo_dano.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_tipo_dano.FormattingEnabled = true;
+            this.cbb_tipo_dano.Items.AddRange(new object[] {
+            "Físico",
+            "Mágico"});
+            this.cbb_tipo_dano.Location = new System.Drawing.Point(88, 55);
+            this.cbb_tipo_dano.Name = "cbb_tipo_dano";
+            this.cbb_tipo_dano.Size = new System.Drawing.Size(94, 23);
+            this.cbb_tipo_dano.TabIndex = 27;
+            // 
             // lbl_valor_lb
             // 
             this.lbl_valor_lb.AutoSize = true;
-            this.lbl_valor_lb.Location = new System.Drawing.Point(84, 41);
+            this.lbl_valor_lb.Location = new System.Drawing.Point(85, 13);
             this.lbl_valor_lb.Name = "lbl_valor_lb";
             this.lbl_valor_lb.Size = new System.Drawing.Size(44, 15);
             this.lbl_valor_lb.TabIndex = 26;
             this.lbl_valor_lb.Text = "label21";
-            // 
-            // button26
-            // 
-            this.button26.Location = new System.Drawing.Point(133, 93);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(75, 23);
-            this.button26.TabIndex = 25;
-            this.button26.Text = "Trocar";
-            this.button26.UseVisualStyleBackColor = true;
             // 
             // img_charm_effect
             // 
@@ -1374,25 +1391,6 @@
             this.img_charm_effect.TabStop = false;
             this.img_charm_effect.Visible = false;
             // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Selecione o jogador"});
-            this.comboBox5.Location = new System.Drawing.Point(7, 94);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 23);
-            this.comboBox5.TabIndex = 24;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(103, 66);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(44, 15);
-            this.label32.TabIndex = 12;
-            this.label32.Text = "Espada";
-            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::Ficha_Jiora.Properties.Resources.Burn_icon;
@@ -1402,15 +1400,6 @@
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Visible = false;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(6, 66);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(91, 15);
-            this.label31.TabIndex = 11;
-            this.label31.Text = "Arma Equipada:";
             // 
             // pictureBox7
             // 
@@ -1437,7 +1426,7 @@
             this.groupBox6.Controls.Add(this.button20);
             this.groupBox6.Controls.Add(this.button19);
             this.groupBox6.Controls.Add(this.btn_small_potion);
-            this.groupBox6.Location = new System.Drawing.Point(659, 282);
+            this.groupBox6.Location = new System.Drawing.Point(645, 283);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(290, 203);
             this.groupBox6.TabIndex = 10;
@@ -1597,7 +1586,7 @@
             this.groupBox5.Controls.Add(this.CBB_categoria);
             this.groupBox5.Controls.Add(this.CBB_alvo);
             this.groupBox5.Controls.Add(this.CBB_Elementos);
-            this.groupBox5.Location = new System.Drawing.Point(659, 12);
+            this.groupBox5.Location = new System.Drawing.Point(651, 13);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(290, 264);
             this.groupBox5.TabIndex = 9;
@@ -1732,16 +1721,9 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.cbb_habilidade);
             this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.button16);
             this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Controls.Add(this.button15);
-            this.groupBox4.Controls.Add(this.button14);
-            this.groupBox4.Controls.Add(this.button13);
-            this.groupBox4.Controls.Add(this.button12);
-            this.groupBox4.Controls.Add(this.button11);
-            this.groupBox4.Controls.Add(this.button10);
-            this.groupBox4.Controls.Add(this.button9);
             this.groupBox4.Controls.Add(this.button6);
             this.groupBox4.Location = new System.Drawing.Point(6, 182);
             this.groupBox4.Name = "groupBox4";
@@ -1749,6 +1731,15 @@
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Habilidades";
+            // 
+            // cbb_habilidade
+            // 
+            this.cbb_habilidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_habilidade.FormattingEnabled = true;
+            this.cbb_habilidade.Location = new System.Drawing.Point(0, 44);
+            this.cbb_habilidade.Name = "cbb_habilidade";
+            this.cbb_habilidade.Size = new System.Drawing.Size(190, 23);
+            this.cbb_habilidade.TabIndex = 10;
             // 
             // button7
             // 
@@ -1759,15 +1750,6 @@
             this.button7.Text = "Summon";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(209, 90);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 17;
-            this.button16.Text = "Skill 02";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(19, 264);
@@ -1777,76 +1759,13 @@
             this.button8.Text = "Limit";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(209, 147);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 16;
-            this.button15.Text = "Skill 02";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(115, 147);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 15;
-            this.button14.Text = "Skill 02";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(209, 40);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "Skill 02";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(115, 90);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 13;
-            this.button12.Text = "Skill 02";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(115, 40);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 12;
-            this.button11.Text = "Skill 02";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(19, 147);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 11;
-            this.button10.Text = "Skill 02";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(6, 90);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(103, 23);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "Corte Giratório";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(6, 40);
+            this.button6.Location = new System.Drawing.Point(196, 43);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(88, 23);
             this.button6.TabIndex = 9;
-            this.button6.Text = "Corte Rápido";
+            this.button6.Text = "Utilizar";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // pictureBox4
@@ -1861,30 +1780,41 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbb_ataque);
             this.groupBox3.Controls.Add(this.txt_defender);
             this.groupBox3.Controls.Add(this.btn_defender);
             this.groupBox3.Controls.Add(this.btn_postura);
             this.groupBox3.Controls.Add(this.btn_esquiva);
             this.groupBox3.Controls.Add(this.btn_Atacar);
-            this.groupBox3.Location = new System.Drawing.Point(377, 321);
+            this.groupBox3.Location = new System.Drawing.Point(310, 321);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(190, 111);
+            this.groupBox3.Size = new System.Drawing.Size(329, 111);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ações Básicas";
             // 
+            // cbb_ataque
+            // 
+            this.cbb_ataque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_ataque.FormattingEnabled = true;
+            this.cbb_ataque.Location = new System.Drawing.Point(6, 22);
+            this.cbb_ataque.Name = "cbb_ataque";
+            this.cbb_ataque.Size = new System.Drawing.Size(232, 23);
+            this.cbb_ataque.TabIndex = 9;
+            // 
             // txt_defender
             // 
-            this.txt_defender.Location = new System.Drawing.Point(113, 80);
+            this.txt_defender.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txt_defender.Location = new System.Drawing.Point(98, 80);
             this.txt_defender.Name = "txt_defender";
-            this.txt_defender.Size = new System.Drawing.Size(75, 23);
+            this.txt_defender.Size = new System.Drawing.Size(63, 23);
             this.txt_defender.TabIndex = 8;
             // 
             // btn_defender
             // 
-            this.btn_defender.Location = new System.Drawing.Point(111, 51);
+            this.btn_defender.Location = new System.Drawing.Point(95, 51);
             this.btn_defender.Name = "btn_defender";
-            this.btn_defender.Size = new System.Drawing.Size(75, 23);
+            this.btn_defender.Size = new System.Drawing.Size(65, 23);
             this.btn_defender.TabIndex = 2;
             this.btn_defender.Text = "Defender";
             this.btn_defender.UseVisualStyleBackColor = true;
@@ -1902,9 +1832,9 @@
             // 
             // btn_esquiva
             // 
-            this.btn_esquiva.Location = new System.Drawing.Point(109, 22);
+            this.btn_esquiva.Location = new System.Drawing.Point(172, 52);
             this.btn_esquiva.Name = "btn_esquiva";
-            this.btn_esquiva.Size = new System.Drawing.Size(75, 23);
+            this.btn_esquiva.Size = new System.Drawing.Size(66, 23);
             this.btn_esquiva.TabIndex = 1;
             this.btn_esquiva.Text = "Esquivar";
             this.btn_esquiva.UseVisualStyleBackColor = true;
@@ -1912,7 +1842,7 @@
             // 
             // btn_Atacar
             // 
-            this.btn_Atacar.Location = new System.Drawing.Point(6, 22);
+            this.btn_Atacar.Location = new System.Drawing.Point(244, 21);
             this.btn_Atacar.Name = "btn_Atacar";
             this.btn_Atacar.Size = new System.Drawing.Size(75, 23);
             this.btn_Atacar.TabIndex = 0;
@@ -1933,7 +1863,7 @@
             // lbl_limite_break
             // 
             this.lbl_limite_break.AutoSize = true;
-            this.lbl_limite_break.Location = new System.Drawing.Point(6, 41);
+            this.lbl_limite_break.Location = new System.Drawing.Point(7, 13);
             this.lbl_limite_break.Name = "lbl_limite_break";
             this.lbl_limite_break.Size = new System.Drawing.Size(57, 15);
             this.lbl_limite_break.TabIndex = 6;
@@ -1941,7 +1871,7 @@
             // 
             // btn_reduzir_mp
             // 
-            this.btn_reduzir_mp.Location = new System.Drawing.Point(244, 70);
+            this.btn_reduzir_mp.Location = new System.Drawing.Point(7, 112);
             this.btn_reduzir_mp.Name = "btn_reduzir_mp";
             this.btn_reduzir_mp.Size = new System.Drawing.Size(75, 23);
             this.btn_reduzir_mp.TabIndex = 3;
@@ -1951,7 +1881,7 @@
             // 
             // btn_reduzir_hp
             // 
-            this.btn_reduzir_hp.Location = new System.Drawing.Point(244, 41);
+            this.btn_reduzir_hp.Location = new System.Drawing.Point(7, 83);
             this.btn_reduzir_hp.Name = "btn_reduzir_hp";
             this.btn_reduzir_hp.Size = new System.Drawing.Size(75, 23);
             this.btn_reduzir_hp.TabIndex = 2;
@@ -1961,7 +1891,8 @@
             // 
             // txt_reduzir
             // 
-            this.txt_reduzir.Location = new System.Drawing.Point(244, 12);
+            this.txt_reduzir.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txt_reduzir.Location = new System.Drawing.Point(7, 54);
             this.txt_reduzir.Name = "txt_reduzir";
             this.txt_reduzir.Size = new System.Drawing.Size(75, 23);
             this.txt_reduzir.TabIndex = 1;
@@ -1979,7 +1910,6 @@
             // 
             // pericia
             // 
-            this.pericia.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pericia.BackgroundImage")));
             this.pericia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pericia.Controls.Add(this.btn_salvar_pericia);
             this.pericia.Controls.Add(this.lbl_pontos_pericia);
@@ -2039,17 +1969,17 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PapayaWhip;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Teste,
@@ -2061,13 +1991,13 @@
             this.dataGridView1.GridColor = System.Drawing.Color.Goldenrod;
             this.dataGridView1.Location = new System.Drawing.Point(34, 27);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
@@ -2093,8 +2023,8 @@
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nome.DataPropertyName = "Nome";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nome.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
             this.Nome.HeaderText = "Nome";
             this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
@@ -2104,8 +2034,8 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
             this.Valor.HeaderText = "CDS (%)";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -2127,8 +2057,8 @@
             // 
             this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descricao.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
             this.descricao.HeaderText = "Descrição";
             this.descricao.MinimumWidth = 6;
             this.descricao.Name = "descricao";
@@ -2147,7 +2077,6 @@
             // 
             // inventario
             // 
-            this.inventario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inventario.BackgroundImage")));
             this.inventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.inventario.Controls.Add(this.button1);
             this.inventario.Controls.Add(this.label34);
@@ -2225,8 +2154,11 @@
             // 
             // Mapa
             // 
-            this.Mapa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mapa.BackgroundImage")));
             this.Mapa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mapa.Controls.Add(this.button26);
+            this.Mapa.Controls.Add(this.comboBox5);
+            this.Mapa.Controls.Add(this.label32);
+            this.Mapa.Controls.Add(this.label31);
             this.Mapa.Location = new System.Drawing.Point(4, 24);
             this.Mapa.Name = "Mapa";
             this.Mapa.Size = new System.Drawing.Size(941, 500);
@@ -2234,9 +2166,45 @@
             this.Mapa.Text = "Equipamento";
             this.Mapa.UseVisualStyleBackColor = true;
             // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(159, 80);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(75, 23);
+            this.button26.TabIndex = 29;
+            this.button26.Text = "Trocar";
+            this.button26.UseVisualStyleBackColor = true;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "Selecione o jogador"});
+            this.comboBox5.Location = new System.Drawing.Point(33, 81);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(121, 23);
+            this.comboBox5.TabIndex = 28;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(129, 53);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(44, 15);
+            this.label32.TabIndex = 27;
+            this.label32.Text = "Espada";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(32, 53);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(91, 15);
+            this.label31.TabIndex = 26;
+            this.label31.Text = "Arma Equipada:";
+            // 
             // Log
             // 
-            this.Log.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Log.BackgroundImage")));
             this.Log.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Log.Controls.Add(this.dtg_log);
             this.Log.Location = new System.Drawing.Point(4, 24);
@@ -2253,14 +2221,14 @@
             this.dtg_log.AllowUserToDeleteRows = false;
             this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dtg_log.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_log.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtg_log.Location = new System.Drawing.Point(6, 6);
@@ -2268,8 +2236,8 @@
             this.dtg_log.ReadOnly = true;
             this.dtg_log.RowHeadersVisible = false;
             this.dtg_log.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LemonChiffon;
-            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dtg_log.RowTemplate.Height = 25;
             this.dtg_log.Size = new System.Drawing.Size(929, 402);
             this.dtg_log.TabIndex = 0;
@@ -2483,6 +2451,7 @@
             this.txt_nome_personagem.Name = "txt_nome_personagem";
             this.txt_nome_personagem.Size = new System.Drawing.Size(100, 23);
             this.txt_nome_personagem.TabIndex = 2;
+            this.txt_nome_personagem.Visible = false;
             // 
             // btn_atualiza
             // 
@@ -2625,7 +2594,6 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1488, 724);
             this.Controls.Add(this.panel2);
@@ -2643,6 +2611,8 @@
             this.Name = "Ficha_do_Jogador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Ficha_do_Jogador_FormClosing);
+            this.Load += new System.EventHandler(this.Ficha_do_Jogador_Load);
             this.tabControl1.ResumeLayout(false);
             this.Status.ResumeLayout(false);
             this.Status.PerformLayout();
@@ -2693,6 +2663,8 @@
             this.inventario.ResumeLayout(false);
             this.inventario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_tonz)).EndInit();
+            this.Mapa.ResumeLayout(false);
+            this.Mapa.PerformLayout();
             this.Log.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_exp)).EndInit();
@@ -2867,14 +2839,6 @@
         private Button btn_small_potion;
         private GroupBox groupBox5;
         private GroupBox groupBox4;
-        private Button button16;
-        private Button button15;
-        private Button button14;
-        private Button button13;
-        private Button button12;
-        private Button button11;
-        private Button button10;
-        private Button button9;
         private Button button6;
         private NumericUpDown txt_defender;
         private Button btn_postura;
@@ -2889,10 +2853,6 @@
         private ComboBox CBB_alvo;
         private ComboBox CBB_Elementos;
         private Button button25;
-        private Button button26;
-        private ComboBox comboBox5;
-        private Label label32;
-        private Label label31;
         private Label lbl_valor_lb;
         private Label lbl_hp;
         private Label lbl_mp;
@@ -2920,5 +2880,14 @@
         private Button btn_defender;
         private Button button1;
         private Label label34;
+        private Label label36;
+        private ComboBox cbb_tipo_dano;
+        private Button button26;
+        private ComboBox comboBox5;
+        private Label label32;
+        private Label label31;
+        private Button btn_iniciativa;
+        private ComboBox cbb_habilidade;
+        private ComboBox cbb_ataque;
     }
 }

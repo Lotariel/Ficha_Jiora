@@ -18,6 +18,8 @@ namespace Ficha_Jiora.Control
         private Batalha_Data batalha_Data = new Batalha_Data();
         private Equipamento_Control equipamento_Control = new Equipamento_Control();
         private Magia_Control magia_Control = new Magia_Control();
+        private Elemento_Control elemento_Control = new Elemento_Control();
+        
 
         private int HPAtual = 0, HPMax = 0, MPAtual = 0, MPMax = 0;
 
@@ -396,12 +398,11 @@ namespace Ficha_Jiora.Control
             }
         }
 
-        public int Atacar()
+        public int ValordoAtaque()
         {
             try
             {
-
-                Equipamento_Model arma = new Equipamento_Model();
+                Equipamento_Model arma = new Equipamento_Model();                
                 string IDArmaEquipada = equipamento_Control.Arma_Equipada(personagem.ID);                
                 int DanoFinal = 0;
                 arma = equipamento_Control.Carrega_Arma_Equipada(IDArmaEquipada);
@@ -438,6 +439,10 @@ namespace Ficha_Jiora.Control
 
                 throw new Exception(ex.Message);
             }
+        }
+        public Ataque_Model Carrega_Ataque(Personagem_Model personagem, string nome)
+        {
+            return batalha_Data.Carrega_Ataque(personagem, nome);
         }
         public int Precisao()
         {
@@ -523,6 +528,11 @@ namespace Ficha_Jiora.Control
         public DataTable Carrega_Combo_Elementos()
         {
             return batalha_Data.Carrega_Combo_Elementos();
+        }
+
+        public DataTable Carrega_Combo_Ataques(Personagem_Model personagem)
+        {
+            return batalha_Data.Carrega_Combo_Ataques(personagem);
         }
 
         public void AdicionaTurno(Personagem_Model personagem)
@@ -637,6 +647,22 @@ namespace Ficha_Jiora.Control
                 throw new Exception("Erro em Reduzir MP Atual: " + ex.Message);
             }
         }
+
+        public void AumentaElementoMod(string ID, string Coluna, int valor)
+        {
+            elemento_Control.AumentaElementoMod(ID, Coluna, valor);
+        }
+
+        public void AdicionaEncantamento(string NomeElemento, int Turnos, string IDpersonagem)
+        {
+            efeitos_Control.AdicionaEncantamento(NomeElemento, Turnos, IDpersonagem);
+        }
+
+        public Efeitos_Model Carrega_Efeito(string IDPersonagem)
+        {
+            return efeitos_Control.Carrega_Efeito(IDPersonagem);
+        }
+
 
 
     }

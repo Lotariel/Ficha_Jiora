@@ -128,5 +128,25 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Efeitos_Data.ReduzTurnos:\n" + ex.Message);
             }
         }
+
+        public void AdicionaEncantamento(string NomeElemento, int Turnos, string IDpersonagem)
+        {
+            try
+            {
+                Script = "update Controle_Efeitos set elemento_encaNtado = '" + NomeElemento + "',";
+                Script += "turnos_encantamento =" + Turnos + " where IDpersonagem = " + IDpersonagem;
+
+                SqlCommand update = new SqlCommand(Script, AbreConexao());
+
+                update.ExecuteNonQuery();
+
+                FechaConexao();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Efeitos_Data.AdicionaEncantamento:\n" + ex.Message);
+            }
+        }
     }
 }

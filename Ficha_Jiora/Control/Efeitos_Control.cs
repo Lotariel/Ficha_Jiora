@@ -78,6 +78,12 @@ namespace Ficha_Jiora.Control
             {
                 efeitos_Data.DesativarEfeito("Poison_Ativo", personagem.ID);
             }
+
+            if (efeitos_Model.Turnos_Encantamento > 0)
+            {
+                valor = efeitos_Model.Turnos_Encantamento - 1;
+                efeitos_Data.ReduzTurnos("Turnos_Encantamento", valor, personagem.ID);
+            }
         }
         public void VerificaEfeito(Personagem_Model personagem, out int poison, out string silence, out int burn, out string frozen, out bool paralyze, out string confuse, out string charm)
         {
@@ -120,14 +126,13 @@ namespace Ficha_Jiora.Control
             }
             if (personagem.Charm_Ativo)
             {
-                 charm =Charm();
+                charm = Charm();
             }
             if (personagem.Blind_Ativo)
             {
                 Blind(personagem);
             }
         }
-
         private int Burn(Personagem_Model personagem)
         {
             try
@@ -169,31 +174,31 @@ namespace Ficha_Jiora.Control
             {
                 case 1:
                     return "Use sua habilidade mais fraca no aliado mais próximo.";
-                    
+
                 case 2:
                     return "Use sua magia mais fraca no aliado mais próximo.";
-                    
+
                 case 3:
                     return "Use uma Poção Grande no aliado mais próximo.";
-                    
+
                 case 4:
                     return "Faça um ataque normal em você mesmo.";
-                    
+
                 case 5:
                     return "Use sua habilidade mais fraca no aliado mais próximo.";
-                    
+
                 case 6:
                     return "Ataque um oponente aleatório.";
-                    
+
                 case 7:
                     return "Use uma Elixir Grande no aliado mais próximo.";
-                    
+
                 case 8:
                     return "Use sua magia ou habilidade mais poderosa em um oponente aleatório.";
-                    
+
                 default:
                     return "";
-                    
+
             }
         }
         private bool Paralyze()
@@ -225,6 +230,11 @@ namespace Ficha_Jiora.Control
         private string Silence()
         {
             return "Seu controle de mana foi selado, agora você não pode utilizar sua mana.";
+        }
+
+        public void AdicionaEncantamento(string NomeElemento, int Turnos, string IDpersonagem)
+        {
+            efeitos_Data.AdicionaEncantamento(NomeElemento, Turnos, IDpersonagem);
         }
 
 

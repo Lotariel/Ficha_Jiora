@@ -12,7 +12,7 @@ namespace Ficha_Jiora
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Ficha_do_Jogador());
+            Application.Run(new Tela_Login());
         }
     }
 }

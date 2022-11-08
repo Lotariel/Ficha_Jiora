@@ -154,7 +154,6 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Personagem_Data.Carrega_Combo_Personagem:\n" + ex.Message);
             }
         }
-
         public string GetID(string nome)
         {
             try
@@ -182,7 +181,6 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Personagem_Data.GetID:\n" + ex.Message);
             }
         }
-
         private string GetClasse(string IDClasse)
         {
             try
@@ -202,7 +200,6 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Personagem_Data.GetClasse:\n" + ex.Message);
             }
         }
-
         private string GetRaca(string IDRaca)
         {
             try
@@ -222,7 +219,6 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Personagem_Data.GetRaca:\n" + ex.Message);
             }
         }
-
         public void Update_Personagem(string Coluna, double Valor, string ID)
         {
             try
