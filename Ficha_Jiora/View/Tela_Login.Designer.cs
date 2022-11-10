@@ -48,6 +48,7 @@
             // txt_nome_personagem
             // 
             this.txt_nome_personagem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txt_nome_personagem.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nome_personagem.Location = new System.Drawing.Point(701, 12);
             this.txt_nome_personagem.Name = "txt_nome_personagem";
             this.txt_nome_personagem.Size = new System.Drawing.Size(100, 23);

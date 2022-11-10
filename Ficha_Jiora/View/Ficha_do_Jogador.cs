@@ -8,14 +8,17 @@ using System.ComponentModel.Design;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.ExceptionServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ProgressBar = System.Windows.Forms.ProgressBar;
 using ToolTip = System.Windows.Forms.ToolTip;
 
 namespace Ficha_Jiora.View
@@ -36,6 +39,7 @@ namespace Ficha_Jiora.View
         private int d100 = 0, d12 = 0, d10 = 0, d8 = 0, d6 = 0;
         private Equipamento_Control equipamento_control = new Equipamento_Control();
 
+
         public Ficha_do_Jogador()
         {
             InitializeComponent();
@@ -48,6 +52,9 @@ namespace Ficha_Jiora.View
             Carrega_Tela(IDPersonagem);
             Carrega_background();
             tabControl1.Enabled = true;
+            ModifyProgressBarColor.SetState(PB_MP, 3);
+            ModifyProgressBarColor.SetState(PG_Limit, 2);
+
         }
 
         private void Ficha_do_Jogador_FormClosing(object sender, FormClosingEventArgs e)
@@ -58,17 +65,9 @@ namespace Ficha_Jiora.View
         {
             try
             {
-
                 Cursor.Current = Cursors.WaitCursor;
-                //Carrega_Tela();                
-                
-                //txt_nome_personagem.Visible = false;                
+                Carrega_Tela(personagem_Model.ID);
                 Cursor.Current = Cursors.Default;
-                if (txt_nome_personagem.Text == "mestre")
-                {
-                    Tela_Do_Mestre telaMaster = new Tela_Do_Mestre(personagem_Model.ID);
-                    telaMaster.Show();
-                }
 
             }
             catch (Exception ex)
@@ -114,19 +113,11 @@ namespace Ficha_Jiora.View
             tabControl1.TabPages[4].BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Capturar.PNG");
             tabControl1.TabPages[5].BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Capturar.PNG");
             this.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Fundo_atualizado.png");
-        }
-        private string GetID(string nome)
-        {
-            try
+            if (personagem_Model.ID == "4")
             {
-                return personagem_Control.GetID(nome);
+                groupBox5.Text = "Elementos";
             }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-        }
+        }       
         private void CarregaPersonagem(string ID)
         {
             try
@@ -139,6 +130,7 @@ namespace Ficha_Jiora.View
                 lbl_classe_peronsagem.Text = personagem_Model.Classe;
                 VerificaEfeito(personagem_Model);
                 panel2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Perfil\\" + personagem_Model.Imagem);
+                panel2.BackgroundImageLayout = ImageLayout.Stretch;
                 if (IDPersonagem == "2")
                 {
                     label2.ForeColor = Color.Black;
@@ -179,6 +171,8 @@ namespace Ficha_Jiora.View
                 lbl_valor_critico.Text = "x" + personagem_Model.Valor_Critico.ToString().Replace(',', '.'); ;
                 lbl_exp.Text = personagem_Model.EXPAtual + " / " + (personagem_Model.Nivel * 500);
                 lbl_tonz.Text = personagem_Model.Tonz.ToString();
+                PG_Limit.Maximum = 100;
+                PG_Limit.Value = personagem_Model.Especial;
 
 
             }
@@ -251,7 +245,7 @@ namespace Ficha_Jiora.View
 
                 if (e.ColumnIndex == dataGridView1.Columns["Teste"].Index)
                 {
-                    int Total = 0;
+
                     var Row = dataGridView1.CurrentRow;
 
 
@@ -271,7 +265,7 @@ namespace Ficha_Jiora.View
                                 if (d100 <= 10)
                                 {
                                     txt_pericia.Text = personagem_Model.Nome + " Realizou um acerto crítico no teste de " + NomeTeste
-                                        + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
+                                         + "\r\n\r\nValor do Teste: " + valor + "\r\nValor do Dado: " + d100;
 
                                     Insertlog("Realizou uma acerto crítico no teste de " + NomeTeste + ". Valor do Dado: " + d100 + ". Valor do teste: " + valor);
                                     if (NomeTeste == "Fuga" && personagem_Model.ID == "2")
@@ -398,7 +392,7 @@ namespace Ficha_Jiora.View
             catch (Exception ex)
             {
 
-                throw;
+                throw new Exception(ex.Message);
             }
         }
 
@@ -453,52 +447,8 @@ namespace Ficha_Jiora.View
                 lbl_magia.Text = personagem_Model.Magia.ToString();
                 lbl_aura.Text = personagem_Model.Aura.ToString();
                 lbl_raca.Text = personagem_Model.Raca;
-                lbl_res_fire.Text = personagem_Model.Res_Fire + " %";
-                lbl_res_water.Text = personagem_Model.Res_Water + " %";
-                lbl_res_ice.Text = personagem_Model.Res_Ice + " %";
-                lbl_res_wind.Text = personagem_Model.Res_Wind + " %";
-                lbl_res_earth.Text = personagem_Model.Res_Earth + " %";
-                lbl_res_thunder.Text = personagem_Model.Res_Thunder + " %";
-                lbl_res_light.Text = personagem_Model.Res_Light + " %";
-                lbl_res_shadow.Text = personagem_Model.Res_Shadow + " %";
-                lbl_res_burn.Text = personagem_Model.Res_Burn + " %";
-                lbl_res_frozen.Text = personagem_Model.Res_Fronze + " %";
-                lbl_res_silence.Text = personagem_Model.Res_Silence + " %";
-                lbl_res_confuse.Text = personagem_Model.Res_Confuse + " %";
-                lbl_res_paralyze.Text = personagem_Model.Res_Paralyze + " %";
-                lbl_res_poison.Text = personagem_Model.Res_Poison + " %";
-                lbl_res_blind.Text = personagem_Model.Res_Blind + " %";
-                lbl_res_charm.Text = personagem_Model.Res_Charm + " %";
                 lbl_critico_atributo.Text = personagem_Model.CDS_Critico.ToString();
                 lbl_potencia.Text = personagem_Model.Potencia.ToString();
-                img_stigma.Load(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Estigma\\" + personagem_Model.EstigmaImagem);
-                if (Convert.ToInt16(IDPersonagem) < 5)
-                {
-                    int nivel1 = estigma_Control.GetNivel("1", IDPersonagem);
-                    int nivel2 = estigma_Control.GetNivel("2", IDPersonagem);
-                    int nivel3 = estigma_Control.GetNivel("3", IDPersonagem);
-                    int nivel4 = estigma_Control.GetNivel("4", IDPersonagem);
-
-                    lbl_estigma_nome01.Text = estigma_Control.GetNome(nivel1, "1", IDPersonagem) + ":";
-                    lbl_estigma_desc01.Text = estigma_Control.GetDescricao(nivel1, "1", IDPersonagem);
-                    lbl_estigma_nome02.Text = estigma_Control.GetNome(nivel2, "2", IDPersonagem) + ":";
-                    lbl_estigma_desc02.Text = estigma_Control.GetDescricao(nivel2, "2", IDPersonagem);
-                    lbl_estigma_nome03.Text = estigma_Control.GetNome(nivel3, "3", IDPersonagem) + ":";
-                    lbl_estigma_desc03.Text = estigma_Control.GetDescricao(nivel3, "3", IDPersonagem);
-                    lbl_estigma_nome04.Text = estigma_Control.GetNome(nivel4, "4", IDPersonagem) + ":";
-                    lbl_estigma_desc04.Text = estigma_Control.GetDescricao(nivel4, "4", IDPersonagem);
-                }
-                else
-                {
-                    lbl_estigma_nome01.Text = "";
-                    lbl_estigma_desc01.Text = "";
-                    lbl_estigma_nome02.Text = "";
-                    lbl_estigma_desc02.Text = "";
-                    lbl_estigma_nome03.Text = "";
-                    lbl_estigma_desc03.Text = "";
-                    lbl_estigma_nome04.Text = "";
-                    lbl_estigma_desc04.Text = "";
-                }
 
                 GPB_status_atributos.Text = "Pontos Disponíveis " + ValorAtributo;
 
@@ -511,28 +461,7 @@ namespace Ficha_Jiora.View
                     ControleBotao(false);
                 }
 
-                if (personagem_Model.NomeEstigma != "")
-                {
-                    lbl_estigma_nome01.Visible = true;
-                    lbl_estigma_nome02.Visible = true;
-                    lbl_estigma_nome03.Visible = true;
-                    lbl_estigma_nome04.Visible = true;
-                    lbl_estigma_desc01.Visible = true;
-                    lbl_estigma_desc02.Visible = true;
-                    lbl_estigma_desc03.Visible = true;
-                    lbl_estigma_desc04.Visible = true;
-                }
-                else
-                {
-                    lbl_estigma_nome01.Visible = false;
-                    lbl_estigma_nome02.Visible = false;
-                    lbl_estigma_nome03.Visible = false;
-                    lbl_estigma_nome04.Visible = false;
-                    lbl_estigma_desc01.Visible = false;
-                    lbl_estigma_desc02.Visible = false;
-                    lbl_estigma_desc03.Visible = false;
-                    lbl_estigma_desc04.Visible = false;
-                }
+
 
             }
             catch (Exception ex)
@@ -636,22 +565,22 @@ namespace Ficha_Jiora.View
                 switch (resultado)
                 {
                     case 1:
-                        txt_status.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Força."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Força."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto crítico no teste de Força. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 2:
-                        txt_status.Text = personagem_Model.Nome + " teve sucesso no teste de Força."
+                        txt_pericia.Text = personagem_Model.Nome + " teve sucesso no teste de Força."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto no teste de Força. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 3:
-                        txt_status.Text = personagem_Model.Nome + " falhou no teste de Força."
+                        txt_pericia.Text = personagem_Model.Nome + " falhou no teste de Força."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Falhou no teste de Força. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 4:
-                        txt_status.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Força."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Força."
                                        + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou uma falha crítica no teste de Força. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
@@ -674,22 +603,22 @@ namespace Ficha_Jiora.View
                 switch (resultado)
                 {
                     case 1:
-                        txt_status.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Vitalidade."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Vitalidade."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto crítico no teste de Vitalidade. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 2:
-                        txt_status.Text = personagem_Model.Nome + " teve sucesso no teste de Vitalidade."
+                        txt_pericia.Text = personagem_Model.Nome + " teve sucesso no teste de Vitalidade."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto no teste de Vitalidade. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 3:
-                        txt_status.Text = personagem_Model.Nome + " falhou no teste de Vitalidade."
+                        txt_pericia.Text = personagem_Model.Nome + " falhou no teste de Vitalidade."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Falhou no teste de Vitalidade. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 4:
-                        txt_status.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Vitalidade."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Vitalidade."
                                        + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou uma falha crítica no teste de Vitalidade. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
@@ -712,22 +641,22 @@ namespace Ficha_Jiora.View
                 switch (resultado)
                 {
                     case 1:
-                        txt_status.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Foco."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Foco."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto crítico no teste de Foco. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 2:
-                        txt_status.Text = personagem_Model.Nome + " teve sucesso no teste de Foco."
+                        txt_pericia.Text = personagem_Model.Nome + " teve sucesso no teste de Foco."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto no teste de Foco. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 3:
-                        txt_status.Text = personagem_Model.Nome + " falhou no teste de Foco."
+                        txt_pericia.Text = personagem_Model.Nome + " falhou no teste de Foco."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Falhou no teste de Foco. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 4:
-                        txt_status.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Foco."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Foco."
                                        + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou uma falha crítica no teste de Foco. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
@@ -750,22 +679,22 @@ namespace Ficha_Jiora.View
                 switch (resultado)
                 {
                     case 1:
-                        txt_status.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Velocidade."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Velocidade."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto crítico no teste de Velocidade. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 2:
-                        txt_status.Text = personagem_Model.Nome + " teve sucesso no teste de Velocidade."
+                        txt_pericia.Text = personagem_Model.Nome + " teve sucesso no teste de Velocidade."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto no teste de Velocidade. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 3:
-                        txt_status.Text = personagem_Model.Nome + " falhou no teste de Velocidade."
+                        txt_pericia.Text = personagem_Model.Nome + " falhou no teste de Velocidade."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Falhou no teste de Velocidade. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 4:
-                        txt_status.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Velocidade."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Velocidade."
                                        + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou uma falha crítica no teste de Velocidade. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
@@ -788,22 +717,22 @@ namespace Ficha_Jiora.View
                 switch (resultado)
                 {
                     case 1:
-                        txt_status.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Magia."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Magia."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto crítico no teste de Magia. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 2:
-                        txt_status.Text = personagem_Model.Nome + " teve sucesso no teste de Magia."
+                        txt_pericia.Text = personagem_Model.Nome + " teve sucesso no teste de Magia."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto no teste de Magia. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 3:
-                        txt_status.Text = personagem_Model.Nome + " falhou no teste de Magia."
+                        txt_pericia.Text = personagem_Model.Nome + " falhou no teste de Magia."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Falhou no teste de Magia. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 4:
-                        txt_status.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Magia."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Magia."
                                        + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou uma falha crítica no teste de Magia. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
@@ -818,8 +747,7 @@ namespace Ficha_Jiora.View
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             //Ver se tem como carregar a tela quando clicar na aba log
-            //Carrega_Tela();   
-
+            Carrega_Tela(personagem_Model.ID);
         }
 
         private void btn_up_for_MouseHover(object sender, EventArgs e)
@@ -894,113 +822,6 @@ namespace Ficha_Jiora.View
             tt.SetToolTip(img_tonz, "Quantidade de Tonz");
         }
 
-        private void img_fire_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_fire, "Resistência a Fogo");
-        }
-
-        private void img_ice_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_ice, "Resistência a Gelo");
-        }
-
-        private void img_wind_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_wind, "Resistência a Vento");
-        }
-
-        private void img_earth_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_earth, "Resistência a Terra");
-        }
-
-        private void img_thunder_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_thunder, "Resistência a Trovão");
-        }
-
-        private void img_water_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_water, "Resistência a Água");
-        }
-
-        private void img_light_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_light, "Resistência a Luz");
-        }
-
-        private void img_shadow_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_shadow, "Resistência a Escuridão");
-        }
-
-        private void img_burn_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_burn, "Resistência a Burn");
-        }
-
-        private void img_frozen_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_frozen, "Resistência a Frozen");
-        }
-
-        private void img_silence_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_silence, "Resistência a Silence");
-        }
-
-        private void img_confuse_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_confuse, "Resistência a Confuse");
-        }
-
-        private void img_paralyze_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_paralyze, "Resistência a Paralyze");
-        }
-
-        private void img_posion_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_posion, "Resistência a Poison");
-        }
-
-        private void img_blind_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_blind, "Resistência a Blind");
-        }
-
-        private void img_charm_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(img_charm, "Resistência a Charm");
-        }
-
-        private void img_stigma_MouseHover(object sender, EventArgs e)
-        {
-            string nomeestigma = personagem_Model.NomeEstigma;
-            if (nomeestigma != "")
-            {
-                ToolTip tt = new ToolTip();
-                tt.SetToolTip(img_stigma, "Estigma da " + nomeestigma);
-
-            }
-        }
-
         private void btn_teste__aur_Click(object sender, EventArgs e)
         {
             try
@@ -1012,22 +833,22 @@ namespace Ficha_Jiora.View
                 switch (resultado)
                 {
                     case 1:
-                        txt_status.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Aura."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou um acerto crítico no teste de Aura."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto crítico no teste de Aura. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 2:
-                        txt_status.Text = personagem_Model.Nome + " teve sucesso no teste de Aura."
+                        txt_pericia.Text = personagem_Model.Nome + " teve sucesso no teste de Aura."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou um acerto no teste de Aura. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 3:
-                        txt_status.Text = personagem_Model.Nome + " falhou no teste de Aura."
+                        txt_pericia.Text = personagem_Model.Nome + " falhou no teste de Aura."
                                         + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Falhou no teste de Aura. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
                     case 4:
-                        txt_status.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Aura."
+                        txt_pericia.Text = personagem_Model.Nome + " realizou uma falha crítica no teste de Aura."
                                        + "\r\n\r\nValor do Teste: " + ValorTeste + "\r\nValor do Dado: " + d100;
                         Insertlog("Realizou uma falha crítica no teste de Aura. Valor do Teste: " + ValorTeste + " Valor do Dado: " + d100);
                         break;
@@ -1142,12 +963,8 @@ namespace Ficha_Jiora.View
             CBB_nome_personagem.Text = "Selecione";
             CBB_alvo.Text = "Selecione";
             CBB_Elementos.Text = "Selecione";
-
             txt_reduzir.Maximum = 999999;
-            txt_defender.Maximum = 999999;
             txt_reduzir.Controls[0].Visible = false;
-            txt_defender.Controls[0].Visible = false;
-            txt_defender.Text = "";
             txt_reduzir.Text = "";
             lbl_valor_lb.Text = personagem_Model.Especial + " %";
 
@@ -1176,6 +993,12 @@ namespace Ficha_Jiora.View
             lbl_hp.Text = personagem_Model.HPAtual + " / " + personagem_Model.HPMax;
             lbl_mp.Text = personagem_Model.MPAtual + " / " + personagem_Model.MPMax;
 
+
+            PB_HP.Maximum = personagem_Model.HPMax;
+            PB_HP.Value = personagem_Model.HPAtual;
+            PB_MP.Maximum = personagem_Model.MPMax;
+            PB_MP.Value = personagem_Model.MPAtual;
+
             if (personagem_Model.ID == "3")
             {
                 btn_postura.Visible = true;
@@ -1195,7 +1018,22 @@ namespace Ficha_Jiora.View
                 btn_postura.Visible = false;
 
             }
+            if (personagem_Model.ID == "4")
+            {
+                CBB_alvo.Visible = true;
+                CBB_categoria.Visible = true;
+                CBB_Elementos.Visible = true;
+                CBB_nivel.Visible = true;
+                btn_magia_antiga.Visible = true;
+                Btn_simular.Visible = true;
+                label28.Visible = true;
+                label29.Visible = true;
+                label30.Visible = true;
+                label21.Visible = true;
+            }
             Carrega_Combo_Ataque();
+            Carrega_Combo_Habilidade();
+
         }
         private void Carrega_Combobox_Personagem()
         {
@@ -1212,32 +1050,6 @@ namespace Ficha_Jiora.View
                 throw new Exception("Falha ao carregar ComboBox Nome do Personagem: " + ex.Message);
             }
         }
-        private void CBB_alvo_Click(object sender, EventArgs e)
-        {
-            Carrega_Combo_Alvo();
-        }
-
-        private void CBB_Elementos_Click(object sender, EventArgs e)
-        {
-            Carrega_Combo_Elementos();
-        }
-
-        private void Carrega_Combo_Alvo()
-        {
-
-            try
-            {
-                CBB_alvo.DataSource = batalha.Carrega_Combo_Alvo();
-                CBB_alvo.ValueMember = "ID";
-                CBB_alvo.DisplayMember = "Nome";
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception("Falha ao carregar ComboBox Nome do Alvo: " + ex.Message);
-            }
-        }
-
         private void Carrega_Combo_Elementos()
         {
 
@@ -1253,7 +1065,6 @@ namespace Ficha_Jiora.View
                 throw new Exception("Falha ao carregar ComboBox Nome dos Elementos: " + ex.Message);
             }
         }
-
         private void Carrega_Combo_Ataque()
         {
             try
@@ -1268,24 +1079,113 @@ namespace Ficha_Jiora.View
                 throw new Exception("Falha ao carregar ComboBox Nome dos Ataques: " + ex.Message);
             }
         }
+        private void Carrega_Combo_Habilidade()
+        {
+            try
+            {
+                cbb_habilidade.DataSource = batalha.Carrega_Combo_Habilidade(personagem_Model, btn_postura.Text);
+                cbb_habilidade.DisplayMember = "Nome";
+                cbb_habilidade.ValueMember = "ID";
 
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Falha ao carregar ComboBox Nome das Habilidades: " + ex.Message);
+            }
+
+        }
+        private void Calcula_Habilidade()
+        {
+            try
+            {
+                Habilidade_Model habilidade = new Habilidade_Model();
+                habilidade = batalha.Carrega_Habilidade(cbb_habilidade.SelectedValue.ToString());
+                double dano = Math.Ceiling(habilidade.Multiplicador * batalha.ValordoAtaque());
+                string alvo = habilidade.Alvo;
+                string descricao = habilidade.Descricao;
+                string efeito = habilidade.Efeito;
+                string tipodano = habilidade.TipoDano;
+                string tipocusto = habilidade.TipoCusto;
+                int Hit = habilidade.HIT;
+                int custo = habilidade.ValorCusto;
+                int CDA = habilidade.CDA;
+                int contador = 1;
+                d100 = Rolar.D100();
+                if (personagem_Model.MPAtual < custo && tipocusto == "MP")
+                {
+                    MessageBox.Show("Mana insuficiente para usar habilidade.", "Sem Mana", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                }
+                else
+                {
+                    if (d100 <= CDA)
+                    {
+
+                        txt_batalha.Text = "Você acertou a habilidade " + habilidade.Nome;
+                        txt_batalha.Text += "\r\n\r\nDescreva a ação de " + personagem_Model.Nome + " utilizando essa habilidade.\r\n\r\n";
+
+                        if (tipocusto == "MP")
+                        {
+                            batalha.ReduzirMPAtual(personagem_Model.ID, custo);
+                        }
+
+
+                        if (habilidade.HIT == 1)
+                        {
+                            txt_batalha.Text += "Dano: " + dano + " " + tipodano + "\r\n";
+                        }
+                        else
+                        {
+                            for (int i = 0; i < habilidade.HIT; i++)
+                            {
+                                dano = Math.Ceiling(habilidade.Multiplicador * batalha.ValordoAtaque());
+                                txt_batalha.Text += contador + "º Dano: " + dano + " " + tipodano + "\r\n";
+                                contador++;
+                            }
+                        }
+
+                        txt_batalha.Text += "Custo: " + custo + " " + tipocusto;
+                        txt_batalha.Text += "\r\nAlvo: " + alvo + "\r\nHit: " + Hit + "\r\nCategoria: " + habilidade.Atributo + "\r\nChance de Acerto: " + CDA + " %\r\n";
+                        txt_batalha.Text += "CDS Efeito: " + habilidade.CDSEfeito + " %\r\nEfeito: " + efeito + "\r\nDescrição:\r\n";
+                        txt_batalha.Text += descricao;
+                    }
+                    else
+                    {
+                        txt_batalha.Text = personagem_Model.Nome + " errou a habilidade.\r\n\r\n";
+                        txt_batalha.Text += "Valor do Dado: " + d100;
+                        txt_batalha.Text += "\r\nChance de Acerto: " + CDA;
+                    }
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
         private void btn_esquiva_Click(object sender, EventArgs e)
         {
             try
             {
                 int esquiva = batalha.Esquiva();
+                string TextoEsquiva = "";
                 d100 = Rolar.D100();
                 if (d100 <= esquiva)
                 {
-                    txt_batalha.Text = personagem_Model.Nome + " conseguiu se esquivar com sucesso!";
-                    txt_batalha.Text += "\r\n\r\nValor do Dado: " + d100;
+                    TextoEsquiva = personagem_Model.Nome + " conseguiu se esquivar com sucesso!";
+                    TextoEsquiva += "\r\n\r\nValor do Dado: " + d100;
                     Insertlog("Teve sucesso no teste de Esquiva.");
+                    MessageBox.Show(TextoEsquiva, "Esquivou", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    txt_batalha.Text = personagem_Model.Nome + " falhou ao tentar se esquivar!";
-                    txt_batalha.Text += "\r\n\r\nValor do Dado: " + d100;
+                    TextoEsquiva = personagem_Model.Nome + " falhou ao tentar se esquivar!";
+                    TextoEsquiva += "\r\n\r\nValor do Dado: " + d100;
                     Insertlog("Teve falha no teste de Esquiva.");
+                    MessageBox.Show(TextoEsquiva, "Não Esquivou", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -1294,7 +1194,6 @@ namespace Ficha_Jiora.View
                 MessageBox.Show("Falha ao tentar executar o comando Esquivar. Motivo do Erro: " + ex.Message, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         private void btn_Atacar_Click(object sender, EventArgs e)
         {
             try
@@ -1309,22 +1208,18 @@ namespace Ficha_Jiora.View
                 MessageBox.Show("Falhar ao gerar o ataque motivo:\r\n" + ex.Message, "Falha ao gerar o Ataque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
-
         private void CBB_nome_personagem_Click(object sender, EventArgs e)
         {
             Carrega_Combobox_Personagem();
         }
-
         private void Btn_simular_Click(object sender, EventArgs e)
         {
             txt_batalha.Text = Simulação_Magia_Antiga();
         }
-
         private void btn_small_potion_Click(object sender, EventArgs e)
         {
             Pocao_Pequena();
         }
-
         private void Pocao_Pequena()
         {
             try
@@ -1359,7 +1254,6 @@ namespace Ficha_Jiora.View
                 MessageBox.Show("Falha ao usar Item: " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void btn_magia_antiga_Click(object sender, EventArgs e)
         {
             try
@@ -1375,47 +1269,162 @@ namespace Ficha_Jiora.View
             }
 
         }
-
         private void AdicionaTurnos()
         {
             CarregaPersonagem(personagem_Model.ID);
             batalha.AdicionaTurno(personagem_Model);
         }
-
         private void btn_reduzir_hp_Click(object sender, EventArgs e)
         {
             try
             {
-                if (cbb_tipo_dano.Text == "")
-                {
-                    MessageBox.Show("Selecione um tipo de Dano", "Tipo de Dano", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }
-                else
-                {
-                    int valor = Convert.ToInt32(txt_reduzir.Text);
-                    txt_batalha.Text = "Você perdeu " + valor + " de HP.";
-                    Insertlog("Perdeu " + valor + " de HP.");
-                    batalha.ReduzirHPAtual(personagem_Model.ID, valor);
-
-                    if (personagem_Model.ID == "2" && cbb_tipo_dano.Text == "Físico")
-                    {
-                        txt_batalha.Text += habilidade_Control.MeatBone_Slash(personagem_Model);
-                    }
-
-                    if (personagem_Model.ID == "3" && btn_postura.Text == "Protector Mode" && cbb_tipo_dano.Text == "Físico")
-                    {
-                        txt_batalha.Text += habilidade_Control.StrikeBack(personagem_Model);
-                    }
-                    Carrega_Tela(personagem_Model.ID);
-                }
-
+                Reduzir_HP();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao reduzir HP:\r\n" + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        private void Reduzir_HP()
+        {
+            try
+            {
+                int valor = Convert.ToInt32(txt_reduzir.Text);
+                string TextoAparouFisico = "aparou o ataque e não recebeu nenhum dano.\r\n\r\nValor do Dano Recebido é inferior a Defesa do personagem."; ;
+                string TextoAparouMagico = "O dano recebido não conseguiu atravessar a Aura de " + personagem_Model.Nome + ".Você não recebe dano desse ataque.\r\n\r\nValor do Dano Recebido é inferior a Resistencia do personagem.";
+                if (cbb_tipo_dano.Text == "")
+                {
+                    MessageBox.Show("Selecione um tipo de Dano", "Tipo de Dano", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    switch (cbb_tipo_dano.Text)
+                    {
+                        case "Físico":
+                            valor = valor - personagem_Model.Defesa;
+                            if (personagem_Model.ID == "3" && btn_postura.Text == "Protector Mode")
+                            {
+                                txt_batalha.Text = personagem_Model.Nome + " aparou o ataque e não recebeu nenhum dano.";
+                                valor = 0;
+                            }
+                            else
+                            {
+                                if (valor < 0)
+                                {
+                                    valor = 0;
+                                    txt_batalha.Text = personagem_Model.Nome + TextoAparouFisico;
 
+                                }
+                                else
+                                {
+                                    txt_batalha.Text = "Você perdeu " + valor + " de HP.";
+                                }
+                            }
+                            txt_batalha.Text += Counter_Ataque();
+                            Insertlog("Perdeu " + valor + " de HP.");
+                            batalha.ReduzirHPAtual(personagem_Model.ID, valor);
+                            break;
+                        case "Perfurante Físico":
+                            valor = valor - (personagem_Model.Defesa / 2);
+                            if (personagem_Model.ID == "3" && btn_postura.Text == "Protector Mode")
+                            {
+                                txt_batalha.Text = personagem_Model.Nome + " aparou o ataque e não recebeu nenhum dano.";
+                                valor = 0;
+                            }
+                            else
+                            {
+                                if (valor < 0)
+                                {
+                                    valor = 0;
+                                    txt_batalha.Text = personagem_Model.Nome + TextoAparouFisico;
+                                }
+                                else
+                                {
+                                    txt_batalha.Text = "Você perdeu " + valor + " de HP.";
+                                }
+                            }
+                            txt_batalha.Text += Counter_Ataque();
+                            Insertlog("Perdeu " + valor + " de HP.");
+                            batalha.ReduzirHPAtual(personagem_Model.ID, valor);
+                            break;
+                        case "Dano Real Físico":
+                            if (personagem_Model.ID == "3" && btn_postura.Text == "Protector Mode")
+                            {
+                                txt_batalha.Text = personagem_Model.Nome + " aparou o ataque e não recebeu nenhum dano.";
+                                valor = 0;
+                            }
+                            else
+                            {
+                                txt_batalha.Text = "Você perdeu " + valor + " de HP.";
+                            }
+                            txt_batalha.Text += Counter_Ataque();
+                            Insertlog("Perdeu " + valor + " de HP.");
+                            batalha.ReduzirHPAtual(personagem_Model.ID, valor);
+                            break;
+                        case "Mágico":
+                            valor = valor - personagem_Model.Resistencia;
+
+                            if (valor < 0)
+                            {
+                                valor = 0;
+                                txt_batalha.Text = TextoAparouMagico;
+                            }
+                            else
+                            {
+                                txt_batalha.Text = "Você perdeu " + valor + " de HP.";
+                            }
+                            Insertlog("Perdeu " + valor + " de HP.");
+                            batalha.ReduzirHPAtual(personagem_Model.ID, valor);
+                            break;
+                        case "Perfurante Mágico":
+                            valor = valor - (personagem_Model.Resistencia / 2);
+
+                            if (valor < 0)
+                            {
+                                valor = 0;
+                                txt_batalha.Text = TextoAparouMagico;
+                            }
+                            else
+                            {
+                                txt_batalha.Text = "Você perdeu " + valor + " de HP.";
+                            }
+                            Insertlog("Perdeu " + valor + " de HP.");
+                            batalha.ReduzirHPAtual(personagem_Model.ID, valor);
+                            break;
+
+                        case "Dano Real Mágico":
+
+                            txt_batalha.Text = "Você perdeu " + valor + " de HP.";
+
+                            Insertlog("Perdeu " + valor + " de HP.");
+                            batalha.ReduzirHPAtual(personagem_Model.ID, valor);
+                            break;
+                    }
+                    Carrega_Tela(personagem_Model.ID);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        private string Counter_Ataque()
+        {
+            if (personagem_Model.ID == "2")
+            {
+                return habilidade_Control.MeatBone_Slash(personagem_Model);
+            }
+
+            if (personagem_Model.ID == "3" && btn_postura.Text == "Protector Mode")
+            {
+                return habilidade_Control.StrikeBack(personagem_Model);
+            }
+
+            return "";
+        }
         private void btn_reduzir_mp_Click(object sender, EventArgs e)
         {
             try
@@ -1431,39 +1440,96 @@ namespace Ficha_Jiora.View
                 MessageBox.Show("Erro ao reduzir MP:\r\n" + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void btn_postura_Click(object sender, EventArgs e)
         {
-            if (personagem_Model.ID == "3")
+            try
             {
-                if (btn_postura.Text == "Predator Mode")
+                Postura();
+                Carrega_Tela(personagem_Model.ID);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("", "Falha ao executar Postura", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+        private void Postura()
+        {
+            try
+            {
+                Ataque_Model ataque = new Ataque_Model();
+                Efeitos_Model efeitos = new Efeitos_Model();
+                if (personagem_Model.ID == "3")
                 {
-                    btn_postura.Text = "Protector Mode";
-                    txt_batalha.Text = "Você adotou a postura ofensiva para a batalha.";
-                    btn_defender.Enabled = false;
-                    txt_defender.Enabled = false;
+                    if (btn_postura.Text == "Predator Mode")
+                    {
+                        btn_postura.Text = "Protector Mode";
+                        txt_batalha.Text = "Você adotou a postura ofensiva para a batalha.";
+                        txt_batalha.Text += "\r\n\r\nCounter Melee Attack - Ativo";
+                        txt_batalha.Text += "\r\nRedução 100% Dano Físico Recebido - Ativo";
+                        txt_batalha.Text += "\r\nAtaque Básico +1 Hit - Ativo";
+                        txt_batalha.Text += "\r\nSkill ofensivas - Ativo";
+                        txt_batalha.Text += "\r\nSkill Defensivas - Desativado";
+                        txt_batalha.Text += "\r\nAção de Defender - Desativado";
+                        btn_defender.Enabled = false;
+                        batalha.Adiciona_Hit_Ataque("Hávarðr", personagem_Model);
+                    }
+                    else
+                    {
+                        btn_postura.Text = "Predator Mode";
+                        txt_batalha.Text = "Você adotou a postura defensiva para a batalha.";
+                        txt_batalha.Text += "\r\n\r\nCounter Melee Attack - Ativo";
+                        txt_batalha.Text += "\r\nRedução 100% Dano Físico Recebido - Desativado";
+                        txt_batalha.Text += "\r\nAtaque Básico +1 Hit - Desativado";
+                        txt_batalha.Text += "\r\nSkill Ofensivas - Desativado";
+                        txt_batalha.Text += "\r\nSkill Defensivas - Ativa";
+                        txt_batalha.Text += "\r\nAção de Defender - Ativa";
+                        btn_defender.Enabled = true;
+                        ataque = batalha.Carrega_Ataque(personagem_Model, "Hávarðr");
+                        batalha.Remove_Hit_Ataque("Hávarðr", personagem_Model);
+
+                    }
 
                 }
-                else
-                {
-                    btn_postura.Text = "Predator Mode";
-                    txt_batalha.Text = "Você adotou a postura defensiva para a batalha.";
-                    btn_defender.Enabled = true;
-                    txt_defender.Enabled = true;
-                }
+            }
+            catch (Exception ex)
+            {
 
+                throw new Exception("Falha ao executar postura: " + ex.Message);
             }
         }
         private string Atacar()
         {
             try
             {
+                if (personagem_Model.ID == "3" && btn_postura.Text == "Predator Mode")
+                {
+                    batalha.Define_Hit_Ataque("Hávarðr", personagem_Model, 1);
+                }
                 Ataque_Model ataque = new Ataque_Model();
+                Efeitos_Model efeitos = new Efeitos_Model();
+                efeitos = batalha.Carrega_Efeito(personagem_Model.ID);
                 d100 = Rolar.D100();
                 double Dano = CalculaAtaque();
                 ataque = batalha.Carrega_Ataque(personagem_Model, cbb_ataque.Text);
                 string textoataque = "";
 
+                if (efeitos.Turnos_Encantamento > 0)
+                {
+                    ataque.TipoDano = " do elemento " + efeitos.Elemento_Encantado;
+                }
+                if (cbb_ataque.Text == "Combate Corpo-a-Corpo")
+                {
+                    if (efeitos.Turnos_Encantamento > 0)
+                    {
+                        ataque.TipoDano = "Físico";
+                    }
+                    else
+                    {
+                        ataque.TipoDano = "Físico";
+                    }
+
+                }
 
                 if (d100 <= batalha.Precisao())
                 {
@@ -1475,14 +1541,14 @@ namespace Ficha_Jiora.View
 
                         if (ataque.HIT == 1)
                         {
-                            textoataque += "Dano: " + (Dano * personagem_Model.Valor_Critico) + " " + ataque.TipoDano + "\r\n";
+                            textoataque += "Dano: " + Convert.ToInt32(Dano * personagem_Model.Valor_Critico) + " " + ataque.TipoDano + "\r\n";
                         }
                         else
                         {
                             for (int i = 0; i < ataque.HIT; i++)
                             {
                                 Dano = CalculaAtaque();
-                                textoataque += contador + "º Dano: " + (Dano * personagem_Model.Valor_Critico) + " " + ataque.TipoDano + "\r\n";
+                                textoataque += contador + "º Dano: " + Convert.ToInt32(Dano * personagem_Model.Valor_Critico) + " " + ataque.TipoDano + "\r\n";
                                 contador++;
                             }
                         }
@@ -1490,7 +1556,7 @@ namespace Ficha_Jiora.View
                         textoataque += "Valor do Dado: " + d100 + "\r\nHit: " + ataque.HIT + "\r\n";
                         textoataque += "Alvo: " + ataque.Alvo + "\r\nCDS Efeito: " + ataque.CDSEfeito + " %\r\n";
                         textoataque += "Efeito: " + ataque.Efeito + "\r\nCategoria: " + ataque.Categoria;
-                        Insertlog("Realizou um acerto crítico,valor do dano: " + (Dano * personagem_Model.Valor_Critico) + " tipo " + ataque.TipoDano);
+                        Insertlog("Realizou um acerto crítico,valor do dano: " + Convert.ToInt32(Dano * personagem_Model.Valor_Critico) + " tipo " + ataque.TipoDano);
                         return textoataque;
                     }
                     else
@@ -1630,15 +1696,128 @@ namespace Ficha_Jiora.View
                 AdicionaTurnos();
                 txt_batalha.Text = "Valor da iniciativa: " + Inciativa;
                 Insertlog("Teve o resultado de " + Inciativa + " no teste de iniciativa.");
+                Efeitos_Model efeitos_Model = new Efeitos_Model();
+                efeitos_Model = batalha.Carrega_Efeito(personagem_Model.ID);
+                if (efeitos_Model.Turnos_Encantamento > 0)
+                {
+                    txt_batalha.Text += "\r\n\r\nVocê possui " + efeitos_Model.Turnos_Encantamento + " turnos com o encantamento do elemento " + efeitos_Model.Elemento_Encantado;
+                }
+
 
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("Falha, motivo do erro:" + ex.Message);
+                MessageBox.Show("Falha, motivo do erro:" + ex.Message, "Erro ao executar Iniciativa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-        }      
+        }
 
+        private void btn_utiliza_habilidade_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                Calcula_Habilidade();
+                Carrega_Tela(personagem_Model.ID);
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Falha, motivo do erro:" + ex.Message, "Erro ao executar Habilidade", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
+        private void CBB_categoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CBB_alvo.ResetText();
+            if (CBB_categoria.Text == "Ofensivo")
+            {
+                CBB_alvo.DataSource = batalha.Carrega_Combo_Alvo_Todos();
+                CBB_alvo.ValueMember = "ID";
+                CBB_alvo.DisplayMember = "Nome";
+            }
+            if (CBB_categoria.Text == "Defensivo" || CBB_categoria.Text == "Encantamento")
+            {
+                CBB_alvo.DataSource = batalha.Carrega_Combo_Alvo_Aliado();
+                CBB_alvo.ValueMember = "ID";
+                CBB_alvo.DisplayMember = "Nome";
+            }
+            if (CBB_categoria.Text == "Enfraquecer")
+            {
+                CBB_alvo.DataSource = batalha.Carrega_Combo_Alvo_Inimigo();
+                CBB_alvo.ValueMember = "ID";
+                CBB_alvo.DisplayMember = "Nome";
+            }
+
+        }
+
+        private void CBB_Elementos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CBB_Elementos_MouseClick(object sender, MouseEventArgs e)
+        {
+            Carrega_Combo_Elementos();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Informacoes info = new Informacoes();
+            info.IDPersonagem = personagem_Model.ID;
+            info.Show();
+        }
+
+        private void btn_defender_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor = Convert.ToInt32(txt_reduzir.Text);
+                valor = valor - (personagem_Model.Defesa + personagem_Model.Resistencia);
+
+                if (valor < 0)
+                {
+                    txt_batalha.Text = "Você bloqueou 100% do dano e não perdeu vida.";
+                    Insertlog("Defendeu 100% do dano recebido");
+                }
+                else
+                {
+                    txt_batalha.Text = "Você perdeu " + valor + " de HP.";
+                    Insertlog("Defendeu o valor de" + valor);
+                    batalha.ReduzirHPAtual(personagem_Model.ID, valor);
+                }
+                Carrega_Tela(personagem_Model.ID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao Defender:\r\n" + ex.Message, "Falha ao Defender", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
+        }
+
+        private void btn_limit_Click(object sender, EventArgs e)
+        {
+            limit();
+            Carrega_Tela(personagem_Model.ID);
+        }
+        private void limit()
+        {
+            switch (personagem_Model.ID)
+            {
+                case "1":
+                    break;
+                case "2":
+                    break;
+                case "3":
+                    
+                    break;
+                case "4":
+                    break;
+                case "6":
+                    break;
+            }
+        }
         private string Simulação_Magia_Antiga()
         {
             try
@@ -1689,7 +1868,7 @@ namespace Ficha_Jiora.View
                         return Texto += "\r\n\r\nValor da Cura: " + Dano + " de HP" + ". (" + CBB_nivel.Text + ")";
                     }
 
-                    if ((categoria == "Defensivo" && elemento == "Lumen") && alvo < 99 && alvo == 102)
+                    if ((categoria == "Ofensivo" && elemento == "Lumen") && alvo < 99 || alvo == 102)
                     {
                         Insertlog("Curou o HP de " + CBB_alvo.Text + " em +" + Dano + ". (" + CBB_nivel.Text + ")");
                         if (alvo < 99)
@@ -1750,7 +1929,7 @@ namespace Ficha_Jiora.View
                         return Texto += "";
                     }
 
-                    if (categoria == "Ofensivo" && alvo < 99 || alvo == 102)
+                    if (categoria == "Encantamento" && alvo < 99 || alvo == 102)
                     {
                         int turnos = 0;
                         Insertlog("Utilizou o elemento " + CBB_Elementos.Text + " na forma " + CBB_categoria.Text + " em " + CBB_alvo.Text + ". (" + CBB_nivel.Text + ")");
@@ -1854,8 +2033,16 @@ namespace Ficha_Jiora.View
             }
         }
         #endregion
-
-
-
     }
+
+    public static class ModifyProgressBarColor
+    {
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
+        public static void SetState(this ProgressBar pBar, int state)
+        {
+            SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
+        }
+    }
+
 }

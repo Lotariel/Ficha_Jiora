@@ -16,7 +16,7 @@ namespace Ficha_Jiora.DAO
         private string Script = "";
         private Batalha_Modelo batalha_modelo = new Batalha_Modelo();
         private Ataque_Model ataque_Model = new Ataque_Model();
-        public DataTable Carrega_Combo_Alvo()
+        public DataTable Carrega_Combo_Alvo_Todos()
         {
             try
             {
@@ -44,7 +44,70 @@ namespace Ficha_Jiora.DAO
             catch (Exception ex)
             {
 
-                throw new Exception("\nErro em Batalha_Data.Carrega_Combo_Alvo:\n" + ex.Message);
+                throw new Exception("\nErro em Batalha_Data.Carrega_Combo_Alvo_Todos:\n" + ex.Message);
+            }
+        }
+
+        public DataTable Carrega_Combo_Alvo_Aliado()
+        {
+            try
+            {
+                DataTable TabelaAlvo = new DataTable();
+
+                Script = "select Nome,ID from Alvo where id < 99 or id = 102";
+                Script += "order by Nome";
+
+                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
+
+                select.Fill(TabelaAlvo);
+                FechaConexao();
+
+                foreach (DataRow item in TabelaAlvo.Rows)
+                {
+                    batalha_modelo = new Batalha_Modelo()
+                    {
+                        Nome = item["Nome"].ToString(),
+                        ID = Convert.ToInt32(item["ID"])
+
+                    };
+                }
+                return TabelaAlvo;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Batalha_Data.Carrega_Combo_Alvo_Aliado:\n" + ex.Message);
+            }
+        }
+        public DataTable Carrega_Combo_Alvo_Inimigo()
+        {
+            try
+            {
+                DataTable TabelaAlvo = new DataTable();
+
+                Script = "select Nome,ID from Alvo where id > 99 and id < 102";
+                Script += "order by Nome";
+
+                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
+
+                select.Fill(TabelaAlvo);
+                FechaConexao();
+
+                foreach (DataRow item in TabelaAlvo.Rows)
+                {
+                    batalha_modelo = new Batalha_Modelo()
+                    {
+                        Nome = item["Nome"].ToString(),
+                        ID = Convert.ToInt32(item["ID"])
+
+                    };
+                }
+                return TabelaAlvo;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Batalha_Data.Carrega_Combo_Alvo_Inimigo:\n" + ex.Message);
             }
         }
         public DataTable Carrega_Combo_Elementos()
@@ -84,7 +147,7 @@ namespace Ficha_Jiora.DAO
                 DataTable TabelaAtaque = new DataTable();
 
                 Script = "select nome from ataques ";
-                Script += "where ativo = 1 and idpersonagem = " + personagem.ID;
+                Script += "where ativo = 1 and idpersonagem = " + personagem.ID + "order by Nome desc";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
 
@@ -113,7 +176,7 @@ namespace Ficha_Jiora.DAO
                 DataTable TabelaAtaque = new DataTable();
                 Ataque_Model ataque = new Ataque_Model();
 
-                Script = "select * from ataques where ativo = 1 and idpersonagem = "+ personagem.ID;
+                Script = "select * from ataques where ativo = 1 and idpersonagem = " + personagem.ID;
                 Script += " and nome = '" + nome + "'";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
@@ -142,10 +205,70 @@ namespace Ficha_Jiora.DAO
                 }
                 return ataque;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception("\nErro em Batalha_Data.Carrega_Ataque:\n" + ex.Message);
+            }
+        }
+
+        public void Adiciona_Hit_Ataque(string NomeAtaque, Personagem_Model personagem)
+        {
+            try
+            {
+                Script = "update Ataques set HIT+=1 ";
+                Script += "where Nome = '" + NomeAtaque + "' and IDPersonagem = '" + personagem.ID + "'";
+
+                SqlCommand update = new SqlCommand(Script, AbreConexao());
+
+                update.ExecuteNonQuery();
+
+                FechaConexao();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Batalha_Data.Adiciona_HIT_Ataque:\n" + ex.Message);
+            }
+        }
+
+        public void Remove_Hit_Ataque(string NomeAtaque, Personagem_Model personagem)
+        {
+            try
+            {
+                Script = "update Ataques set HIT-=1 ";
+                Script += "where Nome = '" + NomeAtaque + "' and IDPersonagem = '" + personagem.ID + "'";
+
+                SqlCommand update = new SqlCommand(Script, AbreConexao());
+
+                update.ExecuteNonQuery();
+
+                FechaConexao();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Batalha_Data.Remove_Hit_Ataque:\n" + ex.Message);
+            }
+        }
+
+        public void Define_Hit_Ataque(string NomeAtaque, Personagem_Model personagem,int Valor)
+        {
+            try
+            {
+                Script = "update Ataques set HIT= "+Valor;
+                Script += "where Nome = '" + NomeAtaque + "' and IDPersonagem = '" + personagem.ID + "'";
+
+                SqlCommand update = new SqlCommand(Script, AbreConexao());
+
+                update.ExecuteNonQuery();
+
+                FechaConexao();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Batalha_Data.Adiciona_HIT_Ataque:\n" + ex.Message);
             }
         }
     }

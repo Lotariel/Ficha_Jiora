@@ -21,10 +21,32 @@ namespace Ficha_Jiora.DAO
                 DataTable TabelaMagiaAntiga = new DataTable();
                 MagiaAntiga_Model  magia_a = new MagiaAntiga_Model();
 
-                Script = "select " + Elemento + ",qntd_dado,custo,mult_dado,multiplicador from magias_antigas";
-                Script += " where rank = " + Rank;
-                Script += " AND alvo = '" + alvo + "'";
-                Script += " AND Tipo = '" + Categoria + "'";
+                if (Categoria =="Ofensivo")
+                {
+                    if (alvo == "Todos Aliados" || alvo == "Todos inimigos")
+                    {
+                        Script = "select " + Elemento + ",qntd_dado,custo,mult_dado,multiplicador from magias_antigas";
+                        Script += " where rank = " + Rank;
+                        Script += " AND alvo = 'Todos inimigos'";
+                        Script += " AND Tipo = '" + Categoria + "'";
+                    }
+                    else
+                    {
+                        Script = "select " + Elemento + ",qntd_dado,custo,mult_dado,multiplicador from magias_antigas";
+                        Script += " where rank = " + Rank;
+                        Script += " AND alvo = 'inimigo'";
+                        Script += " AND Tipo = '" + Categoria + "'";
+                    }
+                   
+                }
+                else
+                {
+                    Script = "select " + Elemento + ",qntd_dado,custo,mult_dado,multiplicador from magias_antigas";
+                    Script += " where rank = " + Rank;
+                    Script += " AND alvo = '" + alvo + "'";
+                    Script += " AND Tipo = '" + Categoria + "'";
+                }
+                
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
 

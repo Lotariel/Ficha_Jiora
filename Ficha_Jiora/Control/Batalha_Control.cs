@@ -19,6 +19,7 @@ namespace Ficha_Jiora.Control
         private Equipamento_Control equipamento_Control = new Equipamento_Control();
         private Magia_Control magia_Control = new Magia_Control();
         private Elemento_Control elemento_Control = new Elemento_Control();
+        private Habilidade_data habilidade_Data = new Habilidade_data();
         
 
         private int HPAtual = 0, HPMax = 0, MPAtual = 0, MPMax = 0;
@@ -520,9 +521,19 @@ namespace Ficha_Jiora.Control
                     return magia;
             }
         }
-        public DataTable Carrega_Combo_Alvo()
+        public DataTable Carrega_Combo_Alvo_Todos()
         {
-            return batalha_Data.Carrega_Combo_Alvo();
+            return batalha_Data.Carrega_Combo_Alvo_Todos();
+        }
+
+        public DataTable Carrega_Combo_Alvo_Aliado()
+        {
+            return batalha_Data.Carrega_Combo_Alvo_Aliado();
+        }
+
+        public DataTable Carrega_Combo_Alvo_Inimigo()
+        {
+            return batalha_Data.Carrega_Combo_Alvo_Inimigo();
         }
 
         public DataTable Carrega_Combo_Elementos()
@@ -535,6 +546,15 @@ namespace Ficha_Jiora.Control
             return batalha_Data.Carrega_Combo_Ataques(personagem);
         }
 
+        public DataTable Carrega_Combo_Habilidade(Personagem_Model personagem,string Postura)
+        {
+            return habilidade_Data.Carrega_Combo_Habilidade(personagem, Postura);
+        }
+
+        public Habilidade_Model Carrega_Habilidade(string IDHabilidade)
+        {
+            return habilidade_Data.Carrega_Habilidade(IDHabilidade);
+        }
         public void AdicionaTurno(Personagem_Model personagem)
         {
             int Valor = personagem.Turnos + 1;
@@ -663,7 +683,19 @@ namespace Ficha_Jiora.Control
             return efeitos_Control.Carrega_Efeito(IDPersonagem);
         }
 
+        public void Adiciona_Hit_Ataque(string NomeAtaque, Personagem_Model personagem)
+        {
+            batalha_Data.Adiciona_Hit_Ataque(NomeAtaque, personagem);
+        }
+        public void Remove_Hit_Ataque(string NomeAtaque, Personagem_Model personagem)
+        {
+            batalha_Data.Remove_Hit_Ataque(NomeAtaque, personagem);
+        }
 
+        public void Define_Hit_Ataque(string NomeAtaque, Personagem_Model personagem, int Valor)
+        {
+            batalha_Data.Define_Hit_Ataque(NomeAtaque, personagem, Valor);
+        }
 
     }
 }

@@ -29,60 +29,87 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
-            this.lbl_estigma_desc04 = new System.Windows.Forms.Label();
-            this.lbl_estigma_desc03 = new System.Windows.Forms.Label();
-            this.lbl_estigma_desc02 = new System.Windows.Forms.Label();
-            this.lbl_estigma_desc01 = new System.Windows.Forms.Label();
-            this.lbl_estigma_nome04 = new System.Windows.Forms.Label();
-            this.lbl_estigma_nome03 = new System.Windows.Forms.Label();
-            this.lbl_estigma_nome02 = new System.Windows.Forms.Label();
-            this.lbl_estigma_nome01 = new System.Windows.Forms.Label();
-            this.img_stigma = new System.Windows.Forms.PictureBox();
-            this.lbl_res_charm = new System.Windows.Forms.Label();
-            this.lbl_res_blind = new System.Windows.Forms.Label();
-            this.lbl_res_poison = new System.Windows.Forms.Label();
-            this.lbl_res_paralyze = new System.Windows.Forms.Label();
-            this.lbl_res_confuse = new System.Windows.Forms.Label();
-            this.lbl_res_silence = new System.Windows.Forms.Label();
-            this.lbl_res_frozen = new System.Windows.Forms.Label();
-            this.lbl_res_burn = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.img_charm = new System.Windows.Forms.PictureBox();
-            this.img_blind = new System.Windows.Forms.PictureBox();
-            this.img_posion = new System.Windows.Forms.PictureBox();
-            this.img_paralyze = new System.Windows.Forms.PictureBox();
-            this.img_confuse = new System.Windows.Forms.PictureBox();
-            this.img_silence = new System.Windows.Forms.PictureBox();
-            this.img_frozen = new System.Windows.Forms.PictureBox();
-            this.img_burn = new System.Windows.Forms.PictureBox();
-            this.lbl_res_shadow = new System.Windows.Forms.Label();
-            this.lbl_res_light = new System.Windows.Forms.Label();
-            this.lbl_res_water = new System.Windows.Forms.Label();
-            this.lbl_res_thunder = new System.Windows.Forms.Label();
-            this.lbl_res_earth = new System.Windows.Forms.Label();
-            this.lbl_res_wind = new System.Windows.Forms.Label();
-            this.lbl_res_ice = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.img_shadow = new System.Windows.Forms.PictureBox();
-            this.img_light = new System.Windows.Forms.PictureBox();
-            this.img_water = new System.Windows.Forms.PictureBox();
-            this.img_thunder = new System.Windows.Forms.PictureBox();
-            this.img_earth = new System.Windows.Forms.PictureBox();
-            this.img_wind = new System.Windows.Forms.PictureBox();
-            this.img_ice = new System.Windows.Forms.PictureBox();
-            this.img_fire = new System.Windows.Forms.PictureBox();
             this.txt_status = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_raca = new System.Windows.Forms.Label();
+            this.lbl_nascimento = new System.Windows.Forms.Label();
+            this.lbl_peso = new System.Windows.Forms.Label();
+            this.lbl_altura = new System.Windows.Forms.Label();
+            this.lbl_cabelo = new System.Windows.Forms.Label();
+            this.lbl_olhos = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.battle = new System.Windows.Forms.TabPage();
+            this.btn_status = new System.Windows.Forms.Button();
+            this.btn_iniciativa = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.cbb_tipo_dano = new System.Windows.Forms.ComboBox();
+            this.img_charm_effect = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.CBB_nome_personagem = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.btn_small_potion = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.CBB_nivel = new System.Windows.Forms.ComboBox();
+            this.Btn_simular = new System.Windows.Forms.Button();
+            this.btn_magia_antiga = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.CBB_categoria = new System.Windows.Forms.ComboBox();
+            this.CBB_Elementos = new System.Windows.Forms.ComboBox();
+            this.CBB_alvo = new System.Windows.Forms.ComboBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cbb_magia = new System.Windows.Forms.ComboBox();
+            this.cbb_habilidade = new System.Windows.Forms.ComboBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btn_utilizar_magia = new System.Windows.Forms.Button();
+            this.btn_limit = new System.Windows.Forms.Button();
+            this.btn_utiliza_habilidade = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbb_ataque = new System.Windows.Forms.ComboBox();
+            this.btn_defender = new System.Windows.Forms.Button();
+            this.btn_postura = new System.Windows.Forms.Button();
+            this.btn_esquiva = new System.Windows.Forms.Button();
+            this.btn_Atacar = new System.Windows.Forms.Button();
+            this.img_poison_effect = new System.Windows.Forms.PictureBox();
+            this.btn_reduzir_mp = new System.Windows.Forms.Button();
+            this.btn_reduzir_hp = new System.Windows.Forms.Button();
+            this.txt_reduzir = new System.Windows.Forms.NumericUpDown();
+            this.txt_batalha = new System.Windows.Forms.TextBox();
+            this.pericia = new System.Windows.Forms.TabPage();
             this.GPB_status_atributos = new System.Windows.Forms.GroupBox();
             this.lbl_potencia = new System.Windows.Forms.Label();
             this.btn_up_pot = new System.Windows.Forms.Button();
@@ -114,81 +141,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lbl_raca = new System.Windows.Forms.Label();
-            this.lbl_nascimento = new System.Windows.Forms.Label();
-            this.lbl_peso = new System.Windows.Forms.Label();
-            this.lbl_altura = new System.Windows.Forms.Label();
-            this.lbl_cabelo = new System.Windows.Forms.Label();
-            this.lbl_olhos = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbl_res_fire = new System.Windows.Forms.Label();
-            this.battle = new System.Windows.Forms.TabPage();
-            this.btn_iniciativa = new System.Windows.Forms.Button();
-            this.label36 = new System.Windows.Forms.Label();
-            this.cbb_tipo_dano = new System.Windows.Forms.ComboBox();
-            this.lbl_valor_lb = new System.Windows.Forms.Label();
-            this.img_charm_effect = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.CBB_nome_personagem = new System.Windows.Forms.ComboBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.btn_small_potion = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.CBB_nivel = new System.Windows.Forms.ComboBox();
-            this.button25 = new System.Windows.Forms.Button();
-            this.Btn_simular = new System.Windows.Forms.Button();
-            this.btn_magia_antiga = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.CBB_categoria = new System.Windows.Forms.ComboBox();
-            this.CBB_alvo = new System.Windows.Forms.ComboBox();
-            this.CBB_Elementos = new System.Windows.Forms.ComboBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cbb_habilidade = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbb_ataque = new System.Windows.Forms.ComboBox();
-            this.txt_defender = new System.Windows.Forms.NumericUpDown();
-            this.btn_defender = new System.Windows.Forms.Button();
-            this.btn_postura = new System.Windows.Forms.Button();
-            this.btn_esquiva = new System.Windows.Forms.Button();
-            this.btn_Atacar = new System.Windows.Forms.Button();
-            this.img_poison_effect = new System.Windows.Forms.PictureBox();
-            this.lbl_limite_break = new System.Windows.Forms.Label();
-            this.btn_reduzir_mp = new System.Windows.Forms.Button();
-            this.btn_reduzir_hp = new System.Windows.Forms.Button();
-            this.txt_reduzir = new System.Windows.Forms.NumericUpDown();
-            this.txt_batalha = new System.Windows.Forms.TextBox();
-            this.pericia = new System.Windows.Forms.TabPage();
-            this.btn_salvar_pericia = new System.Windows.Forms.Button();
-            this.lbl_pontos_pericia = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_pericia = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Teste = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -196,6 +148,10 @@
             this.salvar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_pericia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_salvar_pericia = new System.Windows.Forms.Button();
+            this.lbl_pontos_pericia = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_pericia = new System.Windows.Forms.TextBox();
             this.inventario = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
@@ -210,6 +166,8 @@
             this.label31 = new System.Windows.Forms.Label();
             this.Log = new System.Windows.Forms.TabPage();
             this.dtg_log = new System.Windows.Forms.DataGridView();
+            this.lbl_valor_lb = new System.Windows.Forms.Label();
+            this.lbl_limite_break = new System.Windows.Forms.Label();
             this.lbl_mp = new System.Windows.Forms.Label();
             this.lbl_hp = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -241,28 +199,11 @@
             this.BS_Log = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.PB_HP = new System.Windows.Forms.ProgressBar();
+            this.PB_MP = new System.Windows.Forms.ProgressBar();
+            this.PG_Limit = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
             this.Status.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_stigma)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_charm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_blind)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_posion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_paralyze)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_confuse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_silence)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_frozen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_burn)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_shadow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_light)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_water)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_thunder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_earth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_wind)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_ice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_fire)).BeginInit();
-            this.GPB_status_atributos.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.battle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_charm_effect)).BeginInit();
@@ -276,10 +217,10 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_defender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_poison_effect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_reduzir)).BeginInit();
             this.pericia.SuspendLayout();
+            this.GPB_status_atributos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.inventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_tonz)).BeginInit();
@@ -308,7 +249,7 @@
             this.tabControl1.Controls.Add(this.Mapa);
             this.tabControl1.Controls.Add(this.Log);
             this.tabControl1.Enabled = false;
-            this.tabControl1.Location = new System.Drawing.Point(386, 114);
+            this.tabControl1.Location = new System.Drawing.Point(388, 150);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(949, 528);
@@ -319,856 +260,23 @@
             // 
             this.Status.BackColor = System.Drawing.Color.White;
             this.Status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Status.Controls.Add(this.lbl_estigma_desc04);
-            this.Status.Controls.Add(this.lbl_estigma_desc03);
-            this.Status.Controls.Add(this.lbl_estigma_desc02);
-            this.Status.Controls.Add(this.lbl_estigma_desc01);
-            this.Status.Controls.Add(this.lbl_estigma_nome04);
-            this.Status.Controls.Add(this.lbl_estigma_nome03);
-            this.Status.Controls.Add(this.lbl_estigma_nome02);
-            this.Status.Controls.Add(this.lbl_estigma_nome01);
-            this.Status.Controls.Add(this.img_stigma);
-            this.Status.Controls.Add(this.lbl_res_charm);
-            this.Status.Controls.Add(this.lbl_res_blind);
-            this.Status.Controls.Add(this.lbl_res_poison);
-            this.Status.Controls.Add(this.lbl_res_paralyze);
-            this.Status.Controls.Add(this.lbl_res_confuse);
-            this.Status.Controls.Add(this.lbl_res_silence);
-            this.Status.Controls.Add(this.lbl_res_frozen);
-            this.Status.Controls.Add(this.lbl_res_burn);
-            this.Status.Controls.Add(this.tableLayoutPanel2);
-            this.Status.Controls.Add(this.lbl_res_shadow);
-            this.Status.Controls.Add(this.lbl_res_light);
-            this.Status.Controls.Add(this.lbl_res_water);
-            this.Status.Controls.Add(this.lbl_res_thunder);
-            this.Status.Controls.Add(this.lbl_res_earth);
-            this.Status.Controls.Add(this.lbl_res_wind);
-            this.Status.Controls.Add(this.lbl_res_ice);
-            this.Status.Controls.Add(this.tableLayoutPanel1);
             this.Status.Controls.Add(this.txt_status);
-            this.Status.Controls.Add(this.GPB_status_atributos);
             this.Status.Controls.Add(this.groupBox2);
-            this.Status.Controls.Add(this.lbl_res_fire);
             this.Status.Location = new System.Drawing.Point(4, 24);
             this.Status.Name = "Status";
             this.Status.Padding = new System.Windows.Forms.Padding(3);
             this.Status.Size = new System.Drawing.Size(941, 500);
             this.Status.TabIndex = 0;
-            this.Status.Text = "Status";
-            // 
-            // lbl_estigma_desc04
-            // 
-            this.lbl_estigma_desc04.AutoSize = true;
-            this.lbl_estigma_desc04.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_estigma_desc04.Location = new System.Drawing.Point(171, 472);
-            this.lbl_estigma_desc04.Name = "lbl_estigma_desc04";
-            this.lbl_estigma_desc04.Size = new System.Drawing.Size(45, 15);
-            this.lbl_estigma_desc04.TabIndex = 32;
-            this.lbl_estigma_desc04.Text = "Passiva";
-            this.lbl_estigma_desc04.Visible = false;
-            // 
-            // lbl_estigma_desc03
-            // 
-            this.lbl_estigma_desc03.AutoSize = true;
-            this.lbl_estigma_desc03.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_estigma_desc03.Location = new System.Drawing.Point(171, 430);
-            this.lbl_estigma_desc03.Name = "lbl_estigma_desc03";
-            this.lbl_estigma_desc03.Size = new System.Drawing.Size(45, 15);
-            this.lbl_estigma_desc03.TabIndex = 31;
-            this.lbl_estigma_desc03.Text = "Passiva";
-            this.lbl_estigma_desc03.Visible = false;
-            // 
-            // lbl_estigma_desc02
-            // 
-            this.lbl_estigma_desc02.AutoSize = true;
-            this.lbl_estigma_desc02.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_estigma_desc02.Location = new System.Drawing.Point(171, 385);
-            this.lbl_estigma_desc02.Name = "lbl_estigma_desc02";
-            this.lbl_estigma_desc02.Size = new System.Drawing.Size(45, 15);
-            this.lbl_estigma_desc02.TabIndex = 30;
-            this.lbl_estigma_desc02.Text = "Passiva";
-            this.lbl_estigma_desc02.Visible = false;
-            // 
-            // lbl_estigma_desc01
-            // 
-            this.lbl_estigma_desc01.AutoSize = true;
-            this.lbl_estigma_desc01.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_estigma_desc01.Location = new System.Drawing.Point(171, 344);
-            this.lbl_estigma_desc01.Name = "lbl_estigma_desc01";
-            this.lbl_estigma_desc01.Size = new System.Drawing.Size(45, 15);
-            this.lbl_estigma_desc01.TabIndex = 29;
-            this.lbl_estigma_desc01.Text = "Passiva";
-            this.lbl_estigma_desc01.Visible = false;
-            // 
-            // lbl_estigma_nome04
-            // 
-            this.lbl_estigma_nome04.AutoSize = true;
-            this.lbl_estigma_nome04.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_estigma_nome04.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_estigma_nome04.Location = new System.Drawing.Point(162, 450);
-            this.lbl_estigma_nome04.Name = "lbl_estigma_nome04";
-            this.lbl_estigma_nome04.Size = new System.Drawing.Size(46, 15);
-            this.lbl_estigma_nome04.TabIndex = 28;
-            this.lbl_estigma_nome04.Text = "Passiva";
-            this.lbl_estigma_nome04.Visible = false;
-            // 
-            // lbl_estigma_nome03
-            // 
-            this.lbl_estigma_nome03.AutoSize = true;
-            this.lbl_estigma_nome03.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_estigma_nome03.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_estigma_nome03.Location = new System.Drawing.Point(162, 409);
-            this.lbl_estigma_nome03.Name = "lbl_estigma_nome03";
-            this.lbl_estigma_nome03.Size = new System.Drawing.Size(46, 15);
-            this.lbl_estigma_nome03.TabIndex = 27;
-            this.lbl_estigma_nome03.Text = "Passiva";
-            this.lbl_estigma_nome03.Visible = false;
-            // 
-            // lbl_estigma_nome02
-            // 
-            this.lbl_estigma_nome02.AutoSize = true;
-            this.lbl_estigma_nome02.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_estigma_nome02.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_estigma_nome02.Location = new System.Drawing.Point(162, 364);
-            this.lbl_estigma_nome02.Name = "lbl_estigma_nome02";
-            this.lbl_estigma_nome02.Size = new System.Drawing.Size(46, 15);
-            this.lbl_estigma_nome02.TabIndex = 26;
-            this.lbl_estigma_nome02.Text = "Passiva";
-            this.lbl_estigma_nome02.Visible = false;
-            // 
-            // lbl_estigma_nome01
-            // 
-            this.lbl_estigma_nome01.AutoSize = true;
-            this.lbl_estigma_nome01.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_estigma_nome01.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_estigma_nome01.Location = new System.Drawing.Point(162, 324);
-            this.lbl_estigma_nome01.Name = "lbl_estigma_nome01";
-            this.lbl_estigma_nome01.Size = new System.Drawing.Size(46, 15);
-            this.lbl_estigma_nome01.TabIndex = 25;
-            this.lbl_estigma_nome01.Text = "Passiva";
-            this.lbl_estigma_nome01.Visible = false;
-            // 
-            // img_stigma
-            // 
-            this.img_stigma.BackColor = System.Drawing.Color.Transparent;
-            this.img_stigma.Location = new System.Drawing.Point(6, 314);
-            this.img_stigma.Name = "img_stigma";
-            this.img_stigma.Size = new System.Drawing.Size(150, 180);
-            this.img_stigma.TabIndex = 24;
-            this.img_stigma.TabStop = false;
-            this.img_stigma.MouseHover += new System.EventHandler(this.img_stigma_MouseHover);
-            // 
-            // lbl_res_charm
-            // 
-            this.lbl_res_charm.AutoSize = true;
-            this.lbl_res_charm.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_charm.Location = new System.Drawing.Point(596, 204);
-            this.lbl_res_charm.Name = "lbl_res_charm";
-            this.lbl_res_charm.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_charm.TabIndex = 23;
-            this.lbl_res_charm.Text = "20";
-            // 
-            // lbl_res_blind
-            // 
-            this.lbl_res_blind.AutoSize = true;
-            this.lbl_res_blind.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_blind.Location = new System.Drawing.Point(555, 204);
-            this.lbl_res_blind.Name = "lbl_res_blind";
-            this.lbl_res_blind.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_blind.TabIndex = 22;
-            this.lbl_res_blind.Text = "20";
-            // 
-            // lbl_res_poison
-            // 
-            this.lbl_res_poison.AutoSize = true;
-            this.lbl_res_poison.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_poison.Location = new System.Drawing.Point(514, 204);
-            this.lbl_res_poison.Name = "lbl_res_poison";
-            this.lbl_res_poison.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_poison.TabIndex = 21;
-            this.lbl_res_poison.Text = "20";
-            // 
-            // lbl_res_paralyze
-            // 
-            this.lbl_res_paralyze.AutoSize = true;
-            this.lbl_res_paralyze.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_paralyze.Location = new System.Drawing.Point(473, 204);
-            this.lbl_res_paralyze.Name = "lbl_res_paralyze";
-            this.lbl_res_paralyze.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_paralyze.TabIndex = 20;
-            this.lbl_res_paralyze.Text = "20";
-            // 
-            // lbl_res_confuse
-            // 
-            this.lbl_res_confuse.AutoSize = true;
-            this.lbl_res_confuse.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_confuse.Location = new System.Drawing.Point(431, 204);
-            this.lbl_res_confuse.Name = "lbl_res_confuse";
-            this.lbl_res_confuse.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_confuse.TabIndex = 19;
-            this.lbl_res_confuse.Text = "20";
-            // 
-            // lbl_res_silence
-            // 
-            this.lbl_res_silence.AutoSize = true;
-            this.lbl_res_silence.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_silence.Location = new System.Drawing.Point(392, 204);
-            this.lbl_res_silence.Name = "lbl_res_silence";
-            this.lbl_res_silence.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_silence.TabIndex = 18;
-            this.lbl_res_silence.Text = "20";
-            // 
-            // lbl_res_frozen
-            // 
-            this.lbl_res_frozen.AutoSize = true;
-            this.lbl_res_frozen.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_frozen.Location = new System.Drawing.Point(351, 204);
-            this.lbl_res_frozen.Name = "lbl_res_frozen";
-            this.lbl_res_frozen.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_frozen.TabIndex = 17;
-            this.lbl_res_frozen.Text = "20";
-            // 
-            // lbl_res_burn
-            // 
-            this.lbl_res_burn.AutoSize = true;
-            this.lbl_res_burn.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_burn.Location = new System.Drawing.Point(309, 204);
-            this.lbl_res_burn.Name = "lbl_res_burn";
-            this.lbl_res_burn.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_burn.TabIndex = 16;
-            this.lbl_res_burn.Text = "20";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.ColumnCount = 8;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel2.Controls.Add(this.img_charm, 7, 0);
-            this.tableLayoutPanel2.Controls.Add(this.img_blind, 6, 0);
-            this.tableLayoutPanel2.Controls.Add(this.img_posion, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.img_paralyze, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.img_confuse, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.img_silence, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.img_frozen, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.img_burn, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(305, 156);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(332, 45);
-            this.tableLayoutPanel2.TabIndex = 8;
-            // 
-            // img_charm
-            // 
-            this.img_charm.Image = global::Ficha_Jiora.Properties.Resources.charm_icon;
-            this.img_charm.Location = new System.Drawing.Point(290, 3);
-            this.img_charm.Name = "img_charm";
-            this.img_charm.Size = new System.Drawing.Size(35, 35);
-            this.img_charm.TabIndex = 7;
-            this.img_charm.TabStop = false;
-            this.img_charm.MouseHover += new System.EventHandler(this.img_charm_MouseHover);
-            // 
-            // img_blind
-            // 
-            this.img_blind.Image = global::Ficha_Jiora.Properties.Resources.blind_icon;
-            this.img_blind.Location = new System.Drawing.Point(249, 3);
-            this.img_blind.Name = "img_blind";
-            this.img_blind.Size = new System.Drawing.Size(35, 35);
-            this.img_blind.TabIndex = 6;
-            this.img_blind.TabStop = false;
-            this.img_blind.MouseHover += new System.EventHandler(this.img_blind_MouseHover);
-            // 
-            // img_posion
-            // 
-            this.img_posion.Image = global::Ficha_Jiora.Properties.Resources.poison_icon;
-            this.img_posion.Location = new System.Drawing.Point(208, 3);
-            this.img_posion.Name = "img_posion";
-            this.img_posion.Size = new System.Drawing.Size(35, 35);
-            this.img_posion.TabIndex = 5;
-            this.img_posion.TabStop = false;
-            this.img_posion.MouseHover += new System.EventHandler(this.img_posion_MouseHover);
-            // 
-            // img_paralyze
-            // 
-            this.img_paralyze.Image = global::Ficha_Jiora.Properties.Resources.Paralyze_icon;
-            this.img_paralyze.Location = new System.Drawing.Point(167, 3);
-            this.img_paralyze.Name = "img_paralyze";
-            this.img_paralyze.Size = new System.Drawing.Size(35, 35);
-            this.img_paralyze.TabIndex = 4;
-            this.img_paralyze.TabStop = false;
-            this.img_paralyze.MouseHover += new System.EventHandler(this.img_paralyze_MouseHover);
-            // 
-            // img_confuse
-            // 
-            this.img_confuse.Image = global::Ficha_Jiora.Properties.Resources.confuse_icon;
-            this.img_confuse.Location = new System.Drawing.Point(126, 3);
-            this.img_confuse.Name = "img_confuse";
-            this.img_confuse.Size = new System.Drawing.Size(35, 35);
-            this.img_confuse.TabIndex = 3;
-            this.img_confuse.TabStop = false;
-            this.img_confuse.MouseHover += new System.EventHandler(this.img_confuse_MouseHover);
-            // 
-            // img_silence
-            // 
-            this.img_silence.Image = global::Ficha_Jiora.Properties.Resources.Silence_icon;
-            this.img_silence.Location = new System.Drawing.Point(85, 3);
-            this.img_silence.Name = "img_silence";
-            this.img_silence.Size = new System.Drawing.Size(35, 35);
-            this.img_silence.TabIndex = 2;
-            this.img_silence.TabStop = false;
-            this.img_silence.MouseHover += new System.EventHandler(this.img_silence_MouseHover);
-            // 
-            // img_frozen
-            // 
-            this.img_frozen.Image = global::Ficha_Jiora.Properties.Resources.Frozen_icon;
-            this.img_frozen.Location = new System.Drawing.Point(44, 3);
-            this.img_frozen.Name = "img_frozen";
-            this.img_frozen.Size = new System.Drawing.Size(35, 35);
-            this.img_frozen.TabIndex = 1;
-            this.img_frozen.TabStop = false;
-            this.img_frozen.MouseHover += new System.EventHandler(this.img_frozen_MouseHover);
-            // 
-            // img_burn
-            // 
-            this.img_burn.Image = global::Ficha_Jiora.Properties.Resources.Burn_icon;
-            this.img_burn.Location = new System.Drawing.Point(3, 3);
-            this.img_burn.Name = "img_burn";
-            this.img_burn.Size = new System.Drawing.Size(35, 35);
-            this.img_burn.TabIndex = 0;
-            this.img_burn.TabStop = false;
-            this.img_burn.MouseHover += new System.EventHandler(this.img_burn_MouseHover);
-            // 
-            // lbl_res_shadow
-            // 
-            this.lbl_res_shadow.AutoSize = true;
-            this.lbl_res_shadow.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_shadow.Location = new System.Drawing.Point(597, 291);
-            this.lbl_res_shadow.Name = "lbl_res_shadow";
-            this.lbl_res_shadow.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_shadow.TabIndex = 15;
-            this.lbl_res_shadow.Text = "20";
-            // 
-            // lbl_res_light
-            // 
-            this.lbl_res_light.AutoSize = true;
-            this.lbl_res_light.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_light.Location = new System.Drawing.Point(556, 291);
-            this.lbl_res_light.Name = "lbl_res_light";
-            this.lbl_res_light.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_light.TabIndex = 14;
-            this.lbl_res_light.Text = "20";
-            // 
-            // lbl_res_water
-            // 
-            this.lbl_res_water.AutoSize = true;
-            this.lbl_res_water.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_water.Location = new System.Drawing.Point(515, 291);
-            this.lbl_res_water.Name = "lbl_res_water";
-            this.lbl_res_water.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_water.TabIndex = 13;
-            this.lbl_res_water.Text = "20";
-            // 
-            // lbl_res_thunder
-            // 
-            this.lbl_res_thunder.AutoSize = true;
-            this.lbl_res_thunder.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_thunder.Location = new System.Drawing.Point(474, 291);
-            this.lbl_res_thunder.Name = "lbl_res_thunder";
-            this.lbl_res_thunder.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_thunder.TabIndex = 12;
-            this.lbl_res_thunder.Text = "20";
-            // 
-            // lbl_res_earth
-            // 
-            this.lbl_res_earth.AutoSize = true;
-            this.lbl_res_earth.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_earth.Location = new System.Drawing.Point(432, 291);
-            this.lbl_res_earth.Name = "lbl_res_earth";
-            this.lbl_res_earth.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_earth.TabIndex = 11;
-            this.lbl_res_earth.Text = "20";
-            // 
-            // lbl_res_wind
-            // 
-            this.lbl_res_wind.AutoSize = true;
-            this.lbl_res_wind.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_wind.Location = new System.Drawing.Point(393, 291);
-            this.lbl_res_wind.Name = "lbl_res_wind";
-            this.lbl_res_wind.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_wind.TabIndex = 10;
-            this.lbl_res_wind.Text = "20";
-            // 
-            // lbl_res_ice
-            // 
-            this.lbl_res_ice.AutoSize = true;
-            this.lbl_res_ice.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_ice.Location = new System.Drawing.Point(352, 291);
-            this.lbl_res_ice.Name = "lbl_res_ice";
-            this.lbl_res_ice.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_ice.TabIndex = 9;
-            this.lbl_res_ice.Text = "20";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.Controls.Add(this.img_shadow, 7, 0);
-            this.tableLayoutPanel1.Controls.Add(this.img_light, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.img_water, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.img_thunder, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.img_earth, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.img_wind, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.img_ice, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.img_fire, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(302, 237);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(331, 51);
-            this.tableLayoutPanel1.TabIndex = 6;
-            // 
-            // img_shadow
-            // 
-            this.img_shadow.Image = global::Ficha_Jiora.Properties.Resources.Dark_icon;
-            this.img_shadow.Location = new System.Drawing.Point(290, 3);
-            this.img_shadow.Name = "img_shadow";
-            this.img_shadow.Size = new System.Drawing.Size(35, 37);
-            this.img_shadow.TabIndex = 7;
-            this.img_shadow.TabStop = false;
-            this.img_shadow.MouseHover += new System.EventHandler(this.img_shadow_MouseHover);
-            // 
-            // img_light
-            // 
-            this.img_light.Image = global::Ficha_Jiora.Properties.Resources.Light_icon;
-            this.img_light.Location = new System.Drawing.Point(249, 3);
-            this.img_light.Name = "img_light";
-            this.img_light.Size = new System.Drawing.Size(35, 37);
-            this.img_light.TabIndex = 6;
-            this.img_light.TabStop = false;
-            this.img_light.MouseHover += new System.EventHandler(this.img_light_MouseHover);
-            // 
-            // img_water
-            // 
-            this.img_water.Image = global::Ficha_Jiora.Properties.Resources.water_icon;
-            this.img_water.Location = new System.Drawing.Point(208, 3);
-            this.img_water.Name = "img_water";
-            this.img_water.Size = new System.Drawing.Size(35, 37);
-            this.img_water.TabIndex = 5;
-            this.img_water.TabStop = false;
-            this.img_water.MouseHover += new System.EventHandler(this.img_water_MouseHover);
-            // 
-            // img_thunder
-            // 
-            this.img_thunder.Image = global::Ficha_Jiora.Properties.Resources.thunder_icon;
-            this.img_thunder.Location = new System.Drawing.Point(167, 3);
-            this.img_thunder.Name = "img_thunder";
-            this.img_thunder.Size = new System.Drawing.Size(35, 37);
-            this.img_thunder.TabIndex = 4;
-            this.img_thunder.TabStop = false;
-            this.img_thunder.MouseHover += new System.EventHandler(this.img_thunder_MouseHover);
-            // 
-            // img_earth
-            // 
-            this.img_earth.Image = global::Ficha_Jiora.Properties.Resources.earth_icon;
-            this.img_earth.Location = new System.Drawing.Point(126, 3);
-            this.img_earth.Name = "img_earth";
-            this.img_earth.Size = new System.Drawing.Size(35, 37);
-            this.img_earth.TabIndex = 3;
-            this.img_earth.TabStop = false;
-            this.img_earth.MouseHover += new System.EventHandler(this.img_earth_MouseHover);
-            // 
-            // img_wind
-            // 
-            this.img_wind.Image = global::Ficha_Jiora.Properties.Resources.wind_icon;
-            this.img_wind.Location = new System.Drawing.Point(85, 3);
-            this.img_wind.Name = "img_wind";
-            this.img_wind.Size = new System.Drawing.Size(35, 37);
-            this.img_wind.TabIndex = 2;
-            this.img_wind.TabStop = false;
-            this.img_wind.MouseHover += new System.EventHandler(this.img_wind_MouseHover);
-            // 
-            // img_ice
-            // 
-            this.img_ice.Image = global::Ficha_Jiora.Properties.Resources.ice_icon;
-            this.img_ice.Location = new System.Drawing.Point(44, 3);
-            this.img_ice.Name = "img_ice";
-            this.img_ice.Size = new System.Drawing.Size(35, 37);
-            this.img_ice.TabIndex = 1;
-            this.img_ice.TabStop = false;
-            this.img_ice.MouseHover += new System.EventHandler(this.img_ice_MouseHover);
-            // 
-            // img_fire
-            // 
-            this.img_fire.Image = global::Ficha_Jiora.Properties.Resources._35_35_fire_icon;
-            this.img_fire.Location = new System.Drawing.Point(3, 3);
-            this.img_fire.Name = "img_fire";
-            this.img_fire.Size = new System.Drawing.Size(35, 37);
-            this.img_fire.TabIndex = 0;
-            this.img_fire.TabStop = false;
-            this.img_fire.MouseHover += new System.EventHandler(this.img_fire_MouseHover);
+            this.Status.Text = "Sobre";
             // 
             // txt_status
             // 
             this.txt_status.BackColor = System.Drawing.Color.FloralWhite;
-            this.txt_status.Location = new System.Drawing.Point(384, 23);
+            this.txt_status.Location = new System.Drawing.Point(726, 16);
             this.txt_status.Multiline = true;
             this.txt_status.Name = "txt_status";
             this.txt_status.Size = new System.Drawing.Size(193, 116);
             this.txt_status.TabIndex = 4;
-            // 
-            // GPB_status_atributos
-            // 
-            this.GPB_status_atributos.BackColor = System.Drawing.Color.Transparent;
-            this.GPB_status_atributos.Controls.Add(this.lbl_potencia);
-            this.GPB_status_atributos.Controls.Add(this.btn_up_pot);
-            this.GPB_status_atributos.Controls.Add(this.label35);
-            this.GPB_status_atributos.Controls.Add(this.lbl_critico_atributo);
-            this.GPB_status_atributos.Controls.Add(this.btn_up_cri);
-            this.GPB_status_atributos.Controls.Add(this.label33);
-            this.GPB_status_atributos.Controls.Add(this.lbl_aura);
-            this.GPB_status_atributos.Controls.Add(this.lbl_magia);
-            this.GPB_status_atributos.Controls.Add(this.lbl_velocidade);
-            this.GPB_status_atributos.Controls.Add(this.lbl_foco);
-            this.GPB_status_atributos.Controls.Add(this.lbl_vitalidade);
-            this.GPB_status_atributos.Controls.Add(this.lbl_forca);
-            this.GPB_status_atributos.Controls.Add(this.btn_up_aur);
-            this.GPB_status_atributos.Controls.Add(this.btn_up_mag);
-            this.GPB_status_atributos.Controls.Add(this.btn_up_vel);
-            this.GPB_status_atributos.Controls.Add(this.btn_up_foc);
-            this.GPB_status_atributos.Controls.Add(this.btn_up_vit);
-            this.GPB_status_atributos.Controls.Add(this.btn_up_for);
-            this.GPB_status_atributos.Controls.Add(this.btn_teste__aur);
-            this.GPB_status_atributos.Controls.Add(this.btn_teste_mag);
-            this.GPB_status_atributos.Controls.Add(this.btn_teste_vel);
-            this.GPB_status_atributos.Controls.Add(this.btn_teste_foc);
-            this.GPB_status_atributos.Controls.Add(this.btn_teste_vit);
-            this.GPB_status_atributos.Controls.Add(this.btn_teste_for);
-            this.GPB_status_atributos.Controls.Add(this.label18);
-            this.GPB_status_atributos.Controls.Add(this.label17);
-            this.GPB_status_atributos.Controls.Add(this.label16);
-            this.GPB_status_atributos.Controls.Add(this.label15);
-            this.GPB_status_atributos.Controls.Add(this.label14);
-            this.GPB_status_atributos.Controls.Add(this.label13);
-            this.GPB_status_atributos.Location = new System.Drawing.Point(698, 6);
-            this.GPB_status_atributos.Name = "GPB_status_atributos";
-            this.GPB_status_atributos.Size = new System.Drawing.Size(237, 282);
-            this.GPB_status_atributos.TabIndex = 3;
-            this.GPB_status_atributos.TabStop = false;
-            this.GPB_status_atributos.Text = "Atributos";
-            // 
-            // lbl_potencia
-            // 
-            this.lbl_potencia.AutoSize = true;
-            this.lbl_potencia.Location = new System.Drawing.Point(98, 246);
-            this.lbl_potencia.Name = "lbl_potencia";
-            this.lbl_potencia.Size = new System.Drawing.Size(13, 15);
-            this.lbl_potencia.TabIndex = 37;
-            this.lbl_potencia.Text = "0";
-            // 
-            // btn_up_pot
-            // 
-            this.btn_up_pot.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_pot.Location = new System.Drawing.Point(120, 246);
-            this.btn_up_pot.Name = "btn_up_pot";
-            this.btn_up_pot.Size = new System.Drawing.Size(29, 25);
-            this.btn_up_pot.TabIndex = 36;
-            this.btn_up_pot.UseVisualStyleBackColor = true;
-            this.btn_up_pot.Visible = false;
-            this.btn_up_pot.Click += new System.EventHandler(this.btn_up_pot_Click);
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(7, 246);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(53, 15);
-            this.label35.TabIndex = 34;
-            this.label35.Text = "Potência";
-            // 
-            // lbl_critico_atributo
-            // 
-            this.lbl_critico_atributo.AutoSize = true;
-            this.lbl_critico_atributo.Location = new System.Drawing.Point(98, 217);
-            this.lbl_critico_atributo.Name = "lbl_critico_atributo";
-            this.lbl_critico_atributo.Size = new System.Drawing.Size(13, 15);
-            this.lbl_critico_atributo.TabIndex = 33;
-            this.lbl_critico_atributo.Text = "0";
-            // 
-            // btn_up_cri
-            // 
-            this.btn_up_cri.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_cri.Location = new System.Drawing.Point(120, 217);
-            this.btn_up_cri.Name = "btn_up_cri";
-            this.btn_up_cri.Size = new System.Drawing.Size(29, 25);
-            this.btn_up_cri.TabIndex = 32;
-            this.btn_up_cri.UseVisualStyleBackColor = true;
-            this.btn_up_cri.Visible = false;
-            this.btn_up_cri.Click += new System.EventHandler(this.btn_up_cri_Click);
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(7, 217);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(42, 15);
-            this.label33.TabIndex = 30;
-            this.label33.Text = "Crítico";
-            // 
-            // lbl_aura
-            // 
-            this.lbl_aura.AutoSize = true;
-            this.lbl_aura.Location = new System.Drawing.Point(97, 185);
-            this.lbl_aura.Name = "lbl_aura";
-            this.lbl_aura.Size = new System.Drawing.Size(13, 15);
-            this.lbl_aura.TabIndex = 29;
-            this.lbl_aura.Text = "0";
-            // 
-            // lbl_magia
-            // 
-            this.lbl_magia.AutoSize = true;
-            this.lbl_magia.Location = new System.Drawing.Point(97, 154);
-            this.lbl_magia.Name = "lbl_magia";
-            this.lbl_magia.Size = new System.Drawing.Size(13, 15);
-            this.lbl_magia.TabIndex = 28;
-            this.lbl_magia.Text = "0";
-            // 
-            // lbl_velocidade
-            // 
-            this.lbl_velocidade.AutoSize = true;
-            this.lbl_velocidade.Location = new System.Drawing.Point(97, 125);
-            this.lbl_velocidade.Name = "lbl_velocidade";
-            this.lbl_velocidade.Size = new System.Drawing.Size(13, 15);
-            this.lbl_velocidade.TabIndex = 27;
-            this.lbl_velocidade.Text = "0";
-            // 
-            // lbl_foco
-            // 
-            this.lbl_foco.AutoSize = true;
-            this.lbl_foco.Location = new System.Drawing.Point(97, 96);
-            this.lbl_foco.Name = "lbl_foco";
-            this.lbl_foco.Size = new System.Drawing.Size(13, 15);
-            this.lbl_foco.TabIndex = 26;
-            this.lbl_foco.Text = "0";
-            // 
-            // lbl_vitalidade
-            // 
-            this.lbl_vitalidade.AutoSize = true;
-            this.lbl_vitalidade.Location = new System.Drawing.Point(97, 63);
-            this.lbl_vitalidade.Name = "lbl_vitalidade";
-            this.lbl_vitalidade.Size = new System.Drawing.Size(13, 15);
-            this.lbl_vitalidade.TabIndex = 25;
-            this.lbl_vitalidade.Text = "0";
-            // 
-            // lbl_forca
-            // 
-            this.lbl_forca.AutoSize = true;
-            this.lbl_forca.Location = new System.Drawing.Point(97, 32);
-            this.lbl_forca.Name = "lbl_forca";
-            this.lbl_forca.Size = new System.Drawing.Size(13, 15);
-            this.lbl_forca.TabIndex = 24;
-            this.lbl_forca.Text = "0";
-            // 
-            // btn_up_aur
-            // 
-            this.btn_up_aur.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_aur.Location = new System.Drawing.Point(119, 185);
-            this.btn_up_aur.Name = "btn_up_aur";
-            this.btn_up_aur.Size = new System.Drawing.Size(29, 25);
-            this.btn_up_aur.TabIndex = 23;
-            this.btn_up_aur.UseVisualStyleBackColor = true;
-            this.btn_up_aur.Visible = false;
-            this.btn_up_aur.Click += new System.EventHandler(this.btn_up_aur_Click);
-            this.btn_up_aur.MouseHover += new System.EventHandler(this.btn_up_aur_MouseHover);
-            // 
-            // btn_up_mag
-            // 
-            this.btn_up_mag.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_mag.Location = new System.Drawing.Point(119, 154);
-            this.btn_up_mag.Name = "btn_up_mag";
-            this.btn_up_mag.Size = new System.Drawing.Size(29, 25);
-            this.btn_up_mag.TabIndex = 22;
-            this.btn_up_mag.UseVisualStyleBackColor = true;
-            this.btn_up_mag.Visible = false;
-            this.btn_up_mag.Click += new System.EventHandler(this.btn_up_mag_Click);
-            this.btn_up_mag.MouseHover += new System.EventHandler(this.btn_up_mag_MouseHover);
-            // 
-            // btn_up_vel
-            // 
-            this.btn_up_vel.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_vel.Location = new System.Drawing.Point(119, 123);
-            this.btn_up_vel.Name = "btn_up_vel";
-            this.btn_up_vel.Size = new System.Drawing.Size(29, 25);
-            this.btn_up_vel.TabIndex = 21;
-            this.btn_up_vel.UseVisualStyleBackColor = true;
-            this.btn_up_vel.Visible = false;
-            this.btn_up_vel.Click += new System.EventHandler(this.btn_up_vel_Click);
-            this.btn_up_vel.MouseHover += new System.EventHandler(this.btn_up_vel_MouseHover);
-            // 
-            // btn_up_foc
-            // 
-            this.btn_up_foc.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_foc.Location = new System.Drawing.Point(119, 92);
-            this.btn_up_foc.Name = "btn_up_foc";
-            this.btn_up_foc.Size = new System.Drawing.Size(29, 25);
-            this.btn_up_foc.TabIndex = 20;
-            this.btn_up_foc.UseVisualStyleBackColor = true;
-            this.btn_up_foc.Visible = false;
-            this.btn_up_foc.Click += new System.EventHandler(this.btn_up_foc_Click);
-            this.btn_up_foc.MouseHover += new System.EventHandler(this.btn_up_foc_MouseHover);
-            // 
-            // btn_up_vit
-            // 
-            this.btn_up_vit.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_vit.Location = new System.Drawing.Point(119, 61);
-            this.btn_up_vit.Name = "btn_up_vit";
-            this.btn_up_vit.Size = new System.Drawing.Size(29, 25);
-            this.btn_up_vit.TabIndex = 19;
-            this.btn_up_vit.UseVisualStyleBackColor = true;
-            this.btn_up_vit.Visible = false;
-            this.btn_up_vit.Click += new System.EventHandler(this.btn_up_vit_Click);
-            this.btn_up_vit.MouseHover += new System.EventHandler(this.btn_up_vit_MouseHover);
-            // 
-            // btn_up_for
-            // 
-            this.btn_up_for.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_for.Location = new System.Drawing.Point(119, 30);
-            this.btn_up_for.Name = "btn_up_for";
-            this.btn_up_for.Size = new System.Drawing.Size(29, 25);
-            this.btn_up_for.TabIndex = 18;
-            this.btn_up_for.UseVisualStyleBackColor = true;
-            this.btn_up_for.Visible = false;
-            this.btn_up_for.Click += new System.EventHandler(this.btn_up_for_Click);
-            this.btn_up_for.MouseHover += new System.EventHandler(this.btn_up_for_MouseHover);
-            // 
-            // btn_teste__aur
-            // 
-            this.btn_teste__aur.Location = new System.Drawing.Point(154, 185);
-            this.btn_teste__aur.Name = "btn_teste__aur";
-            this.btn_teste__aur.Size = new System.Drawing.Size(75, 23);
-            this.btn_teste__aur.TabIndex = 17;
-            this.btn_teste__aur.Text = "Teste";
-            this.btn_teste__aur.UseVisualStyleBackColor = true;
-            this.btn_teste__aur.Click += new System.EventHandler(this.btn_teste__aur_Click);
-            // 
-            // btn_teste_mag
-            // 
-            this.btn_teste_mag.Location = new System.Drawing.Point(154, 154);
-            this.btn_teste_mag.Name = "btn_teste_mag";
-            this.btn_teste_mag.Size = new System.Drawing.Size(75, 23);
-            this.btn_teste_mag.TabIndex = 16;
-            this.btn_teste_mag.Text = "Teste";
-            this.btn_teste_mag.UseVisualStyleBackColor = true;
-            this.btn_teste_mag.Click += new System.EventHandler(this.btn_teste_mag_Click);
-            // 
-            // btn_teste_vel
-            // 
-            this.btn_teste_vel.Location = new System.Drawing.Point(154, 125);
-            this.btn_teste_vel.Name = "btn_teste_vel";
-            this.btn_teste_vel.Size = new System.Drawing.Size(75, 23);
-            this.btn_teste_vel.TabIndex = 15;
-            this.btn_teste_vel.Text = "Teste";
-            this.btn_teste_vel.UseVisualStyleBackColor = true;
-            this.btn_teste_vel.Click += new System.EventHandler(this.btn_teste_vel_Click);
-            // 
-            // btn_teste_foc
-            // 
-            this.btn_teste_foc.Location = new System.Drawing.Point(154, 96);
-            this.btn_teste_foc.Name = "btn_teste_foc";
-            this.btn_teste_foc.Size = new System.Drawing.Size(75, 23);
-            this.btn_teste_foc.TabIndex = 14;
-            this.btn_teste_foc.Text = "Teste";
-            this.btn_teste_foc.UseVisualStyleBackColor = true;
-            this.btn_teste_foc.Click += new System.EventHandler(this.btn_teste_foc_Click);
-            // 
-            // btn_teste_vit
-            // 
-            this.btn_teste_vit.Location = new System.Drawing.Point(154, 63);
-            this.btn_teste_vit.Name = "btn_teste_vit";
-            this.btn_teste_vit.Size = new System.Drawing.Size(75, 23);
-            this.btn_teste_vit.TabIndex = 13;
-            this.btn_teste_vit.Text = "Teste";
-            this.btn_teste_vit.UseVisualStyleBackColor = true;
-            this.btn_teste_vit.Click += new System.EventHandler(this.btn_teste_vit_Click);
-            // 
-            // btn_teste_for
-            // 
-            this.btn_teste_for.Location = new System.Drawing.Point(154, 32);
-            this.btn_teste_for.Name = "btn_teste_for";
-            this.btn_teste_for.Size = new System.Drawing.Size(75, 23);
-            this.btn_teste_for.TabIndex = 12;
-            this.btn_teste_for.Text = "Teste";
-            this.btn_teste_for.UseVisualStyleBackColor = true;
-            this.btn_teste_for.Click += new System.EventHandler(this.btn_teste_for_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 185);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(32, 15);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "Aura";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 154);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 15);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "Magia";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 125);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 15);
-            this.label16.TabIndex = 9;
-            this.label16.Text = "Velocidade";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 96);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 15);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "Foco";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 63);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 15);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Vitalidade";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 32);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 15);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Força";
             // 
             // groupBox2
             // 
@@ -1300,22 +408,12 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Olhos:";
             // 
-            // lbl_res_fire
-            // 
-            this.lbl_res_fire.AutoSize = true;
-            this.lbl_res_fire.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_res_fire.Location = new System.Drawing.Point(310, 291);
-            this.lbl_res_fire.Name = "lbl_res_fire";
-            this.lbl_res_fire.Size = new System.Drawing.Size(19, 15);
-            this.lbl_res_fire.TabIndex = 8;
-            this.lbl_res_fire.Text = "20";
-            // 
             // battle
             // 
+            this.battle.Controls.Add(this.btn_status);
             this.battle.Controls.Add(this.btn_iniciativa);
             this.battle.Controls.Add(this.label36);
             this.battle.Controls.Add(this.cbb_tipo_dano);
-            this.battle.Controls.Add(this.lbl_valor_lb);
             this.battle.Controls.Add(this.img_charm_effect);
             this.battle.Controls.Add(this.pictureBox8);
             this.battle.Controls.Add(this.pictureBox7);
@@ -1328,7 +426,6 @@
             this.battle.Controls.Add(this.pictureBox4);
             this.battle.Controls.Add(this.groupBox3);
             this.battle.Controls.Add(this.img_poison_effect);
-            this.battle.Controls.Add(this.lbl_limite_break);
             this.battle.Controls.Add(this.btn_reduzir_mp);
             this.battle.Controls.Add(this.btn_reduzir_hp);
             this.battle.Controls.Add(this.txt_reduzir);
@@ -1341,9 +438,19 @@
             this.battle.Text = "Batalha";
             this.battle.UseVisualStyleBackColor = true;
             // 
+            // btn_status
+            // 
+            this.btn_status.Location = new System.Drawing.Point(772, 87);
+            this.btn_status.Name = "btn_status";
+            this.btn_status.Size = new System.Drawing.Size(87, 23);
+            this.btn_status.TabIndex = 30;
+            this.btn_status.Text = "Status";
+            this.btn_status.UseVisualStyleBackColor = true;
+            this.btn_status.Click += new System.EventHandler(this.button2_Click);
+            // 
             // btn_iniciativa
             // 
-            this.btn_iniciativa.Location = new System.Drawing.Point(434, 130);
+            this.btn_iniciativa.Location = new System.Drawing.Point(434, 55);
             this.btn_iniciativa.Name = "btn_iniciativa";
             this.btn_iniciativa.Size = new System.Drawing.Size(75, 23);
             this.btn_iniciativa.TabIndex = 29;
@@ -1354,7 +461,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(188, 58);
+            this.label36.Location = new System.Drawing.Point(218, 17);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(77, 15);
             this.label36.TabIndex = 28;
@@ -1366,25 +473,20 @@
             this.cbb_tipo_dano.FormattingEnabled = true;
             this.cbb_tipo_dano.Items.AddRange(new object[] {
             "Físico",
-            "Mágico"});
-            this.cbb_tipo_dano.Location = new System.Drawing.Point(88, 55);
+            "Mágico",
+            "Dano Real Físico",
+            "Dano Real Mágico",
+            "Perfurante Físico",
+            "Perfurante Mágico"});
+            this.cbb_tipo_dano.Location = new System.Drawing.Point(87, 14);
             this.cbb_tipo_dano.Name = "cbb_tipo_dano";
-            this.cbb_tipo_dano.Size = new System.Drawing.Size(94, 23);
+            this.cbb_tipo_dano.Size = new System.Drawing.Size(128, 23);
             this.cbb_tipo_dano.TabIndex = 27;
-            // 
-            // lbl_valor_lb
-            // 
-            this.lbl_valor_lb.AutoSize = true;
-            this.lbl_valor_lb.Location = new System.Drawing.Point(85, 13);
-            this.lbl_valor_lb.Name = "lbl_valor_lb";
-            this.lbl_valor_lb.Size = new System.Drawing.Size(44, 15);
-            this.lbl_valor_lb.TabIndex = 26;
-            this.lbl_valor_lb.Text = "label21";
             // 
             // img_charm_effect
             // 
             this.img_charm_effect.Image = global::Ficha_Jiora.Properties.Resources.charm_icon;
-            this.img_charm_effect.Location = new System.Drawing.Point(519, 21);
+            this.img_charm_effect.Location = new System.Drawing.Point(895, 8);
             this.img_charm_effect.Name = "img_charm_effect";
             this.img_charm_effect.Size = new System.Drawing.Size(35, 35);
             this.img_charm_effect.TabIndex = 7;
@@ -1394,7 +496,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::Ficha_Jiora.Properties.Resources.Burn_icon;
-            this.pictureBox8.Location = new System.Drawing.Point(396, 21);
+            this.pictureBox8.Location = new System.Drawing.Point(772, 8);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(35, 35);
             this.pictureBox8.TabIndex = 0;
@@ -1404,7 +506,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::Ficha_Jiora.Properties.Resources.Frozen_icon;
-            this.pictureBox7.Location = new System.Drawing.Point(396, 55);
+            this.pictureBox7.Location = new System.Drawing.Point(772, 42);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(35, 35);
             this.pictureBox7.TabIndex = 1;
@@ -1446,7 +548,7 @@
             // 
             this.CBB_nome_personagem.FormattingEnabled = true;
             this.CBB_nome_personagem.Items.AddRange(new object[] {
-            "Selecione o jogador"});
+            "Selecione o Personagem"});
             this.CBB_nome_personagem.Location = new System.Drawing.Point(80, 22);
             this.CBB_nome_personagem.Name = "CBB_nome_personagem";
             this.CBB_nome_personagem.Size = new System.Drawing.Size(129, 23);
@@ -1556,7 +658,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Ficha_Jiora.Properties.Resources.Silence_icon;
-            this.pictureBox6.Location = new System.Drawing.Point(437, 21);
+            this.pictureBox6.Location = new System.Drawing.Point(813, 8);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(35, 35);
             this.pictureBox6.TabIndex = 2;
@@ -1566,7 +668,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Ficha_Jiora.Properties.Resources.blind_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(519, 55);
+            this.pictureBox2.Location = new System.Drawing.Point(895, 42);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.TabIndex = 6;
@@ -1577,30 +679,29 @@
             // 
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.CBB_nivel);
-            this.groupBox5.Controls.Add(this.button25);
             this.groupBox5.Controls.Add(this.Btn_simular);
             this.groupBox5.Controls.Add(this.btn_magia_antiga);
             this.groupBox5.Controls.Add(this.label30);
             this.groupBox5.Controls.Add(this.label29);
             this.groupBox5.Controls.Add(this.label28);
             this.groupBox5.Controls.Add(this.CBB_categoria);
-            this.groupBox5.Controls.Add(this.CBB_alvo);
             this.groupBox5.Controls.Add(this.CBB_Elementos);
-            this.groupBox5.Location = new System.Drawing.Point(651, 13);
+            this.groupBox5.Controls.Add(this.CBB_alvo);
+            this.groupBox5.Location = new System.Drawing.Point(345, 319);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(290, 264);
+            this.groupBox5.Size = new System.Drawing.Size(244, 174);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Magias";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(133, 193);
+            this.label21.Location = new System.Drawing.Point(133, 117);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(34, 15);
             this.label21.TabIndex = 33;
             this.label21.Text = "Nivel";
+            this.label21.Visible = false;
             // 
             // CBB_nivel
             // 
@@ -1612,66 +713,63 @@
             "Rank 3",
             "Rank 4",
             "Rank 5"});
-            this.CBB_nivel.Location = new System.Drawing.Point(6, 185);
+            this.CBB_nivel.Location = new System.Drawing.Point(6, 109);
             this.CBB_nivel.Name = "CBB_nivel";
             this.CBB_nivel.Size = new System.Drawing.Size(121, 23);
             this.CBB_nivel.TabIndex = 32;
-            // 
-            // button25
-            // 
-            this.button25.Location = new System.Drawing.Point(6, 40);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(106, 23);
-            this.button25.TabIndex = 18;
-            this.button25.Text = "Thundaga";
-            this.button25.UseVisualStyleBackColor = true;
+            this.CBB_nivel.Visible = false;
             // 
             // Btn_simular
             // 
-            this.Btn_simular.Location = new System.Drawing.Point(130, 227);
+            this.Btn_simular.Location = new System.Drawing.Point(131, 143);
             this.Btn_simular.Name = "Btn_simular";
             this.Btn_simular.Size = new System.Drawing.Size(75, 23);
             this.Btn_simular.TabIndex = 31;
             this.Btn_simular.Text = "Simular";
             this.Btn_simular.UseVisualStyleBackColor = true;
+            this.Btn_simular.Visible = false;
             this.Btn_simular.Click += new System.EventHandler(this.Btn_simular_Click);
             // 
             // btn_magia_antiga
             // 
-            this.btn_magia_antiga.Location = new System.Drawing.Point(34, 227);
+            this.btn_magia_antiga.Location = new System.Drawing.Point(34, 143);
             this.btn_magia_antiga.Name = "btn_magia_antiga";
             this.btn_magia_antiga.Size = new System.Drawing.Size(75, 23);
             this.btn_magia_antiga.TabIndex = 30;
             this.btn_magia_antiga.Text = "Usar";
             this.btn_magia_antiga.UseVisualStyleBackColor = true;
+            this.btn_magia_antiga.Visible = false;
             this.btn_magia_antiga.Click += new System.EventHandler(this.btn_magia_antiga_Click);
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(133, 164);
+            this.label30.Location = new System.Drawing.Point(133, 59);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(58, 15);
             this.label30.TabIndex = 29;
             this.label30.Text = "Categoria";
+            this.label30.Visible = false;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(133, 135);
+            this.label29.Location = new System.Drawing.Point(133, 88);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(31, 15);
             this.label29.TabIndex = 28;
             this.label29.Text = "Alvo";
+            this.label29.Visible = false;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(133, 106);
+            this.label28.Location = new System.Drawing.Point(133, 30);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(57, 15);
             this.label28.TabIndex = 27;
             this.label28.Text = "Elemento";
+            this.label28.Visible = false;
             // 
             // CBB_categoria
             // 
@@ -1679,40 +777,46 @@
             this.CBB_categoria.FormattingEnabled = true;
             this.CBB_categoria.Items.AddRange(new object[] {
             "Ofensivo",
-            "Defensivo"});
-            this.CBB_categoria.Location = new System.Drawing.Point(6, 156);
+            "Defensivo",
+            "Encantamento",
+            "Enfraquecer"});
+            this.CBB_categoria.Location = new System.Drawing.Point(6, 51);
             this.CBB_categoria.Name = "CBB_categoria";
             this.CBB_categoria.Size = new System.Drawing.Size(121, 23);
             this.CBB_categoria.TabIndex = 26;
-            // 
-            // CBB_alvo
-            // 
-            this.CBB_alvo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBB_alvo.FormattingEnabled = true;
-            this.CBB_alvo.Items.AddRange(new object[] {
-            "Selecione o jogador"});
-            this.CBB_alvo.Location = new System.Drawing.Point(6, 127);
-            this.CBB_alvo.Name = "CBB_alvo";
-            this.CBB_alvo.Size = new System.Drawing.Size(121, 23);
-            this.CBB_alvo.TabIndex = 25;
-            this.CBB_alvo.Click += new System.EventHandler(this.CBB_alvo_Click);
+            this.CBB_categoria.Visible = false;
+            this.CBB_categoria.SelectedIndexChanged += new System.EventHandler(this.CBB_categoria_SelectedIndexChanged);
             // 
             // CBB_Elementos
             // 
             this.CBB_Elementos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBB_Elementos.FormattingEnabled = true;
             this.CBB_Elementos.Items.AddRange(new object[] {
-            "Selecione o jogador"});
-            this.CBB_Elementos.Location = new System.Drawing.Point(6, 98);
+            "Carregar Elementos"});
+            this.CBB_Elementos.Location = new System.Drawing.Point(6, 22);
             this.CBB_Elementos.Name = "CBB_Elementos";
             this.CBB_Elementos.Size = new System.Drawing.Size(121, 23);
             this.CBB_Elementos.TabIndex = 24;
-            this.CBB_Elementos.Click += new System.EventHandler(this.CBB_Elementos_Click);
+            this.CBB_Elementos.Visible = false;
+            this.CBB_Elementos.SelectedIndexChanged += new System.EventHandler(this.CBB_Elementos_SelectedIndexChanged);
+            this.CBB_Elementos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CBB_Elementos_MouseClick);
+            // 
+            // CBB_alvo
+            // 
+            this.CBB_alvo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBB_alvo.FormattingEnabled = true;
+            this.CBB_alvo.Items.AddRange(new object[] {
+            "Selecione a Categoria"});
+            this.CBB_alvo.Location = new System.Drawing.Point(6, 80);
+            this.CBB_alvo.Name = "CBB_alvo";
+            this.CBB_alvo.Size = new System.Drawing.Size(121, 23);
+            this.CBB_alvo.TabIndex = 25;
+            this.CBB_alvo.Visible = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Ficha_Jiora.Properties.Resources.confuse_icon;
-            this.pictureBox5.Location = new System.Drawing.Point(437, 55);
+            this.pictureBox5.Location = new System.Drawing.Point(813, 42);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(35, 35);
             this.pictureBox5.TabIndex = 3;
@@ -1721,57 +825,79 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.cbb_magia);
             this.groupBox4.Controls.Add(this.cbb_habilidade);
             this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Location = new System.Drawing.Point(6, 182);
+            this.groupBox4.Controls.Add(this.btn_utilizar_magia);
+            this.groupBox4.Controls.Add(this.btn_limit);
+            this.groupBox4.Controls.Add(this.btn_utiliza_habilidade);
+            this.groupBox4.Location = new System.Drawing.Point(11, 209);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(290, 312);
+            this.groupBox4.Size = new System.Drawing.Size(290, 288);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Habilidades";
+            this.groupBox4.Text = "Habilidades/Magias";
+            // 
+            // cbb_magia
+            // 
+            this.cbb_magia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_magia.FormattingEnabled = true;
+            this.cbb_magia.Location = new System.Drawing.Point(4, 110);
+            this.cbb_magia.Name = "cbb_magia";
+            this.cbb_magia.Size = new System.Drawing.Size(281, 23);
+            this.cbb_magia.TabIndex = 34;
             // 
             // cbb_habilidade
             // 
             this.cbb_habilidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_habilidade.FormattingEnabled = true;
-            this.cbb_habilidade.Location = new System.Drawing.Point(0, 44);
+            this.cbb_habilidade.Location = new System.Drawing.Point(4, 44);
             this.cbb_habilidade.Name = "cbb_habilidade";
-            this.cbb_habilidade.Size = new System.Drawing.Size(190, 23);
+            this.cbb_habilidade.Size = new System.Drawing.Size(280, 23);
             this.cbb_habilidade.TabIndex = 10;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(209, 264);
+            this.button7.Location = new System.Drawing.Point(205, 248);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 1;
             this.button7.Text = "Summon";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btn_utilizar_magia
             // 
-            this.button8.Location = new System.Drawing.Point(19, 264);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "Limit";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_utilizar_magia.Location = new System.Drawing.Point(4, 139);
+            this.btn_utilizar_magia.Name = "btn_utilizar_magia";
+            this.btn_utilizar_magia.Size = new System.Drawing.Size(117, 23);
+            this.btn_utilizar_magia.TabIndex = 18;
+            this.btn_utilizar_magia.Text = "Utilizar Magias";
+            this.btn_utilizar_magia.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btn_limit
             // 
-            this.button6.Location = new System.Drawing.Point(196, 43);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(88, 23);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Utilizar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_limit.Location = new System.Drawing.Point(6, 248);
+            this.btn_limit.Name = "btn_limit";
+            this.btn_limit.Size = new System.Drawing.Size(75, 23);
+            this.btn_limit.TabIndex = 0;
+            this.btn_limit.Text = "Limit";
+            this.btn_limit.UseVisualStyleBackColor = true;
+            this.btn_limit.Click += new System.EventHandler(this.btn_limit_Click);
+            // 
+            // btn_utiliza_habilidade
+            // 
+            this.btn_utiliza_habilidade.Location = new System.Drawing.Point(4, 71);
+            this.btn_utiliza_habilidade.Name = "btn_utiliza_habilidade";
+            this.btn_utiliza_habilidade.Size = new System.Drawing.Size(117, 23);
+            this.btn_utiliza_habilidade.TabIndex = 9;
+            this.btn_utiliza_habilidade.Text = "Utilizar Habilidades";
+            this.btn_utiliza_habilidade.UseVisualStyleBackColor = true;
+            this.btn_utiliza_habilidade.Click += new System.EventHandler(this.btn_utiliza_habilidade_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Ficha_Jiora.Properties.Resources.Paralyze_icon;
-            this.pictureBox4.Location = new System.Drawing.Point(478, 55);
+            this.pictureBox4.Location = new System.Drawing.Point(854, 42);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(35, 35);
             this.pictureBox4.TabIndex = 4;
@@ -1781,14 +907,13 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cbb_ataque);
-            this.groupBox3.Controls.Add(this.txt_defender);
             this.groupBox3.Controls.Add(this.btn_defender);
             this.groupBox3.Controls.Add(this.btn_postura);
             this.groupBox3.Controls.Add(this.btn_esquiva);
             this.groupBox3.Controls.Add(this.btn_Atacar);
-            this.groupBox3.Location = new System.Drawing.Point(310, 321);
+            this.groupBox3.Location = new System.Drawing.Point(6, 111);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(329, 111);
+            this.groupBox3.Size = new System.Drawing.Size(329, 87);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ações Básicas";
@@ -1799,29 +924,22 @@
             this.cbb_ataque.FormattingEnabled = true;
             this.cbb_ataque.Location = new System.Drawing.Point(6, 22);
             this.cbb_ataque.Name = "cbb_ataque";
-            this.cbb_ataque.Size = new System.Drawing.Size(232, 23);
+            this.cbb_ataque.Size = new System.Drawing.Size(317, 23);
             this.cbb_ataque.TabIndex = 9;
-            // 
-            // txt_defender
-            // 
-            this.txt_defender.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txt_defender.Location = new System.Drawing.Point(98, 80);
-            this.txt_defender.Name = "txt_defender";
-            this.txt_defender.Size = new System.Drawing.Size(63, 23);
-            this.txt_defender.TabIndex = 8;
             // 
             // btn_defender
             // 
-            this.btn_defender.Location = new System.Drawing.Point(95, 51);
+            this.btn_defender.Location = new System.Drawing.Point(99, 52);
             this.btn_defender.Name = "btn_defender";
             this.btn_defender.Size = new System.Drawing.Size(65, 23);
             this.btn_defender.TabIndex = 2;
             this.btn_defender.Text = "Defender";
             this.btn_defender.UseVisualStyleBackColor = true;
+            this.btn_defender.Click += new System.EventHandler(this.btn_defender_Click);
             // 
             // btn_postura
             // 
-            this.btn_postura.Location = new System.Drawing.Point(6, 51);
+            this.btn_postura.Location = new System.Drawing.Point(244, 51);
             this.btn_postura.Name = "btn_postura";
             this.btn_postura.Size = new System.Drawing.Size(75, 23);
             this.btn_postura.TabIndex = 2;
@@ -1842,7 +960,7 @@
             // 
             // btn_Atacar
             // 
-            this.btn_Atacar.Location = new System.Drawing.Point(244, 21);
+            this.btn_Atacar.Location = new System.Drawing.Point(14, 52);
             this.btn_Atacar.Name = "btn_Atacar";
             this.btn_Atacar.Size = new System.Drawing.Size(75, 23);
             this.btn_Atacar.TabIndex = 0;
@@ -1853,25 +971,16 @@
             // img_poison_effect
             // 
             this.img_poison_effect.Image = global::Ficha_Jiora.Properties.Resources.poison_icon;
-            this.img_poison_effect.Location = new System.Drawing.Point(478, 21);
+            this.img_poison_effect.Location = new System.Drawing.Point(854, 8);
             this.img_poison_effect.Name = "img_poison_effect";
             this.img_poison_effect.Size = new System.Drawing.Size(35, 35);
             this.img_poison_effect.TabIndex = 5;
             this.img_poison_effect.TabStop = false;
             this.img_poison_effect.Visible = false;
             // 
-            // lbl_limite_break
-            // 
-            this.lbl_limite_break.AutoSize = true;
-            this.lbl_limite_break.Location = new System.Drawing.Point(7, 13);
-            this.lbl_limite_break.Name = "lbl_limite_break";
-            this.lbl_limite_break.Size = new System.Drawing.Size(57, 15);
-            this.lbl_limite_break.TabIndex = 6;
-            this.lbl_limite_break.Text = "LB:  100%";
-            // 
             // btn_reduzir_mp
             // 
-            this.btn_reduzir_mp.Location = new System.Drawing.Point(7, 112);
+            this.btn_reduzir_mp.Location = new System.Drawing.Point(6, 71);
             this.btn_reduzir_mp.Name = "btn_reduzir_mp";
             this.btn_reduzir_mp.Size = new System.Drawing.Size(75, 23);
             this.btn_reduzir_mp.TabIndex = 3;
@@ -1881,7 +990,7 @@
             // 
             // btn_reduzir_hp
             // 
-            this.btn_reduzir_hp.Location = new System.Drawing.Point(7, 83);
+            this.btn_reduzir_hp.Location = new System.Drawing.Point(6, 42);
             this.btn_reduzir_hp.Name = "btn_reduzir_hp";
             this.btn_reduzir_hp.Size = new System.Drawing.Size(75, 23);
             this.btn_reduzir_hp.TabIndex = 2;
@@ -1892,7 +1001,7 @@
             // txt_reduzir
             // 
             this.txt_reduzir.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txt_reduzir.Location = new System.Drawing.Point(7, 54);
+            this.txt_reduzir.Location = new System.Drawing.Point(6, 13);
             this.txt_reduzir.Name = "txt_reduzir";
             this.txt_reduzir.Size = new System.Drawing.Size(75, 23);
             this.txt_reduzir.TabIndex = 1;
@@ -1901,7 +1010,7 @@
             // 
             this.txt_batalha.BackColor = System.Drawing.Color.OldLace;
             this.txt_batalha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txt_batalha.Location = new System.Drawing.Point(377, 173);
+            this.txt_batalha.Location = new System.Drawing.Point(386, 87);
             this.txt_batalha.Multiline = true;
             this.txt_batalha.Name = "txt_batalha";
             this.txt_batalha.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -1911,57 +1020,350 @@
             // pericia
             // 
             this.pericia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pericia.Controls.Add(this.GPB_status_atributos);
+            this.pericia.Controls.Add(this.dataGridView1);
             this.pericia.Controls.Add(this.btn_salvar_pericia);
             this.pericia.Controls.Add(this.lbl_pontos_pericia);
             this.pericia.Controls.Add(this.label1);
             this.pericia.Controls.Add(this.txt_pericia);
-            this.pericia.Controls.Add(this.dataGridView1);
             this.pericia.Location = new System.Drawing.Point(4, 24);
             this.pericia.Name = "pericia";
             this.pericia.Size = new System.Drawing.Size(941, 500);
             this.pericia.TabIndex = 2;
-            this.pericia.Text = "Perícia";
+            this.pericia.Text = "Testes";
             this.pericia.UseVisualStyleBackColor = true;
             // 
-            // btn_salvar_pericia
+            // GPB_status_atributos
             // 
-            this.btn_salvar_pericia.Location = new System.Drawing.Point(773, 256);
-            this.btn_salvar_pericia.Name = "btn_salvar_pericia";
-            this.btn_salvar_pericia.Size = new System.Drawing.Size(75, 23);
-            this.btn_salvar_pericia.TabIndex = 4;
-            this.btn_salvar_pericia.Text = "Editar";
-            this.btn_salvar_pericia.UseVisualStyleBackColor = true;
-            this.btn_salvar_pericia.Visible = false;
-            this.btn_salvar_pericia.Click += new System.EventHandler(this.btn_salvar_pericia_Click);
+            this.GPB_status_atributos.BackColor = System.Drawing.Color.Transparent;
+            this.GPB_status_atributos.Controls.Add(this.lbl_potencia);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_pot);
+            this.GPB_status_atributos.Controls.Add(this.label35);
+            this.GPB_status_atributos.Controls.Add(this.lbl_critico_atributo);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_cri);
+            this.GPB_status_atributos.Controls.Add(this.label33);
+            this.GPB_status_atributos.Controls.Add(this.lbl_aura);
+            this.GPB_status_atributos.Controls.Add(this.lbl_magia);
+            this.GPB_status_atributos.Controls.Add(this.lbl_velocidade);
+            this.GPB_status_atributos.Controls.Add(this.lbl_foco);
+            this.GPB_status_atributos.Controls.Add(this.lbl_vitalidade);
+            this.GPB_status_atributos.Controls.Add(this.lbl_forca);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_aur);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_mag);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_vel);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_foc);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_vit);
+            this.GPB_status_atributos.Controls.Add(this.btn_up_for);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste__aur);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_mag);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_vel);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_foc);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_vit);
+            this.GPB_status_atributos.Controls.Add(this.btn_teste_for);
+            this.GPB_status_atributos.Controls.Add(this.label18);
+            this.GPB_status_atributos.Controls.Add(this.label17);
+            this.GPB_status_atributos.Controls.Add(this.label16);
+            this.GPB_status_atributos.Controls.Add(this.label15);
+            this.GPB_status_atributos.Controls.Add(this.label14);
+            this.GPB_status_atributos.Controls.Add(this.label13);
+            this.GPB_status_atributos.Location = new System.Drawing.Point(682, 211);
+            this.GPB_status_atributos.Name = "GPB_status_atributos";
+            this.GPB_status_atributos.Size = new System.Drawing.Size(237, 282);
+            this.GPB_status_atributos.TabIndex = 35;
+            this.GPB_status_atributos.TabStop = false;
+            this.GPB_status_atributos.Text = "Atributos";
             // 
-            // lbl_pontos_pericia
+            // lbl_potencia
             // 
-            this.lbl_pontos_pericia.AutoSize = true;
-            this.lbl_pontos_pericia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_pontos_pericia.Location = new System.Drawing.Point(883, 205);
-            this.lbl_pontos_pericia.Name = "lbl_pontos_pericia";
-            this.lbl_pontos_pericia.Size = new System.Drawing.Size(22, 25);
-            this.lbl_pontos_pericia.TabIndex = 3;
-            this.lbl_pontos_pericia.Text = "0";
+            this.lbl_potencia.AutoSize = true;
+            this.lbl_potencia.Location = new System.Drawing.Point(98, 246);
+            this.lbl_potencia.Name = "lbl_potencia";
+            this.lbl_potencia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_potencia.TabIndex = 37;
+            this.lbl_potencia.Text = "0";
             // 
-            // label1
+            // btn_up_pot
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(716, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Pontos a Distribuir:";
+            this.btn_up_pot.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_pot.Location = new System.Drawing.Point(120, 246);
+            this.btn_up_pot.Name = "btn_up_pot";
+            this.btn_up_pot.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_pot.TabIndex = 36;
+            this.btn_up_pot.UseVisualStyleBackColor = true;
+            this.btn_up_pot.Visible = false;
+            this.btn_up_pot.Click += new System.EventHandler(this.btn_up_pot_Click);
             // 
-            // txt_pericia
+            // label35
             // 
-            this.txt_pericia.BackColor = System.Drawing.SystemColors.Info;
-            this.txt_pericia.Location = new System.Drawing.Point(716, 50);
-            this.txt_pericia.Multiline = true;
-            this.txt_pericia.Name = "txt_pericia";
-            this.txt_pericia.Size = new System.Drawing.Size(189, 110);
-            this.txt_pericia.TabIndex = 1;
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(7, 246);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(53, 15);
+            this.label35.TabIndex = 34;
+            this.label35.Text = "Potência";
+            // 
+            // lbl_critico_atributo
+            // 
+            this.lbl_critico_atributo.AutoSize = true;
+            this.lbl_critico_atributo.Location = new System.Drawing.Point(98, 217);
+            this.lbl_critico_atributo.Name = "lbl_critico_atributo";
+            this.lbl_critico_atributo.Size = new System.Drawing.Size(13, 15);
+            this.lbl_critico_atributo.TabIndex = 33;
+            this.lbl_critico_atributo.Text = "0";
+            // 
+            // btn_up_cri
+            // 
+            this.btn_up_cri.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_cri.Location = new System.Drawing.Point(120, 217);
+            this.btn_up_cri.Name = "btn_up_cri";
+            this.btn_up_cri.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_cri.TabIndex = 32;
+            this.btn_up_cri.UseVisualStyleBackColor = true;
+            this.btn_up_cri.Visible = false;
+            this.btn_up_cri.Click += new System.EventHandler(this.btn_up_cri_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(7, 217);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(42, 15);
+            this.label33.TabIndex = 30;
+            this.label33.Text = "Crítico";
+            // 
+            // lbl_aura
+            // 
+            this.lbl_aura.AutoSize = true;
+            this.lbl_aura.Location = new System.Drawing.Point(97, 185);
+            this.lbl_aura.Name = "lbl_aura";
+            this.lbl_aura.Size = new System.Drawing.Size(13, 15);
+            this.lbl_aura.TabIndex = 29;
+            this.lbl_aura.Text = "0";
+            // 
+            // lbl_magia
+            // 
+            this.lbl_magia.AutoSize = true;
+            this.lbl_magia.Location = new System.Drawing.Point(97, 154);
+            this.lbl_magia.Name = "lbl_magia";
+            this.lbl_magia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_magia.TabIndex = 28;
+            this.lbl_magia.Text = "0";
+            // 
+            // lbl_velocidade
+            // 
+            this.lbl_velocidade.AutoSize = true;
+            this.lbl_velocidade.Location = new System.Drawing.Point(97, 125);
+            this.lbl_velocidade.Name = "lbl_velocidade";
+            this.lbl_velocidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_velocidade.TabIndex = 27;
+            this.lbl_velocidade.Text = "0";
+            // 
+            // lbl_foco
+            // 
+            this.lbl_foco.AutoSize = true;
+            this.lbl_foco.Location = new System.Drawing.Point(97, 96);
+            this.lbl_foco.Name = "lbl_foco";
+            this.lbl_foco.Size = new System.Drawing.Size(13, 15);
+            this.lbl_foco.TabIndex = 26;
+            this.lbl_foco.Text = "0";
+            // 
+            // lbl_vitalidade
+            // 
+            this.lbl_vitalidade.AutoSize = true;
+            this.lbl_vitalidade.Location = new System.Drawing.Point(97, 63);
+            this.lbl_vitalidade.Name = "lbl_vitalidade";
+            this.lbl_vitalidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_vitalidade.TabIndex = 25;
+            this.lbl_vitalidade.Text = "0";
+            // 
+            // lbl_forca
+            // 
+            this.lbl_forca.AutoSize = true;
+            this.lbl_forca.Location = new System.Drawing.Point(97, 32);
+            this.lbl_forca.Name = "lbl_forca";
+            this.lbl_forca.Size = new System.Drawing.Size(13, 15);
+            this.lbl_forca.TabIndex = 24;
+            this.lbl_forca.Text = "0";
+            // 
+            // btn_up_aur
+            // 
+            this.btn_up_aur.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_aur.Location = new System.Drawing.Point(119, 185);
+            this.btn_up_aur.Name = "btn_up_aur";
+            this.btn_up_aur.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_aur.TabIndex = 23;
+            this.btn_up_aur.UseVisualStyleBackColor = true;
+            this.btn_up_aur.Visible = false;
+            this.btn_up_aur.Click += new System.EventHandler(this.btn_up_aur_Click);
+            // 
+            // btn_up_mag
+            // 
+            this.btn_up_mag.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_mag.Location = new System.Drawing.Point(119, 154);
+            this.btn_up_mag.Name = "btn_up_mag";
+            this.btn_up_mag.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_mag.TabIndex = 22;
+            this.btn_up_mag.UseVisualStyleBackColor = true;
+            this.btn_up_mag.Visible = false;
+            this.btn_up_mag.Click += new System.EventHandler(this.btn_up_mag_Click);
+            // 
+            // btn_up_vel
+            // 
+            this.btn_up_vel.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_vel.Location = new System.Drawing.Point(119, 123);
+            this.btn_up_vel.Name = "btn_up_vel";
+            this.btn_up_vel.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_vel.TabIndex = 21;
+            this.btn_up_vel.UseVisualStyleBackColor = true;
+            this.btn_up_vel.Visible = false;
+            this.btn_up_vel.Click += new System.EventHandler(this.btn_up_vel_Click);
+            // 
+            // btn_up_foc
+            // 
+            this.btn_up_foc.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_foc.Location = new System.Drawing.Point(119, 92);
+            this.btn_up_foc.Name = "btn_up_foc";
+            this.btn_up_foc.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_foc.TabIndex = 20;
+            this.btn_up_foc.UseVisualStyleBackColor = true;
+            this.btn_up_foc.Visible = false;
+            this.btn_up_foc.Click += new System.EventHandler(this.btn_up_foc_Click);
+            // 
+            // btn_up_vit
+            // 
+            this.btn_up_vit.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_vit.Location = new System.Drawing.Point(119, 61);
+            this.btn_up_vit.Name = "btn_up_vit";
+            this.btn_up_vit.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_vit.TabIndex = 19;
+            this.btn_up_vit.UseVisualStyleBackColor = true;
+            this.btn_up_vit.Visible = false;
+            this.btn_up_vit.Click += new System.EventHandler(this.btn_up_vit_Click);
+            // 
+            // btn_up_for
+            // 
+            this.btn_up_for.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
+            this.btn_up_for.Location = new System.Drawing.Point(119, 30);
+            this.btn_up_for.Name = "btn_up_for";
+            this.btn_up_for.Size = new System.Drawing.Size(29, 25);
+            this.btn_up_for.TabIndex = 18;
+            this.btn_up_for.UseVisualStyleBackColor = true;
+            this.btn_up_for.Visible = false;
+            this.btn_up_for.Click += new System.EventHandler(this.btn_up_for_Click);
+            // 
+            // btn_teste__aur
+            // 
+            this.btn_teste__aur.Location = new System.Drawing.Point(154, 185);
+            this.btn_teste__aur.Name = "btn_teste__aur";
+            this.btn_teste__aur.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste__aur.TabIndex = 17;
+            this.btn_teste__aur.Text = "Teste";
+            this.btn_teste__aur.UseVisualStyleBackColor = true;
+            this.btn_teste__aur.Click += new System.EventHandler(this.btn_teste__aur_Click);
+            // 
+            // btn_teste_mag
+            // 
+            this.btn_teste_mag.Location = new System.Drawing.Point(154, 154);
+            this.btn_teste_mag.Name = "btn_teste_mag";
+            this.btn_teste_mag.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_mag.TabIndex = 16;
+            this.btn_teste_mag.Text = "Teste";
+            this.btn_teste_mag.UseVisualStyleBackColor = true;
+            this.btn_teste_mag.Click += new System.EventHandler(this.btn_teste_mag_Click);
+            // 
+            // btn_teste_vel
+            // 
+            this.btn_teste_vel.Location = new System.Drawing.Point(154, 125);
+            this.btn_teste_vel.Name = "btn_teste_vel";
+            this.btn_teste_vel.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_vel.TabIndex = 15;
+            this.btn_teste_vel.Text = "Teste";
+            this.btn_teste_vel.UseVisualStyleBackColor = true;
+            this.btn_teste_vel.Click += new System.EventHandler(this.btn_teste_vel_Click);
+            // 
+            // btn_teste_foc
+            // 
+            this.btn_teste_foc.Location = new System.Drawing.Point(154, 96);
+            this.btn_teste_foc.Name = "btn_teste_foc";
+            this.btn_teste_foc.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_foc.TabIndex = 14;
+            this.btn_teste_foc.Text = "Teste";
+            this.btn_teste_foc.UseVisualStyleBackColor = true;
+            this.btn_teste_foc.Click += new System.EventHandler(this.btn_teste_foc_Click);
+            // 
+            // btn_teste_vit
+            // 
+            this.btn_teste_vit.Location = new System.Drawing.Point(154, 63);
+            this.btn_teste_vit.Name = "btn_teste_vit";
+            this.btn_teste_vit.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_vit.TabIndex = 13;
+            this.btn_teste_vit.Text = "Teste";
+            this.btn_teste_vit.UseVisualStyleBackColor = true;
+            this.btn_teste_vit.Click += new System.EventHandler(this.btn_teste_vit_Click);
+            // 
+            // btn_teste_for
+            // 
+            this.btn_teste_for.Location = new System.Drawing.Point(154, 32);
+            this.btn_teste_for.Name = "btn_teste_for";
+            this.btn_teste_for.Size = new System.Drawing.Size(75, 23);
+            this.btn_teste_for.TabIndex = 12;
+            this.btn_teste_for.Text = "Teste";
+            this.btn_teste_for.UseVisualStyleBackColor = true;
+            this.btn_teste_for.Click += new System.EventHandler(this.btn_teste_for_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 185);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(32, 15);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Aura";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 154);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 15);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Magia";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 125);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(64, 15);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Velocidade";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 96);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(33, 15);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Foco";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 63);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 15);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Vitalidade";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 32);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 15);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Força";
             // 
             // dataGridView1
             // 
@@ -1969,17 +1371,17 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PapayaWhip;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Teste,
@@ -1989,21 +1391,21 @@
             this.descricao,
             this.id_pericia});
             this.dataGridView1.GridColor = System.Drawing.Color.Goldenrod;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 8);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(635, 457);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Size = new System.Drawing.Size(611, 485);
+            this.dataGridView1.TabIndex = 34;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Teste
@@ -2023,8 +1425,8 @@
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nome.DataPropertyName = "Nome";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle11;
             this.Nome.HeaderText = "Nome";
             this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
@@ -2034,8 +1436,8 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle12;
             this.Valor.HeaderText = "CDS (%)";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -2057,8 +1459,8 @@
             // 
             this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle13;
             this.descricao.HeaderText = "Descrição";
             this.descricao.MinimumWidth = 6;
             this.descricao.Name = "descricao";
@@ -2075,6 +1477,46 @@
             this.id_pericia.Visible = false;
             this.id_pericia.Width = 125;
             // 
+            // btn_salvar_pericia
+            // 
+            this.btn_salvar_pericia.Location = new System.Drawing.Point(755, 175);
+            this.btn_salvar_pericia.Name = "btn_salvar_pericia";
+            this.btn_salvar_pericia.Size = new System.Drawing.Size(75, 23);
+            this.btn_salvar_pericia.TabIndex = 4;
+            this.btn_salvar_pericia.Text = "Editar";
+            this.btn_salvar_pericia.UseVisualStyleBackColor = true;
+            this.btn_salvar_pericia.Visible = false;
+            this.btn_salvar_pericia.Click += new System.EventHandler(this.btn_salvar_pericia_Click);
+            // 
+            // lbl_pontos_pericia
+            // 
+            this.lbl_pontos_pericia.AutoSize = true;
+            this.lbl_pontos_pericia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_pontos_pericia.Location = new System.Drawing.Point(865, 124);
+            this.lbl_pontos_pericia.Name = "lbl_pontos_pericia";
+            this.lbl_pontos_pericia.Size = new System.Drawing.Size(22, 25);
+            this.lbl_pontos_pericia.TabIndex = 3;
+            this.lbl_pontos_pericia.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(698, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(171, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Pontos a Distribuir:";
+            // 
+            // txt_pericia
+            // 
+            this.txt_pericia.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_pericia.Location = new System.Drawing.Point(698, 8);
+            this.txt_pericia.Multiline = true;
+            this.txt_pericia.Name = "txt_pericia";
+            this.txt_pericia.Size = new System.Drawing.Size(189, 110);
+            this.txt_pericia.TabIndex = 1;
+            // 
             // inventario
             // 
             this.inventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -2088,7 +1530,7 @@
             this.inventario.Name = "inventario";
             this.inventario.Size = new System.Drawing.Size(941, 500);
             this.inventario.TabIndex = 3;
-            this.inventario.Text = "Inventário";
+            this.inventario.Text = "Bolsa";
             this.inventario.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -2179,7 +1621,7 @@
             // 
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
-            "Selecione o jogador"});
+            "Selecione"});
             this.comboBox5.Location = new System.Drawing.Point(33, 81);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(121, 23);
@@ -2221,14 +1663,14 @@
             this.dtg_log.AllowUserToDeleteRows = false;
             this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dtg_log.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_log.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtg_log.Location = new System.Drawing.Point(6, 6);
@@ -2236,37 +1678,60 @@
             this.dtg_log.ReadOnly = true;
             this.dtg_log.RowHeadersVisible = false;
             this.dtg_log.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LemonChiffon;
-            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dtg_log.RowTemplate.Height = 25;
             this.dtg_log.Size = new System.Drawing.Size(929, 402);
             this.dtg_log.TabIndex = 0;
             // 
+            // lbl_valor_lb
+            // 
+            this.lbl_valor_lb.AutoSize = true;
+            this.lbl_valor_lb.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_valor_lb.Location = new System.Drawing.Point(612, 119);
+            this.lbl_valor_lb.Name = "lbl_valor_lb";
+            this.lbl_valor_lb.Size = new System.Drawing.Size(44, 15);
+            this.lbl_valor_lb.TabIndex = 26;
+            this.lbl_valor_lb.Text = "label21";
+            // 
+            // lbl_limite_break
+            // 
+            this.lbl_limite_break.AutoSize = true;
+            this.lbl_limite_break.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_limite_break.Location = new System.Drawing.Point(392, 120);
+            this.lbl_limite_break.Name = "lbl_limite_break";
+            this.lbl_limite_break.Size = new System.Drawing.Size(57, 15);
+            this.lbl_limite_break.TabIndex = 6;
+            this.lbl_limite_break.Text = "LB:  100%";
+            // 
             // lbl_mp
             // 
             this.lbl_mp.AutoSize = true;
-            this.lbl_mp.BackColor = System.Drawing.Color.Azure;
-            this.lbl_mp.Location = new System.Drawing.Point(217, 320);
+            this.lbl_mp.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_mp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_mp.Location = new System.Drawing.Point(612, 95);
             this.lbl_mp.Name = "lbl_mp";
-            this.lbl_mp.Size = new System.Drawing.Size(13, 15);
+            this.lbl_mp.Size = new System.Drawing.Size(14, 15);
             this.lbl_mp.TabIndex = 28;
             this.lbl_mp.Text = "0";
             // 
             // lbl_hp
             // 
             this.lbl_hp.AutoSize = true;
-            this.lbl_hp.BackColor = System.Drawing.Color.Honeydew;
-            this.lbl_hp.Location = new System.Drawing.Point(49, 320);
+            this.lbl_hp.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_hp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_hp.Location = new System.Drawing.Point(612, 75);
             this.lbl_hp.Name = "lbl_hp";
-            this.lbl_hp.Size = new System.Drawing.Size(13, 15);
+            this.lbl_hp.Size = new System.Drawing.Size(14, 15);
             this.lbl_hp.TabIndex = 27;
             this.lbl_hp.Text = "0";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Azure;
-            this.label20.Location = new System.Drawing.Point(182, 320);
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(388, 95);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(31, 15);
             this.label20.TabIndex = 5;
@@ -2275,8 +1740,9 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Honeydew;
-            this.label19.Location = new System.Drawing.Point(14, 320);
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(388, 76);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 15);
             this.label19.TabIndex = 4;
@@ -2287,8 +1753,8 @@
             this.lbl_precisao.AutoSize = true;
             this.lbl_precisao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_precisao.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_precisao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_precisao.Location = new System.Drawing.Point(70, 97);
+            this.lbl_precisao.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_precisao.Location = new System.Drawing.Point(82, 97);
             this.lbl_precisao.Name = "lbl_precisao";
             this.lbl_precisao.Size = new System.Drawing.Size(17, 19);
             this.lbl_precisao.TabIndex = 5;
@@ -2299,8 +1765,8 @@
             this.lbl_defesa.AutoSize = true;
             this.lbl_defesa.BackColor = System.Drawing.Color.Transparent;
             this.lbl_defesa.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_defesa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_defesa.Location = new System.Drawing.Point(68, 51);
+            this.lbl_defesa.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_defesa.Location = new System.Drawing.Point(82, 51);
             this.lbl_defesa.Name = "lbl_defesa";
             this.lbl_defesa.Size = new System.Drawing.Size(17, 19);
             this.lbl_defesa.TabIndex = 2;
@@ -2311,8 +1777,8 @@
             this.lbl_critico.AutoSize = true;
             this.lbl_critico.BackColor = System.Drawing.Color.Transparent;
             this.lbl_critico.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_critico.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_critico.Location = new System.Drawing.Point(66, 146);
+            this.lbl_critico.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_critico.Location = new System.Drawing.Point(82, 146);
             this.lbl_critico.Name = "lbl_critico";
             this.lbl_critico.Size = new System.Drawing.Size(17, 19);
             this.lbl_critico.TabIndex = 15;
@@ -2324,7 +1790,7 @@
             this.img_exp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("img_exp.BackgroundImage")));
             this.img_exp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.img_exp.InitialImage = null;
-            this.img_exp.Location = new System.Drawing.Point(40, 191);
+            this.img_exp.Location = new System.Drawing.Point(59, 188);
             this.img_exp.Name = "img_exp";
             this.img_exp.Size = new System.Drawing.Size(25, 25);
             this.img_exp.TabIndex = 12;
@@ -2336,8 +1802,8 @@
             this.lbl_valor_critico.AutoSize = true;
             this.lbl_valor_critico.BackColor = System.Drawing.Color.Transparent;
             this.lbl_valor_critico.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_valor_critico.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_valor_critico.Location = new System.Drawing.Point(178, 146);
+            this.lbl_valor_critico.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_valor_critico.Location = new System.Drawing.Point(182, 146);
             this.lbl_valor_critico.Name = "lbl_valor_critico";
             this.lbl_valor_critico.Size = new System.Drawing.Size(17, 19);
             this.lbl_valor_critico.TabIndex = 11;
@@ -2347,7 +1813,7 @@
             // 
             this.img_valor_critico.BackColor = System.Drawing.Color.Transparent;
             this.img_valor_critico.Image = global::Ficha_Jiora.Properties.Resources.valor_critico_15_15;
-            this.img_valor_critico.Location = new System.Drawing.Point(160, 146);
+            this.img_valor_critico.Location = new System.Drawing.Point(157, 146);
             this.img_valor_critico.Name = "img_valor_critico";
             this.img_valor_critico.Size = new System.Drawing.Size(15, 15);
             this.img_valor_critico.TabIndex = 10;
@@ -2359,8 +1825,8 @@
             this.lbl_exp.AutoSize = true;
             this.lbl_exp.BackColor = System.Drawing.Color.Transparent;
             this.lbl_exp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_exp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_exp.Location = new System.Drawing.Point(66, 192);
+            this.lbl_exp.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_exp.Location = new System.Drawing.Point(82, 191);
             this.lbl_exp.Name = "lbl_exp";
             this.lbl_exp.Size = new System.Drawing.Size(17, 19);
             this.lbl_exp.TabIndex = 9;
@@ -2370,7 +1836,7 @@
             // 
             this.img_critico.BackColor = System.Drawing.Color.Transparent;
             this.img_critico.Image = global::Ficha_Jiora.Properties.Resources.critico_15_15;
-            this.img_critico.Location = new System.Drawing.Point(45, 146);
+            this.img_critico.Location = new System.Drawing.Point(59, 146);
             this.img_critico.Name = "img_critico";
             this.img_critico.Size = new System.Drawing.Size(15, 15);
             this.img_critico.TabIndex = 8;
@@ -2382,8 +1848,8 @@
             this.lbl_esquiva.AutoSize = true;
             this.lbl_esquiva.BackColor = System.Drawing.Color.Transparent;
             this.lbl_esquiva.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_esquiva.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_esquiva.Location = new System.Drawing.Point(178, 101);
+            this.lbl_esquiva.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_esquiva.Location = new System.Drawing.Point(182, 101);
             this.lbl_esquiva.Name = "lbl_esquiva";
             this.lbl_esquiva.Size = new System.Drawing.Size(17, 19);
             this.lbl_esquiva.TabIndex = 7;
@@ -2404,7 +1870,7 @@
             // 
             this.img_defesa.BackColor = System.Drawing.Color.Transparent;
             this.img_defesa.Image = global::Ficha_Jiora.Properties.Resources.armor_15_151;
-            this.img_defesa.Location = new System.Drawing.Point(47, 51);
+            this.img_defesa.Location = new System.Drawing.Point(59, 51);
             this.img_defesa.Name = "img_defesa";
             this.img_defesa.Size = new System.Drawing.Size(15, 15);
             this.img_defesa.TabIndex = 0;
@@ -2415,7 +1881,7 @@
             // 
             this.img_precisao.BackColor = System.Drawing.Color.Transparent;
             this.img_precisao.Image = global::Ficha_Jiora.Properties.Resources.precisao_15_15__2png;
-            this.img_precisao.Location = new System.Drawing.Point(43, 101);
+            this.img_precisao.Location = new System.Drawing.Point(59, 101);
             this.img_precisao.Name = "img_precisao";
             this.img_precisao.Size = new System.Drawing.Size(15, 15);
             this.img_precisao.TabIndex = 4;
@@ -2438,7 +1904,7 @@
             this.lbl_resistencia.AutoSize = true;
             this.lbl_resistencia.BackColor = System.Drawing.Color.Transparent;
             this.lbl_resistencia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_resistencia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbl_resistencia.ForeColor = System.Drawing.Color.LightCyan;
             this.lbl_resistencia.Location = new System.Drawing.Point(182, 48);
             this.lbl_resistencia.Name = "lbl_resistencia";
             this.lbl_resistencia.Size = new System.Drawing.Size(17, 19);
@@ -2447,7 +1913,7 @@
             // 
             // txt_nome_personagem
             // 
-            this.txt_nome_personagem.Location = new System.Drawing.Point(1127, 86);
+            this.txt_nome_personagem.Location = new System.Drawing.Point(1127, 12);
             this.txt_nome_personagem.Name = "txt_nome_personagem";
             this.txt_nome_personagem.Size = new System.Drawing.Size(100, 23);
             this.txt_nome_personagem.TabIndex = 2;
@@ -2495,7 +1961,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(386, 88);
+            this.label3.Location = new System.Drawing.Point(1088, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 19);
             this.label3.TabIndex = 7;
@@ -2506,7 +1972,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(472, 69);
+            this.label4.Location = new System.Drawing.Point(1174, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 19);
             this.label4.TabIndex = 8;
@@ -2517,7 +1983,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(386, 69);
+            this.label5.Location = new System.Drawing.Point(1088, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 19);
             this.label5.TabIndex = 9;
@@ -2574,10 +2040,6 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lbl_nome_personagem);
-            this.panel2.Controls.Add(this.lbl_mp);
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.lbl_hp);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lbl_nivel_personagem);
             this.panel2.Controls.Add(this.lbl_classe_peronsagem);
@@ -2585,6 +2047,36 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(282, 343);
             this.panel2.TabIndex = 29;
+            // 
+            // PB_HP
+            // 
+            this.PB_HP.BackColor = System.Drawing.SystemColors.Control;
+            this.PB_HP.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.PB_HP.Location = new System.Drawing.Point(423, 75);
+            this.PB_HP.Name = "PB_HP";
+            this.PB_HP.Size = new System.Drawing.Size(183, 16);
+            this.PB_HP.TabIndex = 30;
+            this.PB_HP.Value = 20;
+            // 
+            // PB_MP
+            // 
+            this.PB_MP.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PB_MP.ForeColor = System.Drawing.Color.Blue;
+            this.PB_MP.Location = new System.Drawing.Point(423, 94);
+            this.PB_MP.Name = "PB_MP";
+            this.PB_MP.Size = new System.Drawing.Size(183, 16);
+            this.PB_MP.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.PB_MP.TabIndex = 31;
+            this.PB_MP.Value = 25;
+            // 
+            // PG_Limit
+            // 
+            this.PG_Limit.BackColor = System.Drawing.Color.Coral;
+            this.PG_Limit.ForeColor = System.Drawing.Color.Blue;
+            this.PG_Limit.Location = new System.Drawing.Point(464, 118);
+            this.PG_Limit.Name = "PG_Limit";
+            this.PG_Limit.Size = new System.Drawing.Size(142, 16);
+            this.PG_Limit.TabIndex = 32;
             // 
             // Ficha_do_Jogador
             // 
@@ -2596,14 +2088,23 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1488, 724);
+            this.Controls.Add(this.PG_Limit);
+            this.Controls.Add(this.lbl_mp);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.lbl_valor_lb);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.lbl_hp);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_atualiza);
             this.Controls.Add(this.txt_nome_personagem);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.PB_HP);
+            this.Controls.Add(this.PB_MP);
+            this.Controls.Add(this.lbl_limite_break);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -2616,27 +2117,6 @@
             this.tabControl1.ResumeLayout(false);
             this.Status.ResumeLayout(false);
             this.Status.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_stigma)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.img_charm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_blind)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_posion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_paralyze)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_confuse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_silence)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_frozen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_burn)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.img_shadow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_light)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_water)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_thunder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_earth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_wind)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_ice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_fire)).EndInit();
-            this.GPB_status_atributos.ResumeLayout(false);
-            this.GPB_status_atributos.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.battle.ResumeLayout(false);
@@ -2654,11 +2134,12 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txt_defender)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_poison_effect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_reduzir)).EndInit();
             this.pericia.ResumeLayout(false);
             this.pericia.PerformLayout();
+            this.GPB_status_atributos.ResumeLayout(false);
+            this.GPB_status_atributos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.inventario.ResumeLayout(false);
             this.inventario.PerformLayout();
@@ -2701,7 +2182,6 @@
         private Label label5;
         private Label lbl_nivel_personagem;
         private Label lbl_classe_peronsagem;
-        private DataGridView dataGridView1;
         private BindingSource bs_personagem;
         private TabPage Log;
         private DataGridView dtg_log;
@@ -2710,23 +2190,10 @@
         private Button btn_salvar_pericia;
         private Label lbl_pontos_pericia;
         private Label label1;
-        private DataGridViewButtonColumn Teste;
-        private DataGridViewTextBoxColumn Nome;
-        private DataGridViewTextBoxColumn Valor;
-        private DataGridViewButtonColumn salvar;
-        private DataGridViewTextBoxColumn descricao;
-        private DataGridViewTextBoxColumn id_pericia;
         private PictureBox img_defesa;
         private PictureBox img_resistencia;
         private Label lbl_resistencia;
         private Label lbl_defesa;
-        private GroupBox GPB_status_atributos;
-        private Label label18;
-        private Label label17;
-        private Label label16;
-        private Label label15;
-        private Label label14;
-        private Label label13;
         private GroupBox groupBox2;
         private Label label12;
         private Label label11;
@@ -2740,24 +2207,6 @@
         private Label lbl_cabelo;
         private Label lbl_olhos;
         private TextBox txt_status;
-        private Button btn_teste_for;
-        private Button btn_teste_vit;
-        private Button btn_teste_vel;
-        private Button btn_teste_foc;
-        private Button btn_teste_mag;
-        private Button btn_teste__aur;
-        private Button btn_up_foc;
-        private Button btn_up_vit;
-        private Button btn_up_for;
-        private Button btn_up_mag;
-        private Button btn_up_vel;
-        private Button btn_up_aur;
-        private Label lbl_vitalidade;
-        private Label lbl_forca;
-        private Label lbl_foco;
-        private Label lbl_velocidade;
-        private Label lbl_magia;
-        private Label lbl_aura;
         private Label lbl_raca;
         private Label lbl_precisao;
         private PictureBox img_precisao;
@@ -2771,49 +2220,6 @@
         private PictureBox img_tonz;
         private PictureBox img_exp;
         private Label lbl_critico;
-        private TableLayoutPanel tableLayoutPanel1;
-        private PictureBox img_shadow;
-        private PictureBox img_light;
-        private PictureBox img_water;
-        private PictureBox img_thunder;
-        private PictureBox img_earth;
-        private PictureBox img_wind;
-        private PictureBox img_ice;
-        private PictureBox img_fire;
-        private Label lbl_res_fire;
-        private Label lbl_res_shadow;
-        private Label lbl_res_light;
-        private Label lbl_res_water;
-        private Label lbl_res_thunder;
-        private Label lbl_res_earth;
-        private Label lbl_res_wind;
-        private Label lbl_res_ice;
-        private TableLayoutPanel tableLayoutPanel2;
-        private PictureBox img_charm;
-        private PictureBox img_blind;
-        private PictureBox img_posion;
-        private PictureBox img_paralyze;
-        private PictureBox img_confuse;
-        private PictureBox img_silence;
-        private PictureBox img_frozen;
-        private PictureBox img_burn;
-        private Label lbl_res_charm;
-        private Label lbl_res_blind;
-        private Label lbl_res_poison;
-        private Label lbl_res_paralyze;
-        private Label lbl_res_confuse;
-        private Label lbl_res_silence;
-        private Label lbl_res_frozen;
-        private Label lbl_res_burn;
-        private PictureBox img_stigma;
-        private Label lbl_estigma_nome04;
-        private Label lbl_estigma_nome03;
-        private Label lbl_estigma_nome02;
-        private Label lbl_estigma_nome01;
-        private Label lbl_estigma_desc01;
-        private Label lbl_estigma_desc04;
-        private Label lbl_estigma_desc03;
-        private Label lbl_estigma_desc02;
         private TextBox txt_batalha;
         private Label lbl_limite_break;
         private Label label20;
@@ -2823,7 +2229,7 @@
         private NumericUpDown txt_reduzir;
         private GroupBox groupBox3;
         private Button button7;
-        private Button button8;
+        private Button btn_limit;
         private GroupBox groupBox6;
         private ComboBox CBB_nome_personagem;
         private Label label27;
@@ -2839,8 +2245,7 @@
         private Button btn_small_potion;
         private GroupBox groupBox5;
         private GroupBox groupBox4;
-        private Button button6;
-        private NumericUpDown txt_defender;
+        private Button btn_utiliza_habilidade;
         private Button btn_postura;
         private Button btn_esquiva;
         private Button btn_Atacar;
@@ -2852,17 +2257,11 @@
         private ComboBox CBB_categoria;
         private ComboBox CBB_alvo;
         private ComboBox CBB_Elementos;
-        private Button button25;
+        private Button btn_utilizar_magia;
         private Label lbl_valor_lb;
         private Label lbl_hp;
         private Label lbl_mp;
         private Button button17;
-        private Label lbl_potencia;
-        private Button btn_up_pot;
-        private Label label35;
-        private Label lbl_critico_atributo;
-        private Button btn_up_cri;
-        private Label label33;
         private PictureBox pictureBox8;
         private PictureBox pictureBox7;
         private PictureBox pictureBox6;
@@ -2889,5 +2288,48 @@
         private Button btn_iniciativa;
         private ComboBox cbb_habilidade;
         private ComboBox cbb_ataque;
+        private ComboBox cbb_magia;
+        private ProgressBar PB_HP;
+        private ProgressBar PB_MP;
+        private GroupBox GPB_status_atributos;
+        private Label lbl_potencia;
+        private Button btn_up_pot;
+        private Label label35;
+        private Label lbl_critico_atributo;
+        private Button btn_up_cri;
+        private Label label33;
+        private Label lbl_aura;
+        private Label lbl_magia;
+        private Label lbl_velocidade;
+        private Label lbl_foco;
+        private Label lbl_vitalidade;
+        private Label lbl_forca;
+        private Button btn_up_aur;
+        private Button btn_up_mag;
+        private Button btn_up_vel;
+        private Button btn_up_foc;
+        private Button btn_up_vit;
+        private Button btn_up_for;
+        private Button btn_teste__aur;
+        private Button btn_teste_mag;
+        private Button btn_teste_vel;
+        private Button btn_teste_foc;
+        private Button btn_teste_vit;
+        private Button btn_teste_for;
+        private Label label18;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label label13;
+        private DataGridView dataGridView1;
+        private DataGridViewButtonColumn Teste;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Valor;
+        private DataGridViewButtonColumn salvar;
+        private DataGridViewTextBoxColumn descricao;
+        private DataGridViewTextBoxColumn id_pericia;
+        private Button btn_status;
+        private ProgressBar PG_Limit;
     }
 }

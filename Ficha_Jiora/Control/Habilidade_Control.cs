@@ -21,7 +21,7 @@ namespace Ficha_Jiora.Control
 
                 if (personagem.HPAtual <= HP)
                 {
-                    texto = "\r\n\r\n   Contra-Ataque   \r\n\r\n ";
+                    texto = "\r\n\r\n   Contra-Ataque   \r\n\r\n";
                     if (dados.D100() <= 50)
                     {
 
@@ -54,7 +54,7 @@ namespace Ficha_Jiora.Control
             {
                 string texto = "";
 
-                texto = "\r\n\r\n   Contra-Ataque   \r\n\r\n ";
+                texto = "\r\n\r\n   Contra-Ataque   \r\n\r\n";
                 if (dados.D100() <= 30)
                 {
 
