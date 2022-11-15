@@ -10,34 +10,24 @@ using System.Xml.Linq;
 
 namespace Ficha_Jiora.DAO
 {
-    internal class Habilidade_data: Conexao
+    internal class Habilidade_data : Conexao
     {
         private string Script = "";
 
         private Habilidade_Model habilidade_Model = new Habilidade_Model();
 
-        public DataTable Carrega_Combo_Habilidade(Personagem_Model personagem,string postura)
+        public DataTable Carrega_Combo_Habilidade(Personagem_Model personagem, string postura, string Arma)
         {
             try
             {
                 DataTable TabelaHabilidade = new DataTable();
 
-                if (personagem.ID =="3" && postura =="Protector Mode")
-                {
-                    Script = "select h.ID,Concat(H.Nome,' - ',H.Valor_Custo,' ',H.TIpo_Custo) as Nome  ";
-                    Script += "from Habilidade_Personagem HP inner join Habilidade H ";
-                    Script += "on H.ID = HP.IDHabilidade where HP.IDPersonagem = " + personagem.ID; 
-                    Script += " and Postura_Raktharof = 'Predator' ";
-                }
-                else
-                {
-                    Script = "select h.ID,Concat(H.Nome,' - ',H.Valor_Custo,' ',H.TIpo_Custo) as Nome  ";
-                    Script += "from Habilidade_Personagem HP inner join Habilidade H ";
-                    Script += "on H.ID = HP.IDHabilidade where HP.IDPersonagem = " + personagem.ID;
-                    Script += " and Postura_Raktharof != 'Predator'" ;
-                }
-
-                            
+                Script = "select h.ID,Concat(H.Nome,' - ',H.Valor_Custo,' ',H.TIpo_Custo) as Nome  ";
+                Script += "from Habilidade_Personagem HP inner join Habilidade H ";
+                Script += "on H.ID = HP.IDHabilidade ";
+                Script += "where HP.IDPersonagem = " + personagem.ID;
+                Script += " and HP.postura = '" + postura+ "' ";
+                Script += "and Arma_Equipada = '" + Arma + "'";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
 
@@ -66,10 +56,10 @@ namespace Ficha_Jiora.DAO
             try
             {
                 DataTable TabelaHabilidade = new DataTable();
-                
+
 
                 Script = "select * from Habilidade where ID = " + IDHabilidade;
-               
+
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
 

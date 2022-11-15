@@ -16,5 +16,15 @@ namespace Ficha_Jiora.Control
         {
             return magia_Data.RetornaDescricaoMagiaAntiga(Elemento, Rank, alvo, Categoria);
         }
+
+        public DataTable Carrega_Combo_Magia(Personagem_Model personagem)
+        {
+            return magia_Data.Carrega_Combo_Magia(personagem);
+        }
+
+        public Magia_Model Carrega_Magia(string IDMagia)
+        {
+            return magia_Data.Carrega_Magia(IDMagia);
+        }
     }
 }

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
@@ -55,9 +55,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.battle = new System.Windows.Forms.TabPage();
+            this.btn_troca_arama = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.cbb_categoria_dano = new System.Windows.Forms.ComboBox();
+            this.CBB_lista_arma = new System.Windows.Forms.ComboBox();
             this.btn_status = new System.Windows.Forms.Button();
+            this.lbl_arma_equipada = new System.Windows.Forms.Label();
             this.btn_iniciativa = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.cbb_tipo_dano = new System.Windows.Forms.ComboBox();
             this.img_charm_effect = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -91,6 +97,8 @@
             this.CBB_alvo = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.cbb_magia = new System.Windows.Forms.ComboBox();
             this.cbb_habilidade = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -160,12 +168,13 @@
             this.img_tonz = new System.Windows.Forms.PictureBox();
             this.lbl_tonz = new System.Windows.Forms.Label();
             this.Mapa = new System.Windows.Forms.TabPage();
-            this.button26 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.btn_troca_arma = new System.Windows.Forms.Button();
+            this.cbb_arma_2 = new System.Windows.Forms.ComboBox();
+            this.lbl_arma_equipada_2 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
             this.Log = new System.Windows.Forms.TabPage();
             this.dtg_log = new System.Windows.Forms.DataGridView();
+            this.img_defesa = new System.Windows.Forms.PictureBox();
             this.lbl_valor_lb = new System.Windows.Forms.Label();
             this.lbl_limite_break = new System.Windows.Forms.Label();
             this.lbl_mp = new System.Windows.Forms.Label();
@@ -182,7 +191,6 @@
             this.img_critico = new System.Windows.Forms.PictureBox();
             this.lbl_esquiva = new System.Windows.Forms.Label();
             this.img_esquiva = new System.Windows.Forms.PictureBox();
-            this.img_defesa = new System.Windows.Forms.PictureBox();
             this.img_precisao = new System.Windows.Forms.PictureBox();
             this.img_resistencia = new System.Windows.Forms.PictureBox();
             this.lbl_resistencia = new System.Windows.Forms.Label();
@@ -202,6 +210,8 @@
             this.PB_HP = new System.Windows.Forms.ProgressBar();
             this.PB_MP = new System.Windows.Forms.ProgressBar();
             this.PG_Limit = new System.Windows.Forms.ProgressBar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.Status.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -227,17 +237,19 @@
             this.Mapa.SuspendLayout();
             this.Log.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_exp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_valor_critico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_critico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_esquiva)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_precisao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_resistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Log)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -249,7 +261,7 @@
             this.tabControl1.Controls.Add(this.Mapa);
             this.tabControl1.Controls.Add(this.Log);
             this.tabControl1.Enabled = false;
-            this.tabControl1.Location = new System.Drawing.Point(388, 150);
+            this.tabControl1.Location = new System.Drawing.Point(344, 150);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(949, 528);
@@ -293,6 +305,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(203, 261);
@@ -305,7 +318,7 @@
             this.lbl_raca.AutoSize = true;
             this.lbl_raca.Location = new System.Drawing.Point(12, 235);
             this.lbl_raca.Name = "lbl_raca";
-            this.lbl_raca.Size = new System.Drawing.Size(14, 15);
+            this.lbl_raca.Size = new System.Drawing.Size(15, 15);
             this.lbl_raca.TabIndex = 11;
             this.lbl_raca.Text = "R";
             // 
@@ -341,7 +354,7 @@
             this.lbl_cabelo.AutoSize = true;
             this.lbl_cabelo.Location = new System.Drawing.Point(12, 80);
             this.lbl_cabelo.Name = "lbl_cabelo";
-            this.lbl_cabelo.Size = new System.Drawing.Size(15, 15);
+            this.lbl_cabelo.Size = new System.Drawing.Size(14, 15);
             this.lbl_cabelo.TabIndex = 7;
             this.lbl_cabelo.Text = "C";
             // 
@@ -359,7 +372,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(5, 217);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 15);
+            this.label12.Size = new System.Drawing.Size(36, 15);
             this.label12.TabIndex = 5;
             this.label12.Text = "Raça:";
             // 
@@ -368,7 +381,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(4, 180);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 15);
+            this.label11.Size = new System.Drawing.Size(76, 15);
             this.label11.TabIndex = 4;
             this.label11.Text = "Nascimento:";
             // 
@@ -377,7 +390,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(5, 140);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 15);
+            this.label10.Size = new System.Drawing.Size(36, 15);
             this.label10.TabIndex = 3;
             this.label10.Text = "Peso:";
             // 
@@ -386,7 +399,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(4, 100);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 15);
+            this.label9.Size = new System.Drawing.Size(44, 15);
             this.label9.TabIndex = 2;
             this.label9.Text = "Altura:";
             // 
@@ -410,9 +423,15 @@
             // 
             // battle
             // 
+            this.battle.Controls.Add(this.btn_troca_arama);
+            this.battle.Controls.Add(this.label39);
+            this.battle.Controls.Add(this.cbb_categoria_dano);
+            this.battle.Controls.Add(this.CBB_lista_arma);
             this.battle.Controls.Add(this.btn_status);
+            this.battle.Controls.Add(this.lbl_arma_equipada);
             this.battle.Controls.Add(this.btn_iniciativa);
             this.battle.Controls.Add(this.label36);
+            this.battle.Controls.Add(this.label31);
             this.battle.Controls.Add(this.cbb_tipo_dano);
             this.battle.Controls.Add(this.img_charm_effect);
             this.battle.Controls.Add(this.pictureBox8);
@@ -438,24 +457,80 @@
             this.battle.Text = "Batalha";
             this.battle.UseVisualStyleBackColor = true;
             // 
+            // btn_troca_arama
+            // 
+            this.btn_troca_arama.BackColor = System.Drawing.Color.OldLace;
+            this.btn_troca_arama.Location = new System.Drawing.Point(840, 175);
+            this.btn_troca_arama.Name = "btn_troca_arama";
+            this.btn_troca_arama.Size = new System.Drawing.Size(75, 23);
+            this.btn_troca_arama.TabIndex = 29;
+            this.btn_troca_arama.Text = "Trocar";
+            this.btn_troca_arama.UseVisualStyleBackColor = false;
+            this.btn_troca_arama.Visible = false;
+            this.btn_troca_arama.Click += new System.EventHandler(this.btn_troca_arama_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(221, 46);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(58, 15);
+            this.label39.TabIndex = 32;
+            this.label39.Text = "Categoria";
+            // 
+            // cbb_categoria_dano
+            // 
+            this.cbb_categoria_dano.BackColor = System.Drawing.Color.OldLace;
+            this.cbb_categoria_dano.FormattingEnabled = true;
+            this.cbb_categoria_dano.Items.AddRange(new object[] {
+            "Curto Alcance",
+            "A Distância"});
+            this.cbb_categoria_dano.Location = new System.Drawing.Point(87, 43);
+            this.cbb_categoria_dano.Name = "cbb_categoria_dano";
+            this.cbb_categoria_dano.Size = new System.Drawing.Size(128, 23);
+            this.cbb_categoria_dano.TabIndex = 31;
+            // 
+            // CBB_lista_arma
+            // 
+            this.CBB_lista_arma.BackColor = System.Drawing.Color.OldLace;
+            this.CBB_lista_arma.FormattingEnabled = true;
+            this.CBB_lista_arma.Items.AddRange(new object[] {
+            "Selecione"});
+            this.CBB_lista_arma.Location = new System.Drawing.Point(714, 175);
+            this.CBB_lista_arma.Name = "CBB_lista_arma";
+            this.CBB_lista_arma.Size = new System.Drawing.Size(121, 23);
+            this.CBB_lista_arma.TabIndex = 28;
+            this.CBB_lista_arma.Visible = false;
+            // 
             // btn_status
             // 
+            this.btn_status.BackColor = System.Drawing.Color.OldLace;
             this.btn_status.Location = new System.Drawing.Point(772, 87);
             this.btn_status.Name = "btn_status";
             this.btn_status.Size = new System.Drawing.Size(87, 23);
             this.btn_status.TabIndex = 30;
             this.btn_status.Text = "Status";
-            this.btn_status.UseVisualStyleBackColor = true;
+            this.btn_status.UseVisualStyleBackColor = false;
             this.btn_status.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lbl_arma_equipada
+            // 
+            this.lbl_arma_equipada.AutoSize = true;
+            this.lbl_arma_equipada.Location = new System.Drawing.Point(810, 147);
+            this.lbl_arma_equipada.Name = "lbl_arma_equipada";
+            this.lbl_arma_equipada.Size = new System.Drawing.Size(44, 15);
+            this.lbl_arma_equipada.TabIndex = 27;
+            this.lbl_arma_equipada.Text = "Espada";
             // 
             // btn_iniciativa
             // 
-            this.btn_iniciativa.Location = new System.Drawing.Point(434, 55);
+            this.btn_iniciativa.BackColor = System.Drawing.Color.OldLace;
+            this.btn_iniciativa.Location = new System.Drawing.Point(434, 14);
             this.btn_iniciativa.Name = "btn_iniciativa";
             this.btn_iniciativa.Size = new System.Drawing.Size(75, 23);
             this.btn_iniciativa.TabIndex = 29;
             this.btn_iniciativa.Text = "Iniciativa";
-            this.btn_iniciativa.UseVisualStyleBackColor = true;
+            this.btn_iniciativa.UseVisualStyleBackColor = false;
             this.btn_iniciativa.Click += new System.EventHandler(this.btn_iniciativa_Click);
             // 
             // label36
@@ -467,17 +542,27 @@
             this.label36.TabIndex = 28;
             this.label36.Text = "Tipo de Dano";
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label31.Location = new System.Drawing.Point(713, 147);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(92, 15);
+            this.label31.TabIndex = 26;
+            this.label31.Text = "Arma Equipada:";
+            // 
             // cbb_tipo_dano
             // 
-            this.cbb_tipo_dano.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_tipo_dano.BackColor = System.Drawing.Color.OldLace;
             this.cbb_tipo_dano.FormattingEnabled = true;
             this.cbb_tipo_dano.Items.AddRange(new object[] {
             "Físico",
             "Mágico",
-            "Dano Real Físico",
-            "Dano Real Mágico",
             "Perfurante Físico",
-            "Perfurante Mágico"});
+            "Perfurante Mágico",
+            "Dano Real Físico",
+            "Dano Real Mágico"});
             this.cbb_tipo_dano.Location = new System.Drawing.Point(87, 14);
             this.cbb_tipo_dano.Name = "cbb_tipo_dano";
             this.cbb_tipo_dano.Size = new System.Drawing.Size(128, 23);
@@ -528,6 +613,7 @@
             this.groupBox6.Controls.Add(this.button20);
             this.groupBox6.Controls.Add(this.button19);
             this.groupBox6.Controls.Add(this.btn_small_potion);
+            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox6.Location = new System.Drawing.Point(645, 283);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(290, 203);
@@ -537,15 +623,18 @@
             // 
             // button17
             // 
+            this.button17.BackColor = System.Drawing.Color.OldLace;
+            this.button17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button17.Location = new System.Drawing.Point(6, 127);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 23);
             this.button17.TabIndex = 24;
             this.button17.Text = "Potion L";
-            this.button17.UseVisualStyleBackColor = true;
+            this.button17.UseVisualStyleBackColor = false;
             // 
             // CBB_nome_personagem
             // 
+            this.CBB_nome_personagem.BackColor = System.Drawing.Color.OldLace;
             this.CBB_nome_personagem.FormattingEnabled = true;
             this.CBB_nome_personagem.Items.AddRange(new object[] {
             "Selecione o Personagem"});
@@ -560,7 +649,7 @@
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(178, 175);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(25, 15);
+            this.label27.Size = new System.Drawing.Size(28, 15);
             this.label27.TabIndex = 22;
             this.label27.Text = "x03";
             // 
@@ -569,7 +658,7 @@
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(87, 182);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(25, 15);
+            this.label26.Size = new System.Drawing.Size(28, 15);
             this.label26.TabIndex = 21;
             this.label26.Text = "x03";
             // 
@@ -578,7 +667,7 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(178, 131);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(25, 15);
+            this.label25.Size = new System.Drawing.Size(28, 15);
             this.label25.TabIndex = 20;
             this.label25.Text = "x03";
             // 
@@ -587,7 +676,7 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(87, 131);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(25, 15);
+            this.label24.Size = new System.Drawing.Size(28, 15);
             this.label24.TabIndex = 19;
             this.label24.Text = "x03";
             // 
@@ -596,7 +685,7 @@
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(178, 81);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(25, 15);
+            this.label23.Size = new System.Drawing.Size(28, 15);
             this.label23.TabIndex = 18;
             this.label23.Text = "x01";
             // 
@@ -605,54 +694,64 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(87, 81);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(25, 15);
+            this.label22.Size = new System.Drawing.Size(28, 15);
             this.label22.TabIndex = 17;
             this.label22.Text = "x01";
             // 
             // button22
             // 
+            this.button22.BackColor = System.Drawing.Color.OldLace;
+            this.button22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button22.Location = new System.Drawing.Point(209, 175);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(75, 23);
             this.button22.TabIndex = 16;
             this.button22.Text = "Potion S";
-            this.button22.UseVisualStyleBackColor = true;
+            this.button22.UseVisualStyleBackColor = false;
             // 
             // button21
             // 
+            this.button21.BackColor = System.Drawing.Color.OldLace;
+            this.button21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button21.Location = new System.Drawing.Point(209, 127);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(75, 23);
             this.button21.TabIndex = 15;
             this.button21.Text = "Potion S";
-            this.button21.UseVisualStyleBackColor = true;
+            this.button21.UseVisualStyleBackColor = false;
             // 
             // button20
             // 
+            this.button20.BackColor = System.Drawing.Color.OldLace;
+            this.button20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button20.Location = new System.Drawing.Point(209, 77);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(75, 23);
             this.button20.TabIndex = 14;
             this.button20.Text = "Potion S";
-            this.button20.UseVisualStyleBackColor = true;
+            this.button20.UseVisualStyleBackColor = false;
             // 
             // button19
             // 
+            this.button19.BackColor = System.Drawing.Color.OldLace;
+            this.button19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button19.Location = new System.Drawing.Point(6, 178);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(75, 23);
             this.button19.TabIndex = 13;
             this.button19.Text = "Potion L";
-            this.button19.UseVisualStyleBackColor = true;
+            this.button19.UseVisualStyleBackColor = false;
             // 
             // btn_small_potion
             // 
+            this.btn_small_potion.BackColor = System.Drawing.Color.OldLace;
+            this.btn_small_potion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_small_potion.Location = new System.Drawing.Point(6, 77);
             this.btn_small_potion.Name = "btn_small_potion";
             this.btn_small_potion.Size = new System.Drawing.Size(75, 23);
             this.btn_small_potion.TabIndex = 11;
             this.btn_small_potion.Text = "Potion S";
-            this.btn_small_potion.UseVisualStyleBackColor = true;
+            this.btn_small_potion.UseVisualStyleBackColor = false;
             this.btn_small_potion.Click += new System.EventHandler(this.btn_small_potion_Click);
             // 
             // pictureBox6
@@ -705,7 +804,7 @@
             // 
             // CBB_nivel
             // 
-            this.CBB_nivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBB_nivel.BackColor = System.Drawing.Color.OldLace;
             this.CBB_nivel.FormattingEnabled = true;
             this.CBB_nivel.Items.AddRange(new object[] {
             "Rank 1",
@@ -721,23 +820,25 @@
             // 
             // Btn_simular
             // 
+            this.Btn_simular.BackColor = System.Drawing.Color.OldLace;
             this.Btn_simular.Location = new System.Drawing.Point(131, 143);
             this.Btn_simular.Name = "Btn_simular";
             this.Btn_simular.Size = new System.Drawing.Size(75, 23);
             this.Btn_simular.TabIndex = 31;
             this.Btn_simular.Text = "Simular";
-            this.Btn_simular.UseVisualStyleBackColor = true;
+            this.Btn_simular.UseVisualStyleBackColor = false;
             this.Btn_simular.Visible = false;
             this.Btn_simular.Click += new System.EventHandler(this.Btn_simular_Click);
             // 
             // btn_magia_antiga
             // 
+            this.btn_magia_antiga.BackColor = System.Drawing.Color.OldLace;
             this.btn_magia_antiga.Location = new System.Drawing.Point(34, 143);
             this.btn_magia_antiga.Name = "btn_magia_antiga";
             this.btn_magia_antiga.Size = new System.Drawing.Size(75, 23);
             this.btn_magia_antiga.TabIndex = 30;
             this.btn_magia_antiga.Text = "Usar";
-            this.btn_magia_antiga.UseVisualStyleBackColor = true;
+            this.btn_magia_antiga.UseVisualStyleBackColor = false;
             this.btn_magia_antiga.Visible = false;
             this.btn_magia_antiga.Click += new System.EventHandler(this.btn_magia_antiga_Click);
             // 
@@ -773,7 +874,7 @@
             // 
             // CBB_categoria
             // 
-            this.CBB_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBB_categoria.BackColor = System.Drawing.Color.OldLace;
             this.CBB_categoria.FormattingEnabled = true;
             this.CBB_categoria.Items.AddRange(new object[] {
             "Ofensivo",
@@ -789,7 +890,7 @@
             // 
             // CBB_Elementos
             // 
-            this.CBB_Elementos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBB_Elementos.BackColor = System.Drawing.Color.OldLace;
             this.CBB_Elementos.FormattingEnabled = true;
             this.CBB_Elementos.Items.AddRange(new object[] {
             "Carregar Elementos"});
@@ -803,7 +904,7 @@
             // 
             // CBB_alvo
             // 
-            this.CBB_alvo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBB_alvo.BackColor = System.Drawing.Color.OldLace;
             this.CBB_alvo.FormattingEnabled = true;
             this.CBB_alvo.Items.AddRange(new object[] {
             "Selecione a Categoria"});
@@ -825,73 +926,99 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label38);
+            this.groupBox4.Controls.Add(this.label37);
             this.groupBox4.Controls.Add(this.cbb_magia);
             this.groupBox4.Controls.Add(this.cbb_habilidade);
             this.groupBox4.Controls.Add(this.button7);
             this.groupBox4.Controls.Add(this.btn_utilizar_magia);
             this.groupBox4.Controls.Add(this.btn_limit);
             this.groupBox4.Controls.Add(this.btn_utiliza_habilidade);
-            this.groupBox4.Location = new System.Drawing.Point(11, 209);
+            this.groupBox4.Location = new System.Drawing.Point(11, 267);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(290, 288);
+            this.groupBox4.Size = new System.Drawing.Size(290, 225);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Habilidades/Magias";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label38.Location = new System.Drawing.Point(9, 99);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(45, 15);
+            this.label38.TabIndex = 36;
+            this.label38.Text = "Magias";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label37.Location = new System.Drawing.Point(6, 19);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(70, 15);
+            this.label37.TabIndex = 35;
+            this.label37.Text = "Habilidades";
             // 
             // cbb_magia
             // 
-            this.cbb_magia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_magia.BackColor = System.Drawing.Color.OldLace;
             this.cbb_magia.FormattingEnabled = true;
-            this.cbb_magia.Location = new System.Drawing.Point(4, 110);
+            this.cbb_magia.Location = new System.Drawing.Point(4, 121);
             this.cbb_magia.Name = "cbb_magia";
             this.cbb_magia.Size = new System.Drawing.Size(281, 23);
             this.cbb_magia.TabIndex = 34;
             // 
             // cbb_habilidade
             // 
-            this.cbb_habilidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_habilidade.BackColor = System.Drawing.Color.OldLace;
             this.cbb_habilidade.FormattingEnabled = true;
-            this.cbb_habilidade.Location = new System.Drawing.Point(4, 44);
+            this.cbb_habilidade.Location = new System.Drawing.Point(4, 38);
             this.cbb_habilidade.Name = "cbb_habilidade";
             this.cbb_habilidade.Size = new System.Drawing.Size(280, 23);
             this.cbb_habilidade.TabIndex = 10;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(205, 248);
+            this.button7.BackColor = System.Drawing.Color.OldLace;
+            this.button7.Location = new System.Drawing.Point(207, 194);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 1;
             this.button7.Text = "Summon";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // btn_utilizar_magia
             // 
-            this.btn_utilizar_magia.Location = new System.Drawing.Point(4, 139);
+            this.btn_utilizar_magia.BackColor = System.Drawing.Color.OldLace;
+            this.btn_utilizar_magia.Location = new System.Drawing.Point(4, 150);
             this.btn_utilizar_magia.Name = "btn_utilizar_magia";
             this.btn_utilizar_magia.Size = new System.Drawing.Size(117, 23);
             this.btn_utilizar_magia.TabIndex = 18;
             this.btn_utilizar_magia.Text = "Utilizar Magias";
-            this.btn_utilizar_magia.UseVisualStyleBackColor = true;
+            this.btn_utilizar_magia.UseVisualStyleBackColor = false;
+            this.btn_utilizar_magia.Click += new System.EventHandler(this.btn_utilizar_magia_Click);
             // 
             // btn_limit
             // 
-            this.btn_limit.Location = new System.Drawing.Point(6, 248);
+            this.btn_limit.BackColor = System.Drawing.Color.OldLace;
+            this.btn_limit.Location = new System.Drawing.Point(6, 197);
             this.btn_limit.Name = "btn_limit";
-            this.btn_limit.Size = new System.Drawing.Size(75, 23);
+            this.btn_limit.Size = new System.Drawing.Size(102, 23);
             this.btn_limit.TabIndex = 0;
             this.btn_limit.Text = "Limit";
-            this.btn_limit.UseVisualStyleBackColor = true;
+            this.btn_limit.UseVisualStyleBackColor = false;
             this.btn_limit.Click += new System.EventHandler(this.btn_limit_Click);
             // 
             // btn_utiliza_habilidade
             // 
-            this.btn_utiliza_habilidade.Location = new System.Drawing.Point(4, 71);
+            this.btn_utiliza_habilidade.BackColor = System.Drawing.Color.OldLace;
+            this.btn_utiliza_habilidade.Location = new System.Drawing.Point(4, 65);
             this.btn_utiliza_habilidade.Name = "btn_utiliza_habilidade";
             this.btn_utiliza_habilidade.Size = new System.Drawing.Size(117, 23);
             this.btn_utiliza_habilidade.TabIndex = 9;
             this.btn_utiliza_habilidade.Text = "Utilizar Habilidades";
-            this.btn_utiliza_habilidade.UseVisualStyleBackColor = true;
+            this.btn_utiliza_habilidade.UseVisualStyleBackColor = false;
             this.btn_utiliza_habilidade.Click += new System.EventHandler(this.btn_utiliza_habilidade_Click);
             // 
             // pictureBox4
@@ -911,6 +1038,7 @@
             this.groupBox3.Controls.Add(this.btn_postura);
             this.groupBox3.Controls.Add(this.btn_esquiva);
             this.groupBox3.Controls.Add(this.btn_Atacar);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.Location = new System.Drawing.Point(6, 111);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(329, 87);
@@ -920,7 +1048,8 @@
             // 
             // cbb_ataque
             // 
-            this.cbb_ataque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_ataque.BackColor = System.Drawing.Color.OldLace;
+            this.cbb_ataque.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbb_ataque.FormattingEnabled = true;
             this.cbb_ataque.Location = new System.Drawing.Point(6, 22);
             this.cbb_ataque.Name = "cbb_ataque";
@@ -929,43 +1058,51 @@
             // 
             // btn_defender
             // 
+            this.btn_defender.BackColor = System.Drawing.Color.OldLace;
+            this.btn_defender.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_defender.Location = new System.Drawing.Point(99, 52);
             this.btn_defender.Name = "btn_defender";
             this.btn_defender.Size = new System.Drawing.Size(65, 23);
             this.btn_defender.TabIndex = 2;
             this.btn_defender.Text = "Defender";
-            this.btn_defender.UseVisualStyleBackColor = true;
+            this.btn_defender.UseVisualStyleBackColor = false;
             this.btn_defender.Click += new System.EventHandler(this.btn_defender_Click);
             // 
             // btn_postura
             // 
-            this.btn_postura.Location = new System.Drawing.Point(244, 51);
+            this.btn_postura.BackColor = System.Drawing.Color.OldLace;
+            this.btn_postura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_postura.Location = new System.Drawing.Point(244, 52);
             this.btn_postura.Name = "btn_postura";
             this.btn_postura.Size = new System.Drawing.Size(75, 23);
             this.btn_postura.TabIndex = 2;
             this.btn_postura.Text = "Postura";
-            this.btn_postura.UseVisualStyleBackColor = true;
+            this.btn_postura.UseVisualStyleBackColor = false;
             this.btn_postura.Visible = false;
             this.btn_postura.Click += new System.EventHandler(this.btn_postura_Click);
             // 
             // btn_esquiva
             // 
+            this.btn_esquiva.BackColor = System.Drawing.Color.OldLace;
+            this.btn_esquiva.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_esquiva.Location = new System.Drawing.Point(172, 52);
             this.btn_esquiva.Name = "btn_esquiva";
             this.btn_esquiva.Size = new System.Drawing.Size(66, 23);
             this.btn_esquiva.TabIndex = 1;
             this.btn_esquiva.Text = "Esquivar";
-            this.btn_esquiva.UseVisualStyleBackColor = true;
+            this.btn_esquiva.UseVisualStyleBackColor = false;
             this.btn_esquiva.Click += new System.EventHandler(this.btn_esquiva_Click);
             // 
             // btn_Atacar
             // 
+            this.btn_Atacar.BackColor = System.Drawing.Color.OldLace;
+            this.btn_Atacar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Atacar.Location = new System.Drawing.Point(14, 52);
             this.btn_Atacar.Name = "btn_Atacar";
             this.btn_Atacar.Size = new System.Drawing.Size(75, 23);
             this.btn_Atacar.TabIndex = 0;
             this.btn_Atacar.Text = "Atacar";
-            this.btn_Atacar.UseVisualStyleBackColor = true;
+            this.btn_Atacar.UseVisualStyleBackColor = false;
             this.btn_Atacar.Click += new System.EventHandler(this.btn_Atacar_Click);
             // 
             // img_poison_effect
@@ -980,27 +1117,29 @@
             // 
             // btn_reduzir_mp
             // 
+            this.btn_reduzir_mp.BackColor = System.Drawing.Color.OldLace;
             this.btn_reduzir_mp.Location = new System.Drawing.Point(6, 71);
             this.btn_reduzir_mp.Name = "btn_reduzir_mp";
             this.btn_reduzir_mp.Size = new System.Drawing.Size(75, 23);
             this.btn_reduzir_mp.TabIndex = 3;
             this.btn_reduzir_mp.Text = "Reduzir MP";
-            this.btn_reduzir_mp.UseVisualStyleBackColor = true;
+            this.btn_reduzir_mp.UseVisualStyleBackColor = false;
             this.btn_reduzir_mp.Click += new System.EventHandler(this.btn_reduzir_mp_Click);
             // 
             // btn_reduzir_hp
             // 
+            this.btn_reduzir_hp.BackColor = System.Drawing.Color.OldLace;
             this.btn_reduzir_hp.Location = new System.Drawing.Point(6, 42);
             this.btn_reduzir_hp.Name = "btn_reduzir_hp";
             this.btn_reduzir_hp.Size = new System.Drawing.Size(75, 23);
             this.btn_reduzir_hp.TabIndex = 2;
             this.btn_reduzir_hp.Text = "Reduzir HP";
-            this.btn_reduzir_hp.UseVisualStyleBackColor = true;
+            this.btn_reduzir_hp.UseVisualStyleBackColor = false;
             this.btn_reduzir_hp.Click += new System.EventHandler(this.btn_reduzir_hp_Click);
             // 
             // txt_reduzir
             // 
-            this.txt_reduzir.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txt_reduzir.BackColor = System.Drawing.Color.OldLace;
             this.txt_reduzir.Location = new System.Drawing.Point(6, 13);
             this.txt_reduzir.Name = "txt_reduzir";
             this.txt_reduzir.Size = new System.Drawing.Size(75, 23);
@@ -1076,253 +1215,279 @@
             // lbl_potencia
             // 
             this.lbl_potencia.AutoSize = true;
+            this.lbl_potencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_potencia.Location = new System.Drawing.Point(98, 246);
             this.lbl_potencia.Name = "lbl_potencia";
-            this.lbl_potencia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_potencia.Size = new System.Drawing.Size(14, 15);
             this.lbl_potencia.TabIndex = 37;
             this.lbl_potencia.Text = "0";
             // 
             // btn_up_pot
             // 
+            this.btn_up_pot.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_pot.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
             this.btn_up_pot.Location = new System.Drawing.Point(120, 246);
             this.btn_up_pot.Name = "btn_up_pot";
             this.btn_up_pot.Size = new System.Drawing.Size(29, 25);
             this.btn_up_pot.TabIndex = 36;
-            this.btn_up_pot.UseVisualStyleBackColor = true;
+            this.btn_up_pot.UseVisualStyleBackColor = false;
             this.btn_up_pot.Visible = false;
             this.btn_up_pot.Click += new System.EventHandler(this.btn_up_pot_Click);
             // 
             // label35
             // 
             this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label35.Location = new System.Drawing.Point(7, 246);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(53, 15);
+            this.label35.Size = new System.Drawing.Size(55, 15);
             this.label35.TabIndex = 34;
             this.label35.Text = "Potência";
             // 
             // lbl_critico_atributo
             // 
             this.lbl_critico_atributo.AutoSize = true;
+            this.lbl_critico_atributo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_critico_atributo.Location = new System.Drawing.Point(98, 217);
             this.lbl_critico_atributo.Name = "lbl_critico_atributo";
-            this.lbl_critico_atributo.Size = new System.Drawing.Size(13, 15);
+            this.lbl_critico_atributo.Size = new System.Drawing.Size(14, 15);
             this.lbl_critico_atributo.TabIndex = 33;
             this.lbl_critico_atributo.Text = "0";
             // 
             // btn_up_cri
             // 
+            this.btn_up_cri.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_cri.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
             this.btn_up_cri.Location = new System.Drawing.Point(120, 217);
             this.btn_up_cri.Name = "btn_up_cri";
             this.btn_up_cri.Size = new System.Drawing.Size(29, 25);
             this.btn_up_cri.TabIndex = 32;
-            this.btn_up_cri.UseVisualStyleBackColor = true;
+            this.btn_up_cri.UseVisualStyleBackColor = false;
             this.btn_up_cri.Visible = false;
             this.btn_up_cri.Click += new System.EventHandler(this.btn_up_cri_Click);
             // 
             // label33
             // 
             this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label33.Location = new System.Drawing.Point(7, 217);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(42, 15);
+            this.label33.Size = new System.Drawing.Size(43, 15);
             this.label33.TabIndex = 30;
             this.label33.Text = "Crítico";
             // 
             // lbl_aura
             // 
             this.lbl_aura.AutoSize = true;
+            this.lbl_aura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_aura.Location = new System.Drawing.Point(97, 185);
             this.lbl_aura.Name = "lbl_aura";
-            this.lbl_aura.Size = new System.Drawing.Size(13, 15);
+            this.lbl_aura.Size = new System.Drawing.Size(14, 15);
             this.lbl_aura.TabIndex = 29;
             this.lbl_aura.Text = "0";
             // 
             // lbl_magia
             // 
             this.lbl_magia.AutoSize = true;
+            this.lbl_magia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_magia.Location = new System.Drawing.Point(97, 154);
             this.lbl_magia.Name = "lbl_magia";
-            this.lbl_magia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_magia.Size = new System.Drawing.Size(14, 15);
             this.lbl_magia.TabIndex = 28;
             this.lbl_magia.Text = "0";
             // 
             // lbl_velocidade
             // 
             this.lbl_velocidade.AutoSize = true;
+            this.lbl_velocidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_velocidade.Location = new System.Drawing.Point(97, 125);
             this.lbl_velocidade.Name = "lbl_velocidade";
-            this.lbl_velocidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_velocidade.Size = new System.Drawing.Size(14, 15);
             this.lbl_velocidade.TabIndex = 27;
             this.lbl_velocidade.Text = "0";
             // 
             // lbl_foco
             // 
             this.lbl_foco.AutoSize = true;
+            this.lbl_foco.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_foco.Location = new System.Drawing.Point(97, 96);
             this.lbl_foco.Name = "lbl_foco";
-            this.lbl_foco.Size = new System.Drawing.Size(13, 15);
+            this.lbl_foco.Size = new System.Drawing.Size(14, 15);
             this.lbl_foco.TabIndex = 26;
             this.lbl_foco.Text = "0";
             // 
             // lbl_vitalidade
             // 
             this.lbl_vitalidade.AutoSize = true;
+            this.lbl_vitalidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_vitalidade.Location = new System.Drawing.Point(97, 63);
             this.lbl_vitalidade.Name = "lbl_vitalidade";
-            this.lbl_vitalidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_vitalidade.Size = new System.Drawing.Size(14, 15);
             this.lbl_vitalidade.TabIndex = 25;
             this.lbl_vitalidade.Text = "0";
             // 
             // lbl_forca
             // 
             this.lbl_forca.AutoSize = true;
+            this.lbl_forca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_forca.Location = new System.Drawing.Point(97, 32);
             this.lbl_forca.Name = "lbl_forca";
-            this.lbl_forca.Size = new System.Drawing.Size(13, 15);
+            this.lbl_forca.Size = new System.Drawing.Size(14, 15);
             this.lbl_forca.TabIndex = 24;
             this.lbl_forca.Text = "0";
             // 
             // btn_up_aur
             // 
+            this.btn_up_aur.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_aur.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
             this.btn_up_aur.Location = new System.Drawing.Point(119, 185);
             this.btn_up_aur.Name = "btn_up_aur";
             this.btn_up_aur.Size = new System.Drawing.Size(29, 25);
             this.btn_up_aur.TabIndex = 23;
-            this.btn_up_aur.UseVisualStyleBackColor = true;
+            this.btn_up_aur.UseVisualStyleBackColor = false;
             this.btn_up_aur.Visible = false;
             this.btn_up_aur.Click += new System.EventHandler(this.btn_up_aur_Click);
             // 
             // btn_up_mag
             // 
+            this.btn_up_mag.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_mag.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
             this.btn_up_mag.Location = new System.Drawing.Point(119, 154);
             this.btn_up_mag.Name = "btn_up_mag";
             this.btn_up_mag.Size = new System.Drawing.Size(29, 25);
             this.btn_up_mag.TabIndex = 22;
-            this.btn_up_mag.UseVisualStyleBackColor = true;
+            this.btn_up_mag.UseVisualStyleBackColor = false;
             this.btn_up_mag.Visible = false;
             this.btn_up_mag.Click += new System.EventHandler(this.btn_up_mag_Click);
             // 
             // btn_up_vel
             // 
+            this.btn_up_vel.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_vel.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
             this.btn_up_vel.Location = new System.Drawing.Point(119, 123);
             this.btn_up_vel.Name = "btn_up_vel";
             this.btn_up_vel.Size = new System.Drawing.Size(29, 25);
             this.btn_up_vel.TabIndex = 21;
-            this.btn_up_vel.UseVisualStyleBackColor = true;
+            this.btn_up_vel.UseVisualStyleBackColor = false;
             this.btn_up_vel.Visible = false;
             this.btn_up_vel.Click += new System.EventHandler(this.btn_up_vel_Click);
             // 
             // btn_up_foc
             // 
+            this.btn_up_foc.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_foc.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
             this.btn_up_foc.Location = new System.Drawing.Point(119, 92);
             this.btn_up_foc.Name = "btn_up_foc";
             this.btn_up_foc.Size = new System.Drawing.Size(29, 25);
             this.btn_up_foc.TabIndex = 20;
-            this.btn_up_foc.UseVisualStyleBackColor = true;
+            this.btn_up_foc.UseVisualStyleBackColor = false;
             this.btn_up_foc.Visible = false;
             this.btn_up_foc.Click += new System.EventHandler(this.btn_up_foc_Click);
             // 
             // btn_up_vit
             // 
+            this.btn_up_vit.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_vit.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
             this.btn_up_vit.Location = new System.Drawing.Point(119, 61);
             this.btn_up_vit.Name = "btn_up_vit";
             this.btn_up_vit.Size = new System.Drawing.Size(29, 25);
             this.btn_up_vit.TabIndex = 19;
-            this.btn_up_vit.UseVisualStyleBackColor = true;
+            this.btn_up_vit.UseVisualStyleBackColor = false;
             this.btn_up_vit.Visible = false;
             this.btn_up_vit.Click += new System.EventHandler(this.btn_up_vit_Click);
             // 
             // btn_up_for
             // 
+            this.btn_up_for.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_for.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
             this.btn_up_for.Location = new System.Drawing.Point(119, 30);
             this.btn_up_for.Name = "btn_up_for";
             this.btn_up_for.Size = new System.Drawing.Size(29, 25);
             this.btn_up_for.TabIndex = 18;
-            this.btn_up_for.UseVisualStyleBackColor = true;
+            this.btn_up_for.UseVisualStyleBackColor = false;
             this.btn_up_for.Visible = false;
             this.btn_up_for.Click += new System.EventHandler(this.btn_up_for_Click);
             // 
             // btn_teste__aur
             // 
+            this.btn_teste__aur.BackColor = System.Drawing.Color.OldLace;
             this.btn_teste__aur.Location = new System.Drawing.Point(154, 185);
             this.btn_teste__aur.Name = "btn_teste__aur";
             this.btn_teste__aur.Size = new System.Drawing.Size(75, 23);
             this.btn_teste__aur.TabIndex = 17;
             this.btn_teste__aur.Text = "Teste";
-            this.btn_teste__aur.UseVisualStyleBackColor = true;
+            this.btn_teste__aur.UseVisualStyleBackColor = false;
             this.btn_teste__aur.Click += new System.EventHandler(this.btn_teste__aur_Click);
             // 
             // btn_teste_mag
             // 
+            this.btn_teste_mag.BackColor = System.Drawing.Color.OldLace;
             this.btn_teste_mag.Location = new System.Drawing.Point(154, 154);
             this.btn_teste_mag.Name = "btn_teste_mag";
             this.btn_teste_mag.Size = new System.Drawing.Size(75, 23);
             this.btn_teste_mag.TabIndex = 16;
             this.btn_teste_mag.Text = "Teste";
-            this.btn_teste_mag.UseVisualStyleBackColor = true;
+            this.btn_teste_mag.UseVisualStyleBackColor = false;
             this.btn_teste_mag.Click += new System.EventHandler(this.btn_teste_mag_Click);
             // 
             // btn_teste_vel
             // 
+            this.btn_teste_vel.BackColor = System.Drawing.Color.OldLace;
             this.btn_teste_vel.Location = new System.Drawing.Point(154, 125);
             this.btn_teste_vel.Name = "btn_teste_vel";
             this.btn_teste_vel.Size = new System.Drawing.Size(75, 23);
             this.btn_teste_vel.TabIndex = 15;
             this.btn_teste_vel.Text = "Teste";
-            this.btn_teste_vel.UseVisualStyleBackColor = true;
+            this.btn_teste_vel.UseVisualStyleBackColor = false;
             this.btn_teste_vel.Click += new System.EventHandler(this.btn_teste_vel_Click);
             // 
             // btn_teste_foc
             // 
+            this.btn_teste_foc.BackColor = System.Drawing.Color.OldLace;
             this.btn_teste_foc.Location = new System.Drawing.Point(154, 96);
             this.btn_teste_foc.Name = "btn_teste_foc";
             this.btn_teste_foc.Size = new System.Drawing.Size(75, 23);
             this.btn_teste_foc.TabIndex = 14;
             this.btn_teste_foc.Text = "Teste";
-            this.btn_teste_foc.UseVisualStyleBackColor = true;
+            this.btn_teste_foc.UseVisualStyleBackColor = false;
             this.btn_teste_foc.Click += new System.EventHandler(this.btn_teste_foc_Click);
             // 
             // btn_teste_vit
             // 
+            this.btn_teste_vit.BackColor = System.Drawing.Color.OldLace;
             this.btn_teste_vit.Location = new System.Drawing.Point(154, 63);
             this.btn_teste_vit.Name = "btn_teste_vit";
             this.btn_teste_vit.Size = new System.Drawing.Size(75, 23);
             this.btn_teste_vit.TabIndex = 13;
             this.btn_teste_vit.Text = "Teste";
-            this.btn_teste_vit.UseVisualStyleBackColor = true;
+            this.btn_teste_vit.UseVisualStyleBackColor = false;
             this.btn_teste_vit.Click += new System.EventHandler(this.btn_teste_vit_Click);
             // 
             // btn_teste_for
             // 
+            this.btn_teste_for.BackColor = System.Drawing.Color.OldLace;
             this.btn_teste_for.Location = new System.Drawing.Point(154, 32);
             this.btn_teste_for.Name = "btn_teste_for";
             this.btn_teste_for.Size = new System.Drawing.Size(75, 23);
             this.btn_teste_for.TabIndex = 12;
             this.btn_teste_for.Text = "Teste";
-            this.btn_teste_for.UseVisualStyleBackColor = true;
+            this.btn_teste_for.UseVisualStyleBackColor = false;
             this.btn_teste_for.Click += new System.EventHandler(this.btn_teste_for_Click);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.Location = new System.Drawing.Point(6, 185);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(32, 15);
+            this.label18.Size = new System.Drawing.Size(33, 15);
             this.label18.TabIndex = 11;
             this.label18.Text = "Aura";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(6, 154);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(40, 15);
@@ -1332,15 +1497,17 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(6, 125);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 15);
+            this.label16.Size = new System.Drawing.Size(67, 15);
             this.label16.TabIndex = 9;
             this.label16.Text = "Velocidade";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.Location = new System.Drawing.Point(6, 96);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(33, 15);
@@ -1350,18 +1517,20 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(6, 63);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 15);
+            this.label14.Size = new System.Drawing.Size(62, 15);
             this.label14.TabIndex = 7;
             this.label14.Text = "Vitalidade";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(6, 32);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 15);
+            this.label13.Size = new System.Drawing.Size(37, 15);
             this.label13.TabIndex = 6;
             this.label13.Text = "Força";
             // 
@@ -1371,17 +1540,17 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PapayaWhip;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Teste,
@@ -1393,13 +1562,13 @@
             this.dataGridView1.GridColor = System.Drawing.Color.Goldenrod;
             this.dataGridView1.Location = new System.Drawing.Point(15, 8);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
@@ -1425,8 +1594,8 @@
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nome.DataPropertyName = "Nome";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nome.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
             this.Nome.HeaderText = "Nome";
             this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
@@ -1436,8 +1605,8 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
             this.Valor.HeaderText = "CDS (%)";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -1459,8 +1628,8 @@
             // 
             this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descricao.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
             this.descricao.HeaderText = "Descrição";
             this.descricao.MinimumWidth = 6;
             this.descricao.Name = "descricao";
@@ -1479,34 +1648,35 @@
             // 
             // btn_salvar_pericia
             // 
+            this.btn_salvar_pericia.BackColor = System.Drawing.Color.OldLace;
             this.btn_salvar_pericia.Location = new System.Drawing.Point(755, 175);
             this.btn_salvar_pericia.Name = "btn_salvar_pericia";
             this.btn_salvar_pericia.Size = new System.Drawing.Size(75, 23);
             this.btn_salvar_pericia.TabIndex = 4;
             this.btn_salvar_pericia.Text = "Editar";
-            this.btn_salvar_pericia.UseVisualStyleBackColor = true;
+            this.btn_salvar_pericia.UseVisualStyleBackColor = false;
             this.btn_salvar_pericia.Visible = false;
             this.btn_salvar_pericia.Click += new System.EventHandler(this.btn_salvar_pericia_Click);
             // 
             // lbl_pontos_pericia
             // 
             this.lbl_pontos_pericia.AutoSize = true;
-            this.lbl_pontos_pericia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_pontos_pericia.Location = new System.Drawing.Point(865, 124);
+            this.lbl_pontos_pericia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_pontos_pericia.Location = new System.Drawing.Point(873, 122);
             this.lbl_pontos_pericia.Name = "lbl_pontos_pericia";
-            this.lbl_pontos_pericia.Size = new System.Drawing.Size(22, 25);
+            this.lbl_pontos_pericia.Size = new System.Drawing.Size(17, 19);
             this.lbl_pontos_pericia.TabIndex = 3;
             this.lbl_pontos_pericia.Text = "0";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(698, 124);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(697, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 25);
+            this.label1.Size = new System.Drawing.Size(170, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Pontos a Distribuir:";
+            this.label1.Text = "Pontos disponíveis para Pericia";
             // 
             // txt_pericia
             // 
@@ -1535,12 +1705,13 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.OldLace;
             this.button1.Location = new System.Drawing.Point(843, 424);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
             this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label34
             // 
@@ -1597,10 +1768,10 @@
             // Mapa
             // 
             this.Mapa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Mapa.Controls.Add(this.button26);
-            this.Mapa.Controls.Add(this.comboBox5);
-            this.Mapa.Controls.Add(this.label32);
-            this.Mapa.Controls.Add(this.label31);
+            this.Mapa.Controls.Add(this.btn_troca_arma);
+            this.Mapa.Controls.Add(this.cbb_arma_2);
+            this.Mapa.Controls.Add(this.lbl_arma_equipada_2);
+            this.Mapa.Controls.Add(this.label40);
             this.Mapa.Location = new System.Drawing.Point(4, 24);
             this.Mapa.Name = "Mapa";
             this.Mapa.Size = new System.Drawing.Size(941, 500);
@@ -1608,42 +1779,46 @@
             this.Mapa.Text = "Equipamento";
             this.Mapa.UseVisualStyleBackColor = true;
             // 
-            // button26
+            // btn_troca_arma
             // 
-            this.button26.Location = new System.Drawing.Point(159, 80);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(75, 23);
-            this.button26.TabIndex = 29;
-            this.button26.Text = "Trocar";
-            this.button26.UseVisualStyleBackColor = true;
+            this.btn_troca_arma.BackColor = System.Drawing.Color.OldLace;
+            this.btn_troca_arma.Location = new System.Drawing.Point(148, 59);
+            this.btn_troca_arma.Name = "btn_troca_arma";
+            this.btn_troca_arma.Size = new System.Drawing.Size(75, 23);
+            this.btn_troca_arma.TabIndex = 33;
+            this.btn_troca_arma.Text = "Trocar";
+            this.btn_troca_arma.UseVisualStyleBackColor = false;
+            this.btn_troca_arma.Click += new System.EventHandler(this.btn_troca_arma_Click);
             // 
-            // comboBox5
+            // cbb_arma_2
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cbb_arma_2.BackColor = System.Drawing.Color.OldLace;
+            this.cbb_arma_2.FormattingEnabled = true;
+            this.cbb_arma_2.Items.AddRange(new object[] {
             "Selecione"});
-            this.comboBox5.Location = new System.Drawing.Point(33, 81);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 23);
-            this.comboBox5.TabIndex = 28;
+            this.cbb_arma_2.Location = new System.Drawing.Point(22, 59);
+            this.cbb_arma_2.Name = "cbb_arma_2";
+            this.cbb_arma_2.Size = new System.Drawing.Size(121, 23);
+            this.cbb_arma_2.TabIndex = 32;
             // 
-            // label32
+            // lbl_arma_equipada_2
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(129, 53);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(44, 15);
-            this.label32.TabIndex = 27;
-            this.label32.Text = "Espada";
+            this.lbl_arma_equipada_2.AutoSize = true;
+            this.lbl_arma_equipada_2.Location = new System.Drawing.Point(118, 31);
+            this.lbl_arma_equipada_2.Name = "lbl_arma_equipada_2";
+            this.lbl_arma_equipada_2.Size = new System.Drawing.Size(44, 15);
+            this.lbl_arma_equipada_2.TabIndex = 31;
+            this.lbl_arma_equipada_2.Text = "Espada";
             // 
-            // label31
+            // label40
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(32, 53);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(91, 15);
-            this.label31.TabIndex = 26;
-            this.label31.Text = "Arma Equipada:";
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label40.Location = new System.Drawing.Point(21, 31);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(92, 15);
+            this.label40.TabIndex = 30;
+            this.label40.Text = "Arma Equipada:";
             // 
             // Log
             // 
@@ -1663,14 +1838,14 @@
             this.dtg_log.AllowUserToDeleteRows = false;
             this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dtg_log.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_log.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtg_log.Location = new System.Drawing.Point(6, 6);
@@ -1678,29 +1853,42 @@
             this.dtg_log.ReadOnly = true;
             this.dtg_log.RowHeadersVisible = false;
             this.dtg_log.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LemonChiffon;
-            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dtg_log.RowTemplate.Height = 25;
             this.dtg_log.Size = new System.Drawing.Size(929, 402);
             this.dtg_log.TabIndex = 0;
+            // 
+            // img_defesa
+            // 
+            this.img_defesa.BackColor = System.Drawing.Color.Transparent;
+            this.img_defesa.Image = global::Ficha_Jiora.Properties.Resources.armor_15_151;
+            this.img_defesa.Location = new System.Drawing.Point(59, 52);
+            this.img_defesa.Name = "img_defesa";
+            this.img_defesa.Size = new System.Drawing.Size(15, 15);
+            this.img_defesa.TabIndex = 0;
+            this.img_defesa.TabStop = false;
+            this.img_defesa.MouseHover += new System.EventHandler(this.img_defesa_MouseHover);
             // 
             // lbl_valor_lb
             // 
             this.lbl_valor_lb.AutoSize = true;
             this.lbl_valor_lb.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_valor_lb.Location = new System.Drawing.Point(612, 119);
+            this.lbl_valor_lb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_valor_lb.Location = new System.Drawing.Point(568, 119);
             this.lbl_valor_lb.Name = "lbl_valor_lb";
-            this.lbl_valor_lb.Size = new System.Drawing.Size(44, 15);
+            this.lbl_valor_lb.Size = new System.Drawing.Size(27, 15);
             this.lbl_valor_lb.TabIndex = 26;
-            this.lbl_valor_lb.Text = "label21";
+            this.lbl_valor_lb.Text = "0 %";
             // 
             // lbl_limite_break
             // 
             this.lbl_limite_break.AutoSize = true;
             this.lbl_limite_break.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_limite_break.Location = new System.Drawing.Point(392, 120);
+            this.lbl_limite_break.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_limite_break.Location = new System.Drawing.Point(348, 120);
             this.lbl_limite_break.Name = "lbl_limite_break";
-            this.lbl_limite_break.Size = new System.Drawing.Size(57, 15);
+            this.lbl_limite_break.Size = new System.Drawing.Size(61, 15);
             this.lbl_limite_break.TabIndex = 6;
             this.lbl_limite_break.Text = "LB:  100%";
             // 
@@ -1709,7 +1897,7 @@
             this.lbl_mp.AutoSize = true;
             this.lbl_mp.BackColor = System.Drawing.Color.Transparent;
             this.lbl_mp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_mp.Location = new System.Drawing.Point(612, 95);
+            this.lbl_mp.Location = new System.Drawing.Point(568, 95);
             this.lbl_mp.Name = "lbl_mp";
             this.lbl_mp.Size = new System.Drawing.Size(14, 15);
             this.lbl_mp.TabIndex = 28;
@@ -1720,7 +1908,7 @@
             this.lbl_hp.AutoSize = true;
             this.lbl_hp.BackColor = System.Drawing.Color.Transparent;
             this.lbl_hp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_hp.Location = new System.Drawing.Point(612, 75);
+            this.lbl_hp.Location = new System.Drawing.Point(568, 75);
             this.lbl_hp.Name = "lbl_hp";
             this.lbl_hp.Size = new System.Drawing.Size(14, 15);
             this.lbl_hp.TabIndex = 27;
@@ -1731,7 +1919,7 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(388, 95);
+            this.label20.Location = new System.Drawing.Point(344, 95);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(31, 15);
             this.label20.TabIndex = 5;
@@ -1742,7 +1930,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(388, 76);
+            this.label19.Location = new System.Drawing.Point(344, 76);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 15);
             this.label19.TabIndex = 4;
@@ -1753,8 +1941,8 @@
             this.lbl_precisao.AutoSize = true;
             this.lbl_precisao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_precisao.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_precisao.ForeColor = System.Drawing.Color.LightCyan;
-            this.lbl_precisao.Location = new System.Drawing.Point(82, 97);
+            this.lbl_precisao.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lbl_precisao.Location = new System.Drawing.Point(82, 101);
             this.lbl_precisao.Name = "lbl_precisao";
             this.lbl_precisao.Size = new System.Drawing.Size(17, 19);
             this.lbl_precisao.TabIndex = 5;
@@ -1765,7 +1953,7 @@
             this.lbl_defesa.AutoSize = true;
             this.lbl_defesa.BackColor = System.Drawing.Color.Transparent;
             this.lbl_defesa.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_defesa.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_defesa.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lbl_defesa.Location = new System.Drawing.Point(82, 51);
             this.lbl_defesa.Name = "lbl_defesa";
             this.lbl_defesa.Size = new System.Drawing.Size(17, 19);
@@ -1777,7 +1965,7 @@
             this.lbl_critico.AutoSize = true;
             this.lbl_critico.BackColor = System.Drawing.Color.Transparent;
             this.lbl_critico.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_critico.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_critico.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lbl_critico.Location = new System.Drawing.Point(82, 146);
             this.lbl_critico.Name = "lbl_critico";
             this.lbl_critico.Size = new System.Drawing.Size(17, 19);
@@ -1802,7 +1990,7 @@
             this.lbl_valor_critico.AutoSize = true;
             this.lbl_valor_critico.BackColor = System.Drawing.Color.Transparent;
             this.lbl_valor_critico.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_valor_critico.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_valor_critico.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lbl_valor_critico.Location = new System.Drawing.Point(182, 146);
             this.lbl_valor_critico.Name = "lbl_valor_critico";
             this.lbl_valor_critico.Size = new System.Drawing.Size(17, 19);
@@ -1825,8 +2013,8 @@
             this.lbl_exp.AutoSize = true;
             this.lbl_exp.BackColor = System.Drawing.Color.Transparent;
             this.lbl_exp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_exp.ForeColor = System.Drawing.Color.LightCyan;
-            this.lbl_exp.Location = new System.Drawing.Point(82, 191);
+            this.lbl_exp.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lbl_exp.Location = new System.Drawing.Point(82, 192);
             this.lbl_exp.Name = "lbl_exp";
             this.lbl_exp.Size = new System.Drawing.Size(17, 19);
             this.lbl_exp.TabIndex = 9;
@@ -1848,7 +2036,7 @@
             this.lbl_esquiva.AutoSize = true;
             this.lbl_esquiva.BackColor = System.Drawing.Color.Transparent;
             this.lbl_esquiva.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_esquiva.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_esquiva.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lbl_esquiva.Location = new System.Drawing.Point(182, 101);
             this.lbl_esquiva.Name = "lbl_esquiva";
             this.lbl_esquiva.Size = new System.Drawing.Size(17, 19);
@@ -1865,17 +2053,6 @@
             this.img_esquiva.TabIndex = 6;
             this.img_esquiva.TabStop = false;
             this.img_esquiva.MouseHover += new System.EventHandler(this.img_esquiva_MouseHover);
-            // 
-            // img_defesa
-            // 
-            this.img_defesa.BackColor = System.Drawing.Color.Transparent;
-            this.img_defesa.Image = global::Ficha_Jiora.Properties.Resources.armor_15_151;
-            this.img_defesa.Location = new System.Drawing.Point(59, 51);
-            this.img_defesa.Name = "img_defesa";
-            this.img_defesa.Size = new System.Drawing.Size(15, 15);
-            this.img_defesa.TabIndex = 0;
-            this.img_defesa.TabStop = false;
-            this.img_defesa.MouseHover += new System.EventHandler(this.img_defesa_MouseHover);
             // 
             // img_precisao
             // 
@@ -1904,7 +2081,7 @@
             this.lbl_resistencia.AutoSize = true;
             this.lbl_resistencia.BackColor = System.Drawing.Color.Transparent;
             this.lbl_resistencia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_resistencia.ForeColor = System.Drawing.Color.LightCyan;
+            this.lbl_resistencia.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lbl_resistencia.Location = new System.Drawing.Point(182, 48);
             this.lbl_resistencia.Name = "lbl_resistencia";
             this.lbl_resistencia.Size = new System.Drawing.Size(17, 19);
@@ -1913,7 +2090,7 @@
             // 
             // txt_nome_personagem
             // 
-            this.txt_nome_personagem.Location = new System.Drawing.Point(1127, 12);
+            this.txt_nome_personagem.Location = new System.Drawing.Point(1083, 12);
             this.txt_nome_personagem.Name = "txt_nome_personagem";
             this.txt_nome_personagem.Size = new System.Drawing.Size(100, 23);
             this.txt_nome_personagem.TabIndex = 2;
@@ -1921,15 +2098,16 @@
             // 
             // btn_atualiza
             // 
+            this.btn_atualiza.BackColor = System.Drawing.Color.OldLace;
             this.btn_atualiza.Image = global::Ficha_Jiora.Properties.Resources.Atualizar_16;
             this.btn_atualiza.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_atualiza.Location = new System.Drawing.Point(1233, 85);
+            this.btn_atualiza.Location = new System.Drawing.Point(1189, 85);
             this.btn_atualiza.Name = "btn_atualiza";
             this.btn_atualiza.Size = new System.Drawing.Size(76, 23);
             this.btn_atualiza.TabIndex = 3;
             this.btn_atualiza.Text = "Atualizar";
             this.btn_atualiza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_atualiza.UseVisualStyleBackColor = true;
+            this.btn_atualiza.UseVisualStyleBackColor = false;
             this.btn_atualiza.Click += new System.EventHandler(this.btn_atualiza_Click);
             // 
             // lbl_nome_personagem
@@ -1960,10 +2138,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(1088, 98);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(1044, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 19);
+            this.label3.Size = new System.Drawing.Size(123, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "20 / Virgem / 1285";
             // 
@@ -1971,10 +2149,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(1174, 79);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(1130, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 19);
+            this.label4.Size = new System.Drawing.Size(57, 17);
             this.label4.TabIndex = 8;
             this.label4.Text = "Tropical";
             // 
@@ -1982,10 +2160,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(1088, 79);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(1044, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 19);
+            this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Madrugada";
             // 
@@ -2017,13 +2195,13 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.lbl_precisao);
-            this.panel1.Controls.Add(this.lbl_resistencia);
             this.panel1.Controls.Add(this.lbl_defesa);
+            this.panel1.Controls.Add(this.lbl_precisao);
+            this.panel1.Controls.Add(this.img_defesa);
+            this.panel1.Controls.Add(this.lbl_resistencia);
             this.panel1.Controls.Add(this.img_precisao);
             this.panel1.Controls.Add(this.img_resistencia);
             this.panel1.Controls.Add(this.lbl_critico);
-            this.panel1.Controls.Add(this.img_defesa);
             this.panel1.Controls.Add(this.img_esquiva);
             this.panel1.Controls.Add(this.lbl_esquiva);
             this.panel1.Controls.Add(this.img_critico);
@@ -2031,7 +2209,7 @@
             this.panel1.Controls.Add(this.img_valor_critico);
             this.panel1.Controls.Add(this.img_exp);
             this.panel1.Controls.Add(this.lbl_valor_critico);
-            this.panel1.Location = new System.Drawing.Point(113, 418);
+            this.panel1.Location = new System.Drawing.Point(69, 418);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 260);
             this.panel1.TabIndex = 13;
@@ -2043,7 +2221,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lbl_nivel_personagem);
             this.panel2.Controls.Add(this.lbl_classe_peronsagem);
-            this.panel2.Location = new System.Drawing.Point(98, 79);
+            this.panel2.Location = new System.Drawing.Point(54, 79);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(282, 343);
             this.panel2.TabIndex = 29;
@@ -2052,7 +2230,7 @@
             // 
             this.PB_HP.BackColor = System.Drawing.SystemColors.Control;
             this.PB_HP.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PB_HP.Location = new System.Drawing.Point(423, 75);
+            this.PB_HP.Location = new System.Drawing.Point(379, 75);
             this.PB_HP.Name = "PB_HP";
             this.PB_HP.Size = new System.Drawing.Size(183, 16);
             this.PB_HP.TabIndex = 30;
@@ -2062,7 +2240,7 @@
             // 
             this.PB_MP.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PB_MP.ForeColor = System.Drawing.Color.Blue;
-            this.PB_MP.Location = new System.Drawing.Point(423, 94);
+            this.PB_MP.Location = new System.Drawing.Point(379, 94);
             this.PB_MP.Name = "PB_MP";
             this.PB_MP.Size = new System.Drawing.Size(183, 16);
             this.PB_MP.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -2071,23 +2249,46 @@
             // 
             // PG_Limit
             // 
-            this.PG_Limit.BackColor = System.Drawing.Color.Coral;
+            this.PG_Limit.BackColor = System.Drawing.Color.OldLace;
             this.PG_Limit.ForeColor = System.Drawing.Color.Blue;
-            this.PG_Limit.Location = new System.Drawing.Point(464, 118);
+            this.PG_Limit.Location = new System.Drawing.Point(420, 118);
             this.PG_Limit.Name = "PG_Limit";
             this.PG_Limit.Size = new System.Drawing.Size(142, 16);
+            this.PG_Limit.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.PG_Limit.TabIndex = 32;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(1293, 397);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Location = new System.Drawing.Point(750, 680);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.TabIndex = 34;
+            this.pictureBox3.TabStop = false;
             // 
             // Ficha_do_Jogador
             // 
             this.AcceptButton = this.btn_atualiza;
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1488, 724);
+            this.ClientSize = new System.Drawing.Size(1394, 724);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PG_Limit);
             this.Controls.Add(this.lbl_mp);
             this.Controls.Add(this.panel2);
@@ -2106,6 +2307,7 @@
             this.Controls.Add(this.PB_MP);
             this.Controls.Add(this.lbl_limite_break);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -2132,6 +2334,7 @@
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_poison_effect)).EndInit();
@@ -2148,11 +2351,11 @@
             this.Mapa.PerformLayout();
             this.Log.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_exp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_valor_critico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_critico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_esquiva)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img_defesa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_precisao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_resistencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_personagem)).EndInit();
@@ -2161,6 +2364,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2281,10 +2486,6 @@
         private Label label34;
         private Label label36;
         private ComboBox cbb_tipo_dano;
-        private Button button26;
-        private ComboBox comboBox5;
-        private Label label32;
-        private Label label31;
         private Button btn_iniciativa;
         private ComboBox cbb_habilidade;
         private ComboBox cbb_ataque;
@@ -2331,5 +2532,19 @@
         private DataGridViewTextBoxColumn id_pericia;
         private Button btn_status;
         private ProgressBar PG_Limit;
+        private Label label38;
+        private Label label37;
+        private Label label39;
+        private ComboBox cbb_categoria_dano;
+        private Button btn_troca_arama;
+        private ComboBox CBB_lista_arma;
+        private Label lbl_arma_equipada;
+        private Label label31;
+        private Button btn_troca_arma;
+        private ComboBox cbb_arma_2;
+        private Label lbl_arma_equipada_2;
+        private Label label40;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
     }
 }

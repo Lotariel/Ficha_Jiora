@@ -546,9 +546,9 @@ namespace Ficha_Jiora.Control
             return batalha_Data.Carrega_Combo_Ataques(personagem);
         }
 
-        public DataTable Carrega_Combo_Habilidade(Personagem_Model personagem,string Postura)
+        public DataTable Carrega_Combo_Habilidade(Personagem_Model personagem,string Postura, string Arma)
         {
-            return habilidade_Data.Carrega_Combo_Habilidade(personagem, Postura);
+            return habilidade_Data.Carrega_Combo_Habilidade(personagem, Postura,Arma);
         }
 
         public Habilidade_Model Carrega_Habilidade(string IDHabilidade)
@@ -695,6 +695,26 @@ namespace Ficha_Jiora.Control
         public void Define_Hit_Ataque(string NomeAtaque, Personagem_Model personagem, int Valor)
         {
             batalha_Data.Define_Hit_Ataque(NomeAtaque, personagem, Valor);
+        }
+
+        public DataTable Carrega_Combo_Magia(Personagem_Model personagem)
+        {
+            return magia_Control.Carrega_Combo_Magia(personagem);
+        }
+
+        public Magia_Model Carrega_Magia(string IDMagia)
+        {
+            return magia_Control.Carrega_Magia(IDMagia);
+        }
+
+        public void Ativa_Ataque(string NomeAtaque, Personagem_Model personagem)
+        {
+            batalha_Data.Ativa_Ataque(NomeAtaque, personagem);        
+        }
+
+        public void Desativa_Ataque(string NomeAtaque, Personagem_Model personagem)
+        {
+            batalha_Data.Desativa_Ataque(NomeAtaque, personagem);
         }
 
     }

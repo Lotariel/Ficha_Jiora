@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Ficha_Jiora.Model;
 using System.Data;
+using System.Xml.Linq;
 
 
 namespace Ficha_Jiora.DAO
 {
     internal class Magia_Data : Conexao
     {
-        private string Script = "";        
+        private string Script = "";
 
         public MagiaAntiga_Model RetornaDescricaoMagiaAntiga(string Elemento, int Rank, string alvo, string Categoria)
         {
             try
             {
                 DataTable TabelaMagiaAntiga = new DataTable();
-                MagiaAntiga_Model  magia_a = new MagiaAntiga_Model();
+                MagiaAntiga_Model magia_a = new MagiaAntiga_Model();
 
-                if (Categoria =="Ofensivo")
+                if (Categoria == "Ofensivo")
                 {
                     if (alvo == "Todos Aliados" || alvo == "Todos inimigos")
                     {
@@ -37,7 +38,7 @@ namespace Ficha_Jiora.DAO
                         Script += " AND alvo = 'inimigo'";
                         Script += " AND Tipo = '" + Categoria + "'";
                     }
-                   
+
                 }
                 else
                 {
@@ -46,7 +47,7 @@ namespace Ficha_Jiora.DAO
                     Script += " AND alvo = '" + alvo + "'";
                     Script += " AND Tipo = '" + Categoria + "'";
                 }
-                
+
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
 
@@ -69,6 +70,80 @@ namespace Ficha_Jiora.DAO
             catch (Exception ex)
             {
                 throw new Exception("Erro em Magia_Data.RetornaDescricaoMagiaAntiga: " + ex.Message);
+            }
+        }
+
+        public DataTable Carrega_Combo_Magia(Personagem_Model personagem)
+        {
+            try
+            {
+                DataTable TabelaMagia = new DataTable();
+                Magia_Model magia = new Magia_Model();
+
+                Script = "select m.ID, Concat(NOME,' - ',VALOR_CUSTO,' ',TIPO_CUSTO) as Nome from MAGIA_PERSONAGEM MP inner join MAGIA M  ";
+                Script += "on MP.ID_MAGIA = M.ID ";
+                Script += "where mp.equipado = 1 and mp.ID_PERSONAGEM =" + personagem.ID;
+
+                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
+
+                select.Fill(TabelaMagia);
+                FechaConexao();
+
+                foreach (DataRow item in TabelaMagia.Rows)
+                {
+                    magia = new Magia_Model()
+                    {
+                        Nome = item["Nome"].ToString(),
+                        ID = item["ID"].ToString(),
+                    };
+                }
+                return TabelaMagia;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("\nErro em Magia_data.Carrega_Combo_Magia:\n" + ex.Message);
+            }
+        }
+
+        public Magia_Model Carrega_Magia(string IDMagia)
+        {
+            try
+            {
+                DataTable TabelaMagia = new DataTable();
+                Magia_Model magia = new Magia_Model();
+
+                Script = "select * from magia where ID = "+ IDMagia;
+
+                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
+
+                select.Fill(TabelaMagia);
+                FechaConexao();
+
+                foreach (DataRow item in TabelaMagia.Rows)
+                {
+                    magia = new Magia_Model()
+                    {
+                       ID = item["ID"].ToString(),
+                       Nome = item["Nome"].ToString(),
+                       TipoCusto = item["Tipo_custo"].ToString(),
+                       ValorCusto = Convert.ToInt32(item["Valor_custo"]),
+                       Alvo = item["Alvo"].ToString(),
+                       TipoDano = item["Tipo_dano"].ToString(),
+                       Multiplicador = Convert.ToDouble(item["Multiplicador"]),
+                       Atributo = item["Atributo"].ToString(),
+                       ValorMin = Convert.ToInt32(item["Valor_MIN"]),
+                       ValorMax = Convert.ToInt32(item["Valor_Max"]),
+                       Dado = Convert.ToInt32(item["Dado"]),
+                       Descricao = item["Descricao"].ToString(),
+                       CDSEfeito = Convert.ToInt32(item["CDS_Efeito"]),
+                       Efeito = item["Efeito"].ToString()
+                    };
+                }
+                return magia;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro em Magia_Data.Carrega_Magia: " + ex.Message);
             }
         }
     }

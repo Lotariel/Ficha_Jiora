@@ -25,13 +25,13 @@ namespace Ficha_Jiora.View
         }
         public string IDPersonagem { get; set; }
         private void Informacoes_Load(object sender, EventArgs e)
-        {
-            Carrega_Personagem();
+        {            
             Carrega_tela();
+            Carrega_BackGround();
         }
         private void Carrega_tela()
         {
-            
+            Carrega_Personagem();
             lbl_res_fire.Text = personagem_Model.Res_Fire + " %";
             lbl_res_water.Text = personagem_Model.Res_Water + " %";
             lbl_res_ice.Text = personagem_Model.Res_Ice + " %";
@@ -105,7 +105,11 @@ namespace Ficha_Jiora.View
         {
             personagem_Model = personagem_Control.Carrega_Personagem(IDPersonagem);
         }
-
+        private void Carrega_BackGround()
+        {
+            //this.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Galaxy.gif");
+            //this.BackgroundImageLayout = ImageLayout.Stretch;
+        }
         private void img_fire_MouseHover(object sender, EventArgs e)
         {
             ToolTip tt = new ToolTip();
@@ -213,6 +217,9 @@ namespace Ficha_Jiora.View
             }
         }
 
-        
+        private void Informacoes_MouseClick(object sender, MouseEventArgs e)
+        {
+            Carrega_tela();
+        }
     }
 }

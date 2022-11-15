@@ -271,5 +271,44 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Batalha_Data.Adiciona_HIT_Ataque:\n" + ex.Message);
             }
         }
+
+        public void Ativa_Ataque(string NomeAtaque, Personagem_Model personagem)
+        {
+            try
+            {
+                Script = "update Ataques set Ativo = 1";
+                Script += "where Nome = '" + NomeAtaque + "' and IDPersonagem = '" + personagem.ID + "'";
+
+                SqlCommand update = new SqlCommand(Script, AbreConexao());
+
+                update.ExecuteNonQuery();
+
+                FechaConexao();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Batalha_Data.Ativa_Ataque:\n" + ex.Message);
+            }
+        }
+
+        public void Desativa_Ataque(string NomeAtaque, Personagem_Model personagem)
+        {
+            try
+            {
+                Script = "update Ataques set Ativo = 0";
+                Script += "where Nome = '" + NomeAtaque + "' and IDPersonagem = '" + personagem.ID + "'";
+
+                SqlCommand update = new SqlCommand(Script, AbreConexao());
+
+                update.ExecuteNonQuery();
+
+                FechaConexao();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("\nErro em Batalha_Data.Desativa_Ataque:\n" + ex.Message);
+            }
+        }
     }
 }
