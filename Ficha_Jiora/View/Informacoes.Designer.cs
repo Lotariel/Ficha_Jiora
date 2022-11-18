@@ -198,6 +198,7 @@
             this.img_stigma.Location = new System.Drawing.Point(10, 106);
             this.img_stigma.Name = "img_stigma";
             this.img_stigma.Size = new System.Drawing.Size(150, 180);
+            this.img_stigma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img_stigma.TabIndex = 33;
             this.img_stigma.TabStop = false;
             this.img_stigma.MouseHover += new System.EventHandler(this.img_stigma_MouseHover);

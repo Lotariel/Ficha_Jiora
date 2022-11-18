@@ -14,7 +14,7 @@ namespace Ficha_Jiora.Control
     {
         private Personagem_Data personagem_Data = new Personagem_Data();
         private Personagem_Model personagem_Model = new Personagem_Model();
-
+        Random random = new Random();
 
         public Personagem_Model Carrega_Personagem(string idpersonagem)
         {
@@ -25,24 +25,23 @@ namespace Ficha_Jiora.Control
         {
             return personagem_Data.GetID(nome);
         }
-        public void AumentarAtributo(string coluna, double valor, string id)
+        public void AumentarAtributo(string coluna, double valor, Personagem_Model personagem)
         {
             if (coluna == "Potencia")
             {
                 double potencia = valor + 1.0;
-                personagem_Model = Carrega_Personagem(id);
+                personagem_Model = Carrega_Personagem(personagem.ID);
                 valor = (potencia * 0.1) + 2;
-                personagem_Data.Update_Personagem(coluna, potencia, id);
-                personagem_Data.Update_Personagem("Valor_critico", valor, id);
-
+                personagem_Data.Update_Personagem(coluna, potencia, personagem.ID);
+                personagem_Data.Update_Personagem("Valor_critico", valor, personagem.ID);
             }
             else
             {
                 valor += 1;
-                personagem_Data.Update_Personagem(coluna, valor, id);
-
+                personagem_Data.Update_Personagem(coluna, valor, personagem.ID);
             }
-
+            Aumenta_HP_Max(personagem);
+            Aumenta_MP_Max(personagem);
         }
         public int? GerenciaAtributos(string ID)
         {
@@ -89,7 +88,7 @@ namespace Ficha_Jiora.Control
         public void ReduzHPAtual(string ID, int valor)
         {
             int result = personagem_Model.HPAtual - valor;
-            if (result <0)
+            if (result < 0)
             {
                 personagem_Data.Update_Personagem("HPAtual", 0, ID);
             }
@@ -97,7 +96,7 @@ namespace Ficha_Jiora.Control
             {
                 personagem_Data.Update_Personagem("HPAtual", valor, ID);
             }
-            
+
         }
         public void ReduzMPAtual(string ID, int valor)
         {
@@ -111,7 +110,7 @@ namespace Ficha_Jiora.Control
             {
                 personagem_Data.Update_Personagem("MPAtual", result, ID);
             }
-            
+
         }
         public void AlteraPrecMod(double valor, string ID)
         {
@@ -120,6 +119,27 @@ namespace Ficha_Jiora.Control
         public void AlteraCriticoMod(double valor, string ID)
         {
             personagem_Data.Update_Personagem("Mod_cds_Critico", valor, ID);
+        }
+        public void AlteraForcaMod(double valor, string ID)
+        {
+            personagem_Data.Update_Personagem("Mod_Forca", valor, ID);
+        }
+        private void Aumenta_HP_Max(Personagem_Model personagem)
+        {
+            int BonusHPMax = random.Next(1,personagem_Data.GetDado_vida(personagem.Classe)+1);
+            int valor = BonusHPMax + personagem.HPMax;
+
+            personagem_Data.Update_Personagem("Hpmax", valor, personagem.ID);
+
+        }
+
+        private void Aumenta_MP_Max(Personagem_Model personagem)
+        {
+            int BonusMPMax = random.Next(1, personagem_Data.GetDado_mana(personagem.Classe) + 1);
+            int valor = BonusMPMax + personagem.MPMax;
+
+            personagem_Data.Update_Personagem("Mpmax", valor, personagem.ID);
+
         }
     }
 }

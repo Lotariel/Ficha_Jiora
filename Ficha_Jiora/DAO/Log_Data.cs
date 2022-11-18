@@ -51,7 +51,7 @@ namespace Ficha_Jiora.DAO
                 DataTable TabelaLog = new DataTable();
                 Log_Model log_model = new Log_Model();                
 
-                Script = "select top 20 usuario as Nome,acao as 'Ação',Data from Log_ficha where usuario ='" + nomepersonagem + "'";
+                Script = "select top 30 usuario as Nome,acao as 'Ação',Data from Log_ficha where usuario ='" + nomepersonagem + "'";
                 Script += " order by CONVERT(datetime, data) desc";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());

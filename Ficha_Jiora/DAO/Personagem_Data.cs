@@ -26,7 +26,7 @@ namespace Ficha_Jiora.DAO
 
                 select.Fill(TabelaPersonagem);
                 FechaConexao();
-
+                
                 foreach (DataRow item in TabelaPersonagem.Rows)
                 {
                     personagem_Model = new Personagem_Model()
@@ -257,6 +257,44 @@ namespace Ficha_Jiora.DAO
             {
 
                 throw new Exception("\nErro em Personagem_Data.TotalAtributos:\n" + ex.Message);
+            }
+        }
+        public int GetDado_vida(string NomeClasse)
+        {
+            try
+            {
+                Script = "select dado_hp from job where nome = '" + NomeClasse + "'";
+
+                SqlCommand select = new SqlCommand(Script, AbreConexao());
+
+                FechaConexao();
+
+                return Convert.ToInt32(select.ExecuteScalar());
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Personagem_Data.GetDado_vida:\n" + ex.Message);
+            }
+        }
+        public int GetDado_mana(string NomeClasse)
+        {
+            try
+            {
+                Script = "select dado_mp from job where nome = '" + NomeClasse + "'";
+
+                SqlCommand select = new SqlCommand(Script, AbreConexao());
+
+                FechaConexao();
+
+                return Convert.ToInt32(select.ExecuteScalar());
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Personagem_Data.GetDado_mana:\n" + ex.Message);
             }
         }
     }

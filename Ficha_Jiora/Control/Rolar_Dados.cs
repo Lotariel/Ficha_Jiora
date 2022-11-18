@@ -18,7 +18,14 @@ namespace Ficha_Jiora.Control
         {
             return dado.Next(1, 11);
         }
-
+        public int D25()
+        {
+            return dado.Next(1, 26);
+        }
+        public int D20()
+        {
+            return dado.Next(1, 21);
+        }
         public int D12()
         {
             return dado.Next(1, 13);
