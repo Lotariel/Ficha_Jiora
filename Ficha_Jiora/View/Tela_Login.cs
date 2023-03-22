@@ -41,9 +41,9 @@ namespace Ficha_Jiora.View
                 }
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Personagem "+ txt_nome_personagem.Text+ " não encontrado.","Alerta",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Personagem "+ txt_nome_personagem.Text+ " não encontrado.\r\n\r\n"+ex.Message,"Alerta",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 txt_nome_personagem.Text = "";
             }
             

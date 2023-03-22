@@ -140,17 +140,20 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Batalha_Data.Carrega_Combo_Elementos:\n" + ex.Message);
             }
         }
+
         public DataTable Carrega_Combo_Ataques(Personagem_Model personagem)
         {
             try
             {
+
                 DataTable TabelaAtaque = new DataTable();
 
                 Script = "select nome from ataques ";
-                Script += "where ativo = 1 and idpersonagem = " + personagem.ID + "order by Nome desc";
+                Script += "where ativo = 1 and idpersonagem = @personagem order by Nome desc";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
 
+                select.SelectCommand.Parameters.AddWithValue("@personagem", personagem.ID);
                 select.Fill(TabelaAtaque);
                 FechaConexao();
 
@@ -169,6 +172,8 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Batalha_Data.Carrega_Combo_Ataques:\n" + ex.Message);
             }
         }
+
+
         public Ataque_Model Carrega_Ataque(Personagem_Model personagem, string nome)
         {
             try
@@ -252,11 +257,11 @@ namespace Ficha_Jiora.DAO
             }
         }
 
-        public void Define_Hit_Ataque(string NomeAtaque, Personagem_Model personagem,int Valor)
+        public void Define_Hit_Ataque(string NomeAtaque, Personagem_Model personagem, int Valor)
         {
             try
             {
-                Script = "update Ataques set HIT= "+Valor;
+                Script = "update Ataques set HIT= " + Valor;
                 Script += "where Nome = '" + NomeAtaque + "' and IDPersonagem = '" + personagem.ID + "'";
 
                 SqlCommand update = new SqlCommand(Script, AbreConexao());

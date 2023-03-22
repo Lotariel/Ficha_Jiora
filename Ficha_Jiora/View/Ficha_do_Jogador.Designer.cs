@@ -94,9 +94,11 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.CBB_nome_personagem = new System.Windows.Forms.ComboBox();
-            this.button20 = new System.Windows.Forms.Button();
+            this.btn_consumir = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -133,6 +135,9 @@
             this.txt_reduzir = new System.Windows.Forms.NumericUpDown();
             this.txt_batalha = new System.Windows.Forms.TextBox();
             this.pericia = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.txt_modificador = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -812,7 +817,8 @@
             // lbl_arma_equipada
             // 
             this.lbl_arma_equipada.AutoSize = true;
-            this.lbl_arma_equipada.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_arma_equipada.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_arma_equipada.ForeColor = System.Drawing.Color.Crimson;
             this.lbl_arma_equipada.Location = new System.Drawing.Point(764, 152);
             this.lbl_arma_equipada.Name = "lbl_arma_equipada";
             this.lbl_arma_equipada.Size = new System.Drawing.Size(44, 15);
@@ -897,16 +903,36 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label24);
+            this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Controls.Add(this.comboBox1);
             this.groupBox6.Controls.Add(this.CBB_nome_personagem);
-            this.groupBox6.Controls.Add(this.button20);
+            this.groupBox6.Controls.Add(this.btn_consumir);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox6.Location = new System.Drawing.Point(12, 415);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(282, 65);
+            this.groupBox6.Size = new System.Drawing.Size(282, 79);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Itens";
+            this.groupBox6.Text = "Consumíveis";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(0, 56);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(34, 15);
+            this.label24.TabIndex = 30;
+            this.label24.Text = "Item";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(0, 26);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(32, 15);
+            this.label23.TabIndex = 29;
+            this.label23.Text = "Alvo";
             // 
             // comboBox1
             // 
@@ -918,7 +944,7 @@
             "Elixir Pequeno - 99",
             "Elixir Médio - 99",
             "Elixir Grande - 99"});
-            this.comboBox1.Location = new System.Drawing.Point(82, 21);
+            this.comboBox1.Location = new System.Drawing.Point(46, 52);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(144, 23);
             this.comboBox1.TabIndex = 25;
@@ -929,22 +955,22 @@
             this.CBB_nome_personagem.FormattingEnabled = true;
             this.CBB_nome_personagem.Items.AddRange(new object[] {
             "Selecione o Personagem"});
-            this.CBB_nome_personagem.Location = new System.Drawing.Point(6, 22);
+            this.CBB_nome_personagem.Location = new System.Drawing.Point(47, 23);
             this.CBB_nome_personagem.Name = "CBB_nome_personagem";
-            this.CBB_nome_personagem.Size = new System.Drawing.Size(70, 23);
+            this.CBB_nome_personagem.Size = new System.Drawing.Size(143, 23);
             this.CBB_nome_personagem.TabIndex = 23;
             this.CBB_nome_personagem.Click += new System.EventHandler(this.CBB_nome_personagem_Click);
             // 
-            // button20
+            // btn_consumir
             // 
-            this.button20.BackColor = System.Drawing.Color.OldLace;
-            this.button20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button20.Location = new System.Drawing.Point(232, 21);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(45, 23);
-            this.button20.TabIndex = 14;
-            this.button20.Text = "Usar";
-            this.button20.UseVisualStyleBackColor = false;
+            this.btn_consumir.BackColor = System.Drawing.Color.OldLace;
+            this.btn_consumir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_consumir.Location = new System.Drawing.Point(196, 26);
+            this.btn_consumir.Name = "btn_consumir";
+            this.btn_consumir.Size = new System.Drawing.Size(80, 42);
+            this.btn_consumir.TabIndex = 14;
+            this.btn_consumir.Text = "Consumir";
+            this.btn_consumir.UseVisualStyleBackColor = false;
             // 
             // pictureBox6
             // 
@@ -987,9 +1013,10 @@
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label21.Location = new System.Drawing.Point(133, 117);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(34, 15);
+            this.label21.Size = new System.Drawing.Size(36, 15);
             this.label21.TabIndex = 33;
             this.label21.Text = "Nivel";
             this.label21.Visible = false;
@@ -1037,9 +1064,10 @@
             // label30
             // 
             this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label30.Location = new System.Drawing.Point(133, 59);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(58, 15);
+            this.label30.Size = new System.Drawing.Size(60, 15);
             this.label30.TabIndex = 29;
             this.label30.Text = "Categoria";
             this.label30.Visible = false;
@@ -1047,9 +1075,10 @@
             // label29
             // 
             this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label29.Location = new System.Drawing.Point(133, 88);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(31, 15);
+            this.label29.Size = new System.Drawing.Size(32, 15);
             this.label29.TabIndex = 28;
             this.label29.Text = "Alvo";
             this.label29.Visible = false;
@@ -1057,9 +1086,10 @@
             // label28
             // 
             this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label28.Location = new System.Drawing.Point(133, 30);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(57, 15);
+            this.label28.Size = new System.Drawing.Size(60, 15);
             this.label28.TabIndex = 27;
             this.label28.Text = "Elemento";
             this.label28.Visible = false;
@@ -1153,6 +1183,7 @@
             // cbb_magia
             // 
             this.cbb_magia.BackColor = System.Drawing.Color.OldLace;
+            this.cbb_magia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_magia.FormattingEnabled = true;
             this.cbb_magia.Location = new System.Drawing.Point(4, 121);
             this.cbb_magia.Name = "cbb_magia";
@@ -1162,6 +1193,7 @@
             // cbb_habilidade
             // 
             this.cbb_habilidade.BackColor = System.Drawing.Color.OldLace;
+            this.cbb_habilidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_habilidade.FormattingEnabled = true;
             this.cbb_habilidade.Location = new System.Drawing.Point(4, 38);
             this.cbb_habilidade.Name = "cbb_habilidade";
@@ -1354,6 +1386,9 @@
             // pericia
             // 
             this.pericia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pericia.Controls.Add(this.button4);
+            this.pericia.Controls.Add(this.button3);
+            this.pericia.Controls.Add(this.button2);
             this.pericia.Controls.Add(this.label22);
             this.pericia.Controls.Add(this.txt_modificador);
             this.pericia.Controls.Add(this.label32);
@@ -1379,6 +1414,36 @@
             this.pericia.TabIndex = 2;
             this.pericia.Text = "Testes";
             this.pericia.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.OldLace;
+            this.button4.Location = new System.Drawing.Point(177, 460);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(83, 23);
+            this.button4.TabIndex = 48;
+            this.button4.Text = "Manutenção";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.OldLace;
+            this.button3.Location = new System.Drawing.Point(96, 460);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 47;
+            this.button3.Text = "Alquimia";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.OldLace;
+            this.button2.Location = new System.Drawing.Point(15, 459);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 46;
+            this.button2.Text = "Culinária";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // label22
             // 
@@ -1459,7 +1524,7 @@
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(611, 485);
+            this.dataGridView1.Size = new System.Drawing.Size(611, 446);
             this.dataGridView1.TabIndex = 34;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -1795,6 +1860,7 @@
             // cbb_arma_2
             // 
             this.cbb_arma_2.BackColor = System.Drawing.Color.OldLace;
+            this.cbb_arma_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_arma_2.FormattingEnabled = true;
             this.cbb_arma_2.Items.AddRange(new object[] {
             "Selecione"});
@@ -2343,6 +2409,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox5.ResumeLayout(false);
@@ -2451,7 +2518,7 @@
         private Button btn_limit;
         private GroupBox groupBox6;
         private ComboBox CBB_nome_personagem;
-        private Button button20;
+        private Button btn_consumir;
         private GroupBox groupBox5;
         private GroupBox groupBox4;
         private Button btn_utiliza_habilidade;
@@ -2561,5 +2628,10 @@
         private PictureBox img_gif;
         private Label label22;
         private TextBox txt_modificador;
+        private Button button2;
+        private Button button4;
+        private Button button3;
+        private Label label24;
+        private Label label23;
     }
 }

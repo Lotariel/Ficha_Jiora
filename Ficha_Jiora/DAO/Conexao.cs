@@ -11,8 +11,8 @@ namespace Ficha_Jiora.DAO
 {
     internal class Conexao
     {
-        private string DadosConexao = @"Data Source=25.52.32.100\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;Min Pool Size=5;Max Pool Size=10000; Connect Timeout=5;";
-        //private string DadosConexao = @"Data Source=192.168.1.11\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;Min Pool Size=5;Max Pool Size=10000; Connect Timeout=5;";
+        //private string DadosConexao = @"Data Source=25.52.32.100\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;Min Pool Size=5;Max Pool Size=10000; Connect Timeout=5;";
+        private string DadosConexao = @"Data Source=Lotariel_Machine\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;Min Pool Size=5;Max Pool Size=10000; Connect Timeout=5;";
         public SqlConnection AbreConexao()
         {
 			try
@@ -23,7 +23,6 @@ namespace Ficha_Jiora.DAO
             }
 			catch (Exception ex)
 			{
-
 				throw new Exception("\nConexao.AbreConexao \n"+ex.Message);
 			}
         }
@@ -38,7 +37,6 @@ namespace Ficha_Jiora.DAO
             }
             catch (Exception ex)
             {
-
                 throw new Exception("\nConexao.FechaConexao \n" + ex.Message);
             }
         }
