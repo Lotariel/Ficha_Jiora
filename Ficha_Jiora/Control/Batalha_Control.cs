@@ -20,6 +20,8 @@ namespace Ficha_Jiora.Control
         private Magia_Control magia_Control = new Magia_Control();
         private Elemento_Control elemento_Control = new Elemento_Control();
         private Habilidade_data habilidade_Data = new Habilidade_data();
+        private Consumiveis_Data consumiveis_Data = new Consumiveis_Data();
+        private Magia_Data magia_data = new Magia_Data();
         
 
         private int HPAtual = 0, HPMax = 0, MPAtual = 0, MPMax = 0;
@@ -70,6 +72,7 @@ namespace Ficha_Jiora.Control
                         HPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("HPatual", HPAtual, IDAlvo);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("1", personagem.ID);
                 }
                 else
                 {
@@ -91,6 +94,7 @@ namespace Ficha_Jiora.Control
                         HPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("HPatual", HPAtual, personagem.ID);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("1",personagem.ID);
                 }
 
 
@@ -131,6 +135,7 @@ namespace Ficha_Jiora.Control
                         HPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("HPatual", HPAtual, IDAlvo);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("2", personagem.ID);
                 }
                 else
                 {
@@ -152,6 +157,7 @@ namespace Ficha_Jiora.Control
                         HPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("HPatual", HPAtual, personagem.ID);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("2", personagem.ID);
                 }
 
 
@@ -192,6 +198,7 @@ namespace Ficha_Jiora.Control
                         HPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("HPatual", HPAtual, IDAlvo);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("3", personagem.ID);
                 }
                 else
                 {
@@ -213,6 +220,7 @@ namespace Ficha_Jiora.Control
                         HPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("HPatual", HPAtual, personagem.ID);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("3", personagem.ID);
                 }
 
 
@@ -251,6 +259,7 @@ namespace Ficha_Jiora.Control
                         MPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("MPatual", MPAtual, IDAlvo);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("4", personagem.ID);
                 }
                 else
                 {
@@ -271,6 +280,7 @@ namespace Ficha_Jiora.Control
                         MPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("MPatual", MPAtual, personagem.ID);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("4", personagem.ID);
                 }
 
 
@@ -309,6 +319,7 @@ namespace Ficha_Jiora.Control
                         MPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("MPatual", MPAtual, IDAlvo);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("5", personagem.ID);
                 }
                 else
                 {
@@ -328,7 +339,7 @@ namespace Ficha_Jiora.Control
                     {
                         MPAtual = ValorCura;
                     }
-                    personagem_Data.Update_Personagem("MPatual", MPAtual, personagem.ID);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("5", personagem.ID);
                 }
 
 
@@ -367,6 +378,7 @@ namespace Ficha_Jiora.Control
                         MPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("MPatual", MPAtual, IDAlvo);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("6", personagem.ID);
                 }
                 else
                 {
@@ -387,6 +399,7 @@ namespace Ficha_Jiora.Control
                         MPAtual = ValorCura;
                     }
                     personagem_Data.Update_Personagem("MPatual", MPAtual, personagem.ID);
+                    consumiveis_Data.Reduz_Quantidade_Consumivel("6", personagem.ID);
                 }
 
 
@@ -715,6 +728,16 @@ namespace Ficha_Jiora.Control
         public void Desativa_Ataque(string NomeAtaque, Personagem_Model personagem)
         {
             batalha_Data.Desativa_Ataque(NomeAtaque, personagem);
+        }
+
+        public void Desativa_Magia(string idmagia, string idpersonagem)
+        {
+            magia_data.Desativa_Magia(idmagia, idpersonagem);
+        }
+
+        public void Ativa_Magia(string idmagia, string idpersonagem)
+        {
+            magia_data.Ativa_Magia(idmagia, idpersonagem);
         }
 
     }

@@ -146,5 +146,49 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("Erro em Magia_Data.Carrega_Magia: " + ex.Message);
             }
         }
+
+        public void Ativa_Magia(string idmagia, string idpersonagem)
+        {
+            try
+            {
+                Script = "update MAGIA_PERSONAGEM set Equipado = 1";
+                Script += "where ID_MAGIA = @idmag and ID_PERSONAGEM =@idper";
+
+                SqlCommand update = new SqlCommand(Script, AbreConexao());
+
+                update.Parameters.Add(new SqlParameter("idmag", idmagia));
+                update.Parameters.Add(new SqlParameter("idper", idpersonagem));
+                update.ExecuteNonQuery();
+
+                FechaConexao();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Magia_Data.Ativa_Magia: " + ex.Message);
+            }
+        }
+
+        public void Desativa_Magia(string idmagia, string idpersonagem)
+        {
+            try
+            {
+                Script = "update MAGIA_PERSONAGEM set Equipado = 0";
+                Script += "where ID_MAGIA = @idmag and ID_PERSONAGEM =@idper";
+
+                SqlCommand update = new SqlCommand(Script, AbreConexao());
+
+                update.Parameters.Add(new SqlParameter("idmag", idmagia));
+                update.Parameters.Add(new SqlParameter("idper", idpersonagem));
+                update.ExecuteNonQuery();
+
+                FechaConexao();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro em Magia_Data.Desativa_Magia: " + ex.Message);
+            }
+        }
     }
 }

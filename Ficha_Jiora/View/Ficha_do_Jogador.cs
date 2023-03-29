@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Runtime.InteropServices;
@@ -37,6 +38,7 @@ namespace Ficha_Jiora.View
         private Habilidade_Control habilidade_Control = new Habilidade_Control();
         private Equipamento_Model arma_Model = new Equipamento_Model();
         private Equipamento_Control arma_Control = new Equipamento_Control();
+        private Cosumiveis_Control cosumiveis_Control = new Cosumiveis_Control();
         private Batalha_Control batalha;
         private int d100 = 0, d12 = 0, d10 = 0, d8 = 0, d6 = 0, contador_lb = 0;
         public string IDPersonagem { get; set; }
@@ -1068,6 +1070,18 @@ namespace Ficha_Jiora.View
                 label29.Visible = true;
                 label30.Visible = true;
                 label21.Visible = true;
+                btn_limit.Text = "Apocalipse";
+
+                if (contador_lb >= 100)
+                {
+                    contador_lb = 100;
+                    btn_limit.Visible = true;
+                }
+                else
+                {
+                    btn_limit.Visible = false;
+                    Apocalipse_off();
+                }
             }
 
             if (personagem_Model.ID == "2" || personagem_Model.ID == "6")
@@ -1079,8 +1093,24 @@ namespace Ficha_Jiora.View
                     btn_limit.Visible = false;
                 }
             }
+            Carrega_Combobox_Consumivel();
 
+        }
+        private void Carrega_Combobox_Consumivel()
+        {
+            try
+            {
+                Consumiveis_Model consumiveis_Model = new Consumiveis_Model();
 
+                CMB_consumivel.DataSource = cosumiveis_Control.Carrega_Combo_Consumiveis(personagem_Model.ID);
+                CMB_consumivel.ValueMember = "id";
+                CMB_consumivel.DisplayMember = "list";
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Falha ao carregar ComboBox Lista de consumiveis: " + ex.Message);
+            }
         }
         private void Carrega_Combobox_Personagem()
         {
@@ -2023,6 +2053,11 @@ namespace Ficha_Jiora.View
                     }
                     break;
                 case "4":
+                    Apocalipse_On();
+                    Carrega_Combo_Magia();
+                    txt_batalha.Text = "Zereni revela sua forma verdadeira, nos próximos minutos qualquer criatura que a Iuguean considerar como seu inimigo, irá receber uma quantidade considerável de magias.";
+                    txt_batalha.Text += "\r\n\r\nAs magias abaixo foram liberadas em sua lista de magia.";
+                    txt_batalha.Text += "\r\nApocalipse - Fire\r\nApocalipse - Thunder\r\nApocalipse - Water\r\nApocalipse - Blizzard\r\nApocalipse - Aero";
                     break;
                 case "6":
                     if (contador_lb >= 100)
@@ -2037,6 +2072,46 @@ namespace Ficha_Jiora.View
                     }
                     Insertlog("Ativou o Modo Trance.");
                     break;
+            }
+        }
+
+        private void Apocalipse_On()
+        {
+            try
+            {
+                //Liberando as magias basicas para Zereni usar o apocalipse
+                batalha.Ativa_Magia("6", personagem_Model.ID);
+                batalha.Ativa_Magia("7", personagem_Model.ID);
+                batalha.Ativa_Magia("8", personagem_Model.ID);
+                batalha.Ativa_Magia("9", personagem_Model.ID);
+                batalha.Ativa_Magia("10", personagem_Model.ID);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private void Apocalipse_off()
+        {
+            try
+            {
+                batalha.Desativa_Magia("6", personagem_Model.ID);
+                batalha.Desativa_Magia("7", personagem_Model.ID);
+                batalha.Desativa_Magia("8", personagem_Model.ID);
+                batalha.Desativa_Magia("9", personagem_Model.ID);
+                batalha.Desativa_Magia("10", personagem_Model.ID);
+                if (contador_lb == 0)
+                {
+                    Carrega_Combo_Magia();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
             }
         }
         private void Reduz_Limit()
@@ -2059,6 +2134,22 @@ namespace Ficha_Jiora.View
                     lbl_valor_lb.Text = contador_lb + "%";
                 }
 
+            }
+
+            if (personagem_Model.ID == "4")
+            {
+
+                if (cbb_magia.Text.Contains("Apocalipse"))
+                {
+                    contador_lb -= Rolar.D25();
+                    if (contador_lb < 0)
+                    {
+                        contador_lb = 0;                      
+                        Carrega_Tela(personagem_Model.ID);
+                    }
+                    PG_Limit.Value = contador_lb;
+                    lbl_valor_lb.Text = contador_lb + "%";
+                }
             }
 
             if (personagem_Model.ID == "6")
@@ -2097,6 +2188,27 @@ namespace Ficha_Jiora.View
                     PG_Limit.Value = contador_lb;
                     lbl_valor_lb.Text = contador_lb + "%";
 
+                }
+
+            }
+
+            if (personagem_Model.ID == "4")
+            {
+
+                if (contador_lb < 101)
+                {
+                    contador_lb += Rolar.D10();
+                    if (contador_lb >= 100)
+                    {
+                        contador_lb = 100;
+                        btn_limit.Visible = true;
+                    }
+                    else
+                    {
+                        btn_limit.Visible = false;
+                    }
+                    PG_Limit.Value = contador_lb;
+                    lbl_valor_lb.Text = contador_lb + "%";
                 }
 
             }
@@ -2311,6 +2423,7 @@ namespace Ficha_Jiora.View
                     }
 
                     Texto += "\r\n\r\nDano: " + Dano + " do elemento " + ConversorDeElemento(elemento);
+                    Aumenta_Limit();
                     Insertlog("Utilizou o elemento " + CBB_Elementos.Text + " na forma " + CBB_categoria.Text + " em " + CBB_alvo.Text + ". (" + CBB_nivel.Text + ")");
                     return Texto;
                 }
@@ -2373,6 +2486,70 @@ namespace Ficha_Jiora.View
                     return "Mod_res_shadow";
                 default:
                     return "";
+            }
+        }
+
+        private void btn_consumir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string idalvo = CBB_nome_personagem.SelectedValue.ToString();
+                string iditem = CMB_consumivel.SelectedValue.ToString();
+
+                Cursor.Current = Cursors.WaitCursor;
+                switch (iditem)
+                {
+                    case "1":
+                        batalha.Pocao_Pequena(idalvo);
+                        txt_batalha.Text = "Você utilizou uma poção Pequena.";
+                        Insertlog("Usou: Poção Pequena em " + personagem_Model.Nome);
+                        break;
+                    case "2":
+                        batalha.Pocao_Media(idalvo);
+                        txt_batalha.Text = "Você utilizou uma poção Média.";
+                        Insertlog("Usou: Poção Média em " + personagem_Model.Nome);
+                        break;
+                    case "3":
+                        batalha.Pocao_Grande(idalvo);
+                        txt_batalha.Text = "Você utilizou uma poção Grande.";
+                        Insertlog("Usou: Poção Grande em " + personagem_Model.Nome);
+                        break;
+                    case "4":
+                        batalha.Elixir_Pequeno(idalvo);
+                        txt_batalha.Text = "Você utilizou um Elixir Pequeno.";
+                        Insertlog("Usou: Elixir Pequena em " + personagem_Model.Nome);
+                        break;
+                    case "5":
+                        batalha.Elixir_Media(idalvo);
+                        txt_batalha.Text = "Você utilizou um Elixir Médio.";
+                        Insertlog("Usou: Elixir Médio em " + personagem_Model.Nome);
+                        break;
+                    case "6":
+                        batalha.Elixir_Grande(idalvo);
+                        txt_batalha.Text = "Você utilizou um Elixir grande.";
+                        Insertlog("Usou: Elixir Grande em " + personagem_Model.Nome);
+                        break;
+                    case "7":
+                        txt_batalha.Text = "Você reanimou " + personagem_Model.Nome + "!\r\n Trazendo de volta para batalha.";
+                        cosumiveis_Control.Reduz_Quantidade_Consumivel("7", personagem_Model.ID);
+                        Insertlog("Usou: Phoenix Down em " + personagem_Model.Nome);
+                        break;
+                    case "8":
+                        txt_batalha.Text = "60% CDS de infligir o status Sleep.";
+                        cosumiveis_Control.Reduz_Quantidade_Consumivel("8", personagem_Model.ID);
+                        Insertlog("Usou: Sleep em " + personagem_Model.Nome);
+                        break;
+
+
+                }
+                
+                Cursor.Current = Cursors.Default;
+                Carrega_Tela(personagem_Model.ID);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
         #endregion

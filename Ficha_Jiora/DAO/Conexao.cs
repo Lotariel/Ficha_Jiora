@@ -11,8 +11,8 @@ namespace Ficha_Jiora.DAO
 {
     internal class Conexao
     {
-        //private string DadosConexao = @"Data Source=25.52.32.100\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;Min Pool Size=5;Max Pool Size=10000; Connect Timeout=5;";
-        private string DadosConexao = @"Data Source=Lotariel_Machine\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;Min Pool Size=5;Max Pool Size=10000; Connect Timeout=5;";
+        private string DadosConexao = @"Data Source=25.52.32.89\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;Min Pool Size=5;Max Pool Size=10000; Connect Timeout=5;";
+        //private string DadosConexao = @"Data Source=Lotariel_Machine\localdb,1433;Password=lotariel;User ID=sa;Initial Catalog=jiora_2023;Min Pool Size=5;Max Pool Size=10000; Connect Timeout=5;";
         public SqlConnection AbreConexao()
         {
 			try

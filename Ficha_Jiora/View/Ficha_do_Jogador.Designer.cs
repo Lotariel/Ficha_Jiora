@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
@@ -96,7 +96,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CMB_consumivel = new System.Windows.Forms.ComboBox();
             this.CBB_nome_personagem = new System.Windows.Forms.ComboBox();
             this.btn_consumir = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -171,6 +171,11 @@
             this.img_tonz = new System.Windows.Forms.PictureBox();
             this.lbl_tonz = new System.Windows.Forms.Label();
             this.Mapa = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.img_roupa = new System.Windows.Forms.PictureBox();
             this.img_arma = new System.Windows.Forms.PictureBox();
             this.btn_troca_arma = new System.Windows.Forms.Button();
             this.cbb_arma_2 = new System.Windows.Forms.ComboBox();
@@ -241,6 +246,7 @@
             this.inventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_tonz)).BeginInit();
             this.Mapa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_roupa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_arma)).BeginInit();
             this.Log.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).BeginInit();
@@ -905,7 +911,7 @@
             // 
             this.groupBox6.Controls.Add(this.label24);
             this.groupBox6.Controls.Add(this.label23);
-            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.CMB_consumivel);
             this.groupBox6.Controls.Add(this.CBB_nome_personagem);
             this.groupBox6.Controls.Add(this.btn_consumir);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -934,20 +940,13 @@
             this.label23.TabIndex = 29;
             this.label23.Text = "Alvo";
             // 
-            // comboBox1
+            // CMB_consumivel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Poção Pequena - 99",
-            "Poção Média - 99",
-            "Poção Grande -99",
-            "Elixir Pequeno - 99",
-            "Elixir Médio - 99",
-            "Elixir Grande - 99"});
-            this.comboBox1.Location = new System.Drawing.Point(46, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 23);
-            this.comboBox1.TabIndex = 25;
+            this.CMB_consumivel.FormattingEnabled = true;
+            this.CMB_consumivel.Location = new System.Drawing.Point(46, 52);
+            this.CMB_consumivel.Name = "CMB_consumivel";
+            this.CMB_consumivel.Size = new System.Drawing.Size(144, 23);
+            this.CMB_consumivel.TabIndex = 25;
             // 
             // CBB_nome_personagem
             // 
@@ -971,6 +970,7 @@
             this.btn_consumir.TabIndex = 14;
             this.btn_consumir.Text = "Consumir";
             this.btn_consumir.UseVisualStyleBackColor = false;
+            this.btn_consumir.Click += new System.EventHandler(this.btn_consumir_Click);
             // 
             // pictureBox6
             // 
@@ -1491,17 +1491,17 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PapayaWhip;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Teste,
@@ -1513,13 +1513,13 @@
             this.dataGridView1.GridColor = System.Drawing.Color.Goldenrod;
             this.dataGridView1.Location = new System.Drawing.Point(15, 8);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
@@ -1545,8 +1545,8 @@
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nome.DataPropertyName = "Nome";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle11;
             this.Nome.HeaderText = "Nome";
             this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
@@ -1556,8 +1556,8 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle12;
             this.Valor.HeaderText = "CDS (%)";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -1579,8 +1579,8 @@
             // 
             this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle13;
             this.descricao.HeaderText = "Descrição";
             this.descricao.MinimumWidth = 6;
             this.descricao.Name = "descricao";
@@ -1825,6 +1825,11 @@
             // Mapa
             // 
             this.Mapa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mapa.Controls.Add(this.label25);
+            this.Mapa.Controls.Add(this.label26);
+            this.Mapa.Controls.Add(this.button5);
+            this.Mapa.Controls.Add(this.comboBox2);
+            this.Mapa.Controls.Add(this.img_roupa);
             this.Mapa.Controls.Add(this.img_arma);
             this.Mapa.Controls.Add(this.btn_troca_arma);
             this.Mapa.Controls.Add(this.cbb_arma_2);
@@ -1836,6 +1841,56 @@
             this.Mapa.TabIndex = 4;
             this.Mapa.Text = "Equipamento";
             this.Mapa.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(424, 31);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(44, 15);
+            this.label25.TabIndex = 39;
+            this.label25.Text = "Padrão";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label26.Location = new System.Drawing.Point(326, 31);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(97, 15);
+            this.label26.TabIndex = 38;
+            this.label26.Text = "Roupa Equipada:";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.OldLace;
+            this.button5.Location = new System.Drawing.Point(452, 59);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 37;
+            this.button5.Text = "Trocar";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.OldLace;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Selecione"});
+            this.comboBox2.Location = new System.Drawing.Point(326, 59);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 23);
+            this.comboBox2.TabIndex = 36;
+            // 
+            // img_roupa
+            // 
+            this.img_roupa.Location = new System.Drawing.Point(326, 105);
+            this.img_roupa.Name = "img_roupa";
+            this.img_roupa.Size = new System.Drawing.Size(182, 276);
+            this.img_roupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.img_roupa.TabIndex = 35;
+            this.img_roupa.TabStop = false;
             // 
             // img_arma
             // 
@@ -1906,14 +1961,14 @@
             this.dtg_log.AllowUserToDeleteRows = false;
             this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dtg_log.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_log.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtg_log.Location = new System.Drawing.Point(6, 6);
@@ -1921,8 +1976,8 @@
             this.dtg_log.ReadOnly = true;
             this.dtg_log.RowHeadersVisible = false;
             this.dtg_log.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LemonChiffon;
-            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dtg_log.RowTemplate.Height = 25;
             this.dtg_log.Size = new System.Drawing.Size(864, 488);
             this.dtg_log.TabIndex = 0;
@@ -2429,6 +2484,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_tonz)).EndInit();
             this.Mapa.ResumeLayout(false);
             this.Mapa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_roupa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_arma)).EndInit();
             this.Log.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_log)).EndInit();
@@ -2623,7 +2679,7 @@
         private Label label43;
         private Label label44;
         private Label label45;
-        private ComboBox comboBox1;
+        private ComboBox CMB_consumivel;
         private PictureBox img_arma;
         private PictureBox img_gif;
         private Label label22;
@@ -2633,5 +2689,10 @@
         private Button button3;
         private Label label24;
         private Label label23;
+        private Label label25;
+        private Label label26;
+        private Button button5;
+        private ComboBox comboBox2;
+        private PictureBox img_roupa;
     }
 }

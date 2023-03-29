@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Ficha_Jiora.Model;
 using System.Data.SqlClient;
 using System.Data;
-using System.Security.Cryptography.X509Certificates;
+
 
 namespace Ficha_Jiora.DAO
 {
@@ -133,8 +133,6 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Equipamento_Data.Valida_Troca_de_Arma:\n" + ex.Message);
             }
         }
-
-
         public void Troca_Arma_Equipada(string IDArmaEquipada,int idarmaNova, string NomeAtaqueAtivo, string NomeAtaqueNovo)
         {
             try
@@ -161,7 +159,7 @@ namespace Ficha_Jiora.DAO
                 throw new Exception("\nErro em Equipamento_Data.Troca_Arma_Equipada:\n" + ex.Message);
             }
         }
-
+        
         private void Troca_Ataque(string NomeAtaqueAtivo,string NomeAtaqueNovo)
         {
             try

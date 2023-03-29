@@ -25,6 +25,6 @@ namespace Ficha_Jiora.Control
         public Magia_Model Carrega_Magia(string IDMagia)
         {
             return magia_Data.Carrega_Magia(IDMagia);
-        }
+        }        
     }
 }
