@@ -39,9 +39,9 @@ namespace Ficha_Jiora.Control
                 throw new Exception(ex.Message);
             }
         }
-        public DataTable Carrega_Combo_Personagem()
+        public List<Personagem_Model> Carrega_Combo_Personagem(string id)
         {
-            return personagem_Data.Carrega_Combo_Personagem();
+            return personagem_Data.Carrega_Combo_Personagem(id);
         }
 
         public void Pocao_Pequena(string IDAlvo)

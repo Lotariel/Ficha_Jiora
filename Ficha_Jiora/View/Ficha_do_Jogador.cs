@@ -40,22 +40,26 @@ namespace Ficha_Jiora.View
         private Equipamento_Control arma_Control = new Equipamento_Control();
         private Cosumiveis_Control cosumiveis_Control = new Cosumiveis_Control();
         private Batalha_Control batalha;
-        private int d100 = 0, d12 = 0, d10 = 0, d8 = 0, d6 = 0, contador_lb = 0;
+        private int d100 = 0, contador_lb = 0;
+        
         public string IDPersonagem { get; set; }
+        
         public Ficha_do_Jogador()
         {
             InitializeComponent();
         }
-        
+
         #region INFORMAÇÕES DA MAIN PAGE
         private void Carrega_background()
         {
-            tabControl1.TabPages[0].BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Capturar.PNG");
-            tabControl1.TabPages[1].BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Capturar.PNG");
-            tabControl1.TabPages[2].BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Capturar.PNG");
-            tabControl1.TabPages[3].BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Capturar.PNG");
-            tabControl1.TabPages[4].BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Capturar.PNG");
-            tabControl1.TabPages[5].BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Capturar.PNG");
+            string caminhoImagem = AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Capturar.PNG";
+
+            //Loop para carregar o fundo da tela em todas as abas
+            foreach (TabPage tabPage in tabControl1.TabPages)
+            {
+                tabPage.BackgroundImage = Image.FromFile(caminhoImagem);
+            }
+
             this.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Background\\Fundo_atualizado.png");
             this.BackgroundImageLayout = ImageLayout.Stretch;
             if (personagem_Model.ID == "4")
@@ -115,10 +119,10 @@ namespace Ficha_Jiora.View
             {
 
                 d100 = Rolar.D100();
-                d12 = Rolar.D12();
-                d10 = Rolar.D10();
-                d8 = Rolar.D8();
-                d6 = Rolar.D6();
+                int d12 = Rolar.D12();
+                int d10 = Rolar.D10();
+                int d8 = Rolar.D8();
+                int d6 = Rolar.D6();
                 CarregaPersonagem(ID);
                 Carrega_Log();
                 Carrega_Pericia();
@@ -1117,7 +1121,7 @@ namespace Ficha_Jiora.View
 
             try
             {                
-                CBB_nome_personagem.DataSource = batalha.Carrega_Combo_Personagem();
+                CBB_nome_personagem.DataSource = batalha.Carrega_Combo_Personagem(personagem_Model.ID);
                 CBB_nome_personagem.ValueMember = "ID";
                 CBB_nome_personagem.DisplayMember = "Nome";                
             }

@@ -22,7 +22,7 @@ namespace Ficha_Jiora.DAO
             {
                 DataTable TabelaAlvo = new DataTable();
 
-                Script = "select Nome,ID from Alvo ";
+                Script = "select Nome,ID from Alvo where nome != 'Kazumi'";
                 Script += "order by Nome";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
@@ -54,7 +54,7 @@ namespace Ficha_Jiora.DAO
             {
                 DataTable TabelaAlvo = new DataTable();
 
-                Script = "select Nome,ID from Alvo where id < 99 or id = 102";
+                Script = "select Nome,ID from Alvo where id < 99 or id = 102 and nome != 'Kazumi'";
                 Script += "order by Nome";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());

@@ -124,16 +124,17 @@ namespace Ficha_Jiora.DAO
             }
         }
 
-        public DataTable Carrega_Combo_Personagem()
+        /*public DataTable Carrega_Combo_Personagem(string id)
         {
             try
             {
                 DataTable TabelaPersonagem= new DataTable();
 
-                Script = "select ID,Nome from Personagem where Ativo = 1";
-                Script += "order by Nome";
+                Script = "SELECT ID,nome FROM Personagem where Ativo = 1 and Nome != 'Kazumi'";
+                Script += "ORDER BY CASE WHEN id = "+id+" THEN 0 ELSE 1 END, nome";
 
                 SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
+                
 
                 select.Fill(TabelaPersonagem);
                 FechaConexao();
@@ -153,7 +154,43 @@ namespace Ficha_Jiora.DAO
 
                 throw new Exception("\nErro em Personagem_Data.Carrega_Combo_Personagem:\n" + ex.Message);
             }
+        }*/
+
+        public List<Personagem_Model> Carrega_Combo_Personagem(string id)
+        {
+            try
+            {
+                DataTable TabelaPersonagem = new DataTable();
+
+                string Script = "SELECT ID, nome FROM Personagem WHERE Ativo = 1 AND Nome != 'Kazumi' ORDER BY CASE WHEN id = @id THEN 0 ELSE 1 END, nome";
+
+                using (SqlConnection connection = AbreConexao())
+                {
+                    SqlCommand cmd = new SqlCommand(Script,connection);
+                    cmd.Parameters.AddWithValue("id",id);
+                    
+                    SqlDataAdapter select = new SqlDataAdapter(cmd);
+                    select.Fill(TabelaPersonagem);
+                }
+
+                List<Personagem_Model> listaPersonagens = new List<Personagem_Model>();
+                foreach (DataRow item in TabelaPersonagem.Rows)
+                {
+                    Personagem_Model personagem = new Personagem_Model()
+                    {
+                        Nome = item["Nome"].ToString(),
+                        ID = item["ID"].ToString()
+                    };
+                    listaPersonagens.Add(personagem);
+                }
+                return listaPersonagens;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("\nErro em Personagem_Data.Carrega_Combo_Personagem:\n" + ex.Message);
+            }
         }
+
         public string GetID(string nome)
         {
             try
@@ -223,13 +260,19 @@ namespace Ficha_Jiora.DAO
         {
             try
             {
-                Script = "UPDATE personagem set " + Coluna + " = '" + Valor + "' where ID = " + ID;
+                using (SqlConnection conn = AbreConexao())
+                {
+                    Script = $"UPDATE personagem set {Coluna} = @valor where ID = @id";
 
-                SqlCommand update = new SqlCommand(Script.Replace(',','.'), AbreConexao());
+                    SqlCommand update = new SqlCommand(Script.Replace(',', '.'), conn);
 
-                update.ExecuteNonQuery();
+                    //SqlCommand update = new SqlCommand(Script, conn);
+                    
+                    update.Parameters.Add(new SqlParameter("@valor",Valor));
+                    update.Parameters.Add(new SqlParameter("@id",ID));
 
-                FechaConexao();
+                    update.ExecuteNonQuery();
+                }      
             }
             catch (Exception ex)
             {

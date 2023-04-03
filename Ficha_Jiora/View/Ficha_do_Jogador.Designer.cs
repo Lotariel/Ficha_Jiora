@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
@@ -278,7 +278,7 @@
             this.tabControl1.Location = new System.Drawing.Point(403, 146);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(884, 528);
+            this.tabControl1.Size = new System.Drawing.Size(884, 555);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -291,7 +291,7 @@
             this.Status.Location = new System.Drawing.Point(4, 24);
             this.Status.Name = "Status";
             this.Status.Padding = new System.Windows.Forms.Padding(3);
-            this.Status.Size = new System.Drawing.Size(876, 500);
+            this.Status.Size = new System.Drawing.Size(876, 527);
             this.Status.TabIndex = 0;
             this.Status.Text = "Sobre";
             // 
@@ -332,10 +332,10 @@
             // lbl_potencia
             // 
             this.lbl_potencia.AutoSize = true;
-            this.lbl_potencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_potencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_potencia.Location = new System.Drawing.Point(264, 150);
             this.lbl_potencia.Name = "lbl_potencia";
-            this.lbl_potencia.Size = new System.Drawing.Size(14, 15);
+            this.lbl_potencia.Size = new System.Drawing.Size(13, 15);
             this.lbl_potencia.TabIndex = 37;
             this.lbl_potencia.Text = "0";
             // 
@@ -364,10 +364,10 @@
             // lbl_critico_atributo
             // 
             this.lbl_critico_atributo.AutoSize = true;
-            this.lbl_critico_atributo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_critico_atributo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_critico_atributo.Location = new System.Drawing.Point(98, 150);
             this.lbl_critico_atributo.Name = "lbl_critico_atributo";
-            this.lbl_critico_atributo.Size = new System.Drawing.Size(14, 15);
+            this.lbl_critico_atributo.Size = new System.Drawing.Size(13, 15);
             this.lbl_critico_atributo.TabIndex = 33;
             this.lbl_critico_atributo.Text = "0";
             // 
@@ -396,60 +396,60 @@
             // lbl_aura
             // 
             this.lbl_aura.AutoSize = true;
-            this.lbl_aura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_aura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_aura.Location = new System.Drawing.Point(264, 110);
             this.lbl_aura.Name = "lbl_aura";
-            this.lbl_aura.Size = new System.Drawing.Size(14, 15);
+            this.lbl_aura.Size = new System.Drawing.Size(13, 15);
             this.lbl_aura.TabIndex = 29;
             this.lbl_aura.Text = "0";
             // 
             // lbl_magia
             // 
             this.lbl_magia.AutoSize = true;
-            this.lbl_magia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_magia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_magia.Location = new System.Drawing.Point(98, 110);
             this.lbl_magia.Name = "lbl_magia";
-            this.lbl_magia.Size = new System.Drawing.Size(14, 15);
+            this.lbl_magia.Size = new System.Drawing.Size(13, 15);
             this.lbl_magia.TabIndex = 28;
             this.lbl_magia.Text = "0";
             // 
             // lbl_velocidade
             // 
             this.lbl_velocidade.AutoSize = true;
-            this.lbl_velocidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_velocidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_velocidade.Location = new System.Drawing.Point(264, 70);
             this.lbl_velocidade.Name = "lbl_velocidade";
-            this.lbl_velocidade.Size = new System.Drawing.Size(14, 15);
+            this.lbl_velocidade.Size = new System.Drawing.Size(13, 15);
             this.lbl_velocidade.TabIndex = 27;
             this.lbl_velocidade.Text = "0";
             // 
             // lbl_foco
             // 
             this.lbl_foco.AutoSize = true;
-            this.lbl_foco.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_foco.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_foco.Location = new System.Drawing.Point(98, 70);
             this.lbl_foco.Name = "lbl_foco";
-            this.lbl_foco.Size = new System.Drawing.Size(14, 15);
+            this.lbl_foco.Size = new System.Drawing.Size(13, 15);
             this.lbl_foco.TabIndex = 26;
             this.lbl_foco.Text = "0";
             // 
             // lbl_vitalidade
             // 
             this.lbl_vitalidade.AutoSize = true;
-            this.lbl_vitalidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_vitalidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_vitalidade.Location = new System.Drawing.Point(264, 32);
             this.lbl_vitalidade.Name = "lbl_vitalidade";
-            this.lbl_vitalidade.Size = new System.Drawing.Size(14, 15);
+            this.lbl_vitalidade.Size = new System.Drawing.Size(13, 15);
             this.lbl_vitalidade.TabIndex = 25;
             this.lbl_vitalidade.Text = "0";
             // 
             // lbl_forca
             // 
             this.lbl_forca.AutoSize = true;
-            this.lbl_forca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_forca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_forca.Location = new System.Drawing.Point(97, 32);
             this.lbl_forca.Name = "lbl_forca";
-            this.lbl_forca.Size = new System.Drawing.Size(14, 15);
+            this.lbl_forca.Size = new System.Drawing.Size(13, 15);
             this.lbl_forca.TabIndex = 24;
             this.lbl_forca.Text = "0";
             // 
@@ -611,15 +611,17 @@
             // lbl_raca
             // 
             this.lbl_raca.AutoSize = true;
+            this.lbl_raca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_raca.Location = new System.Drawing.Point(12, 235);
             this.lbl_raca.Name = "lbl_raca";
-            this.lbl_raca.Size = new System.Drawing.Size(15, 15);
+            this.lbl_raca.Size = new System.Drawing.Size(14, 15);
             this.lbl_raca.TabIndex = 11;
             this.lbl_raca.Text = "R";
             // 
             // lbl_nascimento
             // 
             this.lbl_nascimento.AutoSize = true;
+            this.lbl_nascimento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_nascimento.Location = new System.Drawing.Point(11, 200);
             this.lbl_nascimento.Name = "lbl_nascimento";
             this.lbl_nascimento.Size = new System.Drawing.Size(16, 15);
@@ -629,6 +631,7 @@
             // lbl_peso
             // 
             this.lbl_peso.AutoSize = true;
+            this.lbl_peso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_peso.Location = new System.Drawing.Point(12, 160);
             this.lbl_peso.Name = "lbl_peso";
             this.lbl_peso.Size = new System.Drawing.Size(14, 15);
@@ -638,6 +641,7 @@
             // lbl_altura
             // 
             this.lbl_altura.AutoSize = true;
+            this.lbl_altura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_altura.Location = new System.Drawing.Point(12, 120);
             this.lbl_altura.Name = "lbl_altura";
             this.lbl_altura.Size = new System.Drawing.Size(15, 15);
@@ -647,15 +651,17 @@
             // lbl_cabelo
             // 
             this.lbl_cabelo.AutoSize = true;
+            this.lbl_cabelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_cabelo.Location = new System.Drawing.Point(12, 80);
             this.lbl_cabelo.Name = "lbl_cabelo";
-            this.lbl_cabelo.Size = new System.Drawing.Size(14, 15);
+            this.lbl_cabelo.Size = new System.Drawing.Size(15, 15);
             this.lbl_cabelo.TabIndex = 7;
             this.lbl_cabelo.Text = "C";
             // 
             // lbl_olhos
             // 
             this.lbl_olhos.AutoSize = true;
+            this.lbl_olhos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_olhos.Location = new System.Drawing.Point(12, 40);
             this.lbl_olhos.Name = "lbl_olhos";
             this.lbl_olhos.Size = new System.Drawing.Size(16, 15);
@@ -748,7 +754,7 @@
             this.battle.Location = new System.Drawing.Point(4, 24);
             this.battle.Name = "battle";
             this.battle.Padding = new System.Windows.Forms.Padding(3);
-            this.battle.Size = new System.Drawing.Size(876, 500);
+            this.battle.Size = new System.Drawing.Size(876, 527);
             this.battle.TabIndex = 1;
             this.battle.Text = "Batalha";
             this.battle.UseVisualStyleBackColor = true;
@@ -756,7 +762,7 @@
             // img_gif
             // 
             this.img_gif.BackColor = System.Drawing.Color.OldLace;
-            this.img_gif.Location = new System.Drawing.Point(353, 180);
+            this.img_gif.Location = new System.Drawing.Point(353, 331);
             this.img_gif.Name = "img_gif";
             this.img_gif.Size = new System.Drawing.Size(256, 193);
             this.img_gif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -779,22 +785,24 @@
             // label39
             // 
             this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label39.Location = new System.Drawing.Point(257, 48);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(58, 15);
+            this.label39.Size = new System.Drawing.Size(68, 19);
             this.label39.TabIndex = 32;
             this.label39.Text = "Categoria";
             // 
             // cbb_categoria_dano
             // 
             this.cbb_categoria_dano.BackColor = System.Drawing.Color.OldLace;
+            this.cbb_categoria_dano.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbb_categoria_dano.FormattingEnabled = true;
             this.cbb_categoria_dano.Items.AddRange(new object[] {
             "Curto Alcance",
             "A Distância"});
-            this.cbb_categoria_dano.Location = new System.Drawing.Point(110, 42);
+            this.cbb_categoria_dano.Location = new System.Drawing.Point(119, 42);
             this.cbb_categoria_dano.Name = "cbb_categoria_dano";
-            this.cbb_categoria_dano.Size = new System.Drawing.Size(128, 23);
+            this.cbb_categoria_dano.Size = new System.Drawing.Size(128, 25);
             this.cbb_categoria_dano.TabIndex = 31;
             // 
             // CBB_lista_arma
@@ -812,9 +820,10 @@
             // btn_status
             // 
             this.btn_status.BackColor = System.Drawing.Color.OldLace;
-            this.btn_status.Location = new System.Drawing.Point(637, 12);
+            this.btn_status.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_status.Location = new System.Drawing.Point(637, 6);
             this.btn_status.Name = "btn_status";
-            this.btn_status.Size = new System.Drawing.Size(87, 23);
+            this.btn_status.Size = new System.Drawing.Size(87, 29);
             this.btn_status.TabIndex = 30;
             this.btn_status.Text = "Status";
             this.btn_status.UseVisualStyleBackColor = false;
@@ -834,9 +843,10 @@
             // btn_iniciativa
             // 
             this.btn_iniciativa.BackColor = System.Drawing.Color.OldLace;
-            this.btn_iniciativa.Location = new System.Drawing.Point(434, 14);
+            this.btn_iniciativa.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_iniciativa.Location = new System.Drawing.Point(434, 6);
             this.btn_iniciativa.Name = "btn_iniciativa";
-            this.btn_iniciativa.Size = new System.Drawing.Size(75, 23);
+            this.btn_iniciativa.Size = new System.Drawing.Size(77, 31);
             this.btn_iniciativa.TabIndex = 29;
             this.btn_iniciativa.Text = "Iniciativa";
             this.btn_iniciativa.UseVisualStyleBackColor = false;
@@ -845,9 +855,10 @@
             // label36
             // 
             this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label36.Location = new System.Drawing.Point(257, 18);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(77, 15);
+            this.label36.Size = new System.Drawing.Size(91, 19);
             this.label36.TabIndex = 28;
             this.label36.Text = "Tipo de Dano";
             // 
@@ -864,6 +875,7 @@
             // cbb_tipo_dano
             // 
             this.cbb_tipo_dano.BackColor = System.Drawing.Color.OldLace;
+            this.cbb_tipo_dano.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbb_tipo_dano.FormattingEnabled = true;
             this.cbb_tipo_dano.Items.AddRange(new object[] {
             "Físico",
@@ -872,9 +884,9 @@
             "Perfurante Mágico",
             "Dano Real Físico",
             "Dano Real Mágico"});
-            this.cbb_tipo_dano.Location = new System.Drawing.Point(110, 12);
+            this.cbb_tipo_dano.Location = new System.Drawing.Point(119, 12);
             this.cbb_tipo_dano.Name = "cbb_tipo_dano";
-            this.cbb_tipo_dano.Size = new System.Drawing.Size(128, 23);
+            this.cbb_tipo_dano.Size = new System.Drawing.Size(128, 25);
             this.cbb_tipo_dano.TabIndex = 27;
             // 
             // img_charm_effect
@@ -915,7 +927,7 @@
             this.groupBox6.Controls.Add(this.CBB_nome_personagem);
             this.groupBox6.Controls.Add(this.btn_consumir);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox6.Location = new System.Drawing.Point(12, 415);
+            this.groupBox6.Location = new System.Drawing.Point(12, 437);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(282, 79);
             this.groupBox6.TabIndex = 10;
@@ -925,23 +937,26 @@
             // label24
             // 
             this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label24.Location = new System.Drawing.Point(0, 56);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(34, 15);
+            this.label24.Size = new System.Drawing.Size(39, 19);
             this.label24.TabIndex = 30;
             this.label24.Text = "Item";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label23.Location = new System.Drawing.Point(0, 26);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(32, 15);
+            this.label23.Size = new System.Drawing.Size(40, 19);
             this.label23.TabIndex = 29;
             this.label23.Text = "Alvo";
             // 
             // CMB_consumivel
             // 
+            this.CMB_consumivel.BackColor = System.Drawing.Color.OldLace;
             this.CMB_consumivel.FormattingEnabled = true;
             this.CMB_consumivel.Location = new System.Drawing.Point(46, 52);
             this.CMB_consumivel.Name = "CMB_consumivel";
@@ -963,7 +978,7 @@
             // btn_consumir
             // 
             this.btn_consumir.BackColor = System.Drawing.Color.OldLace;
-            this.btn_consumir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_consumir.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_consumir.Location = new System.Drawing.Point(196, 26);
             this.btn_consumir.Name = "btn_consumir";
             this.btn_consumir.Size = new System.Drawing.Size(80, 42);
@@ -1154,7 +1169,7 @@
             this.groupBox4.Controls.Add(this.cbb_habilidade);
             this.groupBox4.Controls.Add(this.btn_utilizar_magia);
             this.groupBox4.Controls.Add(this.btn_utiliza_habilidade);
-            this.groupBox4.Location = new System.Drawing.Point(12, 221);
+            this.groupBox4.Location = new System.Drawing.Point(12, 243);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(282, 188);
             this.groupBox4.TabIndex = 8;
@@ -1163,20 +1178,20 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label38.Location = new System.Drawing.Point(9, 99);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(45, 15);
+            this.label38.Size = new System.Drawing.Size(57, 19);
             this.label38.TabIndex = 36;
             this.label38.Text = "Magias";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label37.Location = new System.Drawing.Point(6, 19);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(70, 15);
+            this.label37.Size = new System.Drawing.Size(89, 19);
             this.label37.TabIndex = 35;
             this.label37.Text = "Habilidades";
             // 
@@ -1203,9 +1218,10 @@
             // btn_utilizar_magia
             // 
             this.btn_utilizar_magia.BackColor = System.Drawing.Color.OldLace;
+            this.btn_utilizar_magia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_utilizar_magia.Location = new System.Drawing.Point(4, 150);
             this.btn_utilizar_magia.Name = "btn_utilizar_magia";
-            this.btn_utilizar_magia.Size = new System.Drawing.Size(117, 23);
+            this.btn_utilizar_magia.Size = new System.Drawing.Size(117, 32);
             this.btn_utilizar_magia.TabIndex = 18;
             this.btn_utilizar_magia.Text = "Utilizar Magias";
             this.btn_utilizar_magia.UseVisualStyleBackColor = false;
@@ -1214,9 +1230,10 @@
             // btn_utiliza_habilidade
             // 
             this.btn_utiliza_habilidade.BackColor = System.Drawing.Color.OldLace;
+            this.btn_utiliza_habilidade.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_utiliza_habilidade.Location = new System.Drawing.Point(4, 65);
             this.btn_utiliza_habilidade.Name = "btn_utiliza_habilidade";
-            this.btn_utiliza_habilidade.Size = new System.Drawing.Size(117, 23);
+            this.btn_utiliza_habilidade.Size = new System.Drawing.Size(147, 31);
             this.btn_utiliza_habilidade.TabIndex = 9;
             this.btn_utiliza_habilidade.Text = "Utilizar Habilidades";
             this.btn_utiliza_habilidade.UseVisualStyleBackColor = false;
@@ -1242,9 +1259,9 @@
             this.groupBox3.Controls.Add(this.btn_Atacar);
             this.groupBox3.Controls.Add(this.btn_limit);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(11, 100);
+            this.groupBox3.Location = new System.Drawing.Point(11, 113);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(283, 115);
+            this.groupBox3.Size = new System.Drawing.Size(283, 129);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ações";
@@ -1262,10 +1279,10 @@
             // btn_defender
             // 
             this.btn_defender.BackColor = System.Drawing.Color.OldLace;
-            this.btn_defender.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_defender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_defender.Location = new System.Drawing.Point(99, 52);
             this.btn_defender.Name = "btn_defender";
-            this.btn_defender.Size = new System.Drawing.Size(102, 23);
+            this.btn_defender.Size = new System.Drawing.Size(102, 30);
             this.btn_defender.TabIndex = 2;
             this.btn_defender.Text = "Defender";
             this.btn_defender.UseVisualStyleBackColor = false;
@@ -1274,10 +1291,10 @@
             // btn_postura
             // 
             this.btn_postura.BackColor = System.Drawing.Color.OldLace;
-            this.btn_postura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_postura.Location = new System.Drawing.Point(6, 81);
+            this.btn_postura.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_postura.Location = new System.Drawing.Point(7, 89);
             this.btn_postura.Name = "btn_postura";
-            this.btn_postura.Size = new System.Drawing.Size(87, 23);
+            this.btn_postura.Size = new System.Drawing.Size(87, 28);
             this.btn_postura.TabIndex = 2;
             this.btn_postura.Text = "Postura";
             this.btn_postura.UseVisualStyleBackColor = false;
@@ -1287,10 +1304,10 @@
             // btn_esquiva
             // 
             this.btn_esquiva.BackColor = System.Drawing.Color.OldLace;
-            this.btn_esquiva.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_esquiva.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_esquiva.Location = new System.Drawing.Point(207, 52);
             this.btn_esquiva.Name = "btn_esquiva";
-            this.btn_esquiva.Size = new System.Drawing.Size(65, 23);
+            this.btn_esquiva.Size = new System.Drawing.Size(70, 30);
             this.btn_esquiva.TabIndex = 1;
             this.btn_esquiva.Text = "Esquivar";
             this.btn_esquiva.UseVisualStyleBackColor = false;
@@ -1299,10 +1316,10 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.OldLace;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(207, 81);
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button7.Location = new System.Drawing.Point(99, 89);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(65, 23);
+            this.button7.Size = new System.Drawing.Size(102, 28);
             this.button7.TabIndex = 1;
             this.button7.Text = "Summon";
             this.button7.UseVisualStyleBackColor = false;
@@ -1310,11 +1327,11 @@
             // btn_Atacar
             // 
             this.btn_Atacar.BackColor = System.Drawing.Color.OldLace;
-            this.btn_Atacar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Atacar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Atacar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Atacar.Location = new System.Drawing.Point(6, 52);
             this.btn_Atacar.Name = "btn_Atacar";
-            this.btn_Atacar.Size = new System.Drawing.Size(87, 23);
+            this.btn_Atacar.Size = new System.Drawing.Size(87, 30);
             this.btn_Atacar.TabIndex = 0;
             this.btn_Atacar.Text = "Atacar";
             this.btn_Atacar.UseVisualStyleBackColor = false;
@@ -1323,10 +1340,10 @@
             // btn_limit
             // 
             this.btn_limit.BackColor = System.Drawing.Color.OldLace;
-            this.btn_limit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_limit.Location = new System.Drawing.Point(99, 81);
+            this.btn_limit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_limit.Location = new System.Drawing.Point(207, 88);
             this.btn_limit.Name = "btn_limit";
-            this.btn_limit.Size = new System.Drawing.Size(102, 23);
+            this.btn_limit.Size = new System.Drawing.Size(70, 28);
             this.btn_limit.TabIndex = 0;
             this.btn_limit.Text = "Limit";
             this.btn_limit.UseVisualStyleBackColor = false;
@@ -1345,22 +1362,26 @@
             // btn_reduzir_mp
             // 
             this.btn_reduzir_mp.BackColor = System.Drawing.Color.OldLace;
-            this.btn_reduzir_mp.Location = new System.Drawing.Point(18, 71);
+            this.btn_reduzir_mp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_reduzir_mp.Location = new System.Drawing.Point(18, 70);
             this.btn_reduzir_mp.Name = "btn_reduzir_mp";
-            this.btn_reduzir_mp.Size = new System.Drawing.Size(86, 23);
+            this.btn_reduzir_mp.Size = new System.Drawing.Size(93, 24);
             this.btn_reduzir_mp.TabIndex = 3;
             this.btn_reduzir_mp.Text = "Reduzir MP";
+            this.btn_reduzir_mp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_reduzir_mp.UseVisualStyleBackColor = false;
             this.btn_reduzir_mp.Click += new System.EventHandler(this.btn_reduzir_mp_Click);
             // 
             // btn_reduzir_hp
             // 
             this.btn_reduzir_hp.BackColor = System.Drawing.Color.OldLace;
-            this.btn_reduzir_hp.Location = new System.Drawing.Point(18, 42);
+            this.btn_reduzir_hp.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_reduzir_hp.Location = new System.Drawing.Point(18, 41);
             this.btn_reduzir_hp.Name = "btn_reduzir_hp";
-            this.btn_reduzir_hp.Size = new System.Drawing.Size(86, 23);
+            this.btn_reduzir_hp.Size = new System.Drawing.Size(93, 25);
             this.btn_reduzir_hp.TabIndex = 2;
             this.btn_reduzir_hp.Text = "Reduzir HP";
+            this.btn_reduzir_hp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_reduzir_hp.UseVisualStyleBackColor = false;
             this.btn_reduzir_hp.Click += new System.EventHandler(this.btn_reduzir_hp_Click);
             // 
@@ -1375,12 +1396,12 @@
             // txt_batalha
             // 
             this.txt_batalha.BackColor = System.Drawing.Color.OldLace;
-            this.txt_batalha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.txt_batalha.Location = new System.Drawing.Point(379, 48);
+            this.txt_batalha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.txt_batalha.Location = new System.Drawing.Point(353, 43);
             this.txt_batalha.Multiline = true;
             this.txt_batalha.Name = "txt_batalha";
             this.txt_batalha.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_batalha.Size = new System.Drawing.Size(190, 111);
+            this.txt_batalha.Size = new System.Drawing.Size(256, 238);
             this.txt_batalha.TabIndex = 0;
             // 
             // pericia
@@ -1410,7 +1431,7 @@
             this.pericia.Controls.Add(this.btn_teste__aur);
             this.pericia.Location = new System.Drawing.Point(4, 24);
             this.pericia.Name = "pericia";
-            this.pericia.Size = new System.Drawing.Size(876, 500);
+            this.pericia.Size = new System.Drawing.Size(876, 527);
             this.pericia.TabIndex = 2;
             this.pericia.Text = "Testes";
             this.pericia.UseVisualStyleBackColor = true;
@@ -1491,17 +1512,17 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PapayaWhip;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Teste,
@@ -1513,13 +1534,13 @@
             this.dataGridView1.GridColor = System.Drawing.Color.Goldenrod;
             this.dataGridView1.Location = new System.Drawing.Point(15, 8);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.Height = 25;
@@ -1545,8 +1566,8 @@
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.Nome.DataPropertyName = "Nome";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Nome.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Nome.DefaultCellStyle = dataGridViewCellStyle3;
             this.Nome.HeaderText = "Nome";
             this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
@@ -1556,8 +1577,8 @@
             // Valor
             // 
             this.Valor.DataPropertyName = "Valor";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle4;
             this.Valor.HeaderText = "CDS (%)";
             this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
@@ -1579,8 +1600,8 @@
             // 
             this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.descricao.DataPropertyName = "Descrição";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.descricao.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.descricao.DefaultCellStyle = dataGridViewCellStyle5;
             this.descricao.HeaderText = "Descrição";
             this.descricao.MinimumWidth = 6;
             this.descricao.Name = "descricao";
@@ -1755,7 +1776,7 @@
             this.inventario.Controls.Add(this.lbl_tonz);
             this.inventario.Location = new System.Drawing.Point(4, 24);
             this.inventario.Name = "inventario";
-            this.inventario.Size = new System.Drawing.Size(876, 500);
+            this.inventario.Size = new System.Drawing.Size(876, 527);
             this.inventario.TabIndex = 3;
             this.inventario.Text = "Bolsa";
             this.inventario.UseVisualStyleBackColor = true;
@@ -1837,7 +1858,7 @@
             this.Mapa.Controls.Add(this.label40);
             this.Mapa.Location = new System.Drawing.Point(4, 24);
             this.Mapa.Name = "Mapa";
-            this.Mapa.Size = new System.Drawing.Size(876, 500);
+            this.Mapa.Size = new System.Drawing.Size(876, 527);
             this.Mapa.TabIndex = 4;
             this.Mapa.Text = "Equipamento";
             this.Mapa.UseVisualStyleBackColor = true;
@@ -1950,7 +1971,7 @@
             this.Log.Location = new System.Drawing.Point(4, 24);
             this.Log.Name = "Log";
             this.Log.Padding = new System.Windows.Forms.Padding(3);
-            this.Log.Size = new System.Drawing.Size(876, 500);
+            this.Log.Size = new System.Drawing.Size(876, 527);
             this.Log.TabIndex = 5;
             this.Log.Text = "log";
             this.Log.UseVisualStyleBackColor = true;
@@ -1961,14 +1982,14 @@
             this.dtg_log.AllowUserToDeleteRows = false;
             this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dtg_log.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_log.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtg_log.Location = new System.Drawing.Point(6, 6);
@@ -1976,8 +1997,8 @@
             this.dtg_log.ReadOnly = true;
             this.dtg_log.RowHeadersVisible = false;
             this.dtg_log.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LemonChiffon;
-            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dtg_log.RowTemplate.Height = 25;
             this.dtg_log.Size = new System.Drawing.Size(864, 488);
             this.dtg_log.TabIndex = 0;
@@ -2403,9 +2424,9 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(750, 680);
+            this.pictureBox3.Location = new System.Drawing.Point(750, 707);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(100, 23);
             this.pictureBox3.TabIndex = 34;
             this.pictureBox3.TabStop = false;
             // 
