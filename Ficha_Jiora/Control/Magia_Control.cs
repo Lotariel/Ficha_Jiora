@@ -25,6 +25,12 @@ namespace Ficha_Jiora.Control
         public Magia_Model Carrega_Magia(string IDMagia)
         {
             return magia_Data.Carrega_Magia(IDMagia);
-        }        
+        }
+
+        public DataTable Carrega_Combo_Magia_Summon(Summon_Model modelo)
+        {
+            return magia_Data.Carrega_Combo_Magia_Summon(modelo);
+        }
+        
     }
 }

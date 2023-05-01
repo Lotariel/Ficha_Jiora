@@ -1,5 +1,4 @@
 ﻿using Ficha_Jiora.Control;
-using Ficha_Jiora.DAO;
 using Ficha_Jiora.Model;
 using System;
 using System.Collections.Generic;
@@ -37,13 +36,16 @@ namespace Ficha_Jiora.View
         private Evento_Estigma evento_estigma = new Evento_Estigma();
         private Habilidade_Control habilidade_Control = new Habilidade_Control();
         private Equipamento_Model arma_Model = new Equipamento_Model();
+        private Roupas_Model roupas_Model = new Roupas_Model();
+        private Roupas_Control roupas_Control = new Roupas_Control();
         private Equipamento_Control arma_Control = new Equipamento_Control();
         private Cosumiveis_Control cosumiveis_Control = new Cosumiveis_Control();
+        private Summon_Control summon_Control = new Summon_Control();
         private Batalha_Control batalha;
         private int d100 = 0, contador_lb = 0;
-        
+
         public string IDPersonagem { get; set; }
-        
+
         public Ficha_do_Jogador()
         {
             InitializeComponent();
@@ -152,6 +154,21 @@ namespace Ficha_Jiora.View
                 throw new Exception(ex.Message);
             }
         }
+
+        private void Carrega_Roupa()
+        {
+            try
+            {
+                string idRoupa = roupas_Control.Roupa_Equipada(personagem_Model.ID);
+                roupas_Model = roupas_Control.Carrega_Roupa_Equipada(idRoupa);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
         private void Ficha_do_Jogador_Load(object sender, EventArgs e)
         {
             Carrega_Tela(IDPersonagem);
@@ -164,7 +181,7 @@ namespace Ficha_Jiora.View
             tabControl1.Enabled = true;
             ModifyProgressBarColor.SetState(PB_MP, 3);
             ModifyProgressBarColor.SetState(PG_Limit, 2);
-            
+
 
         }
         private void Ficha_do_Jogador_FormClosing(object sender, FormClosingEventArgs e)
@@ -391,7 +408,7 @@ namespace Ficha_Jiora.View
             {
                 MessageBox.Show("Erro ao realizar o teste:\n " + ex.Message, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }        
+        }
 
         private void btn_salvar_pericia_Click(object sender, EventArgs e)
         {
@@ -974,7 +991,7 @@ namespace Ficha_Jiora.View
         #region INFORMAÇÕES DA ABA BATALHA
 
         private void Carrega_Batalha()
-        {            
+        {
             CBB_alvo.Text = "Selecione";
             //CBB_Elementos.Text = "Selecione";
             txt_reduzir.Maximum = 999999;
@@ -1034,11 +1051,11 @@ namespace Ficha_Jiora.View
 
                 if (btn_postura.Text == "Protector")
                 {
-                    btn_postura.Text = "Protector";                    
+                    btn_postura.Text = "Protector";
                 }
                 else
                 {
-                    btn_postura.Text = "Predator";                    
+                    btn_postura.Text = "Predator";
                 }
 
                 if (contador_lb < 101)
@@ -1120,10 +1137,10 @@ namespace Ficha_Jiora.View
         {
 
             try
-            {                
+            {
                 CBB_nome_personagem.DataSource = batalha.Carrega_Combo_Personagem(personagem_Model.ID);
                 CBB_nome_personagem.ValueMember = "ID";
-                CBB_nome_personagem.DisplayMember = "Nome";                
+                CBB_nome_personagem.DisplayMember = "Nome";
             }
             catch (Exception ex)
             {
@@ -1151,7 +1168,7 @@ namespace Ficha_Jiora.View
             try
             {
                 cbb_ataque.DataSource = batalha.Carrega_Combo_Ataques(personagem_Model);
-                
+
                 cbb_ataque.DisplayMember = "Nome";
                 cbb_ataque.ValueMember = "Nome";
 
@@ -1258,7 +1275,7 @@ namespace Ficha_Jiora.View
                         }
 
 
-                        if (habilidade.HIT == 1)
+                        if (habilidade.HIT <= 1)
                         {
                             txt_batalha.Text += "Dano: " + dano + " " + tipodano + "\r\n";
                         }
@@ -1278,7 +1295,14 @@ namespace Ficha_Jiora.View
                         txt_batalha.Text += descricao;
                         Insertlog("Utilizou a Habilidade: " + habilidade.Nome);
                         Carrega_Tela(personagem_Model.ID);
-                        
+
+                        if (habilidade.Nome == "Data Drain")
+                        {
+                            DataDrain_View form = new DataDrain_View();
+                            form.idpersonagem = personagem_Model.ID;
+                            form.ShowDialog();
+                            Carrega_Tela(personagem_Model.ID);
+                        }
                     }
                     else
                     {
@@ -1392,7 +1416,7 @@ namespace Ficha_Jiora.View
         }
         private void CBB_nome_personagem_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void Btn_simular_Click(object sender, EventArgs e)
         {
@@ -1712,7 +1736,7 @@ namespace Ficha_Jiora.View
                 string textoataque = "";
                 string LB1 = "True Mikill Dugr (Braver)", LB2 = "Wolf Fang(Cross-Slash)", LB3 = "Garudas Rage(Finish Touch)";
 
-                
+
                 if (efeitos.Turnos_Encantamento > 0)
                 {
                     ataque.TipoDano = " do elemento " + efeitos.Elemento_Encantado;
@@ -1905,7 +1929,8 @@ namespace Ficha_Jiora.View
             {
                 int Inciativa = Rolar.D10() + personagem_Model.Velocidade;
                 AdicionaTurnos();
-                txt_batalha.Text = "Valor da iniciativa: " + Inciativa;
+                txt_batalha.Text = "Turno " + personagem_Model.Turnos + "\r\n";
+                txt_batalha.Text += "Valor da iniciativa: " + Inciativa;
                 Insertlog("Teve o resultado de " + Inciativa + " no teste de iniciativa.");
                 Efeitos_Model efeitos_Model = new Efeitos_Model();
                 efeitos_Model = batalha.Carrega_Efeito(personagem_Model.ID);
@@ -2053,7 +2078,7 @@ namespace Ficha_Jiora.View
                         txt_batalha.Text = personagem_Model.Nome + " elevou sua Aura em " + contador_lb + "%";
                         Insertlog("Carregou " + contador_lb + "% do seu Limit Break.");
                         Carrega_Tela(personagem_Model.ID);
-                        
+
                     }
                     break;
                 case "4":
@@ -2110,7 +2135,7 @@ namespace Ficha_Jiora.View
                 {
                     Carrega_Combo_Magia();
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -2148,7 +2173,7 @@ namespace Ficha_Jiora.View
                     contador_lb -= Rolar.D25();
                     if (contador_lb < 0)
                     {
-                        contador_lb = 0;                      
+                        contador_lb = 0;
                         Carrega_Tela(personagem_Model.ID);
                     }
                     PG_Limit.Value = contador_lb;
@@ -2543,10 +2568,8 @@ namespace Ficha_Jiora.View
                         cosumiveis_Control.Reduz_Quantidade_Consumivel("8", personagem_Model.ID);
                         Insertlog("Usou: Sleep em " + personagem_Model.Nome);
                         break;
-
-
                 }
-                
+
                 Cursor.Current = Cursors.Default;
                 Carrega_Tela(personagem_Model.ID);
             }
@@ -2565,9 +2588,38 @@ namespace Ficha_Jiora.View
             {
                 string ARMAEQUIPADA = arma_Control.Arma_Equipada(personagem_Model.ID).ToString();
                 arma_Model = arma_Control.Carrega_Arma_Equipada(ARMAEQUIPADA);
+
+                string idRoupa = roupas_Control.Roupa_Equipada(personagem_Model.ID);
+                roupas_Model = roupas_Control.Carrega_Roupa_Equipada(idRoupa);
+
                 lbl_arma_equipada.Text = arma_Model.NOME;
                 lbl_arma_equipada_2.Text = arma_Model.NOME;
+                lbl_nomeroupa.Text = roupas_Model.Nome;
+                CarregaDescricaoRoupa();
+                if (personagem_Model.Defesa >= 124)
+                {
+                    lbl_tonzarm.Visible = false;
+                    bnt_uparm.Visible = false;
+                    label46.Visible = false;
+                }
+                else
+                {
+                    lbl_tonzarm.Text = (personagem_Model.Defesa * 500).ToString();
+                }
+
+                if (personagem_Model.Resistencia >= 120)
+                {
+                    btn_upres.Visible = false;
+                    lbl_tonzres.Visible = false;
+                    label27.Visible = false;
+                }
+                else
+                {
+                    lbl_tonzres.Text = (personagem_Model.Resistencia * 500).ToString();
+                }
+
                 Carrega_Combo_Arma();
+                CarregaComboRoupa();
                 Carrega_Imagem_Arma();
 
             }
@@ -2578,17 +2630,62 @@ namespace Ficha_Jiora.View
         }
         private void Carrega_Combo_Arma()
         {
-            CBB_lista_arma.DataSource = arma_Control.Carrega_Combo_Arma(personagem_Model.ID);
+            DataTable dt = arma_Control.Carrega_Combo_Arma(personagem_Model.ID);
+
+            DataRow dr = dt.NewRow();
+            dr["ID"] = 0;
+            dr["Nome"] = "Selecione";
+            dt.Rows.InsertAt(dr, 0);
+
+
+            CBB_lista_arma.DataSource = dt;
             CBB_lista_arma.DisplayMember = "Nome";
             CBB_lista_arma.ValueMember = "ID";
 
-            cbb_arma_2.DataSource = arma_Control.Carrega_Combo_Arma(personagem_Model.ID);
+            cbb_arma_2.DataSource = dt;
             cbb_arma_2.DisplayMember = "Nome";
             cbb_arma_2.ValueMember = "ID";
+        }
+        private void CarregaComboRoupa()
+        {
+            try
+            {
+                /* CMB_roupa.DataSource = roupas_Control.Carrega_Combo_Roupa(IDPersonagem);
+                 CMB_roupa.DisplayMember = "info";
+                 CMB_roupa.ValueMember = "ID";*/
+
+                // Carrega os dados do banco de dados em um DataTable
+                DataTable dt = roupas_Control.Carrega_Combo_Roupa(IDPersonagem);
+
+                // Adiciona um item "Selecione" ao início do DataTable
+                DataRow dr = dt.NewRow();
+                dr["ID"] = 0;
+                dr["info"] = "Selecione";
+                dt.Rows.InsertAt(dr, 0);
+
+                // Define o DataSource e as propriedades DisplayMember e ValueMember do ComboBox
+                CMB_roupa.DataSource = dt;
+                CMB_roupa.DisplayMember = "info";
+                CMB_roupa.ValueMember = "ID";
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        private void CarregaDescricaoRoupa()
+        {
+            txt_desc_roupa.Text = "Descrição Equipamento\r\n\r\n";
+            txt_desc_roupa.Text += "Defesa: " + roupas_Model.Defesa + "\r\nResistencia: " + roupas_Model.Resistencia;
+            txt_desc_roupa.Text += "\r\nSlot para Core:  "+ roupas_Model.SlotCore;
+            txt_desc_roupa.Text += "\r\n\r\nSobre:\r\n"+ roupas_Model.Descricao;
+
         }
         private void Carrega_Imagem_Arma()
         {
             img_arma.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Armas\\" + arma_Model.IMAGEM);
+            img_roupa.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "\\Image\\Roupas\\" + roupas_Model.Imagem);
         }
         private void btn_troca_arama_Click(object sender, EventArgs e)
         {
@@ -2610,6 +2707,91 @@ namespace Ficha_Jiora.View
                 MessageBox.Show("Falhar ao trocar de arma: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
+
+        private void btn_summon_Click(object sender, EventArgs e)
+        {
+            NomeSummons_View summon_View = new NomeSummons_View();
+            summon_View.IDPersonagem = personagem_Model.ID;
+            summon_View.ShowDialog();
+        }
+
+        private void bnt_uparm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int precoAtual = Convert.ToInt32(lbl_tonzarm.Text);
+                string texto = "Você deseja consumir " + precoAtual + " Tonz para aumentar sua Defesa em +1 ponto?";
+
+                if (personagem_Model.Tonz >= precoAtual)
+                {
+                    var dialog = MessageBox.Show(texto, "Defense UP", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dialog == DialogResult.Yes)
+                    {
+                        personagem_Control.GerenciaTonz(0, precoAtual, personagem_Model);
+                        roupas_Control.DefesaUP(roupas_Model);
+                        MessageBox.Show("Sua Defesa foi aumentada em +1!", "Defense UP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Insertlog("Aumentou a Defesa em +1 Ponto. De " + personagem_Model.Defesa + " para " + (personagem_Model.Defesa + 1));
+                        Carrega_Tela(personagem_Model.ID);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("você não possui Tonz suficiente.", "Alert");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Alert");
+            }
+
+        }
+
+        private void btn_upres_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int precoAtual = Convert.ToInt32(lbl_tonzres.Text);
+                string texto = "Você deseja consumir " + precoAtual + " Tonz para aumentar sua Resistencia a Mágia em +1 ponto?";
+
+                if (personagem_Model.Tonz >= precoAtual)
+                {
+                    var dialog = MessageBox.Show(texto, "Resistence UP", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dialog == DialogResult.Yes)
+                    {
+                        personagem_Control.GerenciaTonz(0, precoAtual, personagem_Model);
+                        roupas_Control.ResistenciaUP(roupas_Model);
+                        MessageBox.Show("Sua Resistencia a Mágia foi aumentada em +1!", "Resistence UP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Insertlog("Aumentou a Resistencia a Mágia em +1 Ponto. De " + personagem_Model.Resistencia + " para " + (personagem_Model.Resistencia + 1));
+                        Carrega_Tela(personagem_Model.ID);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("você não possui Tonz suficiente.", "Alert");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Alert");
+            }
+        }
+
+        private void btn_trocaroupa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                roupas_Control.TrocarRoupa(roupas_Model.ID.ToString(), CMB_roupa.SelectedValue.ToString());
+                Carrega_Tela(IDPersonagem);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Você não possui Roupa para trocar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
         private void btn_troca_arma_Click(object sender, EventArgs e)
         {
             try
@@ -2637,7 +2819,7 @@ namespace Ficha_Jiora.View
             {
                 MessageBox.Show("Falha ao trocar de arma: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-        }        
+        }
         #endregion
     }
 

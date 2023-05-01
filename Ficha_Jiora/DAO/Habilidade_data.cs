@@ -51,6 +51,40 @@ namespace Ficha_Jiora.DAO
             }
         }
 
+        public DataTable Carrega_Combo_Habilidade_summon(Summon_Model modelo)
+        {
+            try
+            {
+                DataTable TabelaHabilidade = new DataTable();
+
+                Script = "select h.ID,Concat(H.Nome,' - ',H.Valor_Custo,' ',H.TIpo_Custo) as Nome  ";
+                Script += "from Habilidade_Summon HP inner join Habilidade H ";
+                Script += "on H.ID = HP.IDHabilidade ";
+                Script += "where HP.IDSummon = " + modelo.ID;
+                
+
+                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
+
+                select.Fill(TabelaHabilidade);
+                FechaConexao();
+
+                foreach (DataRow item in TabelaHabilidade.Rows)
+                {
+                    habilidade_Model = new Habilidade_Model()
+                    {
+                        Nome = item["Nome"].ToString(),
+                        ID = item["ID"].ToString(),
+                    };
+                }
+                return TabelaHabilidade;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("\nErro em Habilidade_data.Carrega_Combo_Habilidade_summon:\n" + ex.Message);
+            }
+        }
+
         public Habilidade_Model Carrega_Habilidade(string IDHabilidade)
         {
             try

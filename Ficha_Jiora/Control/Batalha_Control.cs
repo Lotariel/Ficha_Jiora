@@ -564,6 +564,11 @@ namespace Ficha_Jiora.Control
             return habilidade_Data.Carrega_Combo_Habilidade(personagem, Postura,Arma);
         }
 
+        public DataTable Carrega_Combo_Habilidade_summon(Summon_Model modelo)
+        {
+            return habilidade_Data.Carrega_Combo_Habilidade_summon(modelo);
+        }
+
         public Habilidade_Model Carrega_Habilidade(string IDHabilidade)
         {
             return habilidade_Data.Carrega_Habilidade(IDHabilidade);
@@ -714,7 +719,11 @@ namespace Ficha_Jiora.Control
         {
             return magia_Control.Carrega_Combo_Magia(personagem);
         }
-
+        public DataTable Carrega_Combo_Magia_Summon(Summon_Model modelo)
+        {
+            return magia_Control.Carrega_Combo_Magia_Summon(modelo);
+        }
+               
         public Magia_Model Carrega_Magia(string IDMagia)
         {
             return magia_Control.Carrega_Magia(IDMagia);

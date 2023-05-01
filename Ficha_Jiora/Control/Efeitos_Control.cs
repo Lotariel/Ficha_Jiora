@@ -13,7 +13,8 @@ namespace Ficha_Jiora.Control
     {
         private Efeitos_Data efeitos_Data = new Efeitos_Data();
         private Efeitos_Model efeitos_Model = new Efeitos_Model();
-        private Personagem_Control personagem_Control = new Personagem_Control();
+        private Personagem_Control personagem_Control = new Personagem_Control();        
+        private Batalha_Control batalha;
 
         private Random random = new Random();
         public Efeitos_Model Carrega_Efeito(string IDPersonagem)
@@ -235,6 +236,30 @@ namespace Ficha_Jiora.Control
         public void AdicionaEncantamento(string NomeElemento, int Turnos, string IDpersonagem)
         {
             efeitos_Data.AdicionaEncantamento(NomeElemento, Turnos, IDpersonagem);
+        }
+
+        public void AgilityUP(Personagem_Model personagem, int ativarOuDesativar)
+        {
+            try
+            {  //Preciso terminar essa função pois não esta pronta,
+                if (ativarOuDesativar == 1)
+                {
+                    batalha = new Batalha_Control(personagem);
+                    int precisao = batalha.Precisao();
+                    double modprecisao = Math.Ceiling(precisao * 0.25);
+                    personagem_Control.AlteraPrecMod(modprecisao, personagem.ID);
+                }
+                else
+                {
+
+                }
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
 

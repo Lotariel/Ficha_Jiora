@@ -76,5 +76,7 @@ namespace Ficha_Jiora.Control
                 throw new Exception(ex.Message);
             }
         }
+
+        
     }
 }

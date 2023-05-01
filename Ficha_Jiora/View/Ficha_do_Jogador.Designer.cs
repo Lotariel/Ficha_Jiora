@@ -126,7 +126,7 @@
             this.btn_defender = new System.Windows.Forms.Button();
             this.btn_postura = new System.Windows.Forms.Button();
             this.btn_esquiva = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_summon = new System.Windows.Forms.Button();
             this.btn_Atacar = new System.Windows.Forms.Button();
             this.btn_limit = new System.Windows.Forms.Button();
             this.img_poison_effect = new System.Windows.Forms.PictureBox();
@@ -171,16 +171,22 @@
             this.img_tonz = new System.Windows.Forms.PictureBox();
             this.lbl_tonz = new System.Windows.Forms.Label();
             this.Mapa = new System.Windows.Forms.TabPage();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txt_desc_roupa = new System.Windows.Forms.TextBox();
+            this.txt_desc_arma = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.lbl_tonzres = new System.Windows.Forms.Label();
+            this.lbl_tonzarm = new System.Windows.Forms.Label();
+            this.btn_upres = new System.Windows.Forms.Button();
+            this.bnt_uparm = new System.Windows.Forms.Button();
+            this.lbl_nomeroupa = new System.Windows.Forms.Label();
+            this.btn_trocaroupa = new System.Windows.Forms.Button();
+            this.CMB_roupa = new System.Windows.Forms.ComboBox();
             this.img_roupa = new System.Windows.Forms.PictureBox();
             this.img_arma = new System.Windows.Forms.PictureBox();
             this.btn_troca_arma = new System.Windows.Forms.Button();
             this.cbb_arma_2 = new System.Windows.Forms.ComboBox();
             this.lbl_arma_equipada_2 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
             this.Log = new System.Windows.Forms.TabPage();
             this.dtg_log = new System.Windows.Forms.DataGridView();
             this.ptb_trance = new System.Windows.Forms.PictureBox();
@@ -1255,7 +1261,7 @@
             this.groupBox3.Controls.Add(this.btn_defender);
             this.groupBox3.Controls.Add(this.btn_postura);
             this.groupBox3.Controls.Add(this.btn_esquiva);
-            this.groupBox3.Controls.Add(this.button7);
+            this.groupBox3.Controls.Add(this.btn_summon);
             this.groupBox3.Controls.Add(this.btn_Atacar);
             this.groupBox3.Controls.Add(this.btn_limit);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -1313,16 +1319,17 @@
             this.btn_esquiva.UseVisualStyleBackColor = false;
             this.btn_esquiva.Click += new System.EventHandler(this.btn_esquiva_Click);
             // 
-            // button7
+            // btn_summon
             // 
-            this.button7.BackColor = System.Drawing.Color.OldLace;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(99, 89);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(102, 28);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Summon";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btn_summon.BackColor = System.Drawing.Color.OldLace;
+            this.btn_summon.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_summon.Location = new System.Drawing.Point(99, 89);
+            this.btn_summon.Name = "btn_summon";
+            this.btn_summon.Size = new System.Drawing.Size(102, 28);
+            this.btn_summon.TabIndex = 1;
+            this.btn_summon.Text = "Summon";
+            this.btn_summon.UseVisualStyleBackColor = false;
+            this.btn_summon.Click += new System.EventHandler(this.btn_summon_Click);
             // 
             // btn_Atacar
             // 
@@ -1846,16 +1853,22 @@
             // Mapa
             // 
             this.Mapa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Mapa.Controls.Add(this.label25);
-            this.Mapa.Controls.Add(this.label26);
-            this.Mapa.Controls.Add(this.button5);
-            this.Mapa.Controls.Add(this.comboBox2);
+            this.Mapa.Controls.Add(this.txt_desc_roupa);
+            this.Mapa.Controls.Add(this.txt_desc_arma);
+            this.Mapa.Controls.Add(this.label46);
+            this.Mapa.Controls.Add(this.label27);
+            this.Mapa.Controls.Add(this.lbl_tonzres);
+            this.Mapa.Controls.Add(this.lbl_tonzarm);
+            this.Mapa.Controls.Add(this.btn_upres);
+            this.Mapa.Controls.Add(this.bnt_uparm);
+            this.Mapa.Controls.Add(this.lbl_nomeroupa);
+            this.Mapa.Controls.Add(this.btn_trocaroupa);
+            this.Mapa.Controls.Add(this.CMB_roupa);
             this.Mapa.Controls.Add(this.img_roupa);
             this.Mapa.Controls.Add(this.img_arma);
             this.Mapa.Controls.Add(this.btn_troca_arma);
             this.Mapa.Controls.Add(this.cbb_arma_2);
             this.Mapa.Controls.Add(this.lbl_arma_equipada_2);
-            this.Mapa.Controls.Add(this.label40);
             this.Mapa.Location = new System.Drawing.Point(4, 24);
             this.Mapa.Name = "Mapa";
             this.Mapa.Size = new System.Drawing.Size(876, 527);
@@ -1863,50 +1876,123 @@
             this.Mapa.Text = "Equipamento";
             this.Mapa.UseVisualStyleBackColor = true;
             // 
-            // label25
+            // txt_desc_roupa
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(424, 31);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(44, 15);
-            this.label25.TabIndex = 39;
-            this.label25.Text = "Padrão";
+            this.txt_desc_roupa.BackColor = System.Drawing.Color.OldLace;
+            this.txt_desc_roupa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.txt_desc_roupa.Location = new System.Drawing.Point(637, 101);
+            this.txt_desc_roupa.Multiline = true;
+            this.txt_desc_roupa.Name = "txt_desc_roupa";
+            this.txt_desc_roupa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_desc_roupa.Size = new System.Drawing.Size(212, 129);
+            this.txt_desc_roupa.TabIndex = 47;
             // 
-            // label26
+            // txt_desc_arma
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label26.Location = new System.Drawing.Point(326, 31);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(97, 15);
-            this.label26.TabIndex = 38;
-            this.label26.Text = "Roupa Equipada:";
+            this.txt_desc_arma.BackColor = System.Drawing.Color.OldLace;
+            this.txt_desc_arma.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.txt_desc_arma.Location = new System.Drawing.Point(221, 105);
+            this.txt_desc_arma.Multiline = true;
+            this.txt_desc_arma.Name = "txt_desc_arma";
+            this.txt_desc_arma.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_desc_arma.Size = new System.Drawing.Size(188, 129);
+            this.txt_desc_arma.TabIndex = 46;
             // 
-            // button5
+            // label46
             // 
-            this.button5.BackColor = System.Drawing.Color.OldLace;
-            this.button5.Location = new System.Drawing.Point(452, 59);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 37;
-            this.button5.Text = "Trocar";
-            this.button5.UseVisualStyleBackColor = false;
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(545, 387);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(13, 15);
+            this.label46.TabIndex = 45;
+            this.label46.Text = "$";
             // 
-            // comboBox2
+            // label27
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.OldLace;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(545, 416);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(13, 15);
+            this.label27.TabIndex = 44;
+            this.label27.Text = "$";
+            // 
+            // lbl_tonzres
+            // 
+            this.lbl_tonzres.AutoSize = true;
+            this.lbl_tonzres.Location = new System.Drawing.Point(555, 416);
+            this.lbl_tonzres.Name = "lbl_tonzres";
+            this.lbl_tonzres.Size = new System.Drawing.Size(31, 15);
+            this.lbl_tonzres.TabIndex = 43;
+            this.lbl_tonzres.Text = "1000";
+            // 
+            // lbl_tonzarm
+            // 
+            this.lbl_tonzarm.AutoSize = true;
+            this.lbl_tonzarm.Location = new System.Drawing.Point(555, 387);
+            this.lbl_tonzarm.Name = "lbl_tonzarm";
+            this.lbl_tonzarm.Size = new System.Drawing.Size(31, 15);
+            this.lbl_tonzarm.TabIndex = 42;
+            this.lbl_tonzarm.Text = "1000";
+            // 
+            // btn_upres
+            // 
+            this.btn_upres.BackColor = System.Drawing.Color.OldLace;
+            this.btn_upres.Location = new System.Drawing.Point(438, 412);
+            this.btn_upres.Name = "btn_upres";
+            this.btn_upres.Size = new System.Drawing.Size(75, 23);
+            this.btn_upres.TabIndex = 41;
+            this.btn_upres.Text = "+ RES";
+            this.btn_upres.UseVisualStyleBackColor = false;
+            this.btn_upres.Click += new System.EventHandler(this.btn_upres_Click);
+            // 
+            // bnt_uparm
+            // 
+            this.bnt_uparm.BackColor = System.Drawing.Color.OldLace;
+            this.bnt_uparm.Location = new System.Drawing.Point(438, 383);
+            this.bnt_uparm.Name = "bnt_uparm";
+            this.bnt_uparm.Size = new System.Drawing.Size(75, 23);
+            this.bnt_uparm.TabIndex = 40;
+            this.bnt_uparm.Text = "+ARM";
+            this.bnt_uparm.UseVisualStyleBackColor = false;
+            this.bnt_uparm.Click += new System.EventHandler(this.bnt_uparm_Click);
+            // 
+            // lbl_nomeroupa
+            // 
+            this.lbl_nomeroupa.AutoSize = true;
+            this.lbl_nomeroupa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_nomeroupa.Location = new System.Drawing.Point(438, 74);
+            this.lbl_nomeroupa.Name = "lbl_nomeroupa";
+            this.lbl_nomeroupa.Size = new System.Drawing.Size(66, 20);
+            this.lbl_nomeroupa.TabIndex = 39;
+            this.lbl_nomeroupa.Text = "Padrão";
+            // 
+            // btn_trocaroupa
+            // 
+            this.btn_trocaroupa.BackColor = System.Drawing.Color.OldLace;
+            this.btn_trocaroupa.Location = new System.Drawing.Point(545, 48);
+            this.btn_trocaroupa.Name = "btn_trocaroupa";
+            this.btn_trocaroupa.Size = new System.Drawing.Size(75, 23);
+            this.btn_trocaroupa.TabIndex = 37;
+            this.btn_trocaroupa.Text = "Trocar";
+            this.btn_trocaroupa.UseVisualStyleBackColor = false;
+            this.btn_trocaroupa.Click += new System.EventHandler(this.btn_trocaroupa_Click);
+            // 
+            // CMB_roupa
+            // 
+            this.CMB_roupa.BackColor = System.Drawing.Color.OldLace;
+            this.CMB_roupa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMB_roupa.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CMB_roupa.FormattingEnabled = true;
+            this.CMB_roupa.Items.AddRange(new object[] {
             "Selecione"});
-            this.comboBox2.Location = new System.Drawing.Point(326, 59);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 36;
+            this.CMB_roupa.Location = new System.Drawing.Point(438, 22);
+            this.CMB_roupa.Name = "CMB_roupa";
+            this.CMB_roupa.Size = new System.Drawing.Size(182, 21);
+            this.CMB_roupa.TabIndex = 36;
             // 
             // img_roupa
             // 
-            this.img_roupa.Location = new System.Drawing.Point(326, 105);
+            this.img_roupa.Location = new System.Drawing.Point(438, 101);
             this.img_roupa.Name = "img_roupa";
             this.img_roupa.Size = new System.Drawing.Size(182, 276);
             this.img_roupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1925,7 +2011,7 @@
             // btn_troca_arma
             // 
             this.btn_troca_arma.BackColor = System.Drawing.Color.OldLace;
-            this.btn_troca_arma.Location = new System.Drawing.Point(148, 59);
+            this.btn_troca_arma.Location = new System.Drawing.Point(129, 51);
             this.btn_troca_arma.Name = "btn_troca_arma";
             this.btn_troca_arma.Size = new System.Drawing.Size(75, 23);
             this.btn_troca_arma.TabIndex = 33;
@@ -1940,29 +2026,20 @@
             this.cbb_arma_2.FormattingEnabled = true;
             this.cbb_arma_2.Items.AddRange(new object[] {
             "Selecione"});
-            this.cbb_arma_2.Location = new System.Drawing.Point(22, 59);
+            this.cbb_arma_2.Location = new System.Drawing.Point(22, 22);
             this.cbb_arma_2.Name = "cbb_arma_2";
-            this.cbb_arma_2.Size = new System.Drawing.Size(121, 23);
+            this.cbb_arma_2.Size = new System.Drawing.Size(182, 23);
             this.cbb_arma_2.TabIndex = 32;
             // 
             // lbl_arma_equipada_2
             // 
             this.lbl_arma_equipada_2.AutoSize = true;
-            this.lbl_arma_equipada_2.Location = new System.Drawing.Point(118, 31);
+            this.lbl_arma_equipada_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_arma_equipada_2.Location = new System.Drawing.Point(22, 78);
             this.lbl_arma_equipada_2.Name = "lbl_arma_equipada_2";
-            this.lbl_arma_equipada_2.Size = new System.Drawing.Size(44, 15);
+            this.lbl_arma_equipada_2.Size = new System.Drawing.Size(70, 20);
             this.lbl_arma_equipada_2.TabIndex = 31;
             this.lbl_arma_equipada_2.Text = "Espada";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label40.Location = new System.Drawing.Point(21, 31);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(92, 15);
-            this.label40.TabIndex = 30;
-            this.label40.Text = "Arma Equipada:";
             // 
             // Log
             // 
@@ -2077,7 +2154,7 @@
             // 
             this.img_defesa.BackColor = System.Drawing.Color.Transparent;
             this.img_defesa.Image = global::Ficha_Jiora.Properties.Resources.armor_15_151;
-            this.img_defesa.Location = new System.Drawing.Point(59, 52);
+            this.img_defesa.Location = new System.Drawing.Point(59, 51);
             this.img_defesa.Name = "img_defesa";
             this.img_defesa.Size = new System.Drawing.Size(15, 15);
             this.img_defesa.TabIndex = 0;
@@ -2168,7 +2245,7 @@
             this.lbl_defesa.BackColor = System.Drawing.Color.Transparent;
             this.lbl_defesa.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_defesa.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lbl_defesa.Location = new System.Drawing.Point(82, 51);
+            this.lbl_defesa.Location = new System.Drawing.Point(82, 48);
             this.lbl_defesa.Name = "lbl_defesa";
             this.lbl_defesa.Size = new System.Drawing.Size(17, 19);
             this.lbl_defesa.TabIndex = 2;
@@ -2363,8 +2440,8 @@
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.lbl_defesa);
-            this.panel1.Controls.Add(this.lbl_precisao);
             this.panel1.Controls.Add(this.img_defesa);
+            this.panel1.Controls.Add(this.lbl_precisao);
             this.panel1.Controls.Add(this.lbl_resistencia);
             this.panel1.Controls.Add(this.img_precisao);
             this.panel1.Controls.Add(this.img_resistencia);
@@ -2441,7 +2518,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1394, 724);
+            this.ClientSize = new System.Drawing.Size(1370, 724);
             this.Controls.Add(this.ptb_trance);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox3);
@@ -2591,7 +2668,7 @@
         private Button btn_reduzir_hp;
         private NumericUpDown txt_reduzir;
         private GroupBox groupBox3;
-        private Button button7;
+        private Button btn_summon;
         private Button btn_limit;
         private GroupBox groupBox6;
         private ComboBox CBB_nome_personagem;
@@ -2690,7 +2767,6 @@
         private Button btn_troca_arma;
         private ComboBox cbb_arma_2;
         private Label lbl_arma_equipada_2;
-        private Label label40;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private PictureBox ptb_trance;
@@ -2710,10 +2786,17 @@
         private Button button3;
         private Label label24;
         private Label label23;
-        private Label label25;
-        private Label label26;
-        private Button button5;
-        private ComboBox comboBox2;
+        private Label lbl_nomeroupa;
+        private Button btn_trocaroupa;
+        private ComboBox CMB_roupa;
         private PictureBox img_roupa;
+        private Button btn_upres;
+        private Button bnt_uparm;
+        private Label lbl_tonzres;
+        private Label lbl_tonzarm;
+        private Label label46;
+        private Label label27;
+        private TextBox txt_desc_roupa;
+        private TextBox txt_desc_arma;
     }
 }

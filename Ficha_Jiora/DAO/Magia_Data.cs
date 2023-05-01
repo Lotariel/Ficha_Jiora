@@ -105,6 +105,38 @@ namespace Ficha_Jiora.DAO
             }
         }
 
+
+        public DataTable Carrega_Combo_Magia_Summon(Summon_Model modelo)
+        {
+            try
+            {
+                DataTable TabelaMagia = new DataTable();
+                Magia_Model magia = new Magia_Model();
+
+                Script = "select m.ID, Concat(NOME,' - ',VALOR_CUSTO,' ',TIPO_CUSTO) as Nome from MAGIA_Summons MP inner join MAGIA M  ";
+                Script += "on MP.IDMAGIA = M.ID ";
+                Script += "where mp.equipado = 1 and mp.idsummon =" + modelo.ID;
+
+                SqlDataAdapter select = new SqlDataAdapter(Script, AbreConexao());
+
+                select.Fill(TabelaMagia);
+                FechaConexao();
+
+                foreach (DataRow item in TabelaMagia.Rows)
+                {
+                    magia = new Magia_Model()
+                    {
+                        Nome = item["Nome"].ToString(),
+                        ID = item["ID"].ToString(),
+                    };
+                }
+                return TabelaMagia;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("\nErro em Magia_data.Carrega_Combo_Magia_Summon:\n" + ex.Message);
+            }
+        }
         public Magia_Model Carrega_Magia(string IDMagia)
         {
             try
@@ -186,7 +218,6 @@ namespace Ficha_Jiora.DAO
             }
             catch (Exception ex)
             {
-
                 throw new Exception("Erro em Magia_Data.Desativa_Magia: " + ex.Message);
             }
         }

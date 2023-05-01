@@ -12,12 +12,15 @@ namespace Ficha_Jiora.DAO
     internal class Personagem_Data : Conexao
     {
         private Personagem_Model personagem_Model = new Personagem_Model();
+        private Roupas_Data roupas_Data = new Roupas_Data();
         private string Script = "";
 
         public Personagem_Model Carrega_Personagem(string IDPersonagem)
         {
             try
             {
+                string iDRoupa = roupas_Data.Roupa_Equipada(IDPersonagem);
+
                 DataTable TabelaPersonagem = new DataTable();
                 personagem_Model = new Personagem_Model();
                 Script = "select * from personagem where id = " + "'" + IDPersonagem + "'";
@@ -63,8 +66,8 @@ namespace Ficha_Jiora.DAO
                         ModMagia = Convert.ToInt32(item["Mod_magia"]),
                         ModAura = Convert.ToInt32(item["Mod_aura"]),
                         Potencia = Convert.ToInt32(item["Potencia"]),
-                        Defesa = Convert.ToInt32(item["Defesa"]) + Convert.ToInt32(item["mod_Defesa"]),
-                        Resistencia = Convert.ToInt32(item["Resistencia"]) + Convert.ToInt32(item["mod_Resistencia"]),
+                        Defesa = roupas_Data.Carrega_Roupa_Equipada(iDRoupa).Defesa,
+                        Resistencia = roupas_Data.Carrega_Roupa_Equipada(iDRoupa).Resistencia,
                         ModResistenca = Convert.ToInt32(item["Mod_resistencia"]),
                         ModDefesa = Convert.ToInt32(item["mod_defesa"]),
                         CDS_Critico = Convert.ToInt32(item["cds_critico"]) + Convert.ToInt32(item["mod_cds_critico"]),
@@ -162,7 +165,7 @@ namespace Ficha_Jiora.DAO
             {
                 DataTable TabelaPersonagem = new DataTable();
 
-                string Script = "SELECT ID, nome FROM Personagem WHERE Ativo = 1 AND Nome != 'Kazumi' ORDER BY CASE WHEN id = @id THEN 0 ELSE 1 END, nome";
+                string Script = "SELECT ID, nome FROM Personagem WHERE Ativo = 1 ORDER BY CASE WHEN id = @id THEN 0 ELSE 1 END, nome";
 
                 using (SqlConnection connection = AbreConexao())
                 {
@@ -195,22 +198,25 @@ namespace Ficha_Jiora.DAO
         {
             try
             {
-                Script = "select id from personagem where nome = '" + nome + "'";
+                Script = "select id from personagem where nome = @nome and ativo = 1";
 
-                SqlCommand select = new SqlCommand(Script, AbreConexao());
-
-                FechaConexao();
-
-                var resultado = select.ExecuteScalar();
-
-                if (resultado != null)
+                using (SqlConnection conn = AbreConexao())
                 {
-                    return resultado.ToString();
-                }
-                else
-                {
-                    throw new Exception("\nPersonagem '" + nome + "' não encontrado.");
-                }
+                    SqlCommand select = new SqlCommand(Script, conn);
+
+                    select.Parameters.AddWithValue("nome",nome);
+
+                    var resultado = select.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        return resultado.ToString();
+                    }
+                    else
+                    {
+                        throw new Exception("\nPersonagem '" + nome + "' não encontrado ou não esta ativo.");
+                    }
+                }     
 
             }
             catch (Exception ex)
@@ -276,7 +282,6 @@ namespace Ficha_Jiora.DAO
             }
             catch (Exception ex)
             {
-
                 throw new Exception("\nErro em Personagem_Data.Update_Personagem:\n" + ex.Message);
             }
         }

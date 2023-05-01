@@ -7,6 +7,7 @@ using Ficha_Jiora.Model;
 using Ficha_Jiora.DAO;
 using System.Data;
 using System.Threading.Tasks.Sources;
+using System.Xml.Schema;
 
 namespace Ficha_Jiora.Control
 {
@@ -132,7 +133,6 @@ namespace Ficha_Jiora.Control
             personagem_Data.Update_Personagem("Hpmax", valor, personagem.ID);
 
         }
-
         private void Aumenta_MP_Max(Personagem_Model personagem)
         {
             int BonusMPMax = random.Next(1, personagem_Data.GetDado_mana(personagem.Classe) + 1);
@@ -141,5 +141,59 @@ namespace Ficha_Jiora.Control
             personagem_Data.Update_Personagem("Mpmax", valor, personagem.ID);
 
         }
+        public void GerenciaTonz(int DepositarOuSacar, int valor, Personagem_Model personagem)
+        {//Depositar = 1 Sacar <> 1
+            int tonzAtual = personagem.Tonz, saldo =0;
+
+            if (DepositarOuSacar ==1)
+            {
+                saldo = tonzAtual + valor;
+                personagem_Data.Update_Personagem("tonz", saldo, personagem.ID);
+            }
+            else
+            {
+                saldo = tonzAtual - valor;
+                if (saldo < 0)
+                {
+                    personagem_Data.Update_Personagem("tonz", 0, personagem.ID);
+                }
+                else
+                {
+                    personagem_Data.Update_Personagem("tonz", saldo, personagem.ID);
+                }                
+            }
+        }
+
+        public void AmaduraUP(Personagem_Model personagem)
+        {
+            int valor = personagem.Defesa + 1;
+
+            if (valor >= 124)
+            {
+                personagem_Data.Update_Personagem("Defesa", 124, personagem.ID);
+            }
+            else
+            {
+                personagem_Data.Update_Personagem("Defesa", valor, personagem.ID);
+            }
+            
+        }
+
+        public void ResistenciaUP(Personagem_Model personagem)
+        {
+            int valor = personagem.Resistencia + 1;
+            
+            
+            if (valor >= 120)
+            {
+                personagem_Data.Update_Personagem("Resistencia", 120, personagem.ID);
+            }
+            else
+            {
+                personagem_Data.Update_Personagem("Resistencia", valor, personagem.ID);
+            }
+        }
+
+
     }
 }

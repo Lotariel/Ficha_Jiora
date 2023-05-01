@@ -11,7 +11,7 @@ namespace Ficha_Jiora.Model
         public int ID { get; set; }
 
         public string Nome { get; set; }
-
+        public string Info { get; set; }
         public string Descricao { get; set; }
         public string Imagem { get; set; }
         public int Poison { get; set; }
@@ -23,5 +23,10 @@ namespace Ficha_Jiora.Model
         public int Blind { get; set; }
         public int Charm { get; set; }
         public double preco { get; set; }
+        public int Defesa { get; set; }
+        public int DefesaMod { get; set; }
+        public int Resistencia { get; set; }
+        public int ResistenciaMod { get; set; }
+        public int SlotCore { get; set; }
     }
 }
