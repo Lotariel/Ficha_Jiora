@@ -42,6 +42,8 @@ namespace Ficha_Jiora.View
         private Cosumiveis_Control cosumiveis_Control = new Cosumiveis_Control();
         private Summon_Control summon_Control = new Summon_Control();
         private Batalha_Control batalha;
+        private Item_Control item_Control = new Item_Control();
+        private Item_Model item_Model = new Item_Model();
         private int d100 = 0, contador_lb = 0;
 
         public string IDPersonagem { get; set; }
@@ -106,7 +108,10 @@ namespace Ficha_Jiora.View
                 lbl_tonz.Text = personagem_Model.Tonz.ToString();
                 PG_Limit.Maximum = 101;
                 PG_Limit.Value = contador_lb;
-
+                lbl_ap_min.Text = ((personagem_Model.Magia * 3) + 1).ToString();
+                lbl_ap_max.Text = ((personagem_Model.Magia * 3) + 8).ToString();
+                lbl_ad_min.Text = batalha.DanoMin();
+                lbl_ad_max.Text = batalha.DanoMax();
 
             }
             catch (Exception ex)
@@ -132,6 +137,7 @@ namespace Ficha_Jiora.View
                 CarregaStatus();
                 Carrega_Batalha();
                 Carrega_Equipamento();
+                CarregaTelaBolsa();
                 //groupBox1.Paint += PaintBorderlessGroupBox;
 
             }
@@ -1410,7 +1416,6 @@ namespace Ficha_Jiora.View
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Falhar ao gerar o ataque motivo:\r\n" + ex.Message, "Falha ao gerar o Ataque", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
@@ -1962,7 +1967,6 @@ namespace Ficha_Jiora.View
                 MessageBox.Show("Falha, motivo do erro:" + ex.Message, "Erro ao executar Habilidade", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
-
         private void CBB_categoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             CBB_alvo.ResetText();
@@ -1986,24 +1990,20 @@ namespace Ficha_Jiora.View
             }
 
         }
-
         private void CBB_Elementos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void CBB_Elementos_MouseClick(object sender, MouseEventArgs e)
         {
 
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Informacoes info = new Informacoes();
             info.IDPersonagem = personagem_Model.ID;
             info.Show();
         }
-
         private void btn_defender_Click(object sender, EventArgs e)
         {
             try
@@ -2031,7 +2031,6 @@ namespace Ficha_Jiora.View
             }
 
         }
-
         private void btn_limit_Click(object sender, EventArgs e)
         {
             try
@@ -2103,7 +2102,6 @@ namespace Ficha_Jiora.View
                     break;
             }
         }
-
         private void Apocalipse_On()
         {
             try
@@ -2121,7 +2119,6 @@ namespace Ficha_Jiora.View
                 throw new Exception(ex.Message);
             }
         }
-
         private void Apocalipse_off()
         {
             try
@@ -2517,7 +2514,6 @@ namespace Ficha_Jiora.View
                     return "";
             }
         }
-
         private void btn_consumir_Click(object sender, EventArgs e)
         {
             try
@@ -2568,6 +2564,12 @@ namespace Ficha_Jiora.View
                         cosumiveis_Control.Reduz_Quantidade_Consumivel("8", personagem_Model.ID);
                         Insertlog("Usou: Sleep em " + personagem_Model.Nome);
                         break;
+                    /*Cadastrar as descrições dos consumiveis e apresentar na tela
+                      as descrições que não surgem efeitos nos jogadores
+                    exemplo, todas as bombas*/
+                    default:
+                        txt_batalha.Text = "";
+                        break;
                 }
 
                 Cursor.Current = Cursors.Default;
@@ -2595,6 +2597,9 @@ namespace Ficha_Jiora.View
                 lbl_arma_equipada.Text = arma_Model.NOME;
                 lbl_arma_equipada_2.Text = arma_Model.NOME;
                 lbl_nomeroupa.Text = roupas_Model.Nome;
+                lbl_arma_sobre.Text = arma_Model.NOME;
+                lbl_vestes_sobre.Text = roupas_Model.Nome;
+                CarregaDescricaoArma();
                 CarregaDescricaoRoupa();
                 if (personagem_Model.Defesa >= 124)
                 {
@@ -2678,9 +2683,20 @@ namespace Ficha_Jiora.View
         {
             txt_desc_roupa.Text = "Descrição Equipamento\r\n\r\n";
             txt_desc_roupa.Text += "Defesa: " + roupas_Model.Defesa + "\r\nResistencia: " + roupas_Model.Resistencia;
-            txt_desc_roupa.Text += "\r\nSlot para Core:  "+ roupas_Model.SlotCore;
-            txt_desc_roupa.Text += "\r\n\r\nSobre:\r\n"+ roupas_Model.Descricao;
+            txt_desc_roupa.Text += "\r\nSlot para Core:  " + roupas_Model.SlotCore;
+            txt_desc_roupa.Text += "\r\n\r\nSobre:\r\n" + roupas_Model.Descricao;
 
+        }
+        private void CarregaDescricaoArma()
+        {
+            txt_desc_arma.Text = "Descrição Arma\r\n\r\n";
+            txt_desc_arma.Text += "Rank: " + arma_Model.RANK + "\r\n";
+            txt_desc_arma.Text += "Fórmula: " + arma_Model.ATRIBUTO + " x ";
+            txt_desc_arma.Text += arma_Model.MULTIPLICADOR + " + ";
+            txt_desc_arma.Text += arma_Model.QUANT_DADOS + "d";
+            txt_desc_arma.Text += arma_Model.DADO + "\r\n";
+            txt_desc_arma.Text += "Tipo de Dano: Físico" + "\r\n";
+            txt_desc_arma.Text += "Descrição: "+ arma_Model.DESCRICAO;
         }
         private void Carrega_Imagem_Arma()
         {
@@ -2820,6 +2836,35 @@ namespace Ficha_Jiora.View
                 MessageBox.Show("Falha ao trocar de arma: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
+        #endregion
+
+        #region INFORMAÇÕES DA ABA BOLSA
+
+        private void CarregaTelaBolsa()
+        {
+            try
+            {
+                CarregaTabelaBolsa();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Alert");
+            }
+        }
+
+        private void CarregaTabelaBolsa()
+        {
+            try
+            {
+                DGV_bolsa.DataSource = item_Control.Carrega_Item(IDPersonagem);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         #endregion
     }
 

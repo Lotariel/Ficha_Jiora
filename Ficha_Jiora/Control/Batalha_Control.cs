@@ -412,6 +412,66 @@ namespace Ficha_Jiora.Control
             }
         }
 
+        public string DanoMin()
+        {
+            Equipamento_Model arma = new Equipamento_Model();
+            string IDArmaEquipada = equipamento_Control.Arma_Equipada(personagem.ID);
+            int DanoFinal = 0;
+            arma = equipamento_Control.Carrega_Arma_Equipada(IDArmaEquipada);
+
+            switch (arma.ATRIBUTO)
+            {
+                case "FOR":
+                    DanoFinal = (personagem.Forca * arma.MULTIPLICADOR) + arma.QUANT_DADOS;
+                    break;
+                case "MAG":
+                    DanoFinal = (personagem.Magia * arma.MULTIPLICADOR) + arma.QUANT_DADOS;
+                    break;
+                case "FOC":
+                    DanoFinal = (personagem.Foco * arma.MULTIPLICADOR) + arma.QUANT_DADOS;
+                    break;
+                case "VIT":
+                    DanoFinal = (personagem.Vitalidade * arma.MULTIPLICADOR) + arma.QUANT_DADOS;
+                    break;
+                case "VEL":
+                    DanoFinal = (personagem.Velocidade * arma.MULTIPLICADOR) + arma.QUANT_DADOS;
+                    break;
+                case "AUR":
+                    DanoFinal = (personagem.Aura * arma.MULTIPLICADOR) + arma.QUANT_DADOS;
+                    break;
+            }
+            return DanoFinal.ToString();
+        }
+        public string DanoMax()
+        {
+            Equipamento_Model arma = new Equipamento_Model();
+            string IDArmaEquipada = equipamento_Control.Arma_Equipada(personagem.ID);
+            int DanoFinal = 0;
+            arma = equipamento_Control.Carrega_Arma_Equipada(IDArmaEquipada);
+
+            switch (arma.ATRIBUTO)
+            {
+                case "FOR":
+                    DanoFinal = (personagem.Forca * arma.MULTIPLICADOR) + arma.QUANT_DADOS * arma.DADO;
+                    break;
+                case "MAG":
+                    DanoFinal = (personagem.Magia * arma.MULTIPLICADOR) + arma.QUANT_DADOS * arma.DADO;
+                    break;
+                case "FOC":
+                    DanoFinal = (personagem.Foco * arma.MULTIPLICADOR) + arma.QUANT_DADOS * arma.DADO;
+                    break;
+                case "VIT":
+                    DanoFinal = (personagem.Vitalidade * arma.MULTIPLICADOR) + arma.QUANT_DADOS * arma.DADO;
+                    break;
+                case "VEL":
+                    DanoFinal = (personagem.Velocidade * arma.MULTIPLICADOR) + arma.QUANT_DADOS * arma.DADO;
+                    break;
+                case "AUR":
+                    DanoFinal = (personagem.Aura * arma.MULTIPLICADOR) + arma.QUANT_DADOS * arma.DADO;
+                    break;
+            }
+            return DanoFinal.ToString();
+        }
         public int ValordoAtaque()
         {
             try
@@ -443,10 +503,7 @@ namespace Ficha_Jiora.Control
                         break;
                 }
                 return DanoFinal;
-
-
-
-
+                
             }
             catch (Exception ex)
             {

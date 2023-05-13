@@ -92,9 +92,9 @@
             // cbb_habilidade
             // 
             this.cbb_habilidade.FormattingEnabled = true;
-            this.cbb_habilidade.Location = new System.Drawing.Point(27, 183);
+            this.cbb_habilidade.Location = new System.Drawing.Point(14, 183);
             this.cbb_habilidade.Name = "cbb_habilidade";
-            this.cbb_habilidade.Size = new System.Drawing.Size(126, 23);
+            this.cbb_habilidade.Size = new System.Drawing.Size(152, 23);
             this.cbb_habilidade.TabIndex = 4;
             // 
             // iniciativa

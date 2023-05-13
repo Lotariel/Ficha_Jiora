@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,9 +38,30 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha_do_Jogador));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Status = new System.Windows.Forms.TabPage();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.lbl_ap_max = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.lbl_ap_min = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.lbl_ad_max = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.lbl_ad_min = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.lbl_vestes_sobre = new System.Windows.Forms.Label();
+            this.lbl_arma_sobre = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.GPB_status_atributos = new System.Windows.Forms.GroupBox();
             this.lbl_potencia = new System.Windows.Forms.Label();
             this.btn_up_pot = new System.Windows.Forms.Button();
@@ -164,6 +186,11 @@
             this.btn_teste_mag = new System.Windows.Forms.Button();
             this.btn_teste__aur = new System.Windows.Forms.Button();
             this.inventario = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
+            this.DGV_bolsa = new System.Windows.Forms.DataGridView();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -230,6 +257,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.Status.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.GPB_status_atributos.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.battle.SuspendLayout();
@@ -250,6 +281,7 @@
             this.pericia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.inventario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_bolsa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_tonz)).BeginInit();
             this.Mapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_roupa)).BeginInit();
@@ -292,6 +324,22 @@
             // 
             this.Status.BackColor = System.Drawing.Color.White;
             this.Status.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Status.Controls.Add(this.pictureBox12);
+            this.Status.Controls.Add(this.pictureBox11);
+            this.Status.Controls.Add(this.lbl_ap_max);
+            this.Status.Controls.Add(this.label52);
+            this.Status.Controls.Add(this.lbl_ap_min);
+            this.Status.Controls.Add(this.label54);
+            this.Status.Controls.Add(this.lbl_ad_max);
+            this.Status.Controls.Add(this.label49);
+            this.Status.Controls.Add(this.lbl_ad_min);
+            this.Status.Controls.Add(this.label47);
+            this.Status.Controls.Add(this.pictureBox10);
+            this.Status.Controls.Add(this.pictureBox9);
+            this.Status.Controls.Add(this.lbl_vestes_sobre);
+            this.Status.Controls.Add(this.lbl_arma_sobre);
+            this.Status.Controls.Add(this.label40);
+            this.Status.Controls.Add(this.label26);
             this.Status.Controls.Add(this.GPB_status_atributos);
             this.Status.Controls.Add(this.groupBox2);
             this.Status.Location = new System.Drawing.Point(4, 24);
@@ -300,6 +348,182 @@
             this.Status.Size = new System.Drawing.Size(876, 527);
             this.Status.TabIndex = 0;
             this.Status.Text = "Sobre";
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(26, 384);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(32, 38);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 51;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(326, 326);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(32, 38);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 50;
+            this.pictureBox11.TabStop = false;
+            // 
+            // lbl_ap_max
+            // 
+            this.lbl_ap_max.AutoSize = true;
+            this.lbl_ap_max.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ap_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ap_max.Location = new System.Drawing.Point(557, 335);
+            this.lbl_ap_max.Name = "lbl_ap_max";
+            this.lbl_ap_max.Size = new System.Drawing.Size(45, 20);
+            this.lbl_ap_max.TabIndex = 49;
+            this.lbl_ap_max.Text = "9999";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.BackColor = System.Drawing.Color.Transparent;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label52.Location = new System.Drawing.Point(534, 340);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(18, 20);
+            this.label52.TabIndex = 48;
+            this.label52.Text = "~";
+            // 
+            // lbl_ap_min
+            // 
+            this.lbl_ap_min.AutoSize = true;
+            this.lbl_ap_min.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ap_min.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ap_min.Location = new System.Drawing.Point(492, 335);
+            this.lbl_ap_min.Name = "lbl_ap_min";
+            this.lbl_ap_min.Size = new System.Drawing.Size(36, 20);
+            this.lbl_ap_min.TabIndex = 47;
+            this.lbl_ap_min.Text = "999";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.BackColor = System.Drawing.Color.Transparent;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label54.Location = new System.Drawing.Point(369, 335);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(124, 20);
+            this.label54.TabIndex = 46;
+            this.label54.Text = "Dano Mágico: ";
+            // 
+            // lbl_ad_max
+            // 
+            this.lbl_ad_max.AutoSize = true;
+            this.lbl_ad_max.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ad_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ad_max.Location = new System.Drawing.Point(257, 335);
+            this.lbl_ad_max.Name = "lbl_ad_max";
+            this.lbl_ad_max.Size = new System.Drawing.Size(45, 20);
+            this.lbl_ad_max.TabIndex = 45;
+            this.lbl_ad_max.Text = "9999";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.BackColor = System.Drawing.Color.Transparent;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label49.Location = new System.Drawing.Point(234, 340);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(18, 20);
+            this.label49.TabIndex = 44;
+            this.label49.Text = "~";
+            // 
+            // lbl_ad_min
+            // 
+            this.lbl_ad_min.AutoSize = true;
+            this.lbl_ad_min.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ad_min.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ad_min.Location = new System.Drawing.Point(192, 335);
+            this.lbl_ad_min.Name = "lbl_ad_min";
+            this.lbl_ad_min.Size = new System.Drawing.Size(36, 20);
+            this.lbl_ad_min.TabIndex = 43;
+            this.lbl_ad_min.Text = "999";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.BackColor = System.Drawing.Color.Transparent;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label47.Location = new System.Drawing.Point(69, 335);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(114, 20);
+            this.label47.TabIndex = 42;
+            this.label47.Text = "Dano Físico: ";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(25, 429);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(32, 38);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 41;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(26, 326);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(32, 38);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 40;
+            this.pictureBox9.TabStop = false;
+            // 
+            // lbl_vestes_sobre
+            // 
+            this.lbl_vestes_sobre.AutoSize = true;
+            this.lbl_vestes_sobre.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_vestes_sobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_vestes_sobre.Location = new System.Drawing.Point(228, 442);
+            this.lbl_vestes_sobre.Name = "lbl_vestes_sobre";
+            this.lbl_vestes_sobre.Size = new System.Drawing.Size(60, 20);
+            this.lbl_vestes_sobre.TabIndex = 39;
+            this.lbl_vestes_sobre.Text = "label48";
+            // 
+            // lbl_arma_sobre
+            // 
+            this.lbl_arma_sobre.AutoSize = true;
+            this.lbl_arma_sobre.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_arma_sobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_arma_sobre.Location = new System.Drawing.Point(228, 401);
+            this.lbl_arma_sobre.Name = "lbl_arma_sobre";
+            this.lbl_arma_sobre.Size = new System.Drawing.Size(60, 20);
+            this.lbl_arma_sobre.TabIndex = 38;
+            this.lbl_arma_sobre.Text = "label47";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.Color.Transparent;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label40.Location = new System.Drawing.Point(71, 443);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(151, 20);
+            this.label40.TabIndex = 37;
+            this.label40.Text = "Vestes Equipada:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label26.Location = new System.Drawing.Point(71, 400);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(137, 20);
+            this.label26.TabIndex = 36;
+            this.label26.Text = "Arma Equipada:";
             // 
             // GPB_status_atributos
             // 
@@ -328,9 +552,10 @@
             this.GPB_status_atributos.Controls.Add(this.label15);
             this.GPB_status_atributos.Controls.Add(this.label14);
             this.GPB_status_atributos.Controls.Add(this.label13);
-            this.GPB_status_atributos.Location = new System.Drawing.Point(241, 16);
+            this.GPB_status_atributos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.GPB_status_atributos.Location = new System.Drawing.Point(293, 24);
             this.GPB_status_atributos.Name = "GPB_status_atributos";
-            this.GPB_status_atributos.Size = new System.Drawing.Size(321, 196);
+            this.GPB_status_atributos.Size = new System.Drawing.Size(356, 196);
             this.GPB_status_atributos.TabIndex = 35;
             this.GPB_status_atributos.TabStop = false;
             this.GPB_status_atributos.Text = "Atributos";
@@ -338,10 +563,10 @@
             // lbl_potencia
             // 
             this.lbl_potencia.AutoSize = true;
-            this.lbl_potencia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_potencia.Location = new System.Drawing.Point(264, 150);
+            this.lbl_potencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_potencia.Location = new System.Drawing.Point(276, 150);
             this.lbl_potencia.Name = "lbl_potencia";
-            this.lbl_potencia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_potencia.Size = new System.Drawing.Size(18, 20);
             this.lbl_potencia.TabIndex = 37;
             this.lbl_potencia.Text = "0";
             // 
@@ -349,7 +574,7 @@
             // 
             this.btn_up_pot.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_pot.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_pot.Location = new System.Drawing.Point(286, 150);
+            this.btn_up_pot.Location = new System.Drawing.Point(298, 150);
             this.btn_up_pot.Name = "btn_up_pot";
             this.btn_up_pot.Size = new System.Drawing.Size(29, 25);
             this.btn_up_pot.TabIndex = 36;
@@ -360,20 +585,20 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label35.Location = new System.Drawing.Point(173, 150);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(55, 15);
+            this.label35.Size = new System.Drawing.Size(79, 20);
             this.label35.TabIndex = 34;
             this.label35.Text = "Potência";
             // 
             // lbl_critico_atributo
             // 
             this.lbl_critico_atributo.AutoSize = true;
-            this.lbl_critico_atributo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_critico_atributo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_critico_atributo.Location = new System.Drawing.Point(98, 150);
             this.lbl_critico_atributo.Name = "lbl_critico_atributo";
-            this.lbl_critico_atributo.Size = new System.Drawing.Size(13, 15);
+            this.lbl_critico_atributo.Size = new System.Drawing.Size(18, 20);
             this.lbl_critico_atributo.TabIndex = 33;
             this.lbl_critico_atributo.Text = "0";
             // 
@@ -392,70 +617,70 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label33.Location = new System.Drawing.Point(7, 150);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(43, 15);
+            this.label33.Size = new System.Drawing.Size(60, 20);
             this.label33.TabIndex = 30;
             this.label33.Text = "Crítico";
             // 
             // lbl_aura
             // 
             this.lbl_aura.AutoSize = true;
-            this.lbl_aura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_aura.Location = new System.Drawing.Point(264, 110);
+            this.lbl_aura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_aura.Location = new System.Drawing.Point(276, 110);
             this.lbl_aura.Name = "lbl_aura";
-            this.lbl_aura.Size = new System.Drawing.Size(13, 15);
+            this.lbl_aura.Size = new System.Drawing.Size(18, 20);
             this.lbl_aura.TabIndex = 29;
             this.lbl_aura.Text = "0";
             // 
             // lbl_magia
             // 
             this.lbl_magia.AutoSize = true;
-            this.lbl_magia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_magia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_magia.Location = new System.Drawing.Point(98, 110);
             this.lbl_magia.Name = "lbl_magia";
-            this.lbl_magia.Size = new System.Drawing.Size(13, 15);
+            this.lbl_magia.Size = new System.Drawing.Size(18, 20);
             this.lbl_magia.TabIndex = 28;
             this.lbl_magia.Text = "0";
             // 
             // lbl_velocidade
             // 
             this.lbl_velocidade.AutoSize = true;
-            this.lbl_velocidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_velocidade.Location = new System.Drawing.Point(264, 70);
+            this.lbl_velocidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_velocidade.Location = new System.Drawing.Point(276, 70);
             this.lbl_velocidade.Name = "lbl_velocidade";
-            this.lbl_velocidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_velocidade.Size = new System.Drawing.Size(18, 20);
             this.lbl_velocidade.TabIndex = 27;
             this.lbl_velocidade.Text = "0";
             // 
             // lbl_foco
             // 
             this.lbl_foco.AutoSize = true;
-            this.lbl_foco.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_foco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_foco.Location = new System.Drawing.Point(98, 70);
             this.lbl_foco.Name = "lbl_foco";
-            this.lbl_foco.Size = new System.Drawing.Size(13, 15);
+            this.lbl_foco.Size = new System.Drawing.Size(18, 20);
             this.lbl_foco.TabIndex = 26;
             this.lbl_foco.Text = "0";
             // 
             // lbl_vitalidade
             // 
             this.lbl_vitalidade.AutoSize = true;
-            this.lbl_vitalidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_vitalidade.Location = new System.Drawing.Point(264, 32);
+            this.lbl_vitalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_vitalidade.Location = new System.Drawing.Point(276, 32);
             this.lbl_vitalidade.Name = "lbl_vitalidade";
-            this.lbl_vitalidade.Size = new System.Drawing.Size(13, 15);
+            this.lbl_vitalidade.Size = new System.Drawing.Size(18, 20);
             this.lbl_vitalidade.TabIndex = 25;
             this.lbl_vitalidade.Text = "0";
             // 
             // lbl_forca
             // 
             this.lbl_forca.AutoSize = true;
-            this.lbl_forca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_forca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_forca.Location = new System.Drawing.Point(97, 32);
             this.lbl_forca.Name = "lbl_forca";
-            this.lbl_forca.Size = new System.Drawing.Size(13, 15);
+            this.lbl_forca.Size = new System.Drawing.Size(18, 20);
             this.lbl_forca.TabIndex = 24;
             this.lbl_forca.Text = "0";
             // 
@@ -463,7 +688,7 @@
             // 
             this.btn_up_aur.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_aur.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_aur.Location = new System.Drawing.Point(286, 110);
+            this.btn_up_aur.Location = new System.Drawing.Point(298, 110);
             this.btn_up_aur.Name = "btn_up_aur";
             this.btn_up_aur.Size = new System.Drawing.Size(29, 25);
             this.btn_up_aur.TabIndex = 23;
@@ -487,7 +712,7 @@
             // 
             this.btn_up_vel.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_vel.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_vel.Location = new System.Drawing.Point(286, 68);
+            this.btn_up_vel.Location = new System.Drawing.Point(298, 68);
             this.btn_up_vel.Name = "btn_up_vel";
             this.btn_up_vel.Size = new System.Drawing.Size(29, 25);
             this.btn_up_vel.TabIndex = 21;
@@ -511,7 +736,7 @@
             // 
             this.btn_up_vit.BackColor = System.Drawing.Color.OldLace;
             this.btn_up_vit.Image = global::Ficha_Jiora.Properties.Resources.Adicionar_16;
-            this.btn_up_vit.Location = new System.Drawing.Point(286, 30);
+            this.btn_up_vit.Location = new System.Drawing.Point(298, 30);
             this.btn_up_vit.Name = "btn_up_vit";
             this.btn_up_vit.Size = new System.Drawing.Size(29, 25);
             this.btn_up_vit.TabIndex = 19;
@@ -534,60 +759,60 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.Location = new System.Drawing.Point(173, 110);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(33, 15);
+            this.label18.Size = new System.Drawing.Size(47, 20);
             this.label18.TabIndex = 11;
             this.label18.Text = "Aura";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(7, 110);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 15);
+            this.label17.Size = new System.Drawing.Size(57, 20);
             this.label17.TabIndex = 10;
             this.label17.Text = "Magia";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(173, 70);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 15);
+            this.label16.Size = new System.Drawing.Size(98, 20);
             this.label16.TabIndex = 9;
             this.label16.Text = "Velocidade";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.Location = new System.Drawing.Point(7, 70);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(33, 15);
+            this.label15.Size = new System.Drawing.Size(49, 20);
             this.label15.TabIndex = 8;
             this.label15.Text = "Foco";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(173, 32);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 15);
+            this.label14.Size = new System.Drawing.Size(89, 20);
             this.label14.TabIndex = 7;
             this.label14.Text = "Vitalidade";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(6, 32);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 15);
+            this.label13.Size = new System.Drawing.Size(55, 20);
             this.label13.TabIndex = 6;
             this.label13.Text = "Força";
             // 
@@ -606,10 +831,10 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.Location = new System.Drawing.Point(12, 16);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(229, 261);
+            this.groupBox2.Size = new System.Drawing.Size(275, 282);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sobre";
@@ -617,114 +842,120 @@
             // lbl_raca
             // 
             this.lbl_raca.AutoSize = true;
-            this.lbl_raca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_raca.Location = new System.Drawing.Point(12, 235);
+            this.lbl_raca.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_raca.Location = new System.Drawing.Point(12, 247);
             this.lbl_raca.Name = "lbl_raca";
-            this.lbl_raca.Size = new System.Drawing.Size(14, 15);
+            this.lbl_raca.Size = new System.Drawing.Size(20, 21);
             this.lbl_raca.TabIndex = 11;
             this.lbl_raca.Text = "R";
             // 
             // lbl_nascimento
             // 
             this.lbl_nascimento.AutoSize = true;
-            this.lbl_nascimento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_nascimento.Location = new System.Drawing.Point(11, 200);
+            this.lbl_nascimento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_nascimento.Location = new System.Drawing.Point(11, 204);
             this.lbl_nascimento.Name = "lbl_nascimento";
-            this.lbl_nascimento.Size = new System.Drawing.Size(16, 15);
+            this.lbl_nascimento.Size = new System.Drawing.Size(22, 21);
             this.lbl_nascimento.TabIndex = 10;
             this.lbl_nascimento.Text = "N";
             // 
             // lbl_peso
             // 
             this.lbl_peso.AutoSize = true;
-            this.lbl_peso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_peso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_peso.Location = new System.Drawing.Point(12, 160);
             this.lbl_peso.Name = "lbl_peso";
-            this.lbl_peso.Size = new System.Drawing.Size(14, 15);
+            this.lbl_peso.Size = new System.Drawing.Size(19, 21);
             this.lbl_peso.TabIndex = 9;
             this.lbl_peso.Text = "P";
             // 
             // lbl_altura
             // 
             this.lbl_altura.AutoSize = true;
-            this.lbl_altura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_altura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_altura.Location = new System.Drawing.Point(12, 120);
             this.lbl_altura.Name = "lbl_altura";
-            this.lbl_altura.Size = new System.Drawing.Size(15, 15);
+            this.lbl_altura.Size = new System.Drawing.Size(20, 21);
             this.lbl_altura.TabIndex = 8;
             this.lbl_altura.Text = "A";
             // 
             // lbl_cabelo
             // 
             this.lbl_cabelo.AutoSize = true;
-            this.lbl_cabelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cabelo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_cabelo.Location = new System.Drawing.Point(12, 80);
             this.lbl_cabelo.Name = "lbl_cabelo";
-            this.lbl_cabelo.Size = new System.Drawing.Size(15, 15);
+            this.lbl_cabelo.Size = new System.Drawing.Size(20, 21);
             this.lbl_cabelo.TabIndex = 7;
             this.lbl_cabelo.Text = "C";
             // 
             // lbl_olhos
             // 
             this.lbl_olhos.AutoSize = true;
-            this.lbl_olhos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_olhos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_olhos.Location = new System.Drawing.Point(12, 40);
             this.lbl_olhos.Name = "lbl_olhos";
-            this.lbl_olhos.Size = new System.Drawing.Size(16, 15);
+            this.lbl_olhos.Size = new System.Drawing.Size(22, 21);
             this.lbl_olhos.TabIndex = 6;
             this.lbl_olhos.Text = "O";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(5, 217);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(5, 229);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 15);
+            this.label12.Size = new System.Drawing.Size(56, 20);
             this.label12.TabIndex = 5;
             this.label12.Text = "Raça:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 180);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(4, 184);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 15);
+            this.label11.Size = new System.Drawing.Size(108, 20);
             this.label11.TabIndex = 4;
             this.label11.Text = "Nascimento:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(5, 140);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 15);
+            this.label10.Size = new System.Drawing.Size(54, 20);
             this.label10.TabIndex = 3;
             this.label10.Text = "Peso:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(4, 100);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 15);
+            this.label9.Size = new System.Drawing.Size(62, 20);
             this.label9.TabIndex = 2;
             this.label9.Text = "Altura:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(5, 60);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 15);
+            this.label8.Size = new System.Drawing.Size(70, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "Cabelo:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(1, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 15);
+            this.label7.Size = new System.Drawing.Size(60, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Olhos:";
             // 
@@ -1775,6 +2006,8 @@
             // inventario
             // 
             this.inventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.inventario.Controls.Add(this.label25);
+            this.inventario.Controls.Add(this.DGV_bolsa);
             this.inventario.Controls.Add(this.button1);
             this.inventario.Controls.Add(this.label34);
             this.inventario.Controls.Add(this.label6);
@@ -1787,6 +2020,81 @@
             this.inventario.TabIndex = 3;
             this.inventario.Text = "Bolsa";
             this.inventario.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(12, 19);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(46, 21);
+            this.label25.TabIndex = 20;
+            this.label25.Text = "Tonz";
+            // 
+            // DGV_bolsa
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DGV_bolsa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.DGV_bolsa.BackgroundColor = System.Drawing.Color.PapayaWhip;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_bolsa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.DGV_bolsa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_bolsa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.quantidade,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.DGV_bolsa.GridColor = System.Drawing.Color.Goldenrod;
+            this.DGV_bolsa.Location = new System.Drawing.Point(9, 80);
+            this.DGV_bolsa.Name = "DGV_bolsa";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_bolsa.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.DGV_bolsa.RowHeadersVisible = false;
+            this.DGV_bolsa.RowHeadersWidth = 120;
+            this.DGV_bolsa.RowTemplate.Height = 25;
+            this.DGV_bolsa.Size = new System.Drawing.Size(525, 254);
+            this.DGV_bolsa.TabIndex = 19;
+            // 
+            // quantidade
+            // 
+            this.quantidade.DataPropertyName = "quantidade";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.quantidade.DefaultCellStyle = dataGridViewCellStyle9;
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "nome";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 21;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "descricao";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Width = 21;
             // 
             // button1
             // 
@@ -1831,7 +2139,7 @@
             // 
             this.img_tonz.BackColor = System.Drawing.Color.Transparent;
             this.img_tonz.Image = global::Ficha_Jiora.Properties.Resources.tonz_15_15;
-            this.img_tonz.Location = new System.Drawing.Point(34, 25);
+            this.img_tonz.Location = new System.Drawing.Point(16, 45);
             this.img_tonz.Name = "img_tonz";
             this.img_tonz.Size = new System.Drawing.Size(15, 15);
             this.img_tonz.TabIndex = 13;
@@ -1842,11 +2150,11 @@
             // 
             this.lbl_tonz.AutoSize = true;
             this.lbl_tonz.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_tonz.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_tonz.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_tonz.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_tonz.Location = new System.Drawing.Point(55, 23);
+            this.lbl_tonz.Location = new System.Drawing.Point(37, 39);
             this.lbl_tonz.Name = "lbl_tonz";
-            this.lbl_tonz.Size = new System.Drawing.Size(17, 19);
+            this.lbl_tonz.Size = new System.Drawing.Size(19, 21);
             this.lbl_tonz.TabIndex = 14;
             this.lbl_tonz.Text = "0";
             // 
@@ -2059,14 +2367,14 @@
             this.dtg_log.AllowUserToDeleteRows = false;
             this.dtg_log.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dtg_log.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FloralWhite;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FloralWhite;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dtg_log.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_log.GridColor = System.Drawing.Color.DarkGoldenrod;
             this.dtg_log.Location = new System.Drawing.Point(6, 6);
@@ -2074,8 +2382,8 @@
             this.dtg_log.ReadOnly = true;
             this.dtg_log.RowHeadersVisible = false;
             this.dtg_log.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LemonChiffon;
-            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LemonChiffon;
+            this.dtg_log.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dtg_log.RowTemplate.Height = 25;
             this.dtg_log.Size = new System.Drawing.Size(864, 488);
             this.dtg_log.TabIndex = 0;
@@ -2551,6 +2859,11 @@
             this.Load += new System.EventHandler(this.Ficha_do_Jogador_Load);
             this.tabControl1.ResumeLayout(false);
             this.Status.ResumeLayout(false);
+            this.Status.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.GPB_status_atributos.ResumeLayout(false);
             this.GPB_status_atributos.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -2579,6 +2892,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.inventario.ResumeLayout(false);
             this.inventario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_bolsa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_tonz)).EndInit();
             this.Mapa.ResumeLayout(false);
             this.Mapa.PerformLayout();
@@ -2798,5 +3112,26 @@
         private Label label27;
         private TextBox txt_desc_roupa;
         private TextBox txt_desc_arma;
+        private DataGridView DGV_bolsa;
+        private DataGridViewTextBoxColumn quantidade;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private Label label25;
+        private Label lbl_vestes_sobre;
+        private Label lbl_arma_sobre;
+        private Label label40;
+        private Label label26;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox9;
+        private Label lbl_ap_max;
+        private Label label52;
+        private Label lbl_ap_min;
+        private Label label54;
+        private Label lbl_ad_max;
+        private Label label49;
+        private Label lbl_ad_min;
+        private Label label47;
+        private PictureBox pictureBox11;
+        private PictureBox pictureBox12;
     }
 }

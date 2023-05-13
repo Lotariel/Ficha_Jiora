@@ -120,7 +120,6 @@ namespace Ficha_Jiora.DAO
             }
             catch (Exception ex)
             {
-
                 throw new Exception("\nErro em Consumiveis_Data.Carrega_Combo_Consumiveis:\n" + ex.Message);
             }
         }

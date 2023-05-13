@@ -238,7 +238,7 @@ namespace Ficha_Jiora.View
                     if (d100 <= CDA)
                     {
 
-                        txt_texto.Text = "Você acertou a habilidade " + habilidade.Nome;
+                        txt_texto.Text = "Você acertou a habilidade " + habilidade.Nome + "\r\n\r\n";
 
 
                         if (tipocusto == "MP")
@@ -263,7 +263,7 @@ namespace Ficha_Jiora.View
 
                         txt_texto.Text += "Custo: " + custo + " " + tipocusto;
                         txt_texto.Text += "\r\nAlvo: " + alvo + "\r\nHit: " + Hit + "\r\nCategoria: " + habilidade.Atributo + "\r\nChance de Acerto: " + CDA + " %\r\n";
-                        txt_texto.Text += "CDS Efeito: " + habilidade.CDSEfeito + " %\r\nEfeito: " + efeito + "\r\nDescrição:\r\n";
+                        txt_texto.Text += "CDS Efeito: " + habilidade.CDSEfeito + " %\r\nEfeito: " + efeito + "\r\n\r\nDescrição:\r\n";
                         txt_texto.Text += descricao;
 
                         CarregaTela(0);
